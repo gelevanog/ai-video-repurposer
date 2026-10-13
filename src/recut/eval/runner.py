@@ -239,7 +239,8 @@ def rejudge(name: str, settings: Settings, only: list[str] | None = None) -> Non
         verdicts = row.get("judge") or {}
         if only and row["id"] not in only:
             continue
-        if not only and verdicts and all("standalone" in v for v in verdicts.values()):
+        cloud = [v for v in verdicts.values() if "standalone" in v and not str(v.get("judge", "")).startswith("fake")]
+        if not only and verdicts and len(cloud) == len(verdicts):
             continue
         project = store.load(row["project_id"])
         items = [JudgeItem(c["id"], "model", c["text"]) for c in row["clips"]]
