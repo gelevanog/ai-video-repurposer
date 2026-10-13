@@ -1,0 +1,321 @@
+{
+ "id": "synth-03-newsletter-growth",
+ "kind": "synthetic",
+ "title": "From Zero to 10,000 Newsletter Subscribers",
+ "duration": 480.597,
+ "project_id": "from-zero-to-10-000-newsletter-s-9b5410",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.22,
+   "message": "08:00 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.32,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.01,
+   "message": "1211 words · faster-whisper small (int8, CPU) · 0.62x real time"
+  },
+  "diarize": {
+   "seconds": 1.1,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.62)"
+  },
+  "clips": {
+   "seconds": 0.07,
+   "message": "3 clips from 4 candidates"
+  },
+  "chapters": {
+   "seconds": 0.0,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 0.01,
+   "message": "6 social posts, 1 grounding flags"
+  }
+ },
+ "asr_seconds": 295.79,
+ "asr_rtf": 0.6155,
+ "process_seconds_this_run": 1.8,
+ "wer": {
+  "wer": 0.017017828200972446,
+  "ref_words": 1234.0,
+  "substitutions": 16.0,
+  "deletions": 2.0,
+  "insertions": 3.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9835,
+  "words": 1209,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.62)"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 1,
+   "precision": 0.5,
+   "recall": 0.25,
+   "f1": 0.333,
+   "mean_abs_error_s": 11.8
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 18.5
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 2,
+  "recall": 0.4,
+  "coverage": [
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.64
+  ],
+  "clips_mostly_on_a_highlight": 2
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "People · Already · Sophia"
+  },
+  {
+   "start": 81.0,
+   "title": "Single · Words · Issue"
+  },
+  {
+   "start": 211.0,
+   "title": "Email · Emails · Sequence"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 1,
+  "flag_texts": [
+   "1.0"
+  ],
+  "title_chars": 42,
+  "description_chars": 299,
+  "blog_words": 348,
+  "show_notes_words": 178,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 1 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_1fc5db3f",
+   "rank": 1,
+   "start": 326.89,
+   "end": 361.62,
+   "duration": 34.73,
+   "title": "Here's why saying no paid off",
+   "score": 77.4,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 69.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 326.89,
+    "inside_word": false,
+    "gap_before": 0.57,
+    "gap_after": 0.13,
+    "level_db": -72.5
+   },
+   "cut_out": {
+    "at": 361.62,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.4,
+    "level_db": -72.5
+   },
+   "adjustments": [],
+   "text": "Here's why saying no paid off. I replaced that sponsor slot with a paid tier that gives subscribers a weekly deep dive worksheet and a monthly live queue and a Within two months the tier hit 500 members at $10 each Generating $5,000 a month far more than the one off 3000 because the offer came from me the conversion rate was 12 % versus the typical 2 % for third -party ads The lesson, own the product you sell. Alignment drives revenue clearly significantly harder than a quick check."
+  },
+  {
+   "id": "clip_4fea47af",
+   "rank": 2,
+   "start": 286.83,
+   "end": 323.29,
+   "duration": 36.46,
+   "title": "Next we'll discuss how Sofia monetizes without selling",
+   "score": 75.8,
+   "scores": {
+    "hook": 7.5,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 65.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 286.83,
+    "inside_word": false,
+    "gap_before": 0.31,
+    "gap_after": 0.13,
+    "level_db": -72.5
+   },
+   "cut_out": {
+    "at": 323.29,
+    "inside_word": false,
+    "gap_before": 0.31,
+    "gap_after": 0.25,
+    "level_db": -57.4
+   },
+   "adjustments": [],
+   "text": "Next we'll discuss how Sofia monetizes without selling out, turning down a $3,000 sponsor. Stay tuned. Welcome back to The Creator Stack. I'm Marcus Lee, still with Sofia Alvarez. Sofya, you famously turned down a $3,000 sponsorship because it didn't align with your audience. Walk us through that decision. The offer came from a productivity tool company that targeted corporate teams. My readers are solo creators, so the product felt irrelevant and would have eroded trust. Write and you passed on the cash."
+  },
+  {
+   "id": "clip_efc67361",
+   "rank": 3,
+   "start": 397.52,
+   "end": 440.2,
+   "duration": 42.68,
+   "title": "What's the one thing you change about the",
+   "score": 71.6,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 61.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 397.52,
+    "inside_word": false,
+    "gap_before": 0.06,
+    "gap_after": 0.12,
+    "level_db": -41.2
+   },
+   "cut_out": {
+    "at": 440.2,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.12,
+    "level_db": -72.5
+   },
+   "adjustments": [],
+   "text": "What's the one thing you change about the launch if you could start over? I'd launch a welcome email sequence on day one right now that sequence is my highest performing email But I only added it after month three Right, and you didn't have it from the start. What impact did the delay have on early engagement? Here's the concrete cost of waiting. The Welcome series now delivers a 45 % open rate and a 12 % click -through, driving 20 % of all paid tier sign -ups. If I had sent it from subscriber one, I estimate I would have captured an extra 300 paying members in the first 90 days, adding roughly $3,000 in recurring revenue."
+  }
+ ],
+ "judge": {
+  "clip_4fea47af": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_1fc5db3f": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_efc67361": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  }
+ },
+ "eval_seconds": 1.8
+}

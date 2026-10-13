@@ -1,0 +1,270 @@
+{
+ "id": "synth-01-freelance-pricing",
+ "kind": "synthetic",
+ "title": "Stop Charging by the Hour: Pricing for Freelance Video Editors",
+ "duration": 401.066,
+ "project_id": "stop-charging-by-the-hour-pricin-e2bcac",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.21,
+   "message": "06:41 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.23,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.0,
+   "message": "1124 words · faster-whisper small (int8, CPU) · 0.50x real time"
+  },
+  "diarize": {
+   "seconds": 0.48,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.50)"
+  },
+  "clips": {
+   "seconds": 0.04,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 0.0,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 0.01,
+   "message": "6 social posts, 1 grounding flags"
+  }
+ },
+ "asr_seconds": 202.37,
+ "asr_rtf": 0.5046,
+ "process_seconds_this_run": 1.1,
+ "wer": {
+  "wer": 0.014059753954305799,
+  "ref_words": 1138.0,
+  "substitutions": 9.0,
+  "deletions": 3.0,
+  "insertions": 4.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9956,
+  "words": 1124,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.50)"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 1.9
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 1.9
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 1,
+  "recall": 0.2,
+  "coverage": [
+   1.0,
+   0.0,
+   0.41,
+   0.0,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 1
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "First · Pay · Project"
+  },
+  {
+   "start": 145.0,
+   "title": "Tier · Middle · Premium"
+  },
+  {
+   "start": 235.0,
+   "title": "Edit · Without · Clients"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 1,
+  "flag_texts": [
+   "1.0"
+  ],
+  "title_chars": 62,
+  "description_chars": 333,
+  "blog_words": 356,
+  "show_notes_words": 172,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 1 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_c06c287a",
+   "rank": 1,
+   "start": 196.9,
+   "end": 254.04,
+   "duration": 57.14,
+   "title": "The lesson always include a decoy that makes",
+   "score": 81.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 10.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 80.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 196.9,
+    "inside_word": false,
+    "gap_before": 0.36,
+    "gap_after": 0.12,
+    "level_db": -75.3
+   },
+   "cut_out": {
+    "at": 254.04,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.28,
+    "level_db": -75.3
+   },
+   "adjustments": [],
+   "text": "The lesson always include a decoy that makes your real offer look like the obvious choice. I tested removing the premium tier and the middle package conversion dropped to 40%. The decoy isn't about selling the top tier, it's about framing the one you actually want to sell. So the expensive tier you never expect to sell actually drives the middle sales, which is pretty counter -intuitive. Exactly. It's a pricing lever, not a product you push. And it lets me keep the middle -tier profitable while still offering a high -end option for the few who want it. Got it. Let's talk about handling price objections next. Clients often say it's too expensive, and I know many freelancers' cave. How do you respond without discounting? I never lower the price because that signals my work is negotiable. Instead, I trim the scope so the budget fits the deliverable and the client still gets a polished result and it keeps my margins healthy."
+  },
+  {
+   "id": "clip_504b82f0",
+   "rank": 2,
+   "start": 2.19,
+   "end": 52.9,
+   "duration": 50.71,
+   "title": "How did you first get into video editing",
+   "score": 76.9,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 64.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 2.19,
+    "inside_word": false,
+    "gap_before": 0.37,
+    "gap_after": 0.13,
+    "level_db": -75.3
+   },
+   "cut_out": {
+    "at": 52.9,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.24,
+    "level_db": -75.3
+   },
+   "adjustments": [],
+   "text": "How did you first get into video editing? I started messing around with iMovie in high school, cutting together skate clips for friends. After college, I picked up a few wedding gigs just to pay rent. Weddings huh? That sounds like a grind. One night I edited a wedding video for free, just to help a friend. And the couple loved it so much they referred me to a corporate client who paid $5,000 for a single project. I stayed up until 3a, m, tweaking color grades and sinking audio because I wanted the couple to feel the emotion of their day. The next morning they sent a thank you text and a referral to a marketing director who needed a brand film. That project paid $5,000 and became my first retainer client. The lesson, sometimes the work you do for free, becomes the portfolio piece that pays you back tenfold."
+  }
+ ],
+ "judge": {
+  "clip_504b82f0": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_c06c287a": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  }
+ },
+ "eval_seconds": 1.1
+}

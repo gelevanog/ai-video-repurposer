@@ -275,6 +275,30 @@ def posts_summary(project: Project) -> dict[str, Any]:
     }
 
 
+def refresh_chapters(name: str, settings: Settings) -> None:
+    """Re-run the chapters stage of every project of a run and rescore the chapters against the gold data."""
+    work = REPO_ROOT / ".cache" / "eval-projects" / name
+    pipeline = Pipeline(
+        settings.model_copy(update={"data_dir": work}),
+        models=lambda tag: model_for(settings, tag=f"eval-{name}:{tag}"),
+    )
+    manifest = {i["id"]: i for i in testset.load_manifest()}
+    for path in sorted((results_dir(name) / "items").glob("*.json")):
+        row = json.loads(path.read_text(encoding="utf-8"))
+        project = pipeline.process(row["project_id"], stages=("chapters",), force=True)
+        row["chapters_out"] = [{"start": c.start, "title": c.title} for c in project.chapters]
+        item = manifest[row["id"]]
+        if item["kind"] == "synthetic":
+            gold = json.loads(testset.gold_path(item).read_text(encoding="utf-8"))
+            row["chapters"] = chapter_scores(
+                [c.start for c in project.chapters], [c["start"] for c in gold["chapters"]], project.source.duration
+            )
+        if "posts" in row:
+            row["posts"]["chapters_youtube_ready"] = not youtube_ready(project.chapters, project.source.duration)
+        path.write_text(json.dumps(row, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"{row['id']}: {len(project.chapters)} chapters")
+
+
 def refresh_posts(name: str, settings: Settings) -> None:
     """Re-run the posts stage of every project of a run (after a fix in the posts code) and update the items."""
     work = REPO_ROOT / ".cache" / "eval-projects" / name

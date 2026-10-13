@@ -31,7 +31,7 @@ TITLE_MAX = 60
 
 SYSTEM = """RECUT_TASK: chapters
 You write YouTube chapters for a long video or podcast. Read the numbered transcript and mark where each new topic
-or segment begins. Aim for about {k} chapters (one every few minutes); a chapter starts where the speakers move to a
+or segment begins. Aim for about {k} chapters (roughly one every two minutes); a chapter starts where the speakers move to a
 genuinely new subject, not at every new sentence. The first chapter starts at sentence {first}.
 Titles: 2-7 words, specific to what is discussed (\"Why the first sensor failed\", not \"Discussion\"), no
 numbering, no clickbait, max {title_max} characters.
@@ -52,7 +52,8 @@ def _tokens(text: str) -> list[str]:
 
 
 def target_count(duration: float) -> int:
-    return max(3, min(15, round(duration / 240)))
+    """About one chapter every two minutes (typical for podcasts and talks on YouTube), 3 to 15."""
+    return max(3, min(15, round(duration / 120)))
 
 
 def validate(raw: Sequence[tuple[int, str]], sentences: Sequence[Sentence], *, duration: float) -> list[Chapter]:

@@ -5,5 +5,5 @@
  "fallbacks": [],
  "judge": "fake/rules",
  "asr": "faster-whisper small (int8, CPU)",
- "finished_at": "2026-10-13 12:15:46"
+ "finished_at": "2026-10-13 14:01:37"
 }

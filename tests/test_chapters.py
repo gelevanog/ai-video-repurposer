@@ -63,7 +63,7 @@ def test_youtube_rules() -> None:
 def test_target_count_bounds() -> None:
     assert target_count(60) == 3
     assert target_count(3600) == 15
-    assert target_count(1200) == 5
+    assert target_count(1200) == 10
 
 
 def test_texttiling_finds_topic_shifts() -> None:

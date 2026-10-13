@@ -1,0 +1,270 @@
+{
+ "id": "synth-02-sleep-shift-work",
+ "kind": "synthetic",
+ "title": "Sleeping Well on Night Shifts",
+ "duration": 398.035,
+ "project_id": "sleeping-well-on-night-shifts-e8d35d",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.22,
+   "message": "06:38 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.24,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.0,
+   "message": "1251 words · faster-whisper small (int8, CPU) · 0.25x real time"
+  },
+  "diarize": {
+   "seconds": 0.49,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.13); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 0.05,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 0.0,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 0.01,
+   "message": "6 social posts, 1 grounding flags"
+  }
+ },
+ "asr_seconds": 99.86,
+ "asr_rtf": 0.2509,
+ "process_seconds_this_run": 1.1,
+ "wer": {
+  "wer": 0.020456333595594022,
+  "ref_words": 1271.0,
+  "substitutions": 13.0,
+  "deletions": 9.0,
+  "insertions": 4.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 1,
+  "predicted_speakers": 1,
+  "count_correct": true,
+  "word_accuracy": 1.0,
+  "words": 1251,
+  "note": "voices not separable with the light MFCC clustering (best silhouette 0.13); labelled as a single speaker"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 1,
+   "precision": 0.5,
+   "recall": 0.25,
+   "f1": 0.333,
+   "mean_abs_error_s": 8.7
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 14.6
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 1,
+  "recall": 0.2,
+  "coverage": [
+   0.38,
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "clips_mostly_on_a_highlight": 1
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Night · Clock · Timer"
+  },
+  {
+   "start": 104.0,
+   "title": "Anchor · Sleep · Shift"
+  },
+  {
+   "start": 313.0,
+   "title": "Flip · Days · After"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 1,
+  "flag_texts": [
+   "1.0"
+  ],
+  "title_chars": 29,
+  "description_chars": 262,
+  "blog_words": 304,
+  "show_notes_words": 187,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 1 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_04dde6c3",
+   "rank": 1,
+   "start": 31.16,
+   "end": 69.38,
+   "duration": 38.22,
+   "title": "Gets delayed cortisol spikes at the wrong hour",
+   "score": 81.2,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 10.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 82.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 31.16,
+    "inside_word": false,
+    "gap_before": 0.38,
+    "gap_after": 0.12,
+    "level_db": -72.7
+   },
+   "cut_out": {
+    "at": 69.38,
+    "inside_word": false,
+    "gap_before": 0.36,
+    "gap_after": 0.08,
+    "level_db": -64.4
+   },
+   "adjustments": [],
+   "text": "Gets delayed cortisol spikes at the wrong hour and the brain never gets a clean sleep window. The result is fragmented rest, slower reaction times and a higher risk of errors, that weekly jet lag is why night work shreds sleep quality. So the body clock isn't just a suggestion. It's a hard -wired timer that expects bright light in the morning and darkness at night. And when we flip that schedule the timer keeps ticking on its original rhythm. When that timer gets scrambled night after night, the whole system pays the price, hormones, metabolism, even mood, and that's what we'll tackle next. You might notice that after a string of nights you feel groggy even on days off."
+  },
+  {
+   "id": "clip_ee088422",
+   "rank": 2,
+   "start": 329.38,
+   "end": 367.81,
+   "duration": 38.43,
+   "title": "The biggest mistake I see is staying awake",
+   "score": 80.6,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 10.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 76.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 329.38,
+    "inside_word": false,
+    "gap_before": 0.56,
+    "gap_after": 0.12,
+    "level_db": -73.6
+   },
+   "cut_out": {
+    "at": 367.81,
+    "inside_word": false,
+    "gap_before": 0.39,
+    "gap_after": 0.07,
+    "level_db": -66.6
+   },
+   "adjustments": [],
+   "text": "The biggest mistake I see is staying awake all day after the last night shift. Thinking you'll reset by powering through. What actually happens is you push the circadian clock even further out of phase. So the next night you're exhausted before you even start. The gentler approach call it a half -flip. Is to sleep for a short -core block. Say 3 hours right after the shift, then stay up for a few hours, get bright light. And finally go to bed at a reasonable evening hour. This splits the adjustment into two smaller jumps instead of one massive leap. And most people report feeling functional within 48 hours, instead of a week. So the half -flip gives the clock a manageable step."
+  }
+ ],
+ "judge": {
+  "clip_ee088422": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_04dde6c3": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  }
+ },
+ "eval_seconds": 1.1
+}

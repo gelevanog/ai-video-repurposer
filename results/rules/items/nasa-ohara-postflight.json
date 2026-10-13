@@ -1,0 +1,470 @@
+{
+ "id": "nasa-ohara-postflight",
+ "kind": "nasa",
+ "title": "Loral O'Hara post-flight crew news conference (2024-04-15)",
+ "duration": 1379.1,
+ "project_id": "loral-o-hara-post-flight-crew-ne-4b8927",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.46,
+   "message": "22:59 · 640x360 @ 30 fps"
+  },
+  "audio": {
+   "seconds": 1.32,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.01,
+   "message": "4156 words · faster-whisper small (int8, CPU) · 0.07x real time"
+  },
+  "diarize": {
+   "seconds": 1.84,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.17); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 0.37,
+   "message": "7 clips from 10 candidates"
+  },
+  "chapters": {
+   "seconds": 0.01,
+   "message": "6 chapters"
+  },
+  "posts": {
+   "seconds": 0.02,
+   "message": "6 social posts, 12 grounding flags"
+  }
+ },
+ "asr_seconds": 98.09,
+ "asr_rtf": 0.0711,
+ "process_seconds_this_run": 4.3,
+ "wer": {
+  "wer": 0.39180765805877116,
+  "ref_words": 3369.0,
+  "substitutions": 312.0,
+  "deletions": 75.0,
+  "insertions": 933.0,
+  "caption_offset_s": -314.0
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Questions · Space · Thank"
+  },
+  {
+   "start": 234.0,
+   "title": "Miss · Little · Getting"
+  },
+  {
+   "start": 436.0,
+   "title": "Question · Cut · Hair"
+  },
+  {
+   "start": 792.0,
+   "title": "Drink · Water · Environment"
+  },
+  {
+   "start": 907.0,
+   "title": "Planet · Earth · Family"
+  },
+  {
+   "start": 1290.0,
+   "title": "Astronaut · Laurel · Application"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 3,
+  "flags_long_form": 9,
+  "flag_texts": [
+   "2024",
+   "04",
+   "15",
+   "2024",
+   "04",
+   "15",
+   "2024",
+   "04",
+   "15",
+   "2024",
+   "04",
+   "15"
+  ],
+  "title_chars": 58,
+  "description_chars": 421,
+  "blog_words": 468,
+  "show_notes_words": 216,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 12 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_85323c6e",
+   "rank": 1,
+   "start": 166.44,
+   "end": 223.69,
+   "duration": 57.25,
+   "title": "How would you say your when you got",
+   "score": 82.8,
+   "scores": {
+    "hook": 10.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 73.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 166.44,
+    "inside_word": false,
+    "gap_before": 1.13,
+    "gap_after": 0.3,
+    "level_db": -39.7
+   },
+   "cut_out": {
+    "at": 223.69,
+    "inside_word": false,
+    "gap_before": 0.39,
+    "gap_after": 1.66,
+    "level_db": -33.5
+   },
+   "adjustments": [],
+   "text": "How would you say your when you got to the space station how it affected your senses? How did each sense interpret what was happening to you? Yeah also a good question and that's hard kind of hard to answer I'm not really sure like I think it was mostly just like getting used to the 3d environment where we you know all of our training there's a top and a bottom and a left and a right and then you get to space station and suddenly That all goes away And you can be working in any orientation you can see your crewmates working in any orientation and For the first week or two on space station or first couple weeks. That's really disorienting So you kind of have to take a minute and remember what module you're in and you know Which direction your head is pointing and then eventually that just goes away almost without you realizing it and that's kind of how also of re -adapting to gravity has been too."
+  },
+  {
+   "id": "clip_e5576f6c",
+   "rank": 2,
+   "start": 646.55,
+   "end": 684.62,
+   "duration": 38.07,
+   "title": "We're going to go now to a question",
+   "score": 66.0,
+   "scores": {
+    "hook": 6.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 55.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 646.55,
+    "inside_word": false,
+    "gap_before": 1.02,
+    "gap_after": 0.13,
+    "level_db": -27.7
+   },
+   "cut_out": {
+    "at": 684.62,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 1.38,
+    "level_db": -24.6
+   },
+   "adjustments": [],
+   "text": "We're going to go now to a question online from AJ who would like to ask you, what were some of the difficult daily tasks while in space? Other than bag packing. Bad. Yeah, like, Stoge in general could be good or bad sometimes, especially if you were running a little bit behind. And then you saw what location you had to go get something out of. Sometimes your heart would kind of sink, being like, oh, that's going to take me a while to do. But day -to -day challenges, I mean, it was kind of like, ends up being kind of like on Earth. You have good days. You have harder days."
+  },
+  {
+   "id": "clip_bffec015",
+   "rank": 3,
+   "start": 723.69,
+   "end": 761.66,
+   "duration": 37.97,
+   "title": "Did you ever cut hair before space",
+   "score": 66.0,
+   "scores": {
+    "hook": 6.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 55.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 723.69,
+    "inside_word": false,
+    "gap_before": 0.04,
+    "gap_after": 0.04,
+    "level_db": -21.1
+   },
+   "cut_out": {
+    "at": 761.66,
+    "inside_word": false,
+    "gap_before": 0.33,
+    "gap_after": 0.51,
+    "level_db": -25.8
+   },
+   "adjustments": [],
+   "text": "Did you ever cut hair before space? Thanks. No, I actually, I cut hair once before space and I cut Frank Rubio's hair in Baikonur before he launched. And he kind of gave me a lesson on how to cut hair. And so I attribute any of my hair cutting skills to that lesson in Baikonur from Frank. And then I got a lot better at it, I think, on orbit. With maybe one or two misses, but it was overall pretty good. And surprisingly, mine was okay when I got back, because I cut mine three times, I think, while I was up there. So I wasn't sure what it would look like when I got back, but it was okay."
+  },
+  {
+   "id": "clip_32cce727",
+   "rank": 4,
+   "start": 584.23,
+   "end": 623.47,
+   "duration": 39.24,
+   "title": "I realized that of course you weren't quite",
+   "score": 66.0,
+   "scores": {
+    "hook": 6.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 55.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 584.23,
+    "inside_word": false,
+    "gap_before": 0.07,
+    "gap_after": 0.07,
+    "level_db": -27.1
+   },
+   "cut_out": {
+    "at": 623.47,
+    "inside_word": false,
+    "gap_before": 0.57,
+    "gap_after": 0.13,
+    "level_db": -26.2
+   },
+   "adjustments": [],
+   "text": "I realized that of course you weren't quite up there, but did you have a chance to talk with them about the photography? And if you can't answer that, can you talk about the auroras that you saw, because that's also related to the sun. Thank you. Yeah, I know they were doing a lot of preparations to get ready for that. And I didn't talk to them in detail about the photography, but just about the experience in general, and it sounded like it was an epic day on Space Station as well as on Earth. I was hoping to get up there and see it myself or get into the path of totality and see it myself, but with the delay in my return, I was here at Johnson Space Center, so I just stepped outside for a minute, but I know they got a good show on Space Station."
+  },
+  {
+   "id": "clip_ae722ae3",
+   "rank": 5,
+   "start": 832.2,
+   "end": 874.22,
+   "duration": 42.02,
+   "title": "Continuing on with our online questions we've got",
+   "score": 65.9,
+   "scores": {
+    "hook": 6.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 54.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 832.2,
+    "inside_word": false,
+    "gap_before": 1.92,
+    "gap_after": 0.2,
+    "level_db": -26.6
+   },
+   "cut_out": {
+    "at": 874.22,
+    "inside_word": false,
+    "gap_before": 0.37,
+    "gap_after": 0.43,
+    "level_db": -25.0
+   },
+   "adjustments": [],
+   "text": "Continuing on with our online questions, we've got a question from Heather Knot who wants to know what was the first thing you ate once you got home? Chips and guacamole. I had chips and guacamole multiple times. So it was like my first meal and my second meal and then several lunches this week, or last week too. It's like the one thing I craved up there. I've heard that's a popular - And I got it. We're here in Texas. You have to have your guacamole. Yeah. So we're going to go to a question from MIG, who submitted their question online, who wants to know, how did you cope with stress or anxiety when you were on the space station? Yeah, great, great question."
+  },
+  {
+   "id": "clip_63efcc8e",
+   "rank": 6,
+   "start": 1293.22,
+   "end": 1328.45,
+   "duration": 35.23,
+   "title": "Speaking of all these astronauts that you've been",
+   "score": 65.4,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 69.0
+   },
+   "issues": [
+    "cut_in_loud",
+    "cut_out_loud"
+   ],
+   "cut_in": {
+    "at": 1293.22,
+    "inside_word": false,
+    "gap_before": 0.13,
+    "gap_after": 0.07,
+    "level_db": -7.6
+   },
+   "cut_out": {
+    "at": 1328.45,
+    "inside_word": false,
+    "gap_before": 0.08,
+    "gap_after": 0.04,
+    "level_db": -4.8
+   },
+   "adjustments": [],
+   "text": "Speaking of all these astronauts that you've been spending time with, Myrna on Instagram wants to know, how can I apply to be an astronaut like you guys? Excellent, timely question. Astronaut applications are open right now and they close in two days. And so the first step in becoming an astronaut is submitting an application. So if you're interested, then I would encourage anybody to go online and submit an application before April 16th. I'm going to do one more check, one more time for any questions here in the room. Alrighty. Well, Laurel, thank you so much for joining us."
+  },
+  {
+   "id": "clip_8119db23",
+   "rank": 7,
+   "start": 781.65,
+   "end": 818.2,
+   "duration": 36.55,
+   "title": "Instead I actually got really into photography while",
+   "score": 61.0,
+   "scores": {
+    "hook": 6.5,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 63.0
+   },
+   "issues": [
+    "cut_in_loud",
+    "cut_out_loud"
+   ],
+   "cut_in": {
+    "at": 781.65,
+    "inside_word": false,
+    "gap_before": 1.2,
+    "gap_after": 0.42,
+    "level_db": 0.8
+   },
+   "cut_out": {
+    "at": 818.2,
+    "inside_word": false,
+    "gap_before": 0.06,
+    "gap_after": 0.04,
+    "level_db": -9.0
+   },
+   "adjustments": [],
+   "text": "Instead, I actually got really into photography while I was up there, not surprisingly, so I spent a lot of time, you know, figuring that out and getting better at that and riding. I like to ride a lot as well. So that's how I was trying to capture the experience. So let's talk a little bit more about water. We've got a question from Tim online who wanted to know, do you have to drink more or less water when you're in space? Or is it pretty much the same as when you're on Earth? I think I definitely tried to drink more water. Space station is pretty low humidity. So it's a pretty dry environment. And staying hydrated is important."
+  }
+ ],
+ "judge": {
+  "clip_32cce727": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-4": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-6": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 3,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_ae722ae3": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-5": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_e5576f6c": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_85323c6e": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-3": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_8119db23": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_bffec015": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_63efcc8e": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  }
+ },
+ "eval_seconds": 4.3
+}

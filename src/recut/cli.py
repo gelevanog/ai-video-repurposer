@@ -304,6 +304,7 @@ def eval_run(
         only=[x for x in only.split(",") if x],
         render=render,
         judge=judge,
+        judge_cloud=judge_cloud,
     )
 
 
@@ -333,6 +334,17 @@ def eval_rescore(name: Annotated[str, typer.Option()] = "main") -> None:
     from recut.eval import runner
 
     runner.rescore(name)
+
+
+@eval_app.command("refresh-chapters")
+def eval_refresh_chapters(
+    name: Annotated[str, typer.Option()] = "main",
+    provider: Annotated[LLMProviderKind | None, typer.Option()] = None,
+) -> None:
+    """Re-run the chapters stage for every project of a run and rescore it."""
+    from recut.eval import runner
+
+    runner.refresh_chapters(name, _settings(provider))
 
 
 @eval_app.command("refresh-posts")

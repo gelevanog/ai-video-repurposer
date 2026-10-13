@@ -1,0 +1,270 @@
+{
+ "id": "synth-04-espresso-mistakes",
+ "kind": "synthetic",
+ "title": "Five Home Espresso Mistakes (and How to Fix Them)",
+ "duration": 386.56,
+ "project_id": "five-home-espresso-mistakes-and-4ae9df",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.26,
+   "message": "06:26 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.24,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.0,
+   "message": "1250 words · faster-whisper small (int8, CPU) · 0.23x real time"
+  },
+  "diarize": {
+   "seconds": 0.53,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.17); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 0.14,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 0.0,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 0.01,
+   "message": "6 social posts, 1 grounding flags"
+  }
+ },
+ "asr_seconds": 90.51,
+ "asr_rtf": 0.2341,
+ "process_seconds_this_run": 1.9,
+ "wer": {
+  "wer": 0.011876484560570071,
+  "ref_words": 1263.0,
+  "substitutions": 7.0,
+  "deletions": 3.0,
+  "insertions": 5.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 1,
+  "predicted_speakers": 1,
+  "count_correct": true,
+  "word_accuracy": 1.0,
+  "words": 1250,
+  "note": "voices not separable with the light MFCC clustering (best silhouette 0.17); labelled as a single speaker"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 6.0
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 6.0
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 1,
+  "recall": 0.2,
+  "coverage": [
+   1.0,
+   0.34,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 1
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Time · Beans · Grind"
+  },
+  {
+   "start": 135.0,
+   "title": "Scale · Grams · Ratio"
+  },
+  {
+   "start": 230.0,
+   "title": "Tamp · Side · Shot"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 1,
+  "flag_texts": [
+   "1.0"
+  ],
+  "title_chars": 49,
+  "description_chars": 298,
+  "blog_words": 398,
+  "show_notes_words": 206,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 1 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_da789092",
+   "rank": 1,
+   "start": 109.33,
+   "end": 156.24,
+   "duration": 46.91,
+   "title": "If you tweak Stick grind and dose together",
+   "score": 81.8,
+   "scores": {
+    "hook": 8.5,
+    "payoff": 10.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 76.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 109.33,
+    "inside_word": false,
+    "gap_before": 0.28,
+    "gap_after": 0.12,
+    "level_db": -72.5
+   },
+   "cut_out": {
+    "at": 156.24,
+    "inside_word": false,
+    "gap_before": 0.29,
+    "gap_after": 0.05,
+    "level_db": -72.5
+   },
+   "adjustments": [],
+   "text": "If you tweak Stick grind and dose together you'll never know which move fixed the problem. Stick to the single variable method, watch the clock, and you'll dial in a repeatable shot every morning. So you set the grinder, pull a shot, note the time, and if it's 22 seconds you go a notch finer. If it's 35 seconds you back off. Keep a small notebook or phone note, just the grind setting in the time, and you'll see the pattern emerge fast. Remember, the timer is your most honest feedback tool. Nail the 25 to 30 second window and the rest of the recipe falls into place. Once you lock that in, you can start experimenting with temperature or pressure without guessing. Let's talk about ratio. Too many home brewers eyeball the coffee and the liquid, hoping the numbers line up. The result is usually a shot that's either sour and thin or bitter and heavy."
+  },
+  {
+   "id": "clip_c2d1f400",
+   "rank": 2,
+   "start": 18.36,
+   "end": 69.25,
+   "duration": 50.89,
+   "title": "Here's the hard truth a supermarket bag with",
+   "score": 77.1,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 66.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 18.36,
+    "inside_word": false,
+    "gap_before": 0.59,
+    "gap_after": 0.13,
+    "level_db": -72.5
+   },
+   "cut_out": {
+    "at": 69.25,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.18,
+    "level_db": -72.5
+   },
+   "adjustments": [],
+   "text": "Here's the hard truth, a supermarket bag with no roast date is a flavor time bomb. Coffee peaks around 3 -14 days after roasting, then the aromatic oils oxidize and the sweetness evaporates. If the beans are older than a month, no grind adjustment, no temperature tweak, and no fancy machine will bring back that bright acidity or caramel body. You'll taste cardboard, muted acidity, and a hollow finish every single time. The fix is simple by beans with a clear roast date. Use them within two weeks and store them in an airtight container away from light and heat. Freshness is the single lever that makes every other variable matter. So once you have fresh beans, the next step is keeping them that way. I like to portion a week's worth into a small vacuum sealed jar and keep the rest in the freezer. Just make sure it's fully thawed before grinding. Bottom line, if the bag doesn't tell you when it was roasted, put it back."
+  }
+ ],
+ "judge": {
+  "clip_c2d1f400": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_da789092": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  }
+ },
+ "eval_seconds": 1.9
+}

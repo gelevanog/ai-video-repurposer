@@ -1,0 +1,526 @@
+{
+ "id": "nasa-crew9-news-conference",
+ "kind": "nasa",
+ "title": "NASA's SpaceX Crew-9 crew news conference (2024-07-26)",
+ "duration": 1651.6,
+ "project_id": "nasa-s-spacex-crew-9-crew-news-c-0ab933",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.41,
+   "message": "27:31 · 640x360 @ 30 fps"
+  },
+  "audio": {
+   "seconds": 1.73,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.02,
+   "message": "3952 words · faster-whisper small (int8, CPU) · 0.09x real time"
+  },
+  "diarize": {
+   "seconds": 2.23,
+   "message": "3 speakers separated by MFCC and pitch clustering (silhouette 0.32)"
+  },
+  "clips": {
+   "seconds": 0.49,
+   "message": "8 clips from 10 candidates"
+  },
+  "chapters": {
+   "seconds": 0.01,
+   "message": "7 chapters"
+  },
+  "posts": {
+   "seconds": 0.02,
+   "message": "6 social posts, 8 grounding flags"
+  }
+ },
+ "asr_seconds": 145.9,
+ "asr_rtf": 0.0883,
+ "process_seconds_this_run": 5.1,
+ "wer": {
+  "wer": 0.07769173120159881,
+  "ref_words": 4003.0,
+  "substitutions": 107.0,
+  "deletions": 95.0,
+  "insertions": 109.0,
+  "caption_offset_s": 2.0
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Crew · Welcome · Incredible"
+  },
+  {
+   "start": 110.0,
+   "title": "Taking · Time · Friends"
+  },
+  {
+   "start": 279.0,
+   "title": "Space · Doing · Force"
+  },
+  {
+   "start": 523.0,
+   "title": "Patches · Crew · Patch"
+  },
+  {
+   "start": 763.0,
+   "title": "Station · Space · International"
+  },
+  {
+   "start": 1191.0,
+   "title": "Dragon · Soyuz · Training"
+  },
+  {
+   "start": 1486.0,
+   "title": "Small · Message · Come"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 2,
+  "flags_long_form": 6,
+  "flag_texts": [
+   "07",
+   "26",
+   "07",
+   "26",
+   "07",
+   "26",
+   "07",
+   "26"
+  ],
+  "title_chars": 54,
+  "description_chars": 423,
+  "blog_words": 328,
+  "show_notes_words": 234,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 8 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_4cc4050a",
+   "rank": 1,
+   "start": 638.12,
+   "end": 678.36,
+   "duration": 40.24,
+   "title": "How closely have you guys been able to",
+   "score": 72.2,
+   "scores": {
+    "hook": 10.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 77.0
+   },
+   "issues": [
+    "cut_out_loud"
+   ],
+   "cut_in": {
+    "at": 638.12,
+    "inside_word": false,
+    "gap_before": 0.47,
+    "gap_after": 0.05,
+    "level_db": -26.9
+   },
+   "cut_out": {
+    "at": 678.36,
+    "inside_word": false,
+    "gap_before": 0.18,
+    "gap_after": 0.04,
+    "level_db": -3.4
+   },
+   "adjustments": [],
+   "text": "How closely have you guys been able to follow the Falcon 9 anomaly investigation and how confident are you in your rocket? Any thoughts you have would be appreciated. Yeah I'm extremely confident in the team, the approach that they've taken, the integrated approach in which NASA has been incorporated into the response and I'm excited to strap on to the rocket when the team decides it's time to go. Yeah we've been integrated we actually were out at SpaceX in Hawthorne training and it was the day after the the anomaly and from the get -go they brought us into the conversation and told us everything that they knew."
+  },
+  {
+   "id": "clip_037bdbde",
+   "rank": 2,
+   "start": 917.96,
+   "end": 954.94,
+   "duration": 36.98,
+   "title": "How do you kind of reconcile that and",
+   "score": 71.6,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 61.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 917.96,
+    "inside_word": false,
+    "gap_before": 0.61,
+    "gap_after": 0.19,
+    "level_db": -32.4
+   },
+   "cut_out": {
+    "at": 954.94,
+    "inside_word": false,
+    "gap_before": 0.16,
+    "gap_after": 0.3,
+    "level_db": -13.2
+   },
+   "adjustments": [],
+   "text": "How do you kind of reconcile that and prepare yourself mentally for that aspect of the mission? For me personally, it's actually incredibly fulfilling. It's such a privilege to fly in space And if what our bodies are experiencing can then also help us understand diseases and different effects to compromise populations on the earth, this is incredibly valuable. And so for me, this is just a giant privilege. Of course, we know that our bodies are going to experience changes. We do so much to help mitigate and prevent those changes from exercise to support from nutritionists."
+  },
+  {
+   "id": "clip_fa5cc7aa",
+   "rank": 3,
+   "start": 461.8,
+   "end": 493.95,
+   "duration": 32.15,
+   "title": "How does this all play together for you",
+   "score": 71.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 60.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 461.8,
+    "inside_word": false,
+    "gap_before": 0.58,
+    "gap_after": 0.38,
+    "level_db": -35.3
+   },
+   "cut_out": {
+    "at": 493.95,
+    "inside_word": false,
+    "gap_before": 0.65,
+    "gap_after": 0.11,
+    "level_db": -32.1
+   },
+   "adjustments": [],
+   "text": "How does this all play together for you? Yeah, you know, so inside of the astronaut corps, we have, you know, several active -duty military members that are assigned to work for NASA. And that's a, we've got a long history of that level of cooperation. And so it's great to be able to serve not only in the Space Force, but also serve my nation as part of the astronaut corps. Expanding the, you know, what I think the biggest impact of me being on this mission as a guardian is going to be is just raising awareness."
+  },
+  {
+   "id": "clip_d418693c",
+   "rank": 4,
+   "start": 1030.82,
+   "end": 1069.4,
+   "duration": 38.58,
+   "title": "Like to in a way chronicle the assembly",
+   "score": 71.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 70.0
+   },
+   "issues": [
+    "cut_in_loud"
+   ],
+   "cut_in": {
+    "at": 1030.82,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.1,
+    "level_db": -11.8
+   },
+   "cut_out": {
+    "at": 1069.4,
+    "inside_word": false,
+    "gap_before": 0.22,
+    "gap_after": 0.38,
+    "level_db": -29.5
+   },
+   "adjustments": [],
+   "text": "like to in a way chronicle the assembly of the International Space Station and over the period highlight certain components or systems or payloads or window facilities that we have added to the International Space Station and try to tell the story of perhaps how that component flew and some initial information about the background and then how it's being operating today. I think that that's a great way to tell the story of the International Space Station. and it is a wonderful orbiting laboratory that we have the honor of working with our colleagues or international colleagues in doing this international research."
+  },
+  {
+   "id": "clip_42833131",
+   "rank": 5,
+   "start": 583.2,
+   "end": 619.36,
+   "duration": 36.16,
+   "title": "The red yellow white and black is actually",
+   "score": 70.3,
+   "scores": {
+    "hook": 7.5,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 61.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 583.2,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.08,
+    "level_db": -23.1
+   },
+   "cut_out": {
+    "at": 619.36,
+    "inside_word": false,
+    "gap_before": 0.54,
+    "gap_after": 1.91,
+    "level_db": -33.0
+   },
+   "adjustments": [],
+   "text": "The red, yellow, white, and black is actually a nod to the maritime signaling flag for the number 9, Fun fact, and the purple was serendipitous, but we happen to have embraced it deeply. The Expedition 72 patch was actually led by Don Pettit, who is already in Star City on his way to the International Space Station in September. And it really is a nod to the long -standing history of the space station, which has been human -occupied for more than 20 years now. But you'll notice, of course, the space station looks quite a bit different than it did in Expedition 1. and I'm very grateful to be flying with people who actually helped in its construction."
+  },
+  {
+   "id": "clip_3c559837",
+   "rank": 6,
+   "start": 1487.75,
+   "end": 1543.28,
+   "duration": 55.53,
+   "title": "First of all I just want to wish",
+   "score": 68.2,
+   "scores": {
+    "hook": 6.5,
+    "payoff": 10.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 60.0
+   },
+   "issues": [
+    "many_speakers",
+    "cut_in_loud"
+   ],
+   "cut_in": {
+    "at": 1487.75,
+    "inside_word": false,
+    "gap_before": 0.09,
+    "gap_after": 0.09,
+    "level_db": -0.6
+   },
+   "cut_out": {
+    "at": 1543.28,
+    "inside_word": false,
+    "gap_before": 0.33,
+    "gap_after": 0.23,
+    "level_db": -21.9
+   },
+   "adjustments": [],
+   "text": "First of all I just want to wish you all the best of luck on your upcoming mission. I have a question for Stephanie, we cover an area in upstate New York near Albany and that includes your actual alma mater of Tecanic High School. And so I was wondering if there's any message you'd like to share with them and any advice you would like to give to kids from our area who may have similar aspirations to one day end up like you? Yes, I very much enjoyed my time growing up in Western Mass and I miss that part of the country. It's a beautiful area. I miss the weather and the snow and the skiing and the change of seasons and the wonderful community that's there for my high school, Tecanic High School or other students in the area. It is a small town and when I was growing up there were about 40,000 people living in a town of Pittsfield, Massachusetts."
+  },
+  {
+   "id": "clip_f1792b99",
+   "rank": 7,
+   "start": 1318.32,
+   "end": 1372.36,
+   "duration": 54.04,
+   "title": "Like for example on Soyuz Flight Engineer 2",
+   "score": 66.8,
+   "scores": {
+    "hook": 5.5,
+    "payoff": 10.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 60.0
+   },
+   "issues": [
+    "cut_in_loud"
+   ],
+   "cut_in": {
+    "at": 1318.32,
+    "inside_word": false,
+    "gap_before": 0.21,
+    "gap_after": 0.07,
+    "level_db": -9.9
+   },
+   "cut_out": {
+    "at": 1372.36,
+    "inside_word": false,
+    "gap_before": 0.32,
+    "gap_after": 9.39,
+    "level_db": -30.6
+   },
+   "adjustments": [],
+   "text": "Like, for example, on Soyuz, Flight Engineer 2, which is right -seat, is similar to Mission Specialist on Dragon. In terms of time needed for this training and the responsibilities, these two positions that are pretty similar. So the main responsibilities for both mission specialist on Dragon and flight engineer to on Soyuz that's to provide their own safety during the flight, whether it's a nominal flight or during off -normal situations."
+  },
+  {
+   "id": "clip_e4fd608b",
+   "rank": 8,
+   "start": 149.82,
+   "end": 206.39,
+   "duration": 56.57,
+   "title": "I wonder what things you're looking forward to",
+   "score": 66.3,
+   "scores": {
+    "hook": 6.5,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 56.0
+   },
+   "issues": [
+    "cut_in_loud"
+   ],
+   "cut_in": {
+    "at": 149.82,
+    "inside_word": false,
+    "gap_before": 0.12,
+    "gap_after": 0.04,
+    "level_db": -2.6
+   },
+   "cut_out": {
+    "at": 206.39,
+    "inside_word": false,
+    "gap_before": 0.1,
+    "gap_after": 0.16,
+    "level_db": -29.4
+   },
+   "adjustments": [],
+   "text": "I wonder what things you're looking forward to taking with you and why you happen to choose those as special things. We have a few personal items packed. Of course, for me, one big item is photographs, memories from home, taking with me people who are deeply meaningful to me family friends those who have supported us I'm also taking things for our ground support teams the instructors who have trained us prepared us for our mission and the people who really make human spaceflight happen on the ground and so having a piece of them with us in orbit is really special a great opportunity. One thing I'm taking different than than last time is something that didn't exist last time, a space force flag. As an active duty space force officer it's a privilege to be able to represent all the guardians that help support human spaceflight as they watch the skies and the cosmos that surrounds the earth keeping us safe every day."
+  }
+ ],
+ "judge": {
+  "clip_d418693c": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-6": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_e4fd608b": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-5": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-3": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_42833131": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_3c559837": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-4": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 3,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_037bdbde": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_4cc4050a": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-7": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_f1792b99": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_fa5cc7aa": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  }
+ },
+ "eval_seconds": 5.1
+}

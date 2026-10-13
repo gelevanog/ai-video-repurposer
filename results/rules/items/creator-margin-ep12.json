@@ -1,0 +1,250 @@
+{
+ "id": "creator-margin-ep12",
+ "kind": "synthetic",
+ "title": "The Creator Margin, episode 12: Why your first price is too low",
+ "duration": 116.822,
+ "project_id": "the-creator-margin-episode-12-wh-580dbc",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.23,
+   "message": "01:56 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.13,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.0,
+   "message": "308 words · faster-whisper small (int8, CPU) · 0.88x real time"
+  },
+  "diarize": {
+   "seconds": 0.22,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.54)"
+  },
+  "clips": {
+   "seconds": 0.02,
+   "message": "2 clips from 2 candidates"
+  },
+  "chapters": {
+   "seconds": 0.0,
+   "message": "2 chapters (YouTube needs at least three chapters)"
+  },
+  "posts": {
+   "seconds": 0.0,
+   "message": "6 social posts, 5 grounding flags"
+  }
+ },
+ "asr_seconds": 102.27,
+ "asr_rtf": 0.8754,
+ "process_seconds_this_run": 1.6,
+ "wer": {
+  "wer": 0.009708737864077669,
+  "ref_words": 309.0,
+  "substitutions": 2.0,
+  "deletions": 0.0,
+  "insertions": 1.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9772,
+  "words": 307,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.54)"
+ },
+ "chapters": {
+  "predicted": 2,
+  "gold": 3,
+  "tol15": {
+   "hits": 1,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 5.0
+  },
+  "tol30": {
+   "hits": 1,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 5.0
+  }
+ },
+ "highlights": {
+  "highlights": 3,
+  "found": 2,
+  "recall": 0.667,
+  "coverage": [
+   1.0,
+   0.5,
+   1.0
+  ],
+  "clips_mostly_on_a_highlight": 2
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Video · Creators · Hourly"
+  },
+  {
+   "start": 53.0,
+   "title": "Last · Price · Floor"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 1,
+  "flags_long_form": 4,
+  "flag_texts": [
+   "12",
+   "12",
+   "12",
+   "12",
+   "1.0"
+  ],
+  "title_chars": 63,
+  "description_chars": 238,
+  "blog_words": 311,
+  "show_notes_words": 159,
+  "chapters_youtube_ready": false,
+  "stage_message": "6 social posts, 5 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_58f577c5",
+   "rank": 1,
+   "start": 11.16,
+   "end": 61.57,
+   "duration": 50.41,
+   "title": "Here is the uncomfortable truth",
+   "score": 80.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 10.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 70.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 11.16,
+    "inside_word": false,
+    "gap_before": 0.56,
+    "gap_after": 0.12,
+    "level_db": -72.7
+   },
+   "cut_out": {
+    "at": 61.57,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.18,
+    "level_db": -72.7
+   },
+   "adjustments": [],
+   "text": "Here is the uncomfortable truth. Most creators price from fear, not from value. They pick the number that feels safe to say out loud. When I started, I charged $200 for a launch video that made my client $40,000 in a week. The video was not the problem. My price was nobody pays you for your hours. They pay you for the result. So that is the trap with hourly rates. Exactly. An hourly rate punishes you for getting faster. The better you get, the less you earn. What do you tell people to do instead? I use a simple three -number test before every proposal. Right down your floor, the price where you would walk away. Then your target, the price that is fair for the result."
+  },
+  {
+   "id": "clip_850b0057",
+   "rank": 2,
+   "start": 82.31,
+   "end": 115.92,
+   "duration": 33.61,
+   "title": "How do you raise prices with clients you",
+   "score": 77.1,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 66.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 82.31,
+    "inside_word": false,
+    "gap_before": 0.38,
+    "gap_after": 0.12,
+    "level_db": -72.7
+   },
+   "cut_out": {
+    "at": 115.92,
+    "inside_word": false,
+    "gap_before": 0.29,
+    "gap_after": 999.0,
+    "level_db": -72.7
+   },
+   "adjustments": [],
+   "text": "how do you raise prices with clients you already have? Give them 90 days of notice and laid with what changed for them. Last year I told every client that our new rate starts in April and I listed the results we delivered since the last increase. Out of 11 clients, 10 stayed. The one who left was the one I was losing money on anyway. A price increase is not an apology. It is a progress report. A progress report. I love that. Daniel, thank you for coming on the show."
+  }
+ ],
+ "judge": {
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_58f577c5": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_850b0057": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 3,
+   "reason": "rules",
+   "judge": "fake/rules"
+  }
+ },
+ "eval_seconds": 1.6
+}
