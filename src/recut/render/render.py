@@ -21,7 +21,7 @@ log = get_logger(__name__)
 
 
 def _even(value: float) -> int:
-    return max(2, int(round(value / 2.0)) * 2)
+    return max(2, round(value / 2.0) * 2)
 
 
 def escape_filter_path(path: Path) -> str:

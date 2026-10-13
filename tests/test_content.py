@@ -24,7 +24,7 @@ def test_x_counts_urls_as_23_and_emoji_as_2() -> None:
 def test_truncate_cuts_at_a_word_boundary_with_an_ellipsis() -> None:
     text = "one two three four five six seven"
     cut = limits.truncate(text, 15)
-    assert cut.endswith("…") and len(cut) <= 15 and "thr" not in cut.split()[-1][:-1] or cut == "one two three…"
+    assert (cut.endswith("…") and len(cut) <= 15 and "thr" not in cut.split()[-1][:-1]) or cut == "one two three…"
     assert limits.truncate("short", 100) == "short"
 
 
@@ -52,7 +52,7 @@ def test_list_counts_and_timestamps_are_not_claims() -> None:
 
 def test_quotes_must_be_said() -> None:
     assert check_quotes('He said "price the result, not the hours" and it stuck.', INDEX) == []
-    issues = check_quotes('“Never work for exposure, it is the worst deal in business”', INDEX)
+    issues = check_quotes("“Never work for exposure, it is the worst deal in business”", INDEX)
     assert len(issues) == 1 and issues[0].kind == "quote"
 
 
@@ -66,7 +66,9 @@ def test_description_gets_chapters_and_the_credit() -> None:
     text = assemble_description("A talk about pricing.", chapters, source)
     assert "Chapters:\n00:00 Intro\n01:00 Pricing" in text
     assert text.endswith("Video by Jane Doe, CC BY 4.0")
-    no_credit = assemble_description("A talk.", chapters[:2], SourceInfo(path="x", filename="x.mp4", license="Public domain (NASA)"))
+    no_credit = assemble_description(
+        "A talk.", chapters[:2], SourceInfo(path="x", filename="x.mp4", license="Public domain (NASA)")
+    )
     assert "Chapters" not in no_credit and "Public domain" not in no_credit
 
 
@@ -78,7 +80,13 @@ def test_plain_transcript_thins_long_inputs() -> None:
 
 
 def _source() -> SourceInfo:
-    return SourceInfo(path="x", filename="talk.mp4", title="Pricing talk", license="CC BY 4.0", attribution="Credit: Jane Doe (CC BY 4.0)")
+    return SourceInfo(
+        path="x",
+        filename="talk.mp4",
+        title="Pricing talk",
+        license="CC BY 4.0",
+        attribution="Credit: Jane Doe (CC BY 4.0)",
+    )
 
 
 def test_generate_enforces_limits_retries_and_grounding(settings: Settings) -> None:
@@ -98,7 +106,16 @@ def test_generate_enforces_limits_retries_and_grounding(settings: Settings) -> N
             ),
             "blog_post": "```markdown\n# Pricing\n\nSome text.\n```",
             "social_posts": [
-                json.dumps({"x": long_x, "linkedin": "New talk on pricing. #pricing", "instagram": "", "tiktok": "Price it right", "threads": "ok", "facebook": "fb"}),
+                json.dumps(
+                    {
+                        "x": long_x,
+                        "linkedin": "New talk on pricing. #pricing",
+                        "instagram": "",
+                        "tiktok": "Price it right",
+                        "threads": "ok",
+                        "facebook": "fb",
+                    }
+                ),
                 json.dumps({"x": long_x}),
             ],
         }

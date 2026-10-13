@@ -9,7 +9,9 @@ from tests.conftest import make_words
 def _lint(text: str, *, min_s: float = 0, max_s: float = 600, **kw: object) -> list[str]:
     words = make_words(text)
     sentences = sentences_from_words(words)
-    issues = lint_clip(0, len(sentences) - 1, sentences, words, start=0, end=words[-1].end, min_s=min_s, max_s=max_s, **kw)  # type: ignore[arg-type]
+    issues = lint_clip(
+        0, len(sentences) - 1, sentences, words, start=0, end=words[-1].end, min_s=min_s, max_s=max_s, **kw
+    )  # type: ignore[arg-type]
     return [i.code for i in issues]
 
 

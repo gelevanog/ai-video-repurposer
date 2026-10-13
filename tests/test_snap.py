@@ -81,7 +81,9 @@ def test_snap_times_to_sentences_widens_to_whole_sentences(talk: tuple[Transcrip
     transcript, sentences = talk
     mid_second = (sentences[1].start + sentences[1].end) / 2
     mid_fourth = (sentences[4].start + sentences[4].end) / 2
-    result = snap_times(mid_second, mid_fourth, sentences, transcript.words, None, min_s=0, max_s=600, pad_in=0.1, pad_out=0.2)
+    result = snap_times(
+        mid_second, mid_fourth, sentences, transcript.words, None, min_s=0, max_s=600, pad_in=0.1, pad_out=0.2
+    )
     assert result.first_sentence == 1 and result.last_sentence == 4
     assert result.start < sentences[1].start and result.end > sentences[4].end
 
@@ -89,15 +91,25 @@ def test_snap_times_to_sentences_widens_to_whole_sentences(talk: tuple[Transcrip
 def test_snap_times_word_mode_keeps_partial_sentences_but_whole_words(talk: tuple[Transcript, list]) -> None:  # type: ignore[type-arg]
     transcript, sentences = talk
     w = transcript.words[sentences[1].first_word + 2]
-    result = snap_times((w.start + w.end) / 2, sentences[3].end, sentences, transcript.words, None,
-                        min_s=0, max_s=600, pad_in=0.1, pad_out=0.2, to_sentences=False)
+    result = snap_times(
+        (w.start + w.end) / 2,
+        sentences[3].end,
+        sentences,
+        transcript.words,
+        None,
+        min_s=0,
+        max_s=600,
+        pad_in=0.1,
+        pad_out=0.2,
+        to_sentences=False,
+    )
     assert result.start < w.start  # the word that was cut through is kept whole
     assert "starts inside a sentence" in result.adjustments
     assert _all_cuts_clean(result, transcript.words)
 
 
 def test_cut_out_at_the_end_of_the_media(talk: tuple[Transcript, list]) -> None:  # type: ignore[type-arg]
-    transcript, sentences = talk
+    transcript, _sentences = talk
     last = len(transcript.words) - 1
     t = cut_out_point(last, transcript.words, None, pad=0.3, media_end=transcript.words[-1].end + 0.1)
     assert transcript.words[-1].end < t <= transcript.words[-1].end + 0.1

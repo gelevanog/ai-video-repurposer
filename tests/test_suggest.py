@@ -14,8 +14,8 @@ from recut.clips.suggest import (
     windows,
 )
 from recut.config import Settings
-from recut.llm.fake import FakeModel
 from recut.fake_tasks import HANDLERS
+from recut.llm.fake import FakeModel
 from recut.models import Scores, Transcript
 from recut.text import sentences_from_words
 from tests.conftest import make_words, silent_levels_for
@@ -34,7 +34,13 @@ def test_transcript_lines_round_trip(talk: tuple[Transcript, list]) -> None:  # 
 def test_parse_candidates_validates_ranges_and_scores() -> None:
     reply = {
         "clips": [
-            {"start": 2, "end": 5, "title": "Good", "scores": {"hook": 14, "payoff": "7", "standalone": None}, "virality": 250},
+            {
+                "start": 2,
+                "end": 5,
+                "title": "Good",
+                "scores": {"hook": 14, "payoff": "7", "standalone": None},
+                "virality": 250,
+            },
             {"start": 9, "end": 4, "title": "Reversed"},
             {"start": 40, "end": 41, "title": "Out of range"},
             {"start": "x", "end": 2},
@@ -91,13 +97,34 @@ def test_build_clips_snaps_lints_and_drops_overlaps(talk: tuple[Transcript, list
     transcript, sentences = talk
     reply = {
         "clips": [
-            {"start": 0, "end": 4, "title": "Price the result", "hook": "Here is the truth", "scores": {"hook": 9, "payoff": 9, "standalone": 9, "clarity": 8}, "virality": 80},
-            {"start": 1, "end": 4, "title": "Duplicate", "scores": {"hook": 3, "payoff": 3, "standalone": 3, "clarity": 3}, "virality": 10},
-            {"start": 10, "end": 14, "title": "Three numbers", "scores": {"hook": 8, "payoff": 8, "standalone": 8, "clarity": 8}, "virality": 70},
+            {
+                "start": 0,
+                "end": 4,
+                "title": "Price the result",
+                "hook": "Here is the truth",
+                "scores": {"hook": 9, "payoff": 9, "standalone": 9, "clarity": 8},
+                "virality": 80,
+            },
+            {
+                "start": 1,
+                "end": 4,
+                "title": "Duplicate",
+                "scores": {"hook": 3, "payoff": 3, "standalone": 3, "clarity": 3},
+                "virality": 10,
+            },
+            {
+                "start": 10,
+                "end": 14,
+                "title": "Three numbers",
+                "scores": {"hook": 8, "payoff": 8, "standalone": 8, "clarity": 8},
+                "virality": 70,
+            },
         ]
     }
     found, _ = parse_candidates(reply, {s.index for s in sentences})
-    clips, rejected = build_clips(found, sentences, transcript.words, silent_levels_for(transcript.words), settings, source="model")
+    clips, rejected = build_clips(
+        found, sentences, transcript.words, silent_levels_for(transcript.words), settings, source="model"
+    )
     assert sorted(c.title for c in clips) == ["Price the result", "Three numbers"]
     assert any("overlaps" in r for r in rejected)
     assert [c.rank for c in clips] == [1, 2]

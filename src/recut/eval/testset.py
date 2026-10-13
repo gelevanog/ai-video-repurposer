@@ -134,7 +134,7 @@ def parse_srt(text: str) -> list[tuple[float, float, str]]:
         body = " ".join(lines[timing + 1 :])
         body = re.sub(r"<[^>]+>", "", body).replace(">>", " ").strip()
         if body:
-            cues.append((start, end, body))
+            cues.append((round(start, 3), round(end, 3), body))
     return cues
 
 

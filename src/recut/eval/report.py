@@ -71,7 +71,9 @@ def summarize_run(name: str) -> dict[str, Any]:
         gold = sum(r["chapters"]["gold"] - 1 for r in synth)
         p = hits / pred if pred else 0.0
         rc = hits / gold if gold else 0.0
-        errs = [r["chapters"][tol]["mean_abs_error_s"] for r in synth if r["chapters"][tol]["mean_abs_error_s"] is not None]
+        errs = [
+            r["chapters"][tol]["mean_abs_error_s"] for r in synth if r["chapters"][tol]["mean_abs_error_s"] is not None
+        ]
         return {
             "precision": round(p, 3),
             "recall": round(rc, 3),
@@ -142,7 +144,9 @@ def summarize_run(name: str) -> dict[str, Any]:
         "cuts": {
             "count": len(cuts),
             "inside_word": sum(1 for x in cuts if x["inside_word"]),
-            "tight_lt_30ms": sum(1 for x in cuts if not x["inside_word"] and min(x["gap_before"], x["gap_after"]) < 0.03),
+            "tight_lt_30ms": sum(
+                1 for x in cuts if not x["inside_word"] and min(x["gap_before"], x["gap_after"]) < 0.03
+            ),
             "loud_gt_minus12db": sum(1 for x in loud if x["level_db"] > -12),
             "median_level_db": round(median(x["level_db"] for x in loud), 1) if loud else None,
             "rendered_clips_checked": len(boundary),
@@ -166,8 +170,13 @@ def summarize_run(name: str) -> dict[str, Any]:
         },
         "framing": {
             "tracked_clips": len(framing),
-            "face_in_window_tracked_pct": _pct(sum(f["tracked"] * f["samples_with_face"] for f in framing), sum(f["samples_with_face"] for f in framing)),
-            "face_in_window_center_pct": _pct(sum(f["center"] * f["samples_with_face"] for f in framing), sum(f["samples_with_face"] for f in framing)),
+            "face_in_window_tracked_pct": _pct(
+                sum(f["tracked"] * f["samples_with_face"] for f in framing),
+                sum(f["samples_with_face"] for f in framing),
+            ),
+            "face_in_window_center_pct": _pct(
+                sum(f["center"] * f["samples_with_face"] for f in framing), sum(f["samples_with_face"] for f in framing)
+            ),
             "layouts": dict(Counter(c["render"]["layout"] for c in rendered)),
         },
         "timing": {
@@ -197,7 +206,7 @@ def summarize(names: list[str]) -> dict[str, Any]:
         out["smoke"] = json.loads(smoke.read_text(encoding="utf-8"))
     out["all_calls"] = ledger_stats("")
     (RESULTS / "summary.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
-    print(json.dumps({k: v for k, v in out["runs"].items()}, indent=1)[:6000])
+    print(json.dumps(dict(out["runs"].items()), indent=1)[:6000])
     return out
 
 

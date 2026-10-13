@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import itertools
+
 import numpy as np
 
 from recut.config import Settings
@@ -36,7 +38,7 @@ def _eval_expression(expr: str, t: float) -> float:
         cond, a, b = _split_top(inner)
         threshold = float(cond[len("lt(t,") : -1])
         return _eval_expression(a, t) if t < threshold else _eval_expression(b, t)
-    return float(eval(expr, {"t": t}))  # noqa: S307 - test-only, arithmetic built by our own code
+    return float(eval(expr, {"t": t}))
 
 
 def test_camera_stays_put_inside_the_dead_zone() -> None:
@@ -49,7 +51,7 @@ def test_camera_follows_a_moving_face_at_a_capped_speed() -> None:
     keys = camera_path(_samples(xs), window_frac=0.32)
     assert keys[0].cx < 0.35 and keys[-1].cx > 0.6
     path = [interpolate(keys, i / 3) for i in range(len(xs))]
-    speeds = [abs(b - a) * 3 for a, b in zip(path, path[1:], strict=False)]
+    speeds = [abs(b - a) * 3 for a, b in itertools.pairwise(path)]
     assert max(speeds) <= crop.MAX_SPEED + 0.02
 
 

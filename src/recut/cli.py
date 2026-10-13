@@ -33,13 +33,17 @@ def _settings(provider: LLMProviderKind | None = None, model: str | None = None)
     return settings.model_copy(update=updates) if updates else settings
 
 
-@app.callback()
+@app.callback(invoke_without_command=True)
 def main(
+    ctx: typer.Context,
     log_level: Annotated[str, typer.Option(help="DEBUG, INFO, WARNING")] = "WARNING",
     version: Annotated[bool, typer.Option("--version", help="Print the version.")] = False,
 ) -> None:
     if version:
         console.print(__version__)
+        raise typer.Exit()
+    if ctx.invoked_subcommand is None:
+        console.print(ctx.get_help())
         raise typer.Exit()
     configure_logging(log_level, get_settings().log_format)
 

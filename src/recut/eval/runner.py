@@ -26,7 +26,7 @@ from recut.eval.judge import JudgeItem, judge
 from recut.llm.factory import model_for
 from recut.logging_config import get_logger
 from recut.media.ffmpeg import extract_audio, sample_frames
-from recut.models import Clip, Project
+from recut.models import Clip, CropKey, Project
 from recut.pipeline import Pipeline
 from recut.render import crop
 from recut.text import normalize_for_wer, wer
@@ -55,7 +55,9 @@ def speaker_accuracy(project: Project, gold: dict[str, Any]) -> dict[str, Any]:
     gold_labels = sorted({g for _, g in pairs})
     pred_labels = sorted({p for p, _ in pairs})
     best = 0
-    for perm in itertools.permutations(gold_labels + ["?"] * max(0, len(pred_labels) - len(gold_labels)), len(pred_labels)):
+    for perm in itertools.permutations(
+        gold_labels + ["?"] * max(0, len(pred_labels) - len(gold_labels)), len(pred_labels)
+    ):
         mapping = dict(zip(pred_labels, perm, strict=True))
         best = max(best, sum(1 for p, g in pairs if mapping[p] == g))
     return {
@@ -118,7 +120,8 @@ def highlight_recall(clips: list[Clip], highlights: list[dict[str, Any]]) -> dic
     clip_on_highlight = sum(
         1
         for c in clips
-        if max((overlap((c.start, c.end), (h["start"], h["end"])) for h in highlights), default=0.0) / max(1e-6, c.end - c.start)
+        if max((overlap((c.start, c.end), (h["start"], h["end"])) for h in highlights), default=0.0)
+        / max(1e-6, c.end - c.start)
         >= 0.5
     )
     return {
@@ -199,13 +202,15 @@ def framing(project: Project, clip: Clip, settings: Settings) -> dict[str, Any] 
     return {
         "samples_with_face": sum(1 for s in samples if s.faces),
         "tracked": round(crop.coverage(samples, clip.crop.keys, window_frac=window), 3),
-        "center": round(crop.coverage(samples, [crop.CropKey(t=0, cx=0.5)], window_frac=window), 3),
+        "center": round(crop.coverage(samples, [CropKey(t=0, cx=0.5)], window_frac=window), 3),
         "keys": len(clip.crop.keys),
     }
 
 
 # ------------------------------------------------------------------------------------------------ run
-def evaluate_item(item: dict[str, Any], name: str, settings: Settings, *, render: bool, run_judge: bool) -> dict[str, Any]:
+def evaluate_item(
+    item: dict[str, Any], name: str, settings: Settings, *, render: bool, run_judge: bool
+) -> dict[str, Any]:
     media = testset.media_path(item)
     work = REPO_ROOT / ".cache" / "eval-projects" / name
     pipeline = Pipeline(
@@ -238,7 +243,9 @@ def evaluate_item(item: dict[str, Any], name: str, settings: Settings, *, render
     if item["kind"] == "synthetic":
         gold = json.loads(testset.gold_path(item).read_text(encoding="utf-8"))
         row["speakers"] = speaker_accuracy(project, gold)
-        row["chapters"] = chapter_scores([c.start for c in project.chapters], [c["start"] for c in gold["chapters"]], duration)
+        row["chapters"] = chapter_scores(
+            [c.start for c in project.chapters], [c["start"] for c in gold["chapters"]], duration
+        )
         row["highlights"] = highlight_recall(project.clips, gold["highlights"])
     row["chapters_out"] = [{"start": c.start, "title": c.title} for c in project.chapters]
     clips_out = []
@@ -273,7 +280,9 @@ def evaluate_item(item: dict[str, Any], name: str, settings: Settings, *, render
     row["clips"] = clips_out
     if run_judge and project.clips:
         items = [JudgeItem(c["id"], "model", c["text"]) for c in clips_out]
-        for k, (i, j) in enumerate(random_windows(project, len(clips_out), settings, seed=zlib.crc32(item["id"].encode()) % 1000)):
+        for k, (i, j) in enumerate(
+            random_windows(project, len(clips_out), settings, seed=zlib.crc32(item["id"].encode()) % 1000)
+        ):
             items.append(JudgeItem(f"random-{k}", "random", " ".join(s.text for s in project.sentences[i : j + 1])))
         if gold is not None:
             for k, h in enumerate(gold["highlights"]):
@@ -282,7 +291,9 @@ def evaluate_item(item: dict[str, Any], name: str, settings: Settings, *, render
     return row
 
 
-def run(*, name: str, settings: Settings, only: list[str] | None = None, render: bool = True, judge: bool = True) -> None:
+def run(
+    *, name: str, settings: Settings, only: list[str] | None = None, render: bool = True, judge: bool = True
+) -> None:
     out = results_dir(name) / "items"
     out.mkdir(parents=True, exist_ok=True)
     items = [i for i in testset.load_manifest() if not only or i["id"] in only]

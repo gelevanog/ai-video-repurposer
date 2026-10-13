@@ -48,8 +48,15 @@ def sample(tmp_path: Path) -> Path:
     return target
 
 
-def make_words(text: str, *, start: float = 0.0, word: float = 0.3, gap: float = 0.08, sentence_gap: float = 0.6,
-               speaker: str = "S1") -> list[Word]:
+def make_words(
+    text: str,
+    *,
+    start: float = 0.0,
+    word: float = 0.3,
+    gap: float = 0.08,
+    sentence_gap: float = 0.6,
+    speaker: str = "S1",
+) -> list[Word]:
     """Evenly timed words; a longer pause after each sentence end."""
     out: list[Word] = []
     t = start

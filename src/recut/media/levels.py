@@ -61,10 +61,7 @@ class Levels:
         if b <= a:
             return lo
         segment = self.db[a : b + 1].astype(np.float64)
-        if len(segment) >= 3:
-            smooth = np.convolve(segment, np.ones(3) / 3, mode="same")
-        else:
-            smooth = segment
+        smooth = np.convolve(segment, np.ones(3) / 3, mode="same") if len(segment) >= 3 else segment
         best = float(smooth.min())
         candidates = np.flatnonzero(smooth <= best + 1.5)
         target = self._index(prefer) - a if prefer is not None else (b - a) // 2

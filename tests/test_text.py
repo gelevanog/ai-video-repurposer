@@ -47,7 +47,15 @@ def test_timestamp_formatting() -> None:
 
 
 def test_wer_normalization_ignores_formatting() -> None:
-    assert normalize_for_wer("It's 10% — ten percent! Don't [applause]") == ["its", "10", "percent", "10", "percent", "do", "not"]
+    assert normalize_for_wer("It's 10% — ten percent! Don't [applause]") == [
+        "its",
+        "10",
+        "percent",
+        "10",
+        "percent",
+        "do",
+        "not",
+    ]
     assert normalize_for_wer("Um, uh, so") == ["so"]
     assert normalize_for_wer("$40,000") == ["40000"]
 

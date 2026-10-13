@@ -20,7 +20,7 @@ DEFAULT_FREE_MODEL = "nvidia/nemotron-3-super-120b-a12b:free"
 DEFAULT_FREE_FALLBACKS = ["nvidia/nemotron-3-ultra-550b-a55b:free"]
 DEFAULT_JUDGE_MODEL = "google/gemma-4-31b-it:free"
 DEFAULT_JUDGE_FALLBACKS = ["dots-studio/dots-3-note-preview:free"]
-DEFAULT_SCRIPT_MODEL = "dots-studio/dots-3-note-preview:free"
+DEFAULT_SCRIPT_MODEL = "google/gemma-4-31b-it:free"
 """The synthetic test scripts are drafted by a different model family than the one that picks clips."""
 DEFAULT_MODELS: dict[str, str] = {
     "fake": "fake-rules",

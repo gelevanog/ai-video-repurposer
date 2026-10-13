@@ -542,7 +542,7 @@ def clip_srt(project: Project, clip: Clip) -> str:
     groups = group_words(words, STYLES["minimal"])
 
     def stamp(t: float) -> str:
-        ms = int(round(t * 1000))
+        ms = round(t * 1000)
         h, rem = divmod(ms, 3_600_000)
         m, rem = divmod(rem, 60_000)
         s, ms = divmod(rem, 1000)

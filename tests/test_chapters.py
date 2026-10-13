@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import itertools
 import json
 
 from recut.chapters import format_youtube, make_chapters, target_count, texttiling, validate, youtube_ready
@@ -29,17 +30,23 @@ def _sentences():  # type: ignore[no-untyped-def]
 
 def test_validate_forces_zero_start_merges_short_and_caps_titles() -> None:
     sentences = _sentences()
-    raw = [(3, "1. Fresh beans"), (5, "Too close"), (20, "Chapter 2: Grinding " + "x" * 80), (21, "dupe-ish"), (9999, "bad index")]
+    raw = [
+        (3, "1. Fresh beans"),
+        (5, "Too close"),
+        (20, "Chapter 2: Grinding " + "x" * 80),
+        (21, "dupe-ish"),
+        (9999, "bad index"),
+    ]
     chapters = validate(raw, sentences, duration=sentences[-1].end)
     assert chapters[0].start == 0 and chapters[0].title == "Fresh beans"
-    assert all(b.start - a.start >= 45 for a, b in zip(chapters, chapters[1:], strict=False))
+    assert all(b.start - a.start >= 45 for a, b in itertools.pairwise(chapters))
     assert all(len(c.title) <= 60 for c in chapters)
     assert not any(c.title.startswith("Chapter") for c in chapters)
 
 
 def test_validate_adds_an_introduction_when_the_first_chapter_is_late() -> None:
     sentences = _sentences()
-    late = [s.index for s in sentences if s.start > 100][0]
+    late = next(s.index for s in sentences if s.start > 100)
     chapters = validate([(late, "Grinding")], sentences, duration=sentences[-1].end)
     assert chapters[0].title == "Introduction" and chapters[0].start == 0
 
@@ -70,7 +77,14 @@ def test_texttiling_finds_topic_shifts() -> None:
 
 def test_make_chapters_uses_the_model_and_validates(settings: Settings) -> None:
     sentences = _sentences()
-    reply = {"chapters": [{"start": 0, "title": "Beans"}, {"start": 5, "title": "Grind"}, {"start": 10, "title": "Tamping"}, {"start": 15, "title": "Cleaning"}]}
+    reply = {
+        "chapters": [
+            {"start": 0, "title": "Beans"},
+            {"start": 5, "title": "Grind"},
+            {"start": 10, "title": "Tamping"},
+            {"start": 15, "title": "Cleaning"},
+        ]
+    }
     model = ScriptedModel({"chapters": json.dumps(reply)})
     chapters, stats = make_chapters(sentences, model, settings, duration=sentences[-1].end)
     assert [c.title for c in chapters][:2] == ["Beans", "Grind"]

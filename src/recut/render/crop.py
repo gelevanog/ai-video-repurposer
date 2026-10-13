@@ -7,6 +7,7 @@ B-roll) the auto layout switches to "fit": the full 16:9 frame over a blurred fi
 
 from __future__ import annotations
 
+import itertools
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
 from pathlib import Path
@@ -191,7 +192,7 @@ def x_expression(keys: Sequence[CropKey], *, src_width: int, crop_width: int) ->
     if len(keys) == 1:
         return str(px(keys[0].cx))
     expr = str(px(keys[-1].cx))
-    for a, b in reversed(list(zip(keys[:-1], keys[1:], strict=True))):
+    for a, b in reversed(list(itertools.pairwise(keys))):
         xa, xb = px(a.cx), px(b.cx)
         span = max(1e-3, b.t - a.t)
         if abs(xa - xb) < 0.5 or (abs(xb - xa) > src_width * 0.05 and span < 0.5):
@@ -221,7 +222,7 @@ def interpolate(keys: Sequence[CropKey], t: float) -> float:
         return 0.5
     if t <= keys[0].t:
         return keys[0].cx
-    for a, b in zip(keys[:-1], keys[1:], strict=True):
+    for a, b in itertools.pairwise(keys):
         if a.t <= t <= b.t:
             return a.cx + (b.cx - a.cx) * (t - a.t) / max(1e-6, b.t - a.t)
     return keys[-1].cx

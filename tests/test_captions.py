@@ -7,7 +7,9 @@ import pytest
 from recut.render.captions import STYLES, TimedWord, build_ass, clip_words, escape, group_words, wrap_title
 from tests.conftest import make_words
 
-WORDS = make_words("Here is the uncomfortable truth. Most creators price from fear, not from value. Nobody pays you for hours!")
+WORDS = make_words(
+    "Here is the uncomfortable truth. Most creators price from fear, not from value. Nobody pays you for hours!"
+)
 
 
 def _timed() -> list[TimedWord]:
@@ -79,5 +81,7 @@ def test_text_is_escaped_for_ass() -> None:
 
 
 def test_title_wrapping() -> None:
-    wrapped = wrap_title("The three number pricing test that changed how I quote every single project forever", width=20, max_lines=2)
+    wrapped = wrap_title(
+        "The three number pricing test that changed how I quote every single project forever", width=20, max_lines=2
+    )
     assert wrapped.count("\\N") == 1 and wrapped.endswith("…")

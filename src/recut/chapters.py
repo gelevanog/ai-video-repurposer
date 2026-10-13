@@ -211,5 +211,5 @@ def _keyword_title(toks: Sequence[list[str]], a: int, b: int, all_toks: Sequence
     df = Counter(t for ts_ in all_toks for t in set(ts_))
     n = max(1, len(all_toks))
     scored = sorted(local, key=lambda t: -(local[t] * math.log(1 + n / (1 + df[t]))))
-    words = [w for w in scored[:3]]
+    words = list(scored[:3])
     return " · ".join(w.capitalize() for w in words) if words else "Part"

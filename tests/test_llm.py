@@ -37,14 +37,21 @@ def test_free_only_guard_checks_the_request_body_and_the_served_model() -> None:
 
 
 def test_factory_refuses_a_paid_model_before_building_anything(settings: Settings) -> None:
-    s = settings.model_copy(update={"llm_provider": "openrouter", "llm_model": "openai/gpt-5", "openrouter_api_key": None})
+    s = settings.model_copy(
+        update={"llm_provider": "openrouter", "llm_model": "openai/gpt-5", "openrouter_api_key": None}
+    )
     with pytest.raises(PolicyViolationError):
         build_chat_model(s)
 
 
 def test_paid_models_need_the_explicit_opt_in(settings: Settings) -> None:
     s = settings.model_copy(
-        update={"llm_provider": "openrouter", "llm_model": "openai/gpt-5", "openrouter_api_key": KEY, "allow_paid_models": True}
+        update={
+            "llm_provider": "openrouter",
+            "llm_model": "openai/gpt-5",
+            "openrouter_api_key": KEY,
+            "allow_paid_models": True,
+        }
     )
     model = build_chat_model(s)
     assert isinstance(model, OpenAICompatibleModel) and not model.require_free
@@ -52,7 +59,12 @@ def test_paid_models_need_the_explicit_opt_in(settings: Settings) -> None:
 
 def test_fallbacks_are_guarded_too(settings: Settings) -> None:
     s = settings.model_copy(
-        update={"llm_provider": "openrouter", "openrouter_api_key": KEY, "llm_model": "a/b:free", "llm_fallback_models": ["c/d"]}
+        update={
+            "llm_provider": "openrouter",
+            "openrouter_api_key": KEY,
+            "llm_model": "a/b:free",
+            "llm_fallback_models": ["c/d"],
+        }
     )
     with pytest.raises(PolicyViolationError):
         build_chat_model(s)
@@ -66,7 +78,9 @@ def test_default_openrouter_model_is_free_with_free_fallbacks(settings: Settings
 
 
 def test_compat_provider_is_guarded_unless_opted_in(settings: Settings) -> None:
-    s = settings.model_copy(update={"llm_provider": "compat", "llm_model": "gpt-5-mini", "llm_base_url": "http://x/v1", "llm_api_key": KEY})
+    s = settings.model_copy(
+        update={"llm_provider": "compat", "llm_model": "gpt-5-mini", "llm_base_url": "http://x/v1", "llm_api_key": KEY}
+    )
     with pytest.raises(PolicyViolationError):
         build_chat_model(s)
     model = build_chat_model(s.model_copy(update={"allow_paid_models": True}))
@@ -90,13 +104,26 @@ def _transport(responses: list[httpx.Response], seen: list[dict]) -> httpx.MockT
 
 
 def _ok(text: str, model: str = "a/b:free") -> httpx.Response:
-    return httpx.Response(200, json={"model": model, "choices": [{"message": {"content": text}, "finish_reason": "stop"}], "usage": {"prompt_tokens": 3, "completion_tokens": 2}})
+    return httpx.Response(
+        200,
+        json={
+            "model": model,
+            "choices": [{"message": {"content": text}, "finish_reason": "stop"}],
+            "usage": {"prompt_tokens": 3, "completion_tokens": 2},
+        },
+    )
 
 
 def _model(responses: list[httpx.Response], seen: list[dict], **kw: object) -> OpenAICompatibleModel:  # type: ignore[type-arg]
     return OpenAICompatibleModel(
-        kind="openrouter", base_url="https://openrouter.test/api/v1", model="a/b:free", api_key=KEY,
-        fallback_models=["c/d:free"], reasoning_effort="low", transport=_transport(responses, seen), **kw,  # type: ignore[arg-type]
+        kind="openrouter",
+        base_url="https://openrouter.test/api/v1",
+        model="a/b:free",
+        api_key=KEY,
+        fallback_models=["c/d:free"],
+        reasoning_effort="low",
+        transport=_transport(responses, seen),
+        **kw,  # type: ignore[arg-type]
     )
 
 
@@ -114,18 +141,24 @@ def test_a_paid_served_model_is_rejected() -> None:
 
 def test_rate_limits_and_server_errors_are_retryable() -> None:
     with pytest.raises(RetryableLLMError) as info:
-        _model([httpx.Response(429, headers={"retry-after": "7"}, json={"error": {"message": "slow down"}})], []).complete(
-            [{"role": "user", "content": "x"}], max_tokens=5
-        )
+        _model(
+            [httpx.Response(429, headers={"retry-after": "7"}, json={"error": {"message": "slow down"}})], []
+        ).complete([{"role": "user", "content": "x"}], max_tokens=5)
     assert info.value.retry_after == 7.0
     with pytest.raises(RetryableLLMError):
-        _model([httpx.Response(503, json={"error": {"message": "busy"}})], []).complete([{"role": "user", "content": "x"}], max_tokens=5)
+        _model([httpx.Response(503, json={"error": {"message": "busy"}})], []).complete(
+            [{"role": "user", "content": "x"}], max_tokens=5
+        )
     with pytest.raises(RetryableLLMError):  # OpenRouter reports some upstream failures inside a 200
-        _model([httpx.Response(200, json={"error": {"code": 502, "message": "upstream"}})], []).complete([{"role": "user", "content": "x"}], max_tokens=5)
+        _model([httpx.Response(200, json={"error": {"code": 502, "message": "upstream"}})], []).complete(
+            [{"role": "user", "content": "x"}], max_tokens=5
+        )
 
 
 def test_a_cut_off_reply_is_an_error() -> None:
-    cut = httpx.Response(200, json={"model": "a/b:free", "choices": [{"message": {"content": "{\"cl"}, "finish_reason": "length"}]})
+    cut = httpx.Response(
+        200, json={"model": "a/b:free", "choices": [{"message": {"content": '{"cl'}, "finish_reason": "length"}]}
+    )
     with pytest.raises(LLMError, match="cut off"):
         _model([cut], []).complete([{"role": "user", "content": "x"}], max_tokens=5)
 
@@ -153,7 +186,9 @@ class _Flaky:
 def test_budgeted_model_retries_records_and_caches(tmp_path: Path) -> None:
     ledger = CallLedger(tmp_path / "calls.jsonl", max_calls=10)
     inner = _Flaky(failures=2)
-    model = BudgetedModel(inner, ledger=ledger, cache=DiskCache(tmp_path / "cache"), throttle=None, retry_base_seconds=0.01, tag="t")
+    model = BudgetedModel(
+        inner, ledger=ledger, cache=DiskCache(tmp_path / "cache"), throttle=None, retry_base_seconds=0.01, tag="t"
+    )
     messages = [{"role": "user", "content": "hi"}]
     assert model.complete(messages, max_tokens=5).text == "ok"  # type: ignore[arg-type]
     rows = [json.loads(line) for line in (tmp_path / "calls.jsonl").read_text().splitlines()]
