@@ -43,7 +43,8 @@
   "ref_words": 1271.0,
   "substitutions": 13.0,
   "deletions": 9.0,
-  "insertions": 4.0
+  "insertions": 4.0,
+  "caption_offset_s": 0.0
  },
  "speakers": {
   "gold_speakers": 1,

@@ -43,7 +43,8 @@
   "ref_words": 3369.0,
   "substitutions": 312.0,
   "deletions": 75.0,
-  "insertions": 933.0
+  "insertions": 933.0,
+  "caption_offset_s": -314.0
  },
  "chapters_out": [
   {

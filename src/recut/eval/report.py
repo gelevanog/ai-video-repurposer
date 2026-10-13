@@ -26,7 +26,13 @@ def _pct(num: float, den: float) -> float | None:
 def _pooled_wer(rows: list[dict[str, Any]]) -> dict[str, Any]:
     errors = sum(r["wer"]["substitutions"] + r["wer"]["deletions"] + r["wer"]["insertions"] for r in rows)
     words = sum(r["wer"]["ref_words"] for r in rows)
-    return {"wer": round(errors / words, 4) if words else None, "ref_words": int(words), "items": len(rows)}
+    missed = sum(r["wer"]["substitutions"] + r["wer"]["deletions"] for r in rows)
+    return {
+        "wer": round(errors / words, 4) if words else None,
+        "ref_words_wrong_or_missed": round(missed / words, 4) if words else None,
+        "ref_words": int(words),
+        "items": len(rows),
+    }
 
 
 def ledger_stats(prefix: str) -> dict[str, Any]:

@@ -68,7 +68,7 @@ def judge(
         )
         reply = parse_json_object(completion.text)
     except (LLMError, JSONReplyError) as exc:
-        return {item.id: {"error": str(exc)[:200]} for item in items}
+        return {item.id: {"group": item.group, "error": str(exc)[:200]} for item in items}
     out: dict[str, dict[str, Any]] = {}
     for verdict in reply.get("clips") or []:
         if not isinstance(verdict, dict):

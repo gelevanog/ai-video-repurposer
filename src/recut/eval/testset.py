@@ -145,3 +145,49 @@ def reference_text(item: dict[str, Any], start: float = 0.0, end: float | None =
         return " ".join(s["text"] for s in gold["sentences"] if s["end"] > start and (end is None or s["start"] < end))
     cues = parse_srt(captions_path(item).read_text(encoding="utf-8", errors="replace"))
     return " ".join(c[2] for c in cues if c[1] > start and (end is None or c[0] < end))
+
+
+def caption_offset(
+    cues: list[tuple[float, float, str]], words: list[tuple[float, float]], *, search: float = 900.0
+) -> float:
+    """Seconds to add to the caption times so they line up with the video: the shift that best correlates the
+    caption word density with the transcript word density (1 s bins). NASA's caption files are sometimes made
+    for a longer cut of the video (a music intro, a different end)."""
+    import numpy as np
+
+    end = max([c[1] for c in cues] + [w[1] for w in words] + [1.0])
+    n = int(end) + 2
+    ref = np.zeros(n)
+    hyp = np.zeros(n)
+    for start, stop, text in cues:
+        count = len(text.split())
+        a, b = int(start), max(int(start) + 1, int(stop))
+        ref[a:b] += count / (b - a)
+    for start, _ in words:
+        hyp[int(start)] += 1
+    best, best_score = 0, -1.0
+    limit = min(int(search), n - 2)
+    for shift in range(-limit, limit + 1):
+        if shift >= 0:
+            score = float(np.dot(ref[: n - shift], hyp[shift:]))
+        else:
+            score = float(np.dot(ref[-shift:], hyp[: n + shift]))
+        if score > best_score:
+            best, best_score = shift, score
+    return float(best)
+
+
+def aligned_texts(
+    item: dict[str, Any], words: list[tuple[float, float, str]], duration: float
+) -> tuple[str, str, float]:
+    """Reference and hypothesis restricted to the time both cover, after shifting the captions into place."""
+    if item["kind"] == "synthetic":
+        return reference_text(item), " ".join(w[2] for w in words), 0.0
+    cues = parse_srt(captions_path(item).read_text(encoding="utf-8", errors="replace"))
+    cues = [c for c in cues if any(ch.isalnum() for ch in c[2])]  # drop music-only cues
+    offset = caption_offset(cues, [(w[0], w[1]) for w in words])
+    shifted = [(s + offset, e + offset, t) for s, e, t in cues if s + offset >= 0 and e + offset <= duration + 1]
+    if not shifted:
+        return "", " ".join(w[2] for w in words), offset
+    lo, hi = shifted[0][0] - 1.0, shifted[-1][1] + 1.0
+    return " ".join(c[2] for c in shifted), " ".join(w[2] for w in words if lo <= w[0] <= hi), offset

@@ -30,6 +30,7 @@ from recut.media.ffmpeg import extract_audio, sample_frames
 from recut.models import Clip, CropKey, Project
 from recut.pipeline import Pipeline
 from recut.render import crop
+from recut.store import Store
 from recut.text import normalize_for_wer, wer
 
 log = get_logger(__name__)
@@ -208,6 +209,53 @@ def framing(project: Project, clip: Clip, settings: Settings) -> dict[str, Any] 
     }
 
 
+def item_wer(item: dict[str, Any], project: Project) -> dict[str, Any]:
+    assert project.transcript is not None
+    words = [(w.start, w.end, w.text) for w in project.transcript.words]
+    ref, hyp, offset = testset.aligned_texts(item, words, project.source.duration)
+    result: dict[str, Any] = dict(wer(ref, hyp))
+    result["caption_offset_s"] = offset
+    return result
+
+
+def rescore(name: str) -> None:
+    """Recompute the WER of every item of a run from its saved project (after a change in the scoring)."""
+    store = Store(REPO_ROOT / ".cache" / "eval-projects" / name)
+    manifest = {i["id"]: i for i in testset.load_manifest()}
+    for path in sorted((results_dir(name) / "items").glob("*.json")):
+        row = json.loads(path.read_text(encoding="utf-8"))
+        project = store.load(row["project_id"])
+        row["wer"] = item_wer(manifest[row["id"]], project)
+        path.write_text(json.dumps(row, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"{row['id']}: WER {row['wer']['wer']:.3f} (captions shifted {row['wer']['caption_offset_s']:+.0f} s)")
+
+
+def rejudge(name: str, settings: Settings, only: list[str] | None = None) -> None:
+    """Ask the judge again for items whose verdicts failed (rate limits, a cut-off reply)."""
+    store = Store(REPO_ROOT / ".cache" / "eval-projects" / name)
+    manifest = {i["id"]: i for i in testset.load_manifest()}
+    for path in sorted((results_dir(name) / "items").glob("*.json")):
+        row = json.loads(path.read_text(encoding="utf-8"))
+        verdicts = row.get("judge") or {}
+        if only and row["id"] not in only:
+            continue
+        if not only and verdicts and all("standalone" in v for v in verdicts.values()):
+            continue
+        project = store.load(row["project_id"])
+        items = [JudgeItem(c["id"], "model", c["text"]) for c in row["clips"]]
+        seed = zlib.crc32(row["id"].encode()) % 1000
+        for k, (i, j) in enumerate(random_windows(project, len(row["clips"]), settings, seed=seed)):
+            items.append(JudgeItem(f"random-{k}", "random", " ".join(s.text for s in project.sentences[i : j + 1])))
+        if manifest[row["id"]]["kind"] == "synthetic":
+            gold = json.loads(testset.gold_path(manifest[row["id"]]).read_text(encoding="utf-8"))
+            for k, h in enumerate(gold["highlights"]):
+                items.append(JudgeItem(f"gold-{k}", "gold", h["text"]))
+        row["judge"] = judge(items, settings, tag=f"eval-{name}:judge", seed=8)
+        path.write_text(json.dumps(row, indent=1, ensure_ascii=False), encoding="utf-8")
+        ok = sum(1 for v in row["judge"].values() if "standalone" in v)
+        print(f"{row['id']}: {ok} of {len(items)} verdicts")
+
+
 def posts_summary(project: Project) -> dict[str, Any]:
     o = project.outputs
     return {
@@ -281,8 +329,7 @@ def evaluate_item(
         "asr_rtf": round(project.transcript.seconds / max(1.0, duration), 4),
         "process_seconds_this_run": round(process_seconds, 1),
     }
-    hyp_text = " ".join(w.text for w in project.transcript.words)
-    row["wer"] = wer(testset.reference_text(item), hyp_text)
+    row["wer"] = item_wer(item, project)
     gold: dict[str, Any] | None = None
     if item["kind"] == "synthetic":
         gold = json.loads(testset.gold_path(item).read_text(encoding="utf-8"))

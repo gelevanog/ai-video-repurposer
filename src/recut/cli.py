@@ -315,6 +315,26 @@ def eval_summary(names: Annotated[str, typer.Option(help="Comma-separated run na
     report.summarize([n for n in names.split(",") if n])
 
 
+@eval_app.command("rejudge")
+def eval_rejudge(
+    name: Annotated[str, typer.Option()] = "main",
+    only: Annotated[str, typer.Option(help="Comma-separated item ids (default: items with failed verdicts).")] = "",
+    provider: Annotated[LLMProviderKind | None, typer.Option()] = None,
+) -> None:
+    """Ask the judge again where its verdicts failed."""
+    from recut.eval import runner
+
+    runner.rejudge(name, _settings(provider), [x for x in only.split(",") if x])
+
+
+@eval_app.command("rescore")
+def eval_rescore(name: Annotated[str, typer.Option()] = "main") -> None:
+    """Recompute WER for every item of a run from the saved projects."""
+    from recut.eval import runner
+
+    runner.rescore(name)
+
+
 @eval_app.command("refresh-posts")
 def eval_refresh_posts(
     name: Annotated[str, typer.Option()] = "main",
