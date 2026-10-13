@@ -291,6 +291,9 @@ def eval_run(
     model: Annotated[str | None, typer.Option()] = None,
     render: Annotated[bool, typer.Option(help="Render every suggested clip and check it.")] = True,
     judge: Annotated[bool, typer.Option(help="Ask the judge model whether each clip stands alone.")] = True,
+    judge_cloud: Annotated[
+        bool | None, typer.Option(help="Use the free cloud judge even with the offline model (for the baseline).")
+    ] = None,
 ) -> None:
     """Process every test-set item and score transcripts, speakers, chapters, clips, cuts and render time."""
     from recut.eval import runner
@@ -310,6 +313,14 @@ def eval_summary(names: Annotated[str, typer.Option(help="Comma-separated run na
     from recut.eval import report
 
     report.summarize([n for n in names.split(",") if n])
+
+
+@eval_app.command("rubric-sample")
+def eval_rubric_sample(name: Annotated[str, typer.Option()] = "main", n: Annotated[int, typer.Option()] = 24) -> None:
+    """Write a seeded sample of clips for the human-style rubric (results/<run>/rubric_sample.md)."""
+    from recut.eval import report
+
+    console.print(str(report.rubric_sample(name, n)))
 
 
 if __name__ == "__main__":  # pragma: no cover

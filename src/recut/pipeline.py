@@ -429,7 +429,9 @@ class Pipeline:
         uses it, and the render reuses it while the cut and layout stay the same."""
         project = self.store.load(project_id)
         clip = project.clip(clip_id)
-        plan = plan_crop(self.media(project), self.probe_of(project), clip.start, clip.end, self.settings, layout=clip.layout)
+        plan = plan_crop(
+            self.media(project), self.probe_of(project), clip.start, clip.end, self.settings, layout=clip.layout
+        )
         with self.store.lock(project_id):
             fresh = self.store.load(project_id)
             target = fresh.clip(clip_id)

@@ -38,7 +38,9 @@ class JudgeItem:
     text: str
 
 
-def judge(items: Sequence[JudgeItem], settings: Settings, *, tag: str, seed: int = 7) -> dict[str, dict[str, Any]]:
+def judge(
+    items: Sequence[JudgeItem], settings: Settings, *, tag: str, seed: int = 7, cloud: bool | None = None
+) -> dict[str, dict[str, Any]]:
     """Verdicts by item id. Items are shuffled and relabelled so the judge cannot tell the groups apart."""
     if not items:
         return {}
@@ -47,8 +49,9 @@ def judge(items: Sequence[JudgeItem], settings: Settings, *, tag: str, seed: int
     rng.shuffle(shuffled)
     alias = {f"c{i + 1:02d}": item for i, item in enumerate(shuffled)}
     body = "\n\n".join(f"### Clip {key}\n{item.text}" for key, item in alias.items())
-    if settings.llm_provider == "fake":
-        model = model_for(settings, tag=tag)
+    use_cloud = settings.llm_provider != "fake" if cloud is None else cloud
+    if not use_cloud:
+        model = model_for(settings.model_copy(update={"llm_provider": "fake"}), tag=tag)
     else:
         model = model_for(
             settings,

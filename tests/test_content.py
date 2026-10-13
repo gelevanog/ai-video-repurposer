@@ -138,3 +138,9 @@ def test_generate_survives_model_failures(settings: Settings) -> None:
     outputs, stats = generate(sentences, [], _source(), ScriptedModel(fail=True), settings)
     assert len(stats["errors"]) == 3
     assert outputs.seo_title == "Pricing talk" and outputs.social == []
+
+
+def test_abbreviated_amounts_are_grounded() -> None:
+    assert check_numbers("A $200 video that made $40k", INDEX) == []
+    assert check_numbers("It made 40 thousand dollars", INDEX) == []
+    assert [i.text for i in check_numbers("It made $2M", INDEX)] == ["2M"]

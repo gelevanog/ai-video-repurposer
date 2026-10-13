@@ -10,7 +10,31 @@ from rapidfuzz import fuzz
 from recut.models import GroundingIssue
 from recut.text import normalize_for_wer
 
-_NUMBER = re.compile(r"(?<![\w#@])(\d+(?:[.,]\d+)*)(\s?%| percent)?")
+_NUMBER = re.compile(
+    r"(?<![\w#@])(\d+(?:[.,]\d+)*)(\s?(?:k|K|m|M|bn)\b|\s(?:thousand|million|billion)\b)?(\s?%| percent)?"
+)
+_SCALE = {
+    "k": 1_000,
+    "thousand": 1_000,
+    "m": 1_000_000,
+    "million": 1_000_000,
+    "bn": 1_000_000_000,
+    "billion": 1_000_000_000,
+}
+
+
+def _value(raw: str, scale: str | None) -> str:
+    """ "40", "k" -> "40000"; "1.5", "million" -> "1500000"; "4,000" -> "4000"."""
+    number = raw.replace(",", "")
+    if not scale:
+        return number
+    try:
+        scaled = float(number) * _SCALE[scale.strip().lower()]
+    except (KeyError, ValueError):
+        return number
+    return str(int(scaled)) if scaled.is_integer() else str(scaled)
+
+
 _QUOTE = re.compile(r"[\"“]([^\"”]{12,400})[\"”]")
 _LIST_COUNT = re.compile(
     r"^\s*(?:top\s+)?(\d+)\s+(?:key\s+|big\s+|simple\s+|practical\s+)?(?:takeaways?|lessons?|tips?|ways?|things|reasons|"
@@ -29,7 +53,7 @@ class TranscriptIndex:
         self.text = " ".join(self.tokens)
         self.numbers = {t for t in self.tokens if t.isdigit()}
         joined = re.sub(r"(\d),(\d{3})", r"\1\2", text)
-        self.numbers |= {m.group(1).replace(",", "") for m in _NUMBER.finditer(joined)}
+        self.numbers |= {_value(m.group(1), m.group(2)) for m in _NUMBER.finditer(joined)}
         self.numbers |= {n.split(".")[0] for n in list(self.numbers)}
 
 
@@ -38,8 +62,8 @@ def check_numbers(text: str, index: TranscriptIndex) -> list[GroundingIssue]:
     clean = _TIMESTAMP.sub(" ", text)
     seen: set[str] = set()
     for match in _NUMBER.finditer(clean):
-        raw = match.group(1)
-        value = raw.replace(",", "")
+        raw = match.group(1) + (match.group(2) or "")
+        value = _value(match.group(1), match.group(2))
         if value in seen:
             continue
         seen.add(value)
@@ -51,7 +75,7 @@ def check_numbers(text: str, index: TranscriptIndex) -> list[GroundingIssue]:
         issues.append(
             GroundingIssue(
                 kind="number",
-                text=raw + (match.group(2) or ""),
+                text=raw + (match.group(3) or ""),
                 message=f'"{raw}" does not appear in the transcript: check it before publishing',
             )
         )

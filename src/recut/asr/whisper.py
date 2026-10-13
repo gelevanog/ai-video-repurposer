@@ -39,7 +39,9 @@ def load_sidecar(media: Path) -> Transcript:
             f"no sidecar transcript {path.name}: install the `asr` extra (faster-whisper) or set RECUT_ASR=whisper"
         )
     transcript = Transcript.model_validate_json(path.read_text(encoding="utf-8"))
-    return transcript.model_copy(update={"model": transcript.model or "sidecar", "words": clean_words(transcript.words)})
+    return transcript.model_copy(
+        update={"model": transcript.model or "sidecar", "words": clean_words(transcript.words)}
+    )
 
 
 def save_sidecar(media: Path, transcript: Transcript) -> Path:

@@ -209,7 +209,13 @@ def framing(project: Project, clip: Clip, settings: Settings) -> dict[str, Any] 
 
 # ------------------------------------------------------------------------------------------------ run
 def evaluate_item(
-    item: dict[str, Any], name: str, settings: Settings, *, render: bool, run_judge: bool
+    item: dict[str, Any],
+    name: str,
+    settings: Settings,
+    *,
+    render: bool,
+    run_judge: bool,
+    judge_cloud: bool | None = None,
 ) -> dict[str, Any]:
     media = testset.media_path(item)
     work = REPO_ROOT / ".cache" / "eval-projects" / name
@@ -287,12 +293,18 @@ def evaluate_item(
         if gold is not None:
             for k, h in enumerate(gold["highlights"]):
                 items.append(JudgeItem(f"gold-{k}", "gold", h["text"]))
-        row["judge"] = judge(items, settings, tag=f"eval-{name}:judge")
+        row["judge"] = judge(items, settings, tag=f"eval-{name}:judge", cloud=judge_cloud)
     return row
 
 
 def run(
-    *, name: str, settings: Settings, only: list[str] | None = None, render: bool = True, judge: bool = True
+    *,
+    name: str,
+    settings: Settings,
+    only: list[str] | None = None,
+    render: bool = True,
+    judge: bool = True,
+    judge_cloud: bool | None = None,
 ) -> None:
     out = results_dir(name) / "items"
     out.mkdir(parents=True, exist_ok=True)
@@ -306,7 +318,7 @@ def run(
             print(f"{item['id']}: done already")
             continue
         started = time.monotonic()
-        row = evaluate_item(item, name, settings, render=render, run_judge=judge)
+        row = evaluate_item(item, name, settings, render=render, run_judge=judge, judge_cloud=judge_cloud)
         row["eval_seconds"] = round(time.monotonic() - started, 1)
         target.write_text(json.dumps(row, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{item['id']}: {len(row['clips'])} clips, WER {row['wer']['wer']:.3f}, {row['eval_seconds']:.0f} s")
@@ -315,7 +327,9 @@ def run(
         "provider": settings.llm_provider,
         "model": settings.model_name,
         "fallbacks": settings.fallbacks,
-        "judge": settings.judge_model if settings.llm_provider != "fake" else "fake/rules",
+        "judge": settings.judge_model
+        if (judge_cloud if judge_cloud is not None else settings.llm_provider != "fake")
+        else "fake/rules",
         "asr": f"faster-whisper {settings.whisper_model} ({settings.whisper_compute_type}, CPU)",
         "finished_at": time.strftime("%Y-%m-%d %H:%M:%S"),
     }

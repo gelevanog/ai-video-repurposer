@@ -86,8 +86,14 @@ def test_word_model_defaults() -> None:
 def test_split_numbers_from_whisper_are_joined() -> None:
     from recut.asr.whisper import clean_words
 
-    words = [Word(start=0, end=0.4, text="$40"), Word(start=0.4, end=0.6, text=",000"), Word(start=0.7, end=1.0, text="in"),
-             Word(start=1.1, end=1.2, text="4"), Word(start=1.2, end=1.4, text=".5"), Word(start=1.5, end=1.6, text=",and")]
+    words = [
+        Word(start=0, end=0.4, text="$40"),
+        Word(start=0.4, end=0.6, text=",000"),
+        Word(start=0.7, end=1.0, text="in"),
+        Word(start=1.1, end=1.2, text="4"),
+        Word(start=1.2, end=1.4, text=".5"),
+        Word(start=1.5, end=1.6, text=",and"),
+    ]
     out = clean_words(words)
     assert [w.text for w in out] == ["$40,000", "in", "4.5", ",and"]
     assert out[0].end == 0.6

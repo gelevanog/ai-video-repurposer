@@ -135,7 +135,7 @@ _SCALES = {"thousand": 1000, "million": 1_000_000, "billion": 1_000_000_000}
 
 
 def _numbers_to_digits(tokens: list[str]) -> list[str]:
-    """"five thousand" -> "5000", "40 thousand" -> "40000", "one hundred and five" -> "105"."""
+    """ "five thousand" -> "5000", "40 thousand" -> "40000", "one hundred and five" -> "105"."""
     out: list[str] = []
     total = current = 0
     active = False

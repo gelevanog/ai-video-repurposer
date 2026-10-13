@@ -211,3 +211,31 @@ def summarize(names: list[str]) -> dict[str, Any]:
 
 
 __all__ = ["Path", "summarize", "summarize_run"]
+
+
+RUBRIC = """Rubric (each 0, 1 or 2): standalone (understandable with no context), hook (first sentence makes you keep
+watching), payoff (ends on a point, punchline or answer), clean_boundaries (does not start or end mid-thought),
+platform_fit (one idea, 20-60 s, worth posting). A clip "passes" with standalone = 2 and no zero anywhere."""
+
+
+def rubric_sample(name: str, n: int = 24, seed: int = 11) -> Path:
+    """A seeded sample of clips (stratified: synthetic and real) for the human-style rubric, as Markdown."""
+    import random
+
+    rows = _items(name)
+    rng = random.Random(seed)
+    pool = [(r["id"], r["kind"], c) for r in rows for c in r["clips"]]
+    synth = [p for p in pool if p[1] == "synthetic"]
+    real = [p for p in pool if p[1] == "nasa"]
+    pick = rng.sample(synth, min(len(synth), n // 2)) + rng.sample(real, min(len(real), n - n // 2))
+    lines = [f"# Rubric sample: run `{name}`, {len(pick)} clips (seed {seed})", "", RUBRIC, ""]
+    for item_id, kind, clip in pick:
+        lines += [
+            f"## {item_id} / {clip['id']} ({kind}, {clip['duration']:.0f} s): {clip['title']}",
+            "",
+            clip["text"],
+            "",
+        ]
+    path = RESULTS / name / "rubric_sample.md"
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
