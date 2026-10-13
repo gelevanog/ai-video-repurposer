@@ -1,0 +1,225 @@
+{
+ "id": "synth-08-giving-feedback",
+ "kind": "synthetic",
+ "title": "How to Give Feedback Without Starting a Fight",
+ "duration": 520.68,
+ "project_id": "how-to-give-feedback-without-sta-e2558e",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.27,
+   "message": "08:40 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.39,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 122.27,
+   "message": "1324 words · faster-whisper small (int8, CPU) · 0.23x real time"
+  },
+  "diarize": {
+   "seconds": 0.76,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.10); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 0.08,
+   "message": "3 clips from 4 candidates"
+  },
+  "chapters": {
+   "seconds": 0.01,
+   "message": "4 chapters"
+  },
+  "posts": {
+   "seconds": 0.01,
+   "message": "6 social posts, 0 grounding flags"
+  }
+ },
+ "asr_seconds": 122.26,
+ "asr_rtf": 0.2348,
+ "process_seconds_this_run": 124.0,
+ "wer": {
+  "wer": 0.009752438109527382,
+  "ref_words": 1333.0,
+  "substitutions": 5.0,
+  "deletions": 2.0,
+  "insertions": 6.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 1,
+  "predicted_speakers": 1,
+  "count_correct": true,
+  "word_accuracy": 1.0,
+  "words": 1324,
+  "note": "voices not separable with the light MFCC clustering (best silhouette 0.10); labelled as a single speaker"
+ },
+ "chapters": {
+  "predicted": 4,
+  "gold": 5,
+  "tol15": {
+   "hits": 0,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "mean_abs_error_s": null
+  },
+  "tol30": {
+   "hits": 0,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "mean_abs_error_s": null
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 2,
+  "recall": 0.4,
+  "coverage": [
+   1.0,
+   0.18,
+   0.0,
+   1.0,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 2
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Instead · Before · Next"
+  },
+  {
+   "start": 266.0,
+   "title": "Feels · Days · Shift"
+  },
+  {
+   "start": 362.0,
+   "title": "Doing · Stop · Quarter"
+  },
+  {
+   "start": 459.0,
+   "title": "Ask · Feedback · Team"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 45,
+  "description_chars": 334,
+  "blog_words": 366,
+  "show_notes_words": 217,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 0 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_6f284ec1",
+   "rank": 1,
+   "start": 102.78,
+   "end": 140.31,
+   "duration": 37.53,
+   "title": "Now the real work starts describing what actually",
+   "score": 71.6,
+   "scores": {
+    "hook": 6.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 61.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 102.78,
+    "inside_word": false,
+    "gap_before": 0.37,
+    "gap_after": 0.13,
+    "level_db": -72.8
+   },
+   "cut_out": {
+    "at": 140.31,
+    "inside_word": false,
+    "gap_before": 0.24,
+    "gap_after": 0.22,
+    "level_db": -66.8
+   },
+   "adjustments": [],
+   "text": "Now the real work starts, describing what actually happened instead of labelling the person. When you name the observable action, the listener can see the gap and close it. Most feedback slips into diagnosis. You're unreliable, you're careless, you're not a team player. Those are character judgments, and they trigger defensiveness because they feel like an identity attack. The brain protects the self -story, so the conversation stalls before any change can happen. Here's the difference that changes everything. saying, say you were late three times this month instead of you are unreliable."
+  },
+  {
+   "id": "clip_d9514940",
+   "rank": 2,
+   "start": 346.3,
+   "end": 382.94,
+   "duration": 36.64,
+   "title": "The 48 -hour rule is simple",
+   "score": 70.3,
+   "scores": {
+    "hook": 7.5,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 61.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 346.3,
+    "inside_word": false,
+    "gap_before": 0.66,
+    "gap_after": 0.12,
+    "level_db": -72.8
+   },
+   "cut_out": {
+    "at": 382.94,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.42,
+    "level_db": -59.7
+   },
+   "adjustments": [],
+   "text": "The 48 -hour rule is simple. Feedback older than two days feels like an ambush. After 48 hours the details blur, the emotion cools, and the recipient starts filling the gaps with their own story, usually a defensive one. I learned this the hard way when I waited a week to address a missed deadline. The engineer thought I was holding a grudge, not coaching a habit. When you deliver the observation within the window, the facts are fresh, the intent is clear, and the conversation stays on track. Miss the window and you trade coaching for conflict."
+  },
+  {
+   "id": "clip_3cf0e9d9",
+   "rank": 3,
+   "start": 29.31,
+   "end": 70.69,
+   "duration": 41.38,
+   "title": "Here's the hard truth",
+   "score": 65.4,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 69.0
+   },
+   "issues": [
+    "cut_in_tight",
+    "cut_in_loud"
+   ],
+   "cut_in": {
+    "at": 29.31,
+    "inside_word": false,
+    "gap_before": -1.18,
+    "gap_after": 1.18,
+    "level_db": -7.5
+   },
+   "cut_out": {
+    "at": 70.69,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.4,
+    "level_db": -72.8
+   },
+   "adjustments": [],
+   "text": "Here's the hard truth. The feedback sandwich does not work. You lay a praise, criticism, praise, hoping the middle lands, but the brain only remembers the bread. Studies show that recipients recall the positive frames and discard the corrective core, so the behavior never shifts. I've watched managers spend 10 minutes wrapping a single point in compliments, only to hear the same mistake repeated next week. The fix is simple. Drop the filler, name the specific action, and state the impact in one clear sentence. When you stop hiding the message inside a snack, the listener can actually chew on it and change."
+  }
+ ],
+ "eval_seconds": 124.0
+}

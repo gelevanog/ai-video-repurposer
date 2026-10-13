@@ -30,7 +30,7 @@ export default function EvaluationPage() {
       <p className="mt-1 max-w-3xl text-sm text-muted">
         {main.items} videos, {(main.total_duration_s / 3600).toFixed(1)} hours ({main.synthetic_items} synthetic talks with exact gold data, {main.real_items} public-domain NASA
         briefings with NASA&apos;s captions as reference). Model <span className="mono text-ink-soft">{main.model}</span>, judge{" "}
-        <span className="mono text-ink-soft">{main.judge}</span>, speech <span className="mono text-ink-soft">{main.asr}</span>. Finished {main.finished_at}.
+        <span className="mono text-ink-soft">{Object.keys(main.calls.served_models).find((m: string) => !m.includes("nemotron")) ?? main.judge_model}</span>, speech <span className="mono text-ink-soft">{main.asr}</span>. Finished {main.finished_at}.
       </p>
 
       <div className="mt-6 grid grid-cols-4 gap-4">
@@ -48,8 +48,16 @@ export default function EvaluationPage() {
           value={`${main.highlights.clips_mostly_on_a_highlight} / ${main.highlights.clips_on_synthetic}`}
           sub={rules ? `rules baseline ${rules.highlights.clips_mostly_on_a_highlight} / ${rules.highlights.clips_on_synthetic}` : undefined}
         />
-        <Stat label="Render time" value={`${main.timing.render_seconds_per_output_minute} s`} sub="per minute of 1080×1920 output, CPU" />
-        <Stat label="Speech recognition" value={`${main.timing.asr_seconds_per_source_minute} s`} sub="per minute of audio (faster-whisper small, CPU)" />
+        <Stat
+          label="Render time, CPU"
+          value={`${main.bench?.render_s_per_output_min ?? main.timing.render_seconds_per_output_minute} s`}
+          sub={`per minute of 1080×1920 output (16 cores, load ${main.bench?.load_before?.[0] ?? "?"}-${main.bench?.load_after?.[0] ?? "?"} from other jobs)`}
+        />
+        <Stat
+          label="Speech recognition, CPU"
+          value={`${main.bench?.asr_s_per_source_min ?? main.timing.asr_seconds_per_source_minute} s`}
+          sub="per minute of audio (faster-whisper small, int8), same machine and load"
+        />
       </div>
 
       <div className="mt-6 grid grid-cols-2 gap-5">

@@ -1,0 +1,185 @@
+{
+ "id": "synth-07-beginner-marathon",
+ "kind": "synthetic",
+ "title": "Training for Your First Marathon",
+ "duration": 332.829,
+ "project_id": "training-for-your-first-marathon-6222cb",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.37,
+   "message": "05:32 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.28,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 93.5,
+   "message": "949 words · faster-whisper small (int8, CPU) · 0.28x real time"
+  },
+  "diarize": {
+   "seconds": 0.5,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.42)"
+  },
+  "clips": {
+   "seconds": 0.06,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 0.0,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 0.0,
+   "message": "6 social posts, 0 grounding flags"
+  }
+ },
+ "asr_seconds": 93.5,
+ "asr_rtf": 0.2809,
+ "process_seconds_this_run": 96.5,
+ "wer": {
+  "wer": 0.007223942208462332,
+  "ref_words": 969.0,
+  "substitutions": 5.0,
+  "deletions": 0.0,
+  "insertions": 2.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9757,
+  "words": 945,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.42)"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 1,
+   "precision": 0.5,
+   "recall": 0.25,
+   "f1": 0.333,
+   "mean_abs_error_s": 3.9
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 15.4
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 2,
+  "recall": 0.4,
+  "coverage": [
+   0.0,
+   0.0,
+   0.0,
+   0.82,
+   1.0
+  ],
+  "clips_mostly_on_a_highlight": 2
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Minutes · Run · List"
+  },
+  {
+   "start": 122.0,
+   "title": "Week · Long · Hard"
+  },
+  {
+   "start": 213.0,
+   "title": "Same · Race · First"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 32,
+  "description_chars": 257,
+  "blog_words": 297,
+  "show_notes_words": 144,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 0 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_140155d5",
+   "rank": 1,
+   "start": 271.26,
+   "end": 324.1,
+   "duration": 52.84,
+   "title": "Morning the gun goes off how do you",
+   "score": 82.8,
+   "scores": {
+    "hook": 10.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 73.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 271.26,
+    "inside_word": false,
+    "gap_before": 0.25,
+    "gap_after": 0.2,
+    "level_db": -63.0
+   },
+   "cut_out": {
+    "at": 324.1,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.38,
+    "level_db": -70.2
+   },
+   "adjustments": [],
+   "text": "morning the gun goes off how do you pace 26.2 most people start too fast because adrenaline masks effort the first 10 kilometers should feel embarrassingly easy like you're jogging with a friend not racing embarrassingly easy like you're holding back the first 10 kilometers should feel too easy because the race starts at kilometer 30 if you're breathing hard at 5k you've already borrowed energy you'll need at 35k when the walls appear. I teach my runners to target a pace they could hold for a half marathon plus 15 seconds per mile, that's the ceiling for the first 10k. Then settle into goal marathon pace from 10k to 30k. After 30k it's pure grit, but you've saved the glycogen and the mental bandwidth to fight. The athletes who negative split almost always say the first half felt like a warm up. So the race is really the last 12k."
+  },
+  {
+   "id": "clip_b6e1cc09",
+   "rank": 2,
+   "start": 211.87,
+   "end": 252.4,
+   "duration": 40.53,
+   "title": "Where do most people go wrong",
+   "score": 76.0,
+   "scores": {
+    "hook": 9.5,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 68.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 211.87,
+    "inside_word": false,
+    "gap_before": 0.16,
+    "gap_after": 0.04,
+    "level_db": -49.1
+   },
+   "cut_out": {
+    "at": 252.4,
+    "inside_word": false,
+    "gap_before": 0.37,
+    "gap_after": 0.05,
+    "level_db": -43.4
+   },
+   "adjustments": [],
+   "text": "Where do most people go wrong? They wait until race week to experiment. Your gut is a muscle. It needs training just like your quads, and it takes weeks to adapt to carbohydrate concentration. So you make them practice breakfast. Practice your race day breakfast on every single long run. Same oatmeal, same banana, same coffee, same timing. Never try anything new on race day. I had a runner who swore by a new caffeinated gel at mile 20. He'd never used it in training. At mile 22, he cramped so badly he walked the last 4K. Meanwhile, another athlete ate the exact same toast with peanut butter and honey she'd eaten before every 20 -miler for 12 weeks."
+  }
+ ],
+ "eval_seconds": 96.5
+}

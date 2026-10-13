@@ -170,7 +170,7 @@ export default function ProjectsPage() {
                     className="flex w-full items-center justify-between gap-2 rounded-lg border border-line-soft bg-panel-2 px-3 py-2 text-left text-sm hover:border-violet/50"
                   >
                     <span className="truncate">{sample.name}</span>
-                    <span className="text-[11px] text-violet">import →</span>
+                    <span className="whitespace-nowrap text-[11px] text-violet">import →</span>
                   </button>
                 ))}
               </div>

@@ -135,6 +135,7 @@ def summarize_run(name: str, *, same_items_as: str | None = None) -> dict[str, A
     return {
         "run": name,
         **meta,
+        "judge_model": meta.get("judge"),
         "items": len(rows),
         "synthetic_items": len(synth),
         "real_items": len(real),

@@ -413,6 +413,9 @@ def _importable(settings: Settings) -> list[dict[str, str]]:
             continue
         for path in sorted(p for p in folder.iterdir() if p.suffix.lower() in ALLOWED_SUFFIXES):
             item = known.get(path.name, {})
+            name = item.get("title") or path.stem.replace("-", " ")
+            if any(o["name"] == name for o in out):
+                continue
             out.append(
                 {
                     "name": item.get("title") or path.stem.replace("-", " "),
