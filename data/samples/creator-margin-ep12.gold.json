@@ -1,0 +1,373 @@
+{
+ "id": "creator-margin-ep12",
+ "title": "The Creator Margin, episode 12: Why your first price is too low",
+ "duration": 116.821,
+ "speakers": {
+  "S1": "Maya Ortiz (host)",
+  "S2": "Daniel Reeve (guest)"
+ },
+ "chapters": [
+  {
+   "start": 0.6,
+   "title": "Why creators underprice"
+  },
+  {
+   "start": 48.007,
+   "title": "The three-number test"
+  },
+  {
+   "start": 81.244,
+   "title": "Raising prices with existing clients"
+  }
+ ],
+ "highlights": [
+  {
+   "chapter": 0,
+   "start": 11.483,
+   "end": 36.789,
+   "sentences": [
+    3,
+    10
+   ],
+   "text": "Here is the uncomfortable truth. Most creators price from fear, not from value. They pick the number that feels safe to say out loud. When I started, I charged two hundred dollars for a launch video that made my client forty thousand in a week. The video was not the problem. My price was. Nobody pays you for your hours. They pay you for the result."
+  },
+  {
+   "chapter": 1,
+   "start": 50.452,
+   "end": 72.768,
+   "sentences": [
+    16,
+    21
+   ],
+   "text": "I use a simple three-number test before every proposal. Write down your floor, the price where you would walk away. Then your target, the price that is fair for the result. Then your stretch, the price that makes you a little nervous. Now quote the stretch number first. Half the time the client says yes, and you just learned what you are actually worth."
+  },
+  {
+   "chapter": 2,
+   "start": 85.792,
+   "end": 110.695,
+   "sentences": [
+    26,
+    31
+   ],
+   "text": "Give them ninety days of notice and lead with what changed for them. Last year I told every client that our new rate starts in April, and I listed the results we delivered since the last increase. Out of eleven clients, ten stayed. The one who left was the one I was losing money on anyway. A price increase is not an apology. It is a progress report."
+  }
+ ],
+ "sentences": [
+  {
+   "start": 0.6,
+   "end": 2.52,
+   "text": "Welcome back to The Creator Margin.",
+   "speaker": "S1",
+   "chapter": 0,
+   "turn": 0,
+   "highlight": false
+  },
+  {
+   "start": 2.8,
+   "end": 7.635,
+   "text": "Today I am talking to Daniel Reeve, who runs a small video studio, about money.",
+   "speaker": "S1",
+   "chapter": 0,
+   "turn": 0,
+   "highlight": false
+  },
+  {
+   "start": 7.915,
+   "end": 10.833,
+   "text": "Daniel, where do most new creators go wrong with pricing?",
+   "speaker": "S1",
+   "chapter": 0,
+   "turn": 0,
+   "highlight": false
+  },
+  {
+   "start": 11.483,
+   "end": 13.729,
+   "text": "Here is the uncomfortable truth.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 14.009,
+   "end": 17.156,
+   "text": "Most creators price from fear, not from value.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 17.436,
+   "end": 20.829,
+   "text": "They pick the number that feels safe to say out loud.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 21.109,
+   "end": 28.122,
+   "text": "When I started, I charged two hundred dollars for a launch video that made my client forty thousand in a week.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 28.402,
+   "end": 30.379,
+   "text": "The video was not the problem.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 30.659,
+   "end": 31.929,
+   "text": "My price was.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 32.209,
+   "end": 34.583,
+   "text": "Nobody pays you for your hours.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 34.863,
+   "end": 36.789,
+   "text": "They pay you for the result.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 37.439,
+   "end": 39.449,
+   "text": "So that is the trap with hourly rates.",
+   "speaker": "S1",
+   "chapter": 0,
+   "turn": 2,
+   "highlight": false
+  },
+  {
+   "start": 40.099,
+   "end": 41.038,
+   "text": "Exactly.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 3,
+   "highlight": false
+  },
+  {
+   "start": 41.318,
+   "end": 44.32,
+   "text": "An hourly rate punishes you for getting faster.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 3,
+   "highlight": false
+  },
+  {
+   "start": 44.6,
+   "end": 46.807,
+   "text": "The better you get, the less you earn.",
+   "speaker": "S2",
+   "chapter": 0,
+   "turn": 3,
+   "highlight": false
+  },
+  {
+   "start": 48.007,
+   "end": 49.802,
+   "text": "What do you tell people to do instead?",
+   "speaker": "S1",
+   "chapter": 1,
+   "turn": 0,
+   "highlight": false
+  },
+  {
+   "start": 50.452,
+   "end": 54.191,
+   "text": "I use a simple three-number test before every proposal.",
+   "speaker": "S2",
+   "chapter": 1,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 54.471,
+   "end": 57.813,
+   "text": "Write down your floor, the price where you would walk away.",
+   "speaker": "S2",
+   "chapter": 1,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 58.093,
+   "end": 61.485,
+   "text": "Then your target, the price that is fair for the result.",
+   "speaker": "S2",
+   "chapter": 1,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 61.765,
+   "end": 65.238,
+   "text": "Then your stretch, the price that makes you a little nervous.",
+   "speaker": "S2",
+   "chapter": 1,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 65.518,
+   "end": 67.669,
+   "text": "Now quote the stretch number first.",
+   "speaker": "S2",
+   "chapter": 1,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 67.949,
+   "end": 72.768,
+   "text": "Half the time the client says yes, and you just learned what you are actually worth.",
+   "speaker": "S2",
+   "chapter": 1,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 73.418,
+   "end": 74.518,
+   "text": "And if they say no?",
+   "speaker": "S1",
+   "chapter": 1,
+   "turn": 2,
+   "highlight": false
+  },
+  {
+   "start": 75.168,
+   "end": 80.044,
+   "text": "Then you still have room to move towards the target, and you never go below the floor.",
+   "speaker": "S2",
+   "chapter": 1,
+   "turn": 3,
+   "highlight": false
+  },
+  {
+   "start": 81.244,
+   "end": 82.172,
+   "text": "Last question.",
+   "speaker": "S1",
+   "chapter": 2,
+   "turn": 0,
+   "highlight": false
+  },
+  {
+   "start": 82.452,
+   "end": 85.142,
+   "text": "How do you raise prices with clients you already have?",
+   "speaker": "S1",
+   "chapter": 2,
+   "turn": 0,
+   "highlight": false
+  },
+  {
+   "start": 85.792,
+   "end": 90.072,
+   "text": "Give them ninety days of notice and lead with what changed for them.",
+   "speaker": "S2",
+   "chapter": 2,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 90.352,
+   "end": 98.583,
+   "text": "Last year I told every client that our new rate starts in April, and I listed the results we delivered since the last increase.",
+   "speaker": "S2",
+   "chapter": 2,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 98.863,
+   "end": 101.311,
+   "text": "Out of eleven clients, ten stayed.",
+   "speaker": "S2",
+   "chapter": 2,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 101.591,
+   "end": 105.512,
+   "text": "The one who left was the one I was losing money on anyway.",
+   "speaker": "S2",
+   "chapter": 2,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 105.792,
+   "end": 108.561,
+   "text": "A price increase is not an apology.",
+   "speaker": "S2",
+   "chapter": 2,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 108.841,
+   "end": 110.695,
+   "text": "It is a progress report.",
+   "speaker": "S2",
+   "chapter": 2,
+   "turn": 1,
+   "highlight": true
+  },
+  {
+   "start": 111.345,
+   "end": 112.466,
+   "text": "A progress report.",
+   "speaker": "S1",
+   "chapter": 2,
+   "turn": 2,
+   "highlight": false
+  },
+  {
+   "start": 112.746,
+   "end": 113.545,
+   "text": "I love that.",
+   "speaker": "S1",
+   "chapter": 2,
+   "turn": 2,
+   "highlight": false
+  },
+  {
+   "start": 113.825,
+   "end": 115.821,
+   "text": "Daniel, thank you for coming on the show.",
+   "speaker": "S1",
+   "chapter": 2,
+   "turn": 2,
+   "highlight": false
+  }
+ ],
+ "transcript": "Welcome back to The Creator Margin. Today I am talking to Daniel Reeve, who runs a small video studio, about money. Daniel, where do most new creators go wrong with pricing? Here is the uncomfortable truth. Most creators price from fear, not from value. They pick the number that feels safe to say out loud. When I started, I charged two hundred dollars for a launch video that made my client forty thousand in a week. The video was not the problem. My price was. Nobody pays you for your hours. They pay you for the result. So that is the trap with hourly rates. Exactly. An hourly rate punishes you for getting faster. The better you get, the less you earn. What do you tell people to do instead? I use a simple three-number test before every proposal. Write down your floor, the price where you would walk away. Then your target, the price that is fair for the result. Then your stretch, the price that makes you a little nervous. Now quote the stretch number first. Half the time the client says yes, and you just learned what you are actually worth. And if they say no? Then you still have room to move towards the target, and you never go below the floor. Last question. How do you raise prices with clients you already have? Give them ninety days of notice and lead with what changed for them. Last year I told every client that our new rate starts in April, and I listed the results we delivered since the last increase. Out of eleven clients, ten stayed. The one who left was the one I was losing money on anyway. A price increase is not an apology. It is a progress report. A progress report. I love that. Daniel, thank you for coming on the show."
+}

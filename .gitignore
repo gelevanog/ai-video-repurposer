@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Environments and secrets (keys live outside the repository)
+.venv/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Caches, projects and downloaded media (the test set is fetched by `recut testset download`, checksums committed)
+.cache/
+data/projects/
+data/testset/media/
+data/testset/work/
+*.db
+
+# Frontend
+node_modules/
+web/.next/
+web/out/
+web/next-env.d.ts
+*.tsbuildinfo
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+report.xml
+.idea/
+.vscode/
+.DS_Store

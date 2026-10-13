@@ -1,0 +1,42 @@
+{
+  "id": "creator-margin-ep12",
+  "title": "The Creator Margin, episode 12: Why your first price is too low",
+  "show": "The Creator Margin",
+  "accent": [124, 92, 255],
+  "license": "CC0 1.0 (synthetic test media made for this repository)",
+  "speakers": {
+    "S1": {"name": "Maya Ortiz (host)", "voice": "af_heart"},
+    "S2": {"name": "Daniel Reeve (guest)", "voice": "bm_george"}
+  },
+  "chapters": [
+    {
+      "title": "Why creators underprice",
+      "bullets": ["Pricing from fear, not value", "The hourly-rate trap"],
+      "turns": [
+        {"speaker": "S1", "text": "Welcome back to The Creator Margin. Today I am talking to Daniel Reeve, who runs a small video studio, about money. Daniel, where do most new creators go wrong with pricing?"},
+        {"speaker": "S2", "highlight": true, "text": "Here is the uncomfortable truth. Most creators price from fear, not from value. They pick the number that feels safe to say out loud. When I started, I charged two hundred dollars for a launch video that made my client forty thousand in a week. The video was not the problem. My price was. Nobody pays you for your hours. They pay you for the result."},
+        {"speaker": "S1", "text": "So that is the trap with hourly rates."},
+        {"speaker": "S2", "text": "Exactly. An hourly rate punishes you for getting faster. The better you get, the less you earn."}
+      ]
+    },
+    {
+      "title": "The three-number test",
+      "bullets": ["Floor, target and stretch", "Say the stretch number first"],
+      "turns": [
+        {"speaker": "S1", "text": "What do you tell people to do instead?"},
+        {"speaker": "S2", "highlight": true, "text": "I use a simple three-number test before every proposal. Write down your floor, the price where you would walk away. Then your target, the price that is fair for the result. Then your stretch, the price that makes you a little nervous. Now quote the stretch number first. Half the time the client says yes, and you just learned what you are actually worth."},
+        {"speaker": "S1", "text": "And if they say no?"},
+        {"speaker": "S2", "text": "Then you still have room to move towards the target, and you never go below the floor."}
+      ]
+    },
+    {
+      "title": "Raising prices with existing clients",
+      "bullets": ["Give ninety days of notice", "Lead with what changed"],
+      "turns": [
+        {"speaker": "S1", "text": "Last question. How do you raise prices with clients you already have?"},
+        {"speaker": "S2", "highlight": true, "text": "Give them ninety days of notice and lead with what changed for them. Last year I told every client that our new rate starts in April, and I listed the results we delivered since the last increase. Out of eleven clients, ten stayed. The one who left was the one I was losing money on anyway. A price increase is not an apology. It is a progress report."},
+        {"speaker": "S1", "text": "A progress report. I love that. Daniel, thank you for coming on the show."}
+      ]
+    }
+  ]
+}

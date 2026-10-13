@@ -1,0 +1,12 @@
+nasa-crew9-news-conference.mp4 https://images-assets.nasa.gov/video/jsc2024m000139_Crew-9_Crew_News_Conference/jsc2024m000139_Crew-9_Crew_News_Conference~small.mp4
+nasa-crew9-news-conference.srt https://images-assets.nasa.gov/video/jsc2024m000139_Crew-9_Crew_News_Conference/jsc2024m000139_Crew-9_Crew_News_Conference.srt
+nasa-crew9-news-conference.metadata.json https://images-assets.nasa.gov/video/jsc2024m000139_Crew-9_Crew_News_Conference/metadata.json
+nasa-ohara-postflight.mp4 https://images-assets.nasa.gov/video/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415~small.mp4
+nasa-ohara-postflight.srt https://images-assets.nasa.gov/video/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415.srt
+nasa-ohara-postflight.metadata.json https://images-assets.nasa.gov/video/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415/metadata.json
+nasa-swot-prelaunch.mp4 https://images-assets.nasa.gov/video/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707~small.mp4
+nasa-swot-prelaunch.srt https://images-assets.nasa.gov/video/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707.srt
+nasa-swot-prelaunch.metadata.json https://images-assets.nasa.gov/video/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707/metadata.json
+nasa-solar-cruiser.mp4 https://images-assets.nasa.gov/video/Solar%20Cruiser%20Demo/Solar%20Cruiser%20Demo~small.mp4
+nasa-solar-cruiser.srt https://images-assets.nasa.gov/video/Solar%20Cruiser%20Demo/Solar%20Cruiser%20Demo.srt
+nasa-solar-cruiser.metadata.json https://images-assets.nasa.gov/video/Solar%20Cruiser%20Demo/metadata.json
