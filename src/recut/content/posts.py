@@ -47,6 +47,8 @@ You write social media posts that promote a new video. One post per platform, ea
 {specs}
 Every post must stand on its own, lead with the most interesting idea from the video, and use only facts, names and
 numbers from the transcript. Hashtags go at the end. No links (they are added when scheduling).
+Lengths are approximate targets: do not count characters one by one, code measures every post and asks for a
+shorter version when one is over the platform's limit.
 Answer with JSON only: {{{keys}}}"""
 
 
@@ -221,6 +223,33 @@ def generate(
         )
     except (LLMError, JSONReplyError) as exc:
         stats["errors"].append(f"social: {str(exc)[:160]}")
+        # one more try in two smaller requests (a reasoning model can spend its whole budget on six posts)
+        for half in (list(platforms)[: len(platforms) // 2], list(platforms)[len(platforms) // 2 :]):
+            if not half:
+                continue
+            half_specs = "\n".join(
+                f'- "{p.key}" ({p.name}): at most {p.target} characters, {p.hashtags} hashtag(s)'
+                for p in (limits.PLATFORMS[k] for k in half)
+            )
+            stats["calls"] += 1
+            try:
+                social.update(
+                    _ask_json(
+                        model,
+                        [
+                            {
+                                "role": "system",
+                                "content": SOCIAL_SYSTEM.format(
+                                    specs=half_specs, keys=", ".join(f'"{k}": ""' for k in half)
+                                ),
+                            },
+                            {"role": "user", "content": header + "Transcript:\n" + transcript},
+                        ],
+                        settings,
+                    )
+                )
+            except (LLMError, JSONReplyError) as exc2:
+                stats["errors"].append(f"social ({', '.join(half)}): {str(exc2)[:160]}")
     too_long = [
         k
         for k in platforms

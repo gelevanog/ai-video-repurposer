@@ -315,6 +315,17 @@ def eval_summary(names: Annotated[str, typer.Option(help="Comma-separated run na
     report.summarize([n for n in names.split(",") if n])
 
 
+@eval_app.command("refresh-posts")
+def eval_refresh_posts(
+    name: Annotated[str, typer.Option()] = "main",
+    provider: Annotated[LLMProviderKind | None, typer.Option()] = None,
+) -> None:
+    """Re-run the posts stage for every project of a run (after a change in the posts code)."""
+    from recut.eval import runner
+
+    runner.refresh_posts(name, _settings(provider))
+
+
 @eval_app.command("bench")
 def eval_bench(
     items: Annotated[str, typer.Option(help="Comma-separated test-set ids.")],

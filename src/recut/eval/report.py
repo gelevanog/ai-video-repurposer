@@ -188,6 +188,15 @@ def summarize_run(name: str) -> dict[str, Any]:
             "render_seconds_per_output_minute": round(render_s / render_dur * 60, 1) if render_dur else None,
             "rendered_minutes": round(render_dur / 60, 1),
         },
+        "posts": {
+            "items": sum(1 for r in rows if r.get("posts")),
+            "social_posts": sum(r["posts"]["social_posts"] for r in rows if r.get("posts")),
+            "within_limit": sum(r["posts"]["within_limit"] for r in rows if r.get("posts")),
+            "truncated_by_code": sum(r["posts"]["truncated"] for r in rows if r.get("posts")),
+            "grounding_flags_social": sum(r["posts"]["flags_social"] for r in rows if r.get("posts")),
+            "grounding_flags_long_form": sum(r["posts"]["flags_long_form"] for r in rows if r.get("posts")),
+            "chapters_youtube_ready": sum(1 for r in rows if r.get("posts", {}).get("chapters_youtube_ready")),
+        },
         "calls": ledger_stats(f"eval-{name}:"),
     }
 

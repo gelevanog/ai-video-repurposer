@@ -136,7 +136,7 @@ def test_generate_enforces_limits_retries_and_grounding(settings: Settings) -> N
 def test_generate_survives_model_failures(settings: Settings) -> None:
     sentences = sentences_from_words(make_words(LONG_TALK))
     outputs, stats = generate(sentences, [], _source(), ScriptedModel(fail=True), settings)
-    assert len(stats["errors"]) == 3
+    assert len(stats["errors"]) == 5  # metadata, blog, social, and the two smaller social retries
     assert outputs.seo_title == "Pricing talk" and outputs.social == []
 
 

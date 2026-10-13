@@ -20,6 +20,7 @@ from typing import Any
 from rapidfuzz import fuzz
 
 from recut.asr.whisper import transcribe_wav
+from recut.chapters import youtube_ready
 from recut.config import REPO_ROOT, Settings
 from recut.eval import testset
 from recut.eval.judge import JudgeItem, judge
@@ -207,6 +208,43 @@ def framing(project: Project, clip: Clip, settings: Settings) -> dict[str, Any] 
     }
 
 
+def posts_summary(project: Project) -> dict[str, Any]:
+    o = project.outputs
+    return {
+        "social_posts": len(o.social),
+        "within_limit": sum(1 for p in o.social if p.within_limit),
+        "truncated": sum(1 for p in o.social if p.truncated),
+        "flags_social": sum(1 for p in o.social for i in p.issues if i.kind in ("number", "quote")),
+        "flags_long_form": sum(1 for i in o.issues if i.kind in ("number", "quote")),
+        "flag_texts": [i.text for p in o.social for i in p.issues if i.kind in ("number", "quote")]
+        + [i.text for i in o.issues if i.kind in ("number", "quote")],
+        "title_chars": len(o.seo_title),
+        "description_chars": len(o.seo_description),
+        "blog_words": len(o.blog_post.split()),
+        "show_notes_words": len(o.show_notes.split()),
+        "chapters_youtube_ready": not youtube_ready(project.chapters, project.source.duration),
+        "stage_message": project.stage("posts").message,
+    }
+
+
+def refresh_posts(name: str, settings: Settings) -> None:
+    """Re-run the posts stage of every project of a run (after a fix in the posts code) and update the items."""
+    work = REPO_ROOT / ".cache" / "eval-projects" / name
+    pipeline = Pipeline(
+        settings.model_copy(update={"data_dir": work}),
+        models=lambda tag: model_for(settings, tag=f"eval-{name}:{tag}"),
+    )
+    for path in sorted((results_dir(name) / "items").glob("*.json")):
+        row = json.loads(path.read_text(encoding="utf-8"))
+        project = pipeline.store.load(row["project_id"]) if pipeline.store.exists(row["project_id"]) else None
+        if project is None:
+            continue
+        project = pipeline.process(project.id, stages=("posts",), force=True)
+        row["posts"] = posts_summary(project)
+        path.write_text(json.dumps(row, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"{row['id']}: {row['posts']['social_posts']} posts, {row['posts']['flags_social']} flags")
+
+
 # ------------------------------------------------------------------------------------------------ run
 def evaluate_item(
     item: dict[str, Any],
@@ -254,6 +292,7 @@ def evaluate_item(
         )
         row["highlights"] = highlight_recall(project.clips, gold["highlights"])
     row["chapters_out"] = [{"start": c.start, "title": c.title} for c in project.chapters]
+    row["posts"] = posts_summary(project)
     clips_out = []
     for clip in project.clips:
         entry: dict[str, Any] = {
