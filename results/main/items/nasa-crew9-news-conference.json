@@ -1,0 +1,689 @@
+{
+ "id": "nasa-crew9-news-conference",
+ "kind": "nasa",
+ "title": "NASA's SpaceX Crew-9 crew news conference (2024-07-26)",
+ "duration": 1651.6,
+ "project_id": "nasa-s-spacex-crew-9-crew-news-c-06cf13",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.56,
+   "message": "27:31 · 640x360 @ 30 fps"
+  },
+  "audio": {
+   "seconds": 2.62,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.04,
+   "message": "3952 words · faster-whisper small (int8, CPU) · 0.09x real time"
+  },
+  "diarize": {
+   "seconds": 7.02,
+   "message": "3 speakers separated by MFCC and pitch clustering (silhouette 0.32)"
+  },
+  "clips": {
+   "seconds": 157.08,
+   "message": "8 clips from 8 candidates"
+  },
+  "chapters": {
+   "seconds": 17.14,
+   "message": "7 chapters"
+  },
+  "posts": {
+   "seconds": 174.72,
+   "message": "0 social posts, 2 grounding flags, errors: social: empty answer: max_tokens reached before any output"
+  }
+ },
+ "asr_seconds": 145.9,
+ "asr_rtf": 0.0883,
+ "process_seconds_this_run": 359.4,
+ "wer": {
+  "wer": 0.07769173120159881,
+  "ref_words": 4003.0,
+  "substitutions": 107.0,
+  "deletions": 95.0,
+  "insertions": 109.0
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Crew introductions and mission overview"
+  },
+  {
+   "start": 128.0,
+   "title": "Personal items for the mission"
+  },
+  {
+   "start": 289.0,
+   "title": "Science objectives and spacewalk plans"
+  },
+  {
+   "start": 442.0,
+   "title": "Space Force role and mission patches"
+  },
+  {
+   "start": 603.0,
+   "title": "Falcon 9 anomaly investigation confidence"
+  },
+  {
+   "start": 700.0,
+   "title": "Sports, Stephanie background, mental prep"
+  },
+  {
+   "start": 1078.0,
+   "title": "Deorbit feelings, training comparison, closing"
+  }
+ ],
+ "clips": [
+  {
+   "id": "clip_477c7d06",
+   "rank": 1,
+   "start": 340.9,
+   "end": 373.64,
+   "duration": 32.74,
+   "title": "Space Research on Humans Helps Earth",
+   "score": 80.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 9.0,
+    "virality": 75.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 340.9,
+    "inside_word": false,
+    "gap_before": 0.76,
+    "gap_after": 0.08,
+    "level_db": -30.6
+   },
+   "cut_out": {
+    "at": 373.64,
+    "inside_word": false,
+    "gap_before": 0.44,
+    "gap_after": 1.7,
+    "level_db": -33.8
+   },
+   "adjustments": [],
+   "text": "A lot of the science that we'll be doing is actually research on ourselves as human bodies. The way that we respond to the spaceflight environment is incredibly interesting. We're still looking to understand that as we move farther and farther beyond low -earth orbit. And some of the effects that we experience, things like effects on our vascular system, on our genetics are very similar to aging populations and immunocompromised populations on Earth and a lot of the research that we will be doing therefore helps people on the ground.",
+   "render": {
+    "seconds": 20.28,
+    "layout": "track",
+    "seconds_per_output_minute": 37.17
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "a",
+     "ground"
+    ],
+    "got": [
+     "a",
+     "ground"
+    ],
+    "clip_wer": 0.011
+   },
+   "framing": {
+    "samples_with_face": 66,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 4
+   }
+  },
+  {
+   "id": "clip_b9d8a2aa",
+   "rank": 2,
+   "start": 1535.32,
+   "end": 1580.75,
+   "duration": 45.43,
+   "title": "Big Dreams from Small Towns",
+   "score": 80.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 75.0
+   },
+   "issues": [
+    "dangling_reference"
+   ],
+   "cut_in": {
+    "at": 1535.32,
+    "inside_word": false,
+    "gap_before": 0.27,
+    "gap_after": 0.19,
+    "level_db": -29.6
+   },
+   "cut_out": {
+    "at": 1580.75,
+    "inside_word": false,
+    "gap_before": 0.34,
+    "gap_after": 0.9,
+    "level_db": -34.0
+   },
+   "adjustments": [],
+   "text": "It is a small town and when I was growing up there were about 40,000 people living in a town of Pittsfield, Massachusetts. And I'd like to say that big dreams can come from small places. And I had great support from my family, from my parents, for whom education was very important. And so I'm very thankful that they were encouraging of me throughout my education. And the teachers that I had in that community were also very supportive and instructive. And my message is really find your dream, find what you're passionate about, pursue it with all that you can. And even though you might come from a small place, remember that big dreams can come from small places.",
+   "render": {
+    "seconds": 25.82,
+    "layout": "track",
+    "seconds_per_output_minute": 34.1
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "it",
+     "places"
+    ],
+    "got": [
+     "it",
+     "places"
+    ],
+    "clip_wer": 0.016
+   },
+   "framing": {
+    "samples_with_face": 91,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_755f9ca7",
+   "rank": 3,
+   "start": 1106.1,
+   "end": 1144.88,
+   "duration": 38.78,
+   "title": "ISS: A Living Breathing Laboratory",
+   "score": 78.5,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 8.0,
+    "standalone": 9.0,
+    "clarity": 8.0,
+    "virality": 70.0
+   },
+   "issues": [
+    "dangling_reference"
+   ],
+   "cut_in": {
+    "at": 1106.1,
+    "inside_word": false,
+    "gap_before": 1.05,
+    "gap_after": 0.09,
+    "level_db": -24.4
+   },
+   "cut_out": {
+    "at": 1144.88,
+    "inside_word": false,
+    "gap_before": 0.29,
+    "gap_after": 0.68,
+    "level_db": -31.4
+   },
+   "adjustments": [],
+   "text": "It is amazing what you are able to get involved in over the course of six or seven months. You just become part of this machine, this living breathing laboratory that's up there and you feel the extension on the ground to the to the hundreds and thousands of people that are supporting you day in and day out and and then you land and you've almost forgotten everything that you did up there because you were going so fast and chasing that red line and trying to get everything done that you could possibly do so I'm excited to grab the baton again and see what we can accomplish.",
+   "render": {
+    "seconds": 18.18,
+    "layout": "track",
+    "seconds_per_output_minute": 28.13
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "it",
+     "accomplish"
+    ],
+    "got": [
+     "it",
+     "accomplish"
+    ],
+    "clip_wer": 0.027
+   },
+   "framing": {
+    "samples_with_face": 78,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_cef60acd",
+   "rank": 4,
+   "start": 185.14,
+   "end": 229.86,
+   "duration": 44.72,
+   "title": "Personal Mementos and Space Force Flag on Crew-9",
+   "score": 73.3,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 8.0,
+    "virality": 68.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 185.14,
+    "inside_word": false,
+    "gap_before": 1.4,
+    "gap_after": 0.43,
+    "level_db": -42.9
+   },
+   "cut_out": {
+    "at": 229.86,
+    "inside_word": false,
+    "gap_before": 0.37,
+    "gap_after": 12.39,
+    "level_db": -37.5
+   },
+   "adjustments": [],
+   "text": "One thing I'm taking different than than last time is something that didn't exist last time, a space force flag. As an active duty space force officer it's a privilege to be able to represent all the guardians that help support human spaceflight as they watch the skies and the cosmos that surrounds the earth keeping us safe every day. So that's one of the things I'm taking along. And similarly for me it's important to be able to share this opportunity in the moment with family and friends and so I am also taking personal photographs of family and friends to be reminded of them and to stay connected with them and also to help me to tell the story of the mission once it's all complete and when we return home.",
+   "render": {
+    "seconds": 20.26,
+    "layout": "track",
+    "seconds_per_output_minute": 27.18
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "1",
+     "home"
+    ],
+    "got": [
+     "yeah",
+     "home"
+    ],
+    "clip_wer": 0.037
+   },
+   "framing": {
+    "samples_with_face": 90,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 5
+   }
+  },
+  {
+   "id": "clip_b1a1f654",
+   "rank": 5,
+   "start": 905.77,
+   "end": 945.9,
+   "duration": 40.13,
+   "title": "Mental Prep for a Six‑Month ISS Stay",
+   "score": 71.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 6.0,
+    "clarity": 8.0,
+    "virality": 55.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 905.77,
+    "inside_word": false,
+    "gap_before": 0.44,
+    "gap_after": 0.12,
+    "level_db": -32.4
+   },
+   "cut_out": {
+    "at": 945.9,
+    "inside_word": false,
+    "gap_before": 0.28,
+    "gap_after": 0.34,
+    "level_db": -14.4
+   },
+   "adjustments": [],
+   "text": "I was wondering what the mentality is going into a six month stay on the ISS, knowing that your body's going to be undergoing a lot of stress and like you said, kind of mimicking the aging process. How do you kind of reconcile that and prepare yourself mentally for that aspect of the mission? For me personally, it's actually incredibly fulfilling. It's such a privilege to fly in space And if what our bodies are experiencing can then also help us understand diseases and different effects to compromise populations on the earth, this is incredibly valuable. And so for me, this is just a giant privilege.",
+   "render": {
+    "seconds": 16.02,
+    "layout": "track",
+    "seconds_per_output_minute": 23.95
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "i",
+     "privilege"
+    ],
+    "got": [
+     "i",
+     "privilege"
+    ],
+    "clip_wer": 0.037
+   },
+   "framing": {
+    "samples_with_face": 80,
+    "tracked": 1.0,
+    "center": 0.537,
+    "keys": 4
+   }
+  },
+  {
+   "id": "clip_8e179180",
+   "rank": 6,
+   "start": 486.07,
+   "end": 508.21,
+   "duration": 22.14,
+   "title": "Guardian Role: Raising Space Force Awareness",
+   "score": 69.5,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 65.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 486.07,
+    "inside_word": false,
+    "gap_before": 1.45,
+    "gap_after": 0.25,
+    "level_db": -32.4
+   },
+   "cut_out": {
+    "at": 508.21,
+    "inside_word": false,
+    "gap_before": 0.39,
+    "gap_after": 1.29,
+    "level_db": -32.4
+   },
+   "adjustments": [],
+   "text": "Expanding the, you know, what I think the biggest impact of me being on this mission as a guardian is going to be is just raising awareness. There are a lot of things that the Space Force does that are instrumental to making human spaceflight possible, whether that's providing us support to launch and land or keeping us safe by by moving us out of the way or warning us of potential debris.",
+   "render": {
+    "seconds": 7.82,
+    "layout": "track",
+    "seconds_per_output_minute": 21.19
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "expanding",
+     "debris"
+    ],
+    "got": [
+     "expanding",
+     "debris"
+    ],
+    "clip_wer": 0.014
+   },
+   "framing": {
+    "samples_with_face": 44,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_843e044a",
+   "rank": 7,
+   "start": 593.96,
+   "end": 619.36,
+   "duration": 25.4,
+   "title": "Patch Symbolism: Maritime Flag and Station History",
+   "score": 66.0,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 6.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 55.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 593.96,
+    "inside_word": false,
+    "gap_before": 0.56,
+    "gap_after": 0.12,
+    "level_db": -29.0
+   },
+   "cut_out": {
+    "at": 619.36,
+    "inside_word": false,
+    "gap_before": 0.54,
+    "gap_after": 1.91,
+    "level_db": -33.0
+   },
+   "adjustments": [],
+   "text": "The Expedition 72 patch was actually led by Don Pettit, who is already in Star City on his way to the International Space Station in September. And it really is a nod to the long -standing history of the space station, which has been human -occupied for more than 20 years now. But you'll notice, of course, the space station looks quite a bit different than it did in Expedition 1. and I'm very grateful to be flying with people who actually helped in its construction.",
+   "render": {
+    "seconds": 6.03,
+    "layout": "track",
+    "seconds_per_output_minute": 14.24
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "the",
+     "construction"
+    ],
+    "got": [
+     "the",
+     "construction"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 51,
+    "tracked": 1.0,
+    "center": 0.922,
+    "keys": 6
+   }
+  },
+  {
+   "id": "clip_fba488c9",
+   "rank": 8,
+   "start": 996.6,
+   "end": 1024.83,
+   "duration": 28.23,
+   "title": "Age‑Diverse Crew Shares Station Stories",
+   "score": 61.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 6.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 45.0
+   },
+   "issues": [
+    "cut_in_loud"
+   ],
+   "cut_in": {
+    "at": 996.6,
+    "inside_word": false,
+    "gap_before": 0.08,
+    "gap_after": 0.12,
+    "level_db": -0.9
+   },
+   "cut_out": {
+    "at": 1024.83,
+    "inside_word": false,
+    "gap_before": 0.23,
+    "gap_after": 0.23,
+    "level_db": -24.7
+   },
+   "adjustments": [],
+   "text": "We will have crew members who were born in the 50s 60s 70s 80s and 90s And so we all have a really complex story to tell Don Pettit our crewmate launching on Soyuz is an incredible photographer I'm really looking forward to not only seeing what he produces, but learning from him and hoping that I can get even a tiny little bit of his expertise while we're there. And Stephanie meanwhile really wants to share the story of how Station has evolved since she started participating in its construction.",
+   "render": {
+    "seconds": 6.58,
+    "layout": "track",
+    "seconds_per_output_minute": 13.99
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "we",
+     "construction"
+    ],
+    "got": [
+     "we",
+     "construction"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 56,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  }
+ ],
+ "judge": {
+  "clip_cef60acd": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Explains personal items being taken to space and their purpose.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-6": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 5,
+   "reason": "Starts with a request to repeat a question and ends on an unfinished comparison.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_fba488c9": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Discusses crew diversity and individual crew members' goals and stories.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 7,
+   "reason": "Explains the symbolism and design details of the Crew 9 and Expedition 72 patches.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-5": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 8,
+   "reason": "Provides an inspiring closing message and wraps up the press conference.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-3": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 7,
+   "reason": "Explains the scientific goals of the mission and how they adapt to changes.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_b1a1f654": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Answers a question about mental preparation for long-duration spaceflight.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_8e179180": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 7,
+   "reason": "Discusses the impact of being a Space Force guardian on the mission.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-4": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 6,
+   "payoff": 4,
+   "reason": "Consists of a caller asking Stephanie a question about her alma mater.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Answers a fun question about celebrating major sports events while on the ISS.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_b9d8a2aa": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 8,
+   "reason": "Shares a personal story of growing up in a small town and delivers an inspiring message.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_477c7d06": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 7,
+   "reason": "Explains how space science research on the human body benefits people on Earth.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-7": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Explains how past work on a joint operations panel enabled the station to support seven crew.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_843e044a": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 7,
+   "reason": "Discusses the Expedition 72 patch and reflects on the history of the space station.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_755f9ca7": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 8,
+   "reason": "Reflects on the intense experience of a long-duration space mission and future excitement.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Addresses concerns about a rocket anomaly by expressing strong confidence in the team.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 861.0
+}

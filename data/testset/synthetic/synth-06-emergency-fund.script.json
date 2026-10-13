@@ -1,0 +1,221 @@
+{
+ "id": "synth-06-emergency-fund",
+ "title": "Your First $1,000 Emergency Fund",
+ "show": "Money Basics",
+ "format": "talk",
+ "accent": [
+  16,
+  185,
+  129
+ ],
+ "speakers": {
+  "S1": {
+   "name": "Aisha Johnson",
+   "voice": "af_nicole"
+  }
+ },
+ "license": "CC0 1.0 (synthetic test media made for this repository)",
+ "drafted_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "chapters": [
+  {
+   "title": "Why $1,000 first",
+   "bullets": [
+    "Small buffer prevents debt spiral",
+    "Flat tyre example: $400 → $1,200",
+    "First step before investing or extra debt payments"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Let's start with the number that trips people up: one thousand dollars. It feels arbitrary, but it's the line between a bad day and a financial crisis.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Picture this: you're driving to work, hear that thump-thump-thump, and pull over to a shredded tyre. Four hundred bucks for a replacement. No buffer? You swipe the credit card. The card carries 24 percent interest. You pay the minimum because rent is due. Six months later that four hundred has become twelve hundred. One thousand in a savings account would have stopped the bleeding at four hundred. That's the whole point: a tiny wall between you and compound interest working against you.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "You might wonder why we don't just attack the credit cards first. The answer is simple: without a cushion, every surprise becomes a new balance.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Think about the last time you had to choose between fixing the car and buying groceries. That choice disappears when the buffer exists.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, and that's why this comes before aggressive debt payoff or investing. You're not building wealth yet; you're buying insurance against the inevitable.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "So step one: get that first thousand tucked away. Everything else builds on top of it.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Finding the money",
+   "bullets": [
+    "Audit recurring charges",
+    "Found $87/month in forgotten subscriptions",
+    "Redirect that cash to the fund"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Okay, where does the money come from? Most people tell me they're already stretched. The answer is usually hiding in plain sight.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "I did a subscription audit last year. Pulled up my bank statements, highlighted every recurring charge, and asked: do I still use this? Eighty-seven dollars a month. A meditation app I opened twice, a streaming service for a show that got cancelled, a gym membership from the apartment I moved out of. Eighty-seven dollars times twelve is over a thousand a year. That's your emergency fund in twelve months without changing your lifestyle one bit.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "I know it sounds tedious, but pulling three months of statements takes maybe twenty minutes. You'll be surprised how many line items you don't recognize.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "One listener told me she found a twelve-dollar magazine subscription she hadn't read in two years. Twelve bucks times twelve months, that's another hundred forty-four back in her pocket.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Like you said, it's not about deprivation. It's about plugging leaks you didn't know existed.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Grab three months of statements this weekend. Cancel what you don't use. Move the savings straight to the fund.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Automate it",
+   "bullets": [
+    "Automatic transfer on payday",
+    "$25 per paycheck beats willpower",
+    "Pay yourself first, then spend the rest"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "You've found the money. Now make it move without you thinking about it.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Pay yourself first isn't a cute phrase; it's a mechanical advantage. Set up a twenty-five dollar automatic transfer the day your salary hits. Twenty-five bucks, twenty-six pay periods, that's six hundred fifty dollars a year. You don't decide each time. You don't negotiate with yourself after a long week. The money vanishes before you can spend it on takeout. Willpower is a battery that drains; automation is a wire that stays live.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "If twenty-five feels tight, start with ten. The habit matters more than the amount, and you can bump it up after a raise.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Automation also removes the temptation to 'borrow' from the fund for a weekend trip. The transfer happens before you even see the balance.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, the key is consistency. Even a small automatic transfer builds the muscle memory of saving.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Log in to your bank right now. Schedule it. Future you will thank present you.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Where to keep it",
+   "bullets": [
+    "Separate account, not checking",
+    "Boring name hides it from impulse",
+    "Accessible but not visible daily"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Where does this money live? Not in your checking account. That's the fastest way to accidentally spend it on concert tickets.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Open a separate savings account at a different bank if you can. Name it something boring: \"Emergency Reserve\" or \"Account 8472.\" No \"Vegas Fund\" or \"New Car.\" When you log in to check your balance, you don't see it. Out of sight, out of mind, until the water heater dies in January. Then it's there, earning a little interest, doing its one job: waiting.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "I like to keep mine at a credit union across town. No debit card, no app on my phone. Two extra steps to see the balance means I pause before I dip.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Some people use a high-yield online savings account with a nickname like 'Do Not Touch.' The name alone stops impulse transfers.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Like you said, friction is your friend here. Two extra clicks to see the balance means two extra seconds to ask: is this really an emergency?",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Set it up this week. Boring name, separate login, forget it exists.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "When to use it",
+   "bullets": [
+    "Three-question test: urgent, necessary, unexpected",
+    "TV sale fails all three",
+    "Replenish immediately after use"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "The fund is built. Now the discipline: knowing when to break the seal.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Use the three-question test. Is it urgent? Is it necessary? Is it unexpected? A blown transmission on the only car that gets you to work: yes, yes, yes. A sixty-five-inch TV on sale for Black Friday: not urgent, not necessary, and you knew Black Friday existed. That's zero for three. The fund is for the roof leak, the ER visit, the layoff. Not for opportunities, upgrades, or \"really good deals.\"",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "I've had friends use the fund for a vacation because they called it 'unexpected.' It wasn't. A vacation is planned, so it fails the test.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Another trap is the 'once-in-a-lifetime' sale on a laptop. It feels urgent, but you knew the model was coming out. That's not unexpected either.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, and if you do tap it, the next paycheck's first job is refilling the bucket. No exceptions.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Write the three questions on a sticky note. Stick it on your laptop. Next time you hesitate, read them.",
+     "highlight": false
+    }
+   ]
+  }
+ ]
+}

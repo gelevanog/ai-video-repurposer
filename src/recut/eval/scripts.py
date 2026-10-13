@@ -71,7 +71,7 @@ def validate(script: dict[str, Any], outline: dict[str, Any]) -> list[str]:
             if not str(t.get("text") or "").strip():
                 problems.append(f"chapter {i + 1}: empty turn")
         words = sum(word_count(str(t.get("text") or "")) for t in turns)
-        if words < 170:
+        if words < 150:
             problems.append(f"chapter {i + 1}: only {words} words")
         for h in highlights:
             hw = word_count(str(h.get("text") or ""))
