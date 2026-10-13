@@ -182,68 +182,68 @@
   }
  ],
  "judge": {
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Complete lesson on value-based pricing with a strong hook and satisfying payoff.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
   "gold-1": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Actionable three-number pricing test explaining why quoting stretch first works.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_58f577c5": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 9,
+   "payoff": 3,
+   "reason": "Strong hook but cuts off mid-explanation, leaving the three-number test unfinished.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-2": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "gold-0": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_58f577c5": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Raising client prices advice with a compelling retention story and memorable closing principle.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-1": {
    "group": "random",
    "standalone": true,
    "complete_ending": true,
    "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "payoff": 9,
+   "reason": "Combines pricing negotiation with client retention advice, ending with a complete show wrap-up.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 8,
+   "payoff": 5,
+   "reason": "Explains the three-number test clearly but cuts off abruptly mid-sentence.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_850b0057": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-0": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": false,
-   "hook": 4,
-   "payoff": 3,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Answers how to raise client prices with a compelling story and satisfying show sign-off.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 1.6

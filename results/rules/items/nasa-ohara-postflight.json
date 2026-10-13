@@ -339,14 +339,50 @@
   }
  ],
  "judge": {
-  "clip_32cce727": {
-   "group": "model",
+  "random-3": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 5,
+   "reason": "Starts mid-sentence and ends abruptly without a concluding point.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Relatable story about space bag annoyances with a clear, satisfying conclusion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 5,
+   "reason": "Refers to unexplained context and ends on an open interviewer question.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-5": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Refers to unexplained 'that' and ends abruptly mid-sentence.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_ae722ae3": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 6,
+   "payoff": 5,
+   "reason": "Starts mid-segment and ends on an unanswered question.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-4": {
    "group": "random",
@@ -354,116 +390,80 @@
    "complete_ending": true,
    "hook": 4,
    "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-6": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "reason": "Starts mid-thought about hair cutting but concludes the hobby discussion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-0": {
    "group": "random",
    "standalone": false,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-2": {
-   "group": "random",
-   "standalone": true,
    "complete_ending": false,
-   "hook": 4,
-   "payoff": 3,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_ae722ae3": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-5": {
-   "group": "random",
-   "standalone": false,
-   "complete_ending": true,
    "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-1": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "payoff": 4,
+   "reason": "Starts mid-sentence about family and ends mid-sentence on science experiments.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_e5576f6c": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Complete Q&A about daily space tasks with a clear, satisfying conclusion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_85323c6e": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Complete answer to a sensory question with a clear explanation of disorientation.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
-  "random-3": {
+  "random-6": {
    "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_8119db23": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
+   "standalone": false,
+   "complete_ending": false,
    "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "payoff": 3,
+   "reason": "Starts mid-sentence about auroras and ends abruptly mid-sentence.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_bffec015": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Complete and humorous Q&A about cutting hair in space with a satisfying end.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_8119db23": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 4,
+   "reason": "Starts mid-thought about hobbies and ends mid-sentence on hydration.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_63efcc8e": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Complete Q&A on astronaut applications with a satisfying interview wrap-up.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_32cce727": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
    "hook": 6,
    "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "reason": "Complete audience question and answer about space photography and auroras.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 4.3

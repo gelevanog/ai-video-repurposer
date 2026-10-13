@@ -377,149 +377,149 @@
   }
  ],
  "judge": {
-  "clip_d418693c": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
   "random-6": {
    "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_e4fd608b": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-1": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-5": {
-   "group": "random",
    "standalone": false,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-3": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_42833131": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_3c559837": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-4": {
-   "group": "random",
-   "standalone": true,
    "complete_ending": false,
    "hook": 4,
-   "payoff": 3,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "payoff": 2,
+   "reason": "Starts with a meta-request and ends abruptly on an unexplained BTM unit.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 7,
+   "reason": "Complete Q&A about rocket confidence with a satisfying, confident answer.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-0": {
    "group": "random",
    "standalone": true,
    "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Complete Q&A about celebrating sports on Earth from space.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-7": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 7,
+   "reason": "Standalone explanation of crew panel work and its current impact.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
    "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "payoff": 3,
+   "reason": "Starts mid-explanation and abruptly switches to another patch topic.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_42833131": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 3,
+   "payoff": 8,
+   "reason": "Starts mid-sentence but ends with a satisfying reflection on ISS history.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-5": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 8,
+   "reason": "Complete closing segment with inspiring advice and formal event wrap-up.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-3": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 3,
+   "reason": "Fragment of explanation that starts and ends mid-thought.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-4": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 1,
+   "reason": "Contains only the question without any answer or resolution.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_037bdbde": {
    "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 3,
+   "reason": "Starts with an unexplained reference and cuts off mid-sentence.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_4cc4050a": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
    "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "payoff": 7,
+   "reason": "Standalone Q&A about anomaly investigation with detailed response.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
-  "random-7": {
-   "group": "random",
-   "standalone": false,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_f1792b99": {
+  "clip_d418693c": {
    "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 3,
+   "payoff": 3,
+   "reason": "Mid-sentence fragment about documenting ISS assembly.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_fa5cc7aa": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
+   "hook": 5,
    "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "reason": "Standalone explanation of Space Force role and raising awareness.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
-  "random-2": {
-   "group": "random",
+  "clip_f1792b99": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 3,
+   "payoff": 6,
+   "reason": "Starts mid-sentence but explains safety responsibilities completely.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_3c559837": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 3,
+   "reason": "Starts with a question but the answer cuts off before giving advice.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_e4fd608b": {
+   "group": "model",
    "standalone": true,
    "complete_ending": true,
    "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "payoff": 9,
+   "reason": "Complete, inspiring Q&A about personal items and their symbolic meaning.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 5.1

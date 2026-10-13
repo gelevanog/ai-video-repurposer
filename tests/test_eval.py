@@ -168,3 +168,10 @@ def test_summary_folds_item_files(tmp_path: Path, monkeypatch: pytest.MonkeyPatc
     )
     assert summary["cuts"]["inside_word"] == 0 and summary["cuts"]["last_word_intact_pct"] == 0.0
     assert summary["timing"]["render_seconds_per_output_minute"] == round(6 / 35 * 60, 1)
+
+
+def test_caption_offset_finds_a_shifted_caption_track() -> None:
+    words = [(float(t), float(t) + 0.3) for t in range(100, 400, 2)]
+    cues = [(float(t) + 60, float(t) + 61.5, "one two three") for t in range(100, 400, 6)]
+    assert testset.caption_offset(cues, words) == -60.0
+    assert testset.caption_offset([(1.0, 2.0, "a b")], [(1.2, 1.5)]) == 0.0
