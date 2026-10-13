@@ -13,7 +13,9 @@
 ![mypy strict](https://img.shields.io/badge/mypy-strict-2a6db2)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
-<!-- demo-video -->
+https://github.com/user-attachments/assets/abab3dde-958d-4442-ac78-7ac98495df4a
+
+<sub>72-second walkthrough with voiceover. Can't play it? [Download the MP4](docs/demo.mp4).</sub>
 
 ![The clip editor on a real NASA news conference: the timeline of the 27-minute video with chapters and eight suggested clips, the clip list with scores, a phone-frame live preview following the astronaut's face with bold captions highlighting the spoken word, and the editor with the model's reason, scores, a trim bar that snaps to word gaps, cut checks and caption styles](docs/screenshots/hero.png)
 
