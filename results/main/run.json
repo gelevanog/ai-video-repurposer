@@ -1,0 +1,11 @@
+{
+ "run": "main",
+ "provider": "openrouter",
+ "model": "nvidia/nemotron-3-super-120b-a12b:free",
+ "fallbacks": [
+  "nvidia/nemotron-3-ultra-550b-a55b:free"
+ ],
+ "judge": "google/gemma-4-31b-it:free",
+ "asr": "faster-whisper small (int8, CPU)",
+ "finished_at": "2026-10-13 13:19:35"
+}

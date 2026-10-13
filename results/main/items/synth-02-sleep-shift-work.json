@@ -1,0 +1,313 @@
+{
+ "id": "synth-02-sleep-shift-work",
+ "kind": "synthetic",
+ "title": "Sleeping Well on Night Shifts",
+ "duration": 398.035,
+ "project_id": "sleeping-well-on-night-shifts-fe686d",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.28,
+   "message": "06:38 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.24,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 99.87,
+   "message": "1251 words · faster-whisper small (int8, CPU) · 0.25x real time"
+  },
+  "diarize": {
+   "seconds": 0.41,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.13); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 62.28,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 9.54,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 96.85,
+   "message": "6 social posts, 7 grounding flags"
+  }
+ },
+ "asr_seconds": 99.86,
+ "asr_rtf": 0.2509,
+ "process_seconds_this_run": 270.8,
+ "wer": {
+  "wer": 0.020456333595594022,
+  "ref_words": 1271.0,
+  "substitutions": 13.0,
+  "deletions": 9.0,
+  "insertions": 4.0
+ },
+ "speakers": {
+  "gold_speakers": 1,
+  "predicted_speakers": 1,
+  "count_correct": true,
+  "word_accuracy": 1.0,
+  "words": 1251,
+  "note": "voices not separable with the light MFCC clustering (best silhouette 0.13); labelled as a single speaker"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 0.7
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 0.7
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 2,
+  "recall": 0.4,
+  "coverage": [
+   0.0,
+   0.56,
+   0.0,
+   0.0,
+   0.6
+  ],
+  "clips_mostly_on_a_highlight": 2
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Why Night Shifts Desynchronize Your Body Clock"
+  },
+  {
+   "start": 83.0,
+   "title": "Using Light and Anchor Sleep to Reset"
+  },
+  {
+   "start": 244.0,
+   "title": "Caffeine, Food Tips and Day‑Shift Recovery"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 6,
+  "flags_long_form": 1,
+  "flag_texts": [
+   "1.10",
+   "1.10",
+   "1.10",
+   "1.10",
+   "1.10",
+   "1.10",
+   "1.0"
+  ],
+  "title_chars": 65,
+  "description_chars": 1012,
+  "blog_words": 979,
+  "show_notes_words": 312,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 7 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_a4a9a035",
+   "rank": 1,
+   "start": 106.72,
+   "end": 133.64,
+   "duration": 26.92,
+   "title": "Wear Sunglasses After Night Shift to Sleep Better",
+   "score": 83.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 70.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 106.72,
+    "inside_word": false,
+    "gap_before": 0.22,
+    "gap_after": 0.12,
+    "level_db": -73.6
+   },
+   "cut_out": {
+    "at": 133.64,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.28,
+    "level_db": -73.6
+   },
+   "adjustments": [],
+   "text": "Slip on a pair of dark sunglasses the moment you step outside. And you block most of that signal. The result. Your body still thinks it's night, melatonin rises on schedule, and you fall asleep faster once you're in bed. It's the cheapest sleep intervention I know, just a dollar ten pair of shades. And it works because light is the master switch for the circadian system. So the takeaway is simple, protect your eyes from morning light and you protect your sleep pressure.",
+   "render": {
+    "seconds": 6.84,
+    "layout": "fit",
+    "seconds_per_output_minute": 15.25
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "slip",
+     "pressure"
+    ],
+    "got": [
+     "slip",
+     "pressure"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_b353ee4e",
+   "rank": 2,
+   "start": 343.58,
+   "end": 371.24,
+   "duration": 27.66,
+   "title": "Use the Half‑Flip to Recover Faster After Night Shifts",
+   "score": 78.8,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 68.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 343.58,
+    "inside_word": false,
+    "gap_before": 0.34,
+    "gap_after": 0.12,
+    "level_db": -73.6
+   },
+   "cut_out": {
+    "at": 371.24,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.4,
+    "level_db": -73.6
+   },
+   "adjustments": [],
+   "text": "The gentler approach call it a half -flip. Is to sleep for a short -core block. Say 3 hours right after the shift, then stay up for a few hours, get bright light. And finally go to bed at a reasonable evening hour. This splits the adjustment into two smaller jumps instead of one massive leap. And most people report feeling functional within 48 hours, instead of a week. So the half -flip gives the clock a manageable step. And you avoid the brutal all -day wakefulness that wrecks recovery.",
+   "render": {
+    "seconds": 6.87,
+    "layout": "fit",
+    "seconds_per_output_minute": 14.9
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "the",
+     "recovery"
+    ],
+    "got": [
+     "the",
+     "recovery"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "clip_b353ee4e": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Explains the half-flip method, its steps, and benefits completely.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Details the four-hour anchor sleep rule, its rationale, and benefits.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Offers a clear caffeine cutoff rule and snack pairing advice.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Uses a nurse scenario to explain circadian misalignment and its consequences.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_a4a9a035": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Presents the sunglasses intervention, its low cost, and circadian mechanism.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Contrasts the powering-through mistake with the half-flip solution and benefits.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Explains days-off strategy, the half-flip, and social scheduling.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 5,
+   "reason": "Starts mid-sentence referencing prior advice and ends by transitioning.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Uses a driving scenario to explain the sunglasses solution and light mechanism.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 374.6
+}

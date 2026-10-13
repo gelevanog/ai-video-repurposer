@@ -1,0 +1,196 @@
+{
+ "id": "synth-08-giving-feedback",
+ "title": "How to Give Feedback Without Starting a Fight",
+ "show": "Lead Better",
+ "format": "talk",
+ "accent": [
+  168,
+  85,
+  247
+ ],
+ "speakers": {
+  "S1": {
+   "name": "Daniel Ross",
+   "voice": "bm_george"
+  }
+ },
+ "license": "CC0 1.0 (synthetic test media made for this repository)",
+ "drafted_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "chapters": [
+  {
+   "title": "Why feedback goes wrong",
+   "bullets": [
+    "Defensiveness spikes",
+    "Timing kills impact",
+    "Sandwich myth"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Most leaders think they’re giving feedback, but the conversation ends in a standoff. You’ve seen it: the recipient crosses arms, the tone sharpens, and nothing changes. The result is wasted time and eroded trust.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Defensiveness spikes when the message feels personal, and bad timing turns a quick correction into a lingering grudge. People hear the criticism before they hear the intent, so they shut down instead of leaning in.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Here’s the hard truth: the feedback sandwich does not work. You layer praise, criticism, praise, hoping the middle lands, but the brain only remembers the bread. Studies show that recipients recall the positive frames and discard the corrective core, so the behavior never shifts. I’ve watched managers spend ten minutes wrapping a single point in compliments, only to hear the same mistake repeated next week. The fix is simple: drop the filler, name the specific action, and state the impact in one clear sentence. When you stop hiding the message inside a snack, the listener can actually chew on it and change.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So after you strip the sandwich, the next step is to describe the behavior, not the person. That shift alone cuts defensiveness in half, and it gives the other person a concrete target they can actually fix.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, and that brings us to the next habit: ask before you tell. When you open with a question, the conversation turns collaborative instead of combative, and the other side feels heard before they’re judged.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Describe, don't diagnose",
+   "bullets": [
+    "Behavior vs character",
+    "Specific observable actions",
+    "Fixable feedback"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "We just saw how stripping the sandwich clears the noise. Now the real work starts: describing what actually happened instead of labeling the person. When you name the observable action, the listener can see the gap and close it.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Most feedback slips into diagnosis: you’re unreliable, you’re careless, you’re not a team player. Those are character judgments, and they trigger defensiveness because they feel like an identity attack. The brain protects the self‑story, so the conversation stalls before any change can happen.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Here’s the difference that changes everything: say ‘you were late three times this month’ instead of ‘you are unreliable.’ The first statement is a fact you can verify on a calendar; the second is a label that cannot be measured. When you point to the specific behavior, the recipient can agree, apologize, and adjust the habit. When you slap a trait on them, they argue about who they are, not what they did. I’ve seen a manager replace a vague ‘you’re disorganized’ with ‘the report missed the deadline twice,’ and the employee fixed the process within a week. Concrete beats character every time.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So after you swap diagnosis for description, the next lever is timing. Give the observation while the details are fresh, and the conversation stays grounded in reality. Otherwise the memory fades and the feedback feels like a surprise attack.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, and that sets up the habit of asking first. When you open with ‘how do you think that went?’ you invite reflection instead of resistance, and the dialogue shifts from judgment to joint problem‑solving.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Ask before you tell",
+   "bullets": [
+    "Open with a question",
+    "How do you think that went?",
+    "Turns dialogue collaborative"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "We’ve moved from labeling to describing. The next step flips the script: start with a question instead of a statement. When you ask, you hand the microphone to the other person and you learn what they already see.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Most leaders jump straight to the fix because it feels faster. But the fix lands on a closed door if the other side hasn’t bought in. A question opens that door. It also signals respect, which lowers the defensive wall before any critique arrives.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "The single question that unlocks every tough conversation is simple: ‘How do you think that went?’ It works because it forces the other person to evaluate their own performance first. You’re not telling them they missed the mark; you’re inviting them to notice the gap themselves. In my own team, a senior engineer who habitually missed code‑review deadlines answered, ‘I think I rushed the last two pulls.’ That self‑diagnosis opened a coaching moment that a direct ‘you’re late’ never could. The question also buys you time to listen, calibrate, and then add your observation without sounding like an accusation. Try it next time and watch the tone shift.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So after you ask, you still need to deliver the observation, but now it lands on a shared understanding. The conversation feels like a partnership, not a prosecution. That shift is what makes the feedback stick instead of sliding off.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, and that brings us to when and where you have the talk. The 48‑hour rule says feedback older than two days feels like an ambush, so timing matters as much as wording. Get it right and the conversation stays constructive; get it wrong and you lose credibility.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Timing and place",
+   "bullets": [
+    "Private setting",
+    "Within 48 hours",
+    "Specific context"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "We’ve covered what to say and how to ask. Now let’s talk about when and where you say it, because context can make or break the message. A hallway chat, a Slack ping, or a delayed email each send a different signal about importance.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Private, soon, specific — those three words are the checklist. Pull the person aside, do it within two days, and tie the comment to a concrete event they can recall. If any element slips, the feedback feels random, and the receiver wonders why now.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "The 48‑hour rule is simple: feedback older than two days feels like an ambush. After 48 hours the details blur, the emotion cools, and the recipient starts filling the gaps with their own story — usually a defensive one. I learned this the hard way when I waited a week to address a missed deadline; the engineer thought I was holding a grudge, not coaching a habit. When you deliver the observation within the window, the facts are fresh, the intent is clear, and the conversation stays on track. Miss the window and you trade coaching for conflict.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So once you nail timing and place, the last piece is modeling the behavior yourself. Leaders who ask for feedback set the tone for the whole team. When you show you can receive it, others feel safe doing the same.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, and that brings us to the final habit: receiving feedback like a pro. I ask my team for one thing to stop doing every quarter, and the answer that changed my meetings was surprisingly simple.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Receiving feedback",
+   "bullets": [
+    "Model openness",
+    "Quarterly stop‑doing ask",
+    "Meeting transformation"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "We’ve walked through giving feedback that lands. The final lever is how you receive it, because a leader who can’t take input can’t expect the team to give it. Modeling openness turns the whole culture from defensive to curious.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Most managers wait for the annual review to hear what’s wrong. I flipped that by asking every quarter: ‘What’s one thing I should stop doing?’ The answers are raw, specific, and actionable. It also signals that I’m in the same learning loop as everyone else.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Here’s the practice that reshaped my leadership: every quarter I ask each direct report for one thing I should stop doing. The first time I did it, a senior designer said, ‘Stop scheduling back‑to‑back meetings without a buffer.’ I realized my calendar was the bottleneck, not the team’s capacity. I added fifteen‑minute gaps, and meeting attendance jumped from 60 % to 95 % within two weeks. The request was tiny, the impact massive, and it only surfaced because I created a safe, recurring slot for honest input. If you want better feedback, you have to ask for it — regularly, specifically, and without defensiveness.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So when you model that habit, the team mirrors it. They start asking each other the same question, and the feedback loop becomes a daily rhythm instead of a quarterly event. That cultural shift is what turns good managers into great leaders.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, and that wraps the five habits: ditch the sandwich, describe behavior, ask first, respect the 48‑hour window, and ask your team what to stop. Practice them, and feedback stops being a fight and starts being fuel.",
+     "highlight": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,225 @@
+{
+ "id": "synth-07-beginner-marathon",
+ "title": "Training for Your First Marathon",
+ "show": "Long Run Radio",
+ "format": "podcast",
+ "accent": [
+  249,
+  115,
+  22
+ ],
+ "speakers": {
+  "S1": {
+   "name": "Jamal Wright (host)",
+   "voice": "am_fenrir"
+  },
+  "S2": {
+   "name": "Coach Nina Park",
+   "voice": "af_nova"
+  }
+ },
+ "license": "CC0 1.0 (synthetic test media made for this repository)",
+ "drafted_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "chapters": [
+  {
+   "title": "Is a marathon realistic?",
+   "bullets": [
+    "Anyone can train for a marathon",
+    "Consistency beats talent",
+    "18-month beginner to finisher"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Welcome to Long Run Radio. I'm Jamal Wright. Today we're asking: is a marathon realistic for regular people? Coach Nina Park is here. Nina, who actually shows up at your door wanting to run 26.2?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Honestly, it's everyone from a 22-year-old who ran cross country in college to a 55-year-old who hasn't jogged since high school. The common thread? They all have a reason — a charity, a bucket list, a bet with a sibling.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Okay, but what about someone who can barely run five minutes without stopping?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "I had a client, Maria, who couldn't run for five minutes straight when we met. She was 42, worked night shifts, and hadn't exercised in a decade. We started with walk-run intervals — one minute jogging, two minutes walking — three times a week. Every two weeks we added a minute to the jog. No speed work, no fancy gadgets, just consistency. Eighteen months later she crossed the finish line of the Chicago Marathon in five hours twelve minutes. The lesson? You don't need talent; you need a plan that respects where you are today.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "That's incredible. Five hours twelve — and she started from basically zero.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Exactly. And that's why I tell every new runner: the marathon is a logistics problem, not a genetics test. Show up, follow the progression, and the distance takes care of itself.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Slow runs build speed",
+   "bullets": [
+    "80/20 easy/hard split",
+    "Talk test for easy pace",
+    "Mitochondria grow at conversational speed"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Let's talk about the 80/20 rule. Nina, you're famous for telling runners to slow down. Why does running easy make you faster?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Because 80 percent of your weekly mileage should be at a pace where your body builds aerobic capacity without stacking fatigue. The other 20 percent is where you sharpen. Most amateurs flip that ratio and wonder why they're always tired.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, and you have a simple way to check if you're actually easy enough.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Here's the talk test: if you cannot speak in full sentences while you're running, you are running too fast. I tell my athletes to recite the Pledge of Allegiance or list their grocery list out loud. If you're gasping for air between words, drop the pace until you can finish the sentence comfortably. That pace — usually 60 to 75 seconds per mile slower than your 5K race pace — is where mitochondria multiply, capillaries grow, and fat becomes your primary fuel. Trust the test, and your hard days will actually feel hard instead of just exhausting.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So the talk test is basically a built-in heart-rate monitor you carry in your throat.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Exactly. No watch required. Just your voice.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "The long run",
+   "bullets": [
+    "10% weekly long-run increase",
+    "Step-back week every 4th week",
+    "Sawtooth pattern prevents injury"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "The weekly long run is the cornerstone. How do you build it without breaking the runner?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "You add roughly ten percent each week — that's the classic rule. But the magic is in the fourth week.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "The fourth week you do what?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Every fourth week I deliberately break the ten percent rule and cut the long run back by twenty to thirty percent. Call it a step-back week. Your tendons, ligaments, and nervous system need that relative rest to absorb the previous three weeks of loading. I learned this the hard way with a group training for Boston — two runners developed IT-band flare-ups because we kept pushing the long run every single week. Since inserting the step-back, injury rates dropped to near zero. The long run still trends upward over the cycle, but the sawtooth pattern lets adaptation catch up.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So it's two steps forward, one step back — but the net gain is bigger.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Precisely. And mentally it gives athletes a confidence boost: they see the peak week coming, know a recovery week follows, and they show up fresher.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Fuel and water",
+   "bullets": [
+    "Practice race breakfast every long run",
+    "Nothing new on race day",
+    "Gut training matches leg training"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Nutrition on the course — gels, drinks, real food. Where do most people go wrong?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "They wait until race week to experiment. Your gut is a muscle; it needs training just like your quads, and it takes weeks to adapt to carbohydrate concentration.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "So you make them practice breakfast?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Practice your race-day breakfast on every single long run — same oatmeal, same banana, same coffee, same timing. Never try anything new on race day. I had a runner who swore by a new caffeinated gel at mile 20; he'd never used it in training. At mile 22 he cramped so badly he walked the last 4K. Meanwhile, another athlete ate the exact same toast with peanut butter and honey she'd eaten before every 20-miler for twelve weeks — she negative-split the marathon. Your stomach remembers; don't surprise it when the stakes are highest.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "That's a great rule: nothing new on race day, period.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "And it extends to hydration — same bottles, same electrolyte mix, same sip schedule. Consistency beats optimism every time.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Race day",
+   "bullets": [
+    "First 10K feels too easy",
+    "Race starts at 30K",
+    "Negative split from disciplined start"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Race morning. The gun goes off. How do you pace 26.2?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Most people start too fast because adrenaline masks effort. The first ten kilometres should feel embarrassingly easy — like you're jogging with a friend, not racing.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Embarrassingly easy — like you're holding back?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "The first ten kilometres should feel too easy, because the race starts at kilometre 30. If you're breathing hard at 5K, you've already borrowed energy you'll need at 35K when the walls appear. I teach my runners to target a pace they could hold for a half marathon plus 15 seconds per mile — that's the ceiling for the first 10K. Then settle into goal marathon pace from 10K to 30K. After 30K it's pure grit, but you've saved the glycogen and the mental bandwidth to fight. The athletes who negative-split almost always say the first half felt like a warm-up.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So the race is really the last 12K.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Exactly. Respect the first 30K, and the last 12K becomes a battle you're equipped to win, not a survival march.",
+     "highlight": false
+    }
+   ]
+  }
+ ]
+}

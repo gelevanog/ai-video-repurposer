@@ -1,0 +1,787 @@
+{
+ "id": "nasa-swot-prelaunch",
+ "kind": "nasa",
+ "title": "SWOT prelaunch news conference (2022-12-14)",
+ "duration": 2660.433,
+ "project_id": "swot-prelaunch-news-conference-2-77aca1",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.62,
+   "message": "44:20 · 640x360 @ 30 fps"
+  },
+  "audio": {
+   "seconds": 2.6,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.04,
+   "message": "6271 words · faster-whisper small (int8, CPU) · 0.09x real time"
+  },
+  "diarize": {
+   "seconds": 4.7,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.32)"
+  },
+  "clips": {
+   "seconds": 251.5,
+   "message": "9 clips from 9 candidates"
+  },
+  "chapters": {
+   "seconds": 279.47,
+   "message": "11 chapters"
+  },
+  "posts": {
+   "seconds": 201.64,
+   "message": "6 social posts, 9 grounding flags"
+  }
+ },
+ "asr_seconds": 229.71,
+ "asr_rtf": 0.0863,
+ "process_seconds_this_run": 741.1,
+ "wer": {
+  "wer": 0.20098643649815043,
+  "ref_words": 5677.0,
+  "substitutions": 332.0,
+  "deletions": 65.0,
+  "insertions": 744.0
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Nasa's · Swat · Launch"
+  },
+  {
+   "start": 190.0,
+   "title": "Water · Planet · Earth"
+  },
+  {
+   "start": 385.0,
+   "title": "Launch · Team · Swat"
+  },
+  {
+   "start": 643.0,
+   "title": "Launch · Ready · Yesterday"
+  },
+  {
+   "start": 752.0,
+   "title": "Space · Spacecraft · Journey"
+  },
+  {
+   "start": 1415.0,
+   "title": "Looking · Pretty · Serious"
+  },
+  {
+   "start": 1579.0,
+   "title": "Question · Start · Water"
+  },
+  {
+   "start": 2080.0,
+   "title": "Water · Drier · Important"
+  },
+  {
+   "start": 2187.0,
+   "title": "Deployment · Cameras · Days"
+  },
+  {
+   "start": 2386.0,
+   "title": "Antennas · Years · Instrument"
+  },
+  {
+   "start": 2605.0,
+   "title": "Gov · Swot · Questions"
+  }
+ ],
+ "clips": [
+  {
+   "id": "clip_5b587ea7",
+   "rank": 1,
+   "start": 339.78,
+   "end": 361.15,
+   "duration": 21.37,
+   "title": "SWAT data will help communities prepare for floods",
+   "score": 83.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 70.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 339.78,
+    "inside_word": false,
+    "gap_before": 1.34,
+    "gap_after": 0.12,
+    "level_db": -32.6
+   },
+   "cut_out": {
+    "at": 361.15,
+    "inside_word": false,
+    "gap_before": 0.27,
+    "gap_after": 1.01,
+    "level_db": -33.5
+   },
+   "adjustments": [],
+   "text": "From a user perspective, and this is one of the things that we're most excited about, the data from SWAT will inform communities around the world from water managers and agriculture producers inland to coastal communities who are dealing with increased risk of flooding and disaster planning and preparedness.",
+   "render": {
+    "seconds": 9.48,
+    "layout": "track",
+    "seconds_per_output_minute": 26.62
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "from",
+     "preparedness"
+    ],
+    "got": [
+     "from",
+     "preparedness"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 43,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_9a4a9427",
+   "rank": 2,
+   "start": 1761.07,
+   "end": 1818.09,
+   "duration": 57.02,
+   "title": "SWOT’s tenfold improvement in water height measurement",
+   "score": 79.5,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 8.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 70.0
+   },
+   "issues": [
+    "starts_with_connector"
+   ],
+   "cut_in": {
+    "at": 1761.07,
+    "inside_word": false,
+    "gap_before": 0.77,
+    "gap_after": 0.19,
+    "level_db": -29.8
+   },
+   "cut_out": {
+    "at": 1818.09,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.46,
+    "level_db": -35.7
+   },
+   "adjustments": [],
+   "text": "But what SWAT will do is give us a tenfold improvement in the fidelity, the spatial resolution of our measurements of water height. So, excuse me, if you think of normal satellite imagery tells us where the water is. and altimeter tells us how high it is and so we know how much water is there. Well, with SWAT, with this increased spatial resolution, what that really means is a few important things. The first one is we'll be able to see detail in eddies and currents and circulation in the oceans that we've never been able to see before. Along our coastlines, because we have that fine spatial resolution will be able to see changes along our coastline that are happening because of rising seas.",
+   "render": {
+    "seconds": 17.48,
+    "layout": "track",
+    "seconds_per_output_minute": 18.39
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "but",
+     "seas"
+    ],
+    "got": [
+     "but",
+     "seas"
+    ],
+    "clip_wer": 0.016
+   },
+   "framing": {
+    "samples_with_face": 114,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_af0036cb",
+   "rank": 3,
+   "start": 2534.24,
+   "end": 2574.72,
+   "duration": 40.48,
+   "title": "How SWOT’s dual‑antenna radar achieves unprecedented water…",
+   "score": 78.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 65.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 2534.24,
+    "inside_word": false,
+    "gap_before": 0.4,
+    "gap_after": 0.04,
+    "level_db": -22.7
+   },
+   "cut_out": {
+    "at": 2574.72,
+    "inside_word": false,
+    "gap_before": 0.38,
+    "gap_after": 0.7,
+    "level_db": -18.0
+   },
+   "adjustments": [],
+   "text": "In this case the particularity with carrying is that the signal is sent by you've seen all these antennas, impressive antennas which are separated by a 10 -meter base. So one of the antennas send the radar signal to the ground, and the echo reflected by the water surface is then received by the two antennas at the same moment, or slightly deferred. And this is this measurement with the same signal received by the two antennas that provides such an accuracy for water detection and resolution.",
+   "render": {
+    "seconds": 17.5,
+    "layout": "track",
+    "seconds_per_output_minute": 25.94
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "in",
+     "resolution"
+    ],
+    "got": [
+     "in",
+     "resolution"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 81,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_5347bb90",
+   "rank": 4,
+   "start": 717.96,
+   "end": 740.7,
+   "duration": 22.74,
+   "title": "SWAT launches Thursday at 3:46 a.m. PT",
+   "score": 73.0,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 7.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 60.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 717.96,
+    "inside_word": false,
+    "gap_before": 0.68,
+    "gap_after": 0.29,
+    "level_db": -35.2
+   },
+   "cut_out": {
+    "at": 740.7,
+    "inside_word": false,
+    "gap_before": 0.27,
+    "gap_after": 0.51,
+    "level_db": -41.3
+   },
+   "adjustments": [],
+   "text": "After series of final launch vehicle checks, we will be ready for our targeted T -Zero and launch at 3.46 and 47 seconds AM Pacific time Thursday morning. To summarize the Falcon 9 rocket and SWAT spacecraft are ready and the launch team is prepared to launch this very important global water survey mission.",
+   "render": {
+    "seconds": 8.27,
+    "layout": "track",
+    "seconds_per_output_minute": 21.82
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "after",
+     "mission"
+    ],
+    "got": [
+     "after",
+     "mission"
+    ],
+    "clip_wer": 0.037
+   },
+   "framing": {
+    "samples_with_face": 46,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 4
+   }
+  },
+  {
+   "id": "clip_82de7ae2",
+   "rank": 5,
+   "start": 111.79,
+   "end": 139.03,
+   "duration": 27.24,
+   "title": "SWAT will map Earth's water like never before",
+   "score": 71.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 75.0
+   },
+   "issues": [
+    "cut_in_tight",
+    "cut_in_loud"
+   ],
+   "cut_in": {
+    "at": 111.79,
+    "inside_word": false,
+    "gap_before": -1.06,
+    "gap_after": 1.06,
+    "level_db": -6.3
+   },
+   "cut_out": {
+    "at": 139.03,
+    "inside_word": false,
+    "gap_before": 0.4,
+    "gap_after": 0.3,
+    "level_db": -30.0
+   },
+   "adjustments": [],
+   "text": "SWAT will survey nearly all water on our planet's surface for the first time ever. This global inventory of our water will help scientists better understand where the water is, where it's coming from, and where it's going. These observations will provide insights into how the ocean influences climate change, how a warming world affects lakes, rivers, and reservoirs, and how communities can help better plan for disasters like floods.",
+   "render": {
+    "seconds": 10.32,
+    "layout": "track",
+    "seconds_per_output_minute": 22.73
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "swat",
+     "floods"
+    ],
+    "got": [
+     "swat",
+     "floods"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 55,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_6014bec6",
+   "rank": 6,
+   "start": 2419.45,
+   "end": 2474.82,
+   "duration": 55.37,
+   "title": "SWOT mission lifetime and extension potential",
+   "score": 69.5,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 60.0
+   },
+   "issues": [
+    "cut_out_loud"
+   ],
+   "cut_in": {
+    "at": 2419.45,
+    "inside_word": false,
+    "gap_before": 1.18,
+    "gap_after": 0.23,
+    "level_db": -15.8
+   },
+   "cut_out": {
+    "at": 2474.82,
+    "inside_word": false,
+    "gap_before": 0.2,
+    "gap_after": 0.08,
+    "level_db": -2.3
+   },
+   "adjustments": [],
+   "text": "for mission duration of course every time we launch a mission we have a we have to specify mission duration here is 42 months of course but everything on board has been really taken care of and I can give you an example the the platform that has been designed by Talas Alignia Space is built against 10 years at least on orbit. So of course our system will not limit the lifetime of SWAT. And if everything is okay on board, certainly there will be an extension of the mission. Five years is completely reachable and many more years as we've been doing since 30 years on our mission that achieved more than around 10 years every time.",
+   "render": {
+    "seconds": 20.56,
+    "layout": "track",
+    "seconds_per_output_minute": 22.28
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "for",
+     "time"
+    ],
+    "got": [
+     "so",
+     "time"
+    ],
+    "clip_wer": 0.067
+   },
+   "framing": {
+    "samples_with_face": 111,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_97d911c1",
+   "rank": 7,
+   "start": 889.63,
+   "end": 932.97,
+   "duration": 43.34,
+   "title": "20‑Year Journey to SWAT Satellite",
+   "score": 61.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 70.0
+   },
+   "issues": [
+    "cut_in_tight",
+    "cut_in_loud",
+    "cut_out_loud"
+   ],
+   "cut_in": {
+    "at": 889.63,
+    "inside_word": false,
+    "gap_before": -0.26,
+    "gap_after": 0.26,
+    "level_db": -1.0
+   },
+   "cut_out": {
+    "at": 932.97,
+    "inside_word": false,
+    "gap_before": 0.18,
+    "gap_after": 0.12,
+    "level_db": -10.6
+   },
+   "adjustments": [],
+   "text": "I think we've been developing and working on the concept for almost 20 years. And NASA, as Karen describes, takes on challenging missions. We take on challenging missions to solve global problems, and water is one of those global problems. And water unites all of us. And between the U .S. and Europe, we have been working on this concept for more than 20, 30, 40 years, as Karen said. So SWAT is the culmination of all those efforts from our scientists, engineers, and management teams really working together to be able to form this mission and bring it to reality.",
+   "render": {
+    "seconds": 12.48,
+    "layout": "track",
+    "seconds_per_output_minute": 17.28
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "i",
+     "reality"
+    ],
+    "got": [
+     "i",
+     "reality"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 87,
+    "tracked": 1.0,
+    "center": 0.908,
+    "keys": 6
+   }
+  },
+  {
+   "id": "clip_b47b646c",
+   "rank": 8,
+   "start": 1240.36,
+   "end": 1263.64,
+   "duration": 23.28,
+   "title": "The Kerrin Breakthrough Instrument",
+   "score": 49.0,
+   "scores": {
+    "hook": 4.0,
+    "payoff": 6.0,
+    "standalone": 5.0,
+    "clarity": 5.0,
+    "virality": 40.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 1240.36,
+    "inside_word": false,
+    "gap_before": 0.51,
+    "gap_after": 0.21,
+    "level_db": -14.2
+   },
+   "cut_out": {
+    "at": 1263.64,
+    "inside_word": false,
+    "gap_before": 0.29,
+    "gap_after": 0.21,
+    "level_db": -28.9
+   },
+   "adjustments": [],
+   "text": "Kerrin is a unique instrument. It's a white swath radar interferometer. and it's probably the flagship for a new generation of altimeters in space. So this payload was built by JPL and delivered in France in June 21.",
+   "render": {
+    "seconds": 4.82,
+    "layout": "track",
+    "seconds_per_output_minute": 12.42
+   },
+   "boundary": {
+    "first_ok": false,
+    "last_ok": true,
+    "expected": [
+     "kerrin",
+     "21"
+    ],
+    "got": [
+     "a",
+     "21"
+    ],
+    "clip_wer": 0.079
+   },
+   "framing": {
+    "samples_with_face": 26,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_1cf7b54b",
+   "rank": 9,
+   "start": 1650.42,
+   "end": 1676.52,
+   "duration": 26.1,
+   "title": "Launch Dog‑Leg and Orbit Explained",
+   "score": 44.5,
+   "scores": {
+    "hook": 5.0,
+    "payoff": 4.0,
+    "standalone": 5.0,
+    "clarity": 5.0,
+    "virality": 30.0
+   },
+   "issues": [
+    "dangling_reference"
+   ],
+   "cut_in": {
+    "at": 1650.42,
+    "inside_word": false,
+    "gap_before": 0.1,
+    "gap_after": 0.28,
+    "level_db": -35.1
+   },
+   "cut_out": {
+    "at": 1676.52,
+    "inside_word": false,
+    "gap_before": 0.03,
+    "gap_after": 0.03,
+    "level_db": -24.2
+   },
+   "adjustments": [],
+   "text": "There is a significant dog leg. So we are our initial trajectory out of Vandenberg. It's going to be Southwestern Lee, but we will be turning making that dog leg a little bit left after that. As far as the orbital parameters, Parag, do you know your orbital altitude? 850 kilometers, 78 degrees inclination. Yeah. Did you get that, Stephen? 850 kilometers? 78 degrees.",
+   "render": {
+    "seconds": 5.91,
+    "layout": "track",
+    "seconds_per_output_minute": 13.59
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "there",
+     "degrees"
+    ],
+    "got": [
+     "there",
+     "degrees"
+    ],
+    "clip_wer": 0.062
+   },
+   "framing": {
+    "samples_with_face": 43,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 4
+   }
+  }
+ ],
+ "judge": {
+  "random-5": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Explains SWAT's capabilities, partnerships, and climate significance fully.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_af0036cb": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 6,
+   "reason": "Technical explanation of the radar antenna system and accuracy.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 3,
+   "payoff": 2,
+   "reason": "Live Q&A snippet starting mid-sentence and cutting off during an answer.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-7": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Comprehensive overview of the satellite's launch, objectives, and collaboration.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_b47b646c": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "Brief introduction to the KaRIn radar instrument and its delivery.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_97d911c1": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Reflects on the decades of US-European collaboration leading to SWOT.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 6,
+   "reason": "Press conference logistics and transition to Earth science with context clues.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_5347bb90": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Final launch status update confirming vehicle and team readiness.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-4": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains the SWOT mission's role in understanding the global water cycle.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_6014bec6": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 7,
+   "reason": "Details the satellite's design life, nominal duration, and extension prospects.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-6": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 2,
+   "reason": "Reporter asks questions about mission lifetime and instrument, ending without answers.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_1cf7b54b": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Explains the launch trajectory dog leg and specifies the target orbit.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_9a4a9427": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Details the tenfold resolution improvement and its scientific benefits.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_5b587ea7": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Highlights the practical applications of SWOT data for global communities.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-8": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Narrates the development and international shipping journey of the payload.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-3": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains the massive increase in inland water monitoring and its vital impact.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_82de7ae2": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Summarizes the global water survey goals and benefits for climate and disasters.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Details the final pre-launch propellant loading and readiness confirmation.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 1116.0
+}

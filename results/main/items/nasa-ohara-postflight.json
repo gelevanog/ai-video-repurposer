@@ -1,0 +1,608 @@
+{
+ "id": "nasa-ohara-postflight",
+ "kind": "nasa",
+ "title": "Loral O'Hara post-flight crew news conference (2024-04-15)",
+ "duration": 1379.1,
+ "project_id": "loral-o-hara-post-flight-crew-ne-0fc7bd",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.48,
+   "message": "22:59 · 640x360 @ 30 fps"
+  },
+  "audio": {
+   "seconds": 1.34,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.01,
+   "message": "4156 words · faster-whisper small (int8, CPU) · 0.07x real time"
+  },
+  "diarize": {
+   "seconds": 1.87,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.17); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 173.53,
+   "message": "7 clips from 10 candidates, 1 dropped"
+  },
+  "chapters": {
+   "seconds": 22.35,
+   "message": "6 chapters"
+  },
+  "posts": {
+   "seconds": 86.41,
+   "message": "6 social posts, 3 grounding flags"
+  }
+ },
+ "asr_seconds": 98.09,
+ "asr_rtf": 0.0711,
+ "process_seconds_this_run": 286.8,
+ "wer": {
+  "wer": 0.39180765805877116,
+  "ref_words": 3369.0,
+  "substitutions": 312.0,
+  "deletions": 75.0,
+  "insertions": 933.0
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Welcome and Opening Remarks"
+  },
+  {
+   "start": 107.0,
+   "title": "Recovery Time and Earth Legs"
+  },
+  {
+   "start": 166.0,
+   "title": "Sensory Adaptation and Spacewalk Experience"
+  },
+  {
+   "start": 339.0,
+   "title": "What She Misses Most and Least"
+  },
+  {
+   "start": 570.0,
+   "title": "Eclipse Prep, Auroras, and Daily Routines"
+  },
+  {
+   "start": 861.0,
+   "title": "Earth Perspective, Homecoming, and Astronaut Application"
+  }
+ ],
+ "clips": [
+  {
+   "id": "clip_cd06c1c5",
+   "rank": 1,
+   "start": 957.84,
+   "end": 994.45,
+   "duration": 36.61,
+   "title": "Earth as One Planet: Astronaut's View",
+   "score": 80.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 80.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 957.84,
+    "inside_word": false,
+    "gap_before": 1.32,
+    "gap_after": 0.36,
+    "level_db": -29.8
+   },
+   "cut_out": {
+    "at": 994.45,
+    "inside_word": false,
+    "gap_before": 0.36,
+    "gap_after": 0.74,
+    "level_db": -22.6
+   },
+   "adjustments": [],
+   "text": "Just, it's this perspective of Earth as one planet, not just a bunch of countries, you know, hundreds of countries, it's one planet that we all share. And so for me, it was a deep sense of feeling connected to the planet as a whole, which is something I felt before launch, but you really see, once you're in space, and you can see entire continents that just in one view and see the planet against the blackness of space, that was definitely a poignant feeling. And then also just the sense that Earth is really special.",
+   "render": {
+    "seconds": 10.08,
+    "layout": "track",
+    "seconds_per_output_minute": 16.52
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "just",
+     "special"
+    ],
+    "got": [
+     "just",
+     "special"
+    ],
+    "clip_wer": 0.051
+   },
+   "framing": {
+    "samples_with_face": 73,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_b1706ab4",
+   "rank": 2,
+   "start": 247.01,
+   "end": 273.85,
+   "duration": 26.84,
+   "title": "Spacewalk Highlights: Preparation and Feeling",
+   "score": 79.5,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 8.0,
+    "standalone": 7.0,
+    "clarity": 8.0,
+    "virality": 80.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 247.01,
+    "inside_word": false,
+    "gap_before": 0.21,
+    "gap_after": 0.21,
+    "level_db": -13.6
+   },
+   "cut_out": {
+    "at": 273.85,
+    "inside_word": false,
+    "gap_before": 0.32,
+    "gap_after": 0.2,
+    "level_db": -21.9
+   },
+   "adjustments": [],
+   "text": "The spacewalk was definitely one of the most amazing days of the mission and also of my life. That's one of the biggest things that we do in training for astronauts and where we spend most of our time is training for a spacewalk. And so getting to actually do that was just this amazing feeling. I felt like we were really well prepared. That was probably one of the biggest feelings I took away from that day.",
+   "render": {
+    "seconds": 7.4,
+    "layout": "track",
+    "seconds_per_output_minute": 16.54
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "the",
+     "day"
+    ],
+    "got": [
+     "the",
+     "day"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 54,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_1ab0cea7",
+   "rank": 3,
+   "start": 118.32,
+   "end": 166.0,
+   "duration": 47.68,
+   "title": "Earth Legs Recovery: Motion Sickness to Normal",
+   "score": 78.0,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 9.0,
+    "virality": 75.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 118.32,
+    "inside_word": false,
+    "gap_before": 0.44,
+    "gap_after": 0.06,
+    "level_db": -45.1
+   },
+   "cut_out": {
+    "at": 166.0,
+    "inside_word": false,
+    "gap_before": 0.69,
+    "gap_after": 0.74,
+    "level_db": -34.0
+   },
+   "adjustments": [],
+   "text": "What do you think it was for you before you felt like you had your Earth legs back? Great question. I still feel like I'm getting my Earth legs back a little bit, but the time, like I've been back on planet Earth for a week now, and I feel like a totally new human than I did this time last week. I definitely, when I got to space, I didn't really feel sick. I wasn't really that motion sick and I was hoping that my return to earth would be that easy but definitely for the first 48 hours I had a fair bit of motion sickness just kind of moving my head around. You know, I felt nauseous but after a couple days that went away like every day got better and better and now I pretty much feel normal. You know, I can take a corner too fast and be a little unstable but for the most part I'm feeling really good.",
+   "render": {
+    "seconds": 13.38,
+    "layout": "track",
+    "seconds_per_output_minute": 16.84
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "what",
+     "good"
+    ],
+    "got": [
+     "what",
+     "good"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 95,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 6
+   }
+  },
+  {
+   "id": "clip_16156bd8",
+   "rank": 4,
+   "start": 832.2,
+   "end": 855.8,
+   "duration": 23.6,
+   "title": "First Meal After Space: Chips and Guacamole",
+   "score": 76.0,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 65.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 832.2,
+    "inside_word": false,
+    "gap_before": 1.92,
+    "gap_after": 0.2,
+    "level_db": -26.6
+   },
+   "cut_out": {
+    "at": 855.8,
+    "inside_word": false,
+    "gap_before": 0.27,
+    "gap_after": 0.09,
+    "level_db": -28.2
+   },
+   "adjustments": [],
+   "text": "Continuing on with our online questions, we've got a question from Heather Knot who wants to know what was the first thing you ate once you got home? Chips and guacamole. I had chips and guacamole multiple times. So it was like my first meal and my second meal and then several lunches this week, or last week too. It's like the one thing I craved up there.",
+   "render": {
+    "seconds": 6.35,
+    "layout": "track",
+    "seconds_per_output_minute": 16.14
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "continuing",
+     "there"
+    ],
+    "got": [
+     "continuing",
+     "there"
+    ],
+    "clip_wer": 0.014
+   },
+   "framing": {
+    "samples_with_face": 47,
+    "tracked": 0.404,
+    "center": 0.0,
+    "keys": 2
+   }
+  },
+  {
+   "id": "clip_1e077538",
+   "rank": 5,
+   "start": 352.65,
+   "end": 393.48,
+   "duration": 40.83,
+   "title": "What I Miss Most: Crew, Earth, Floating",
+   "score": 73.5,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 7.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 65.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 352.65,
+    "inside_word": false,
+    "gap_before": 3.22,
+    "gap_after": 0.14,
+    "level_db": -27.3
+   },
+   "cut_out": {
+    "at": 393.48,
+    "inside_word": false,
+    "gap_before": 0.35,
+    "gap_after": 0.87,
+    "level_db": -24.7
+   },
+   "adjustments": [],
+   "text": "There's not one thing I miss the most but definitely a top three. The first thing that I miss is just my crewmates and the experience, getting to share that experience with them, first with crew seven and then with crew eight. And also with the ground teams, you know, it takes a huge team to make every day on space station run. And so just getting to work with everybody was definitely a highlight. I'll also miss getting to look at Earth, just pop into the cupola and see what part of the planet we're over. there was always something that would surprise me or that I found amazing. And then lastly, floating. Floating was just really fun getting to do that.",
+   "render": {
+    "seconds": 9.86,
+    "layout": "track",
+    "seconds_per_output_minute": 14.49
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "theres",
+     "that"
+    ],
+    "got": [
+     "theres",
+     "that"
+    ],
+    "clip_wer": 0.04
+   },
+   "framing": {
+    "samples_with_face": 82,
+    "tracked": 1.0,
+    "center": 1.0,
+    "keys": 4
+   }
+  },
+  {
+   "id": "clip_f7b52ad0",
+   "rank": 6,
+   "start": 1293.22,
+   "end": 1318.89,
+   "duration": 25.67,
+   "title": "How to Apply to Become an Astronaut Now",
+   "score": 71.0,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 75.0
+   },
+   "issues": [
+    "cut_in_loud"
+   ],
+   "cut_in": {
+    "at": 1293.22,
+    "inside_word": false,
+    "gap_before": 0.13,
+    "gap_after": 0.07,
+    "level_db": -7.6
+   },
+   "cut_out": {
+    "at": 1318.89,
+    "inside_word": false,
+    "gap_before": 0.34,
+    "gap_after": 1.66,
+    "level_db": -29.8
+   },
+   "adjustments": [],
+   "text": "Speaking of all these astronauts that you've been spending time with, Myrna on Instagram wants to know, how can I apply to be an astronaut like you guys? Excellent, timely question. Astronaut applications are open right now and they close in two days. And so the first step in becoming an astronaut is submitting an application. So if you're interested, then I would encourage anybody to go online and submit an application before April 16th.",
+   "render": {
+    "seconds": 7.03,
+    "layout": "track",
+    "seconds_per_output_minute": 16.43
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "speaking",
+     "16th"
+    ],
+    "got": [
+     "speaking",
+     "16th"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 51,
+    "tracked": 0.745,
+    "center": 0.255,
+    "keys": 6
+   }
+  },
+  {
+   "id": "clip_ccbf7375",
+   "rank": 7,
+   "start": 1075.8,
+   "end": 1129.22,
+   "duration": 53.42,
+   "title": "Homecoming Highlights: Family, Baby Nephew & Galveston Bay",
+   "score": 70.5,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 70.0
+   },
+   "issues": [
+    "starts_with_connector"
+   ],
+   "cut_in": {
+    "at": 1075.8,
+    "inside_word": false,
+    "gap_before": 0.58,
+    "gap_after": 0.1,
+    "level_db": -39.2
+   },
+   "cut_out": {
+    "at": 1129.22,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 1.27,
+    "level_db": -25.3
+   },
+   "adjustments": [],
+   "text": "And so I'm curious when you came back, What was the one thing in the Houston area that you were really looking forward to doing that you have already done or you hope to do soon? Thanks Yeah, well being a Houston native my family is all really close And so one of the highlights for me in getting back is that they were all there at landing so I got off the airplane and They were all standing at the bottom of the stairs and I have a new baby nephew So I got to meet him for the first time and a baby niece who I just met when she was six weeks old and now she's almost a year. And so getting to see my family and meet my niece and nephew was a highlight. And then they had actually Airbnbed a house on the water. And so we got to go over to the ocean pretty much, like later that same day. And water is really important to me. And so just getting to spend time with them next to Galveston Bay, where I spend a lot of time here was really special.",
+   "render": {
+    "seconds": 14.86,
+    "layout": "track",
+    "seconds_per_output_minute": 16.69
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "and",
+     "special"
+    ],
+    "got": [
+     "and",
+     "special"
+    ],
+    "clip_wer": 0.025
+   },
+   "framing": {
+    "samples_with_face": 107,
+    "tracked": 0.869,
+    "center": 0.776,
+    "keys": 4
+   }
+  }
+ ],
+ "judge": {
+  "clip_16156bd8": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "Answers the audience question about first food craved, fully self-contained.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-4": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 3,
+   "payoff": 5,
+   "reason": "Starts mid-thought with unexplained pronouns like 'it' and 'mine'.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-6": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 3,
+   "reason": "Ends abruptly mid-sentence while answering a question about difficult tasks.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 3,
+   "reason": "Starts mid-sentence and ends mid-explanation of a science experiment question.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 2,
+   "reason": "Ends on an unanswered question about difficult tasks in space.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_1e077538": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Complete answer listing top three things missed about space, fully self-contained.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-5": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 8,
+   "reason": "Focuses on the preparation and feeling of the spacewalk, ending with a vivid image.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Relatable anecdote about the frustration of packing bags in space.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_b1706ab4": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Strong opening about the spacewalk, explains training and feeling of readiness.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_cd06c1c5": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Reflects on the profound perspective of seeing Earth as one shared planet from space.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-3": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Discusses the variety of science experiments, highlighting life sciences and health applications.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_ccbf7375": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 8,
+   "reason": "Answers what she looked forward to in Houston with a warm family story and visiting the bay.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_1ab0cea7": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Answers the question about regaining Earth legs with a detailed account of post-flight recovery.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_f7b52ad0": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Directly answers how to apply to be an astronaut with steps and deadline.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 561.6
+}

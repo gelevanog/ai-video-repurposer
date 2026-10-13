@@ -1,0 +1,212 @@
+{
+ "id": "nasa-solar-cruiser",
+ "kind": "nasa",
+ "title": "Solar Cruiser solar sail deployment demo (2022-11-09)",
+ "duration": 299.05,
+ "project_id": "solar-cruiser-solar-sail-deploym-56707a",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.26,
+   "message": "04:59 · 640x360 @ 30 fps"
+  },
+  "audio": {
+   "seconds": 0.37,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.01,
+   "message": "828 words · faster-whisper small (int8, CPU) · 0.06x real time"
+  },
+  "diarize": {
+   "seconds": 0.32,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.15); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 274.78,
+   "message": "2 clips from 2 candidates"
+  },
+  "chapters": {
+   "seconds": 6.05,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 226.71,
+   "message": "6 social posts, 0 grounding flags"
+  }
+ },
+ "asr_seconds": 17.24,
+ "asr_rtf": 0.0576,
+ "process_seconds_this_run": 509.7,
+ "wer": {
+  "wer": 0.014201183431952662,
+  "ref_words": 845.0,
+  "substitutions": 9.0,
+  "deletions": 3.0,
+  "insertions": 0.0
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Introduction to Solar Sail Technology"
+  },
+  {
+   "start": 62.0,
+   "title": "Test Flights and Deployment Testing"
+  },
+  {
+   "start": 142.0,
+   "title": "Future Applications and Mission Potential"
+  }
+ ],
+ "clips": [
+  {
+   "id": "clip_e337a455",
+   "rank": 1,
+   "start": 202.45,
+   "end": 227.09,
+   "duration": 24.64,
+   "title": "Solar sails enable fuel‑free maneuvering and Sun pole views",
+   "score": 83.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 70.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 202.45,
+    "inside_word": false,
+    "gap_before": 0.32,
+    "gap_after": 0.12,
+    "level_db": -21.1
+   },
+   "cut_out": {
+    "at": 227.09,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.2,
+    "level_db": -20.6
+   },
+   "adjustments": [],
+   "text": "What we're doing is we're maneuvering in space without any fuel just using the natural environment to get from point A to point B. As long as the Sun is shining we can get propulsion. And the significance of that is there are a lot of science missions that need to be accomplished that cannot be done any other way. It will allow scientists to gain views of the Sun's North and South Poles on future missions, which we can't study right now.",
+   "render": {
+    "seconds": 9.89,
+    "layout": "track",
+    "seconds_per_output_minute": 24.08
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "what",
+     "now"
+    ],
+    "got": [
+     "what",
+     "now"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": {
+    "samples_with_face": 31,
+    "tracked": 1.0,
+    "center": 0.0,
+    "keys": 4
+   }
+  },
+  {
+   "id": "clip_29672fe8",
+   "rank": 2,
+   "start": 112.11,
+   "end": 142.52,
+   "duration": 30.41,
+   "title": "Solar sail deployment test proves large sails can unfold…",
+   "score": 72.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 6.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 55.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 112.11,
+    "inside_word": false,
+    "gap_before": 0.21,
+    "gap_after": 0.13,
+    "level_db": -20.7
+   },
+   "cut_out": {
+    "at": 142.52,
+    "inside_word": false,
+    "gap_before": 0.31,
+    "gap_after": 0.25,
+    "level_db": -18.5
+   },
+   "adjustments": [],
+   "text": "Could you get these two hundred foot long booms coiled up, put in a deployer attached to a sail that has the area of over 4,000 square feet when it's all folded and rolled, put it in a small box and get it to deploy unaided? And the answer is yes. We had a very successful test and the results are evident in the pictures that have been taken and the data we collected during the test. And the key to enabling some of these missions is having larger and larger sails that are very lightweight.",
+   "render": {
+    "seconds": 16.09,
+    "layout": "fit",
+    "seconds_per_output_minute": 31.75
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "could",
+     "lightweight"
+    ],
+    "got": [
+     "could",
+     "lightweight"
+    ],
+    "clip_wer": 0.032
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Explains the concept of a solar sail and how it works using a sailboat analogy.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_29672fe8": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Poses a compelling engineering question about deploying large sails and shares successful test results.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_e337a455": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Explains the benefits of fuel-free solar sail propulsion for future scientific missions.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Introduces NASA's first interplanetary solar sail mission and its specific asteroid-study goal.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 643.2
+}

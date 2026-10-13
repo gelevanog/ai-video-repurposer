@@ -1,0 +1,307 @@
+{
+ "id": "synth-01-freelance-pricing",
+ "kind": "synthetic",
+ "title": "Stop Charging by the Hour: Pricing for Freelance Video Editors",
+ "duration": 401.066,
+ "project_id": "stop-charging-by-the-hour-pricin-58eb4d",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.37,
+   "message": "06:41 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.37,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 205.7,
+   "message": "1124 words · faster-whisper small (int8, CPU) · 0.50x real time"
+  },
+  "diarize": {
+   "seconds": 0.91,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.50)"
+  },
+  "clips": {
+   "seconds": 95.81,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 7.56,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 83.03,
+   "message": "6 social posts, 1 grounding flags"
+  }
+ },
+ "asr_seconds": 202.37,
+ "asr_rtf": 0.5046,
+ "process_seconds_this_run": 394.0,
+ "wer": {
+  "wer": 0.014059753954305799,
+  "ref_words": 1138.0,
+  "substitutions": 9.0,
+  "deletions": 3.0,
+  "insertions": 4.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9956,
+  "words": 1124,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.50)"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 2.5
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 2.5
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 2,
+  "recall": 0.4,
+  "coverage": [
+   0.0,
+   0.72,
+   1.0,
+   0.0,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 2
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "From Free Edits to First $5k Client"
+  },
+  {
+   "start": 70.0,
+   "title": "Why Hourly Billing Hurts Freelancers"
+  },
+  {
+   "start": 231.0,
+   "title": "Handling Objections and Beginner Tips"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 1,
+  "flag_texts": [
+   "1.0"
+  ],
+  "title_chars": 62,
+  "description_chars": 688,
+  "blog_words": 842,
+  "show_notes_words": 285,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 1 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_6a54a0c6",
+   "rank": 1,
+   "start": 72.17,
+   "end": 116.8,
+   "duration": 44.63,
+   "title": "Why Hourly Billing Hurts Freelancers & the Fix",
+   "score": 89.2,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 9.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 82.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 72.17,
+    "inside_word": false,
+    "gap_before": 0.35,
+    "gap_after": 0.13,
+    "level_db": -75.3
+   },
+   "cut_out": {
+    "at": 116.8,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.08,
+    "level_db": -75.3
+   },
+   "adjustments": [],
+   "text": "Why do you hate hourly billing so much? Hourly billing caps your income because the faster you get, the less you charge, and clients hate watching the clock tick while they wait for a final cut. that. Right, speed becomes a penalty instead of a reward, and that messes with motivation. When I cut a recurring YouTube series, the first season took 20 hours and I billed $2,000. By season 3 I trimmed the workflow to 8 hours, but the invoice fell to $800, a 60 % drop. Clients loved the faster turnaround, yet they paid less because the clock stopped sooner. I realized I was subsidizing my own skill growth. The model forces you to choose between quality speed and fair pay. Switching to flat packages solved that conflict.",
+   "render": {
+    "seconds": 11.3,
+    "layout": "fit",
+    "seconds_per_output_minute": 15.19
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "why",
+     "conflict"
+    ],
+    "got": [
+     "why",
+     "conflict"
+    ],
+    "clip_wer": 0.008
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_3250cd14",
+   "rank": 2,
+   "start": 173.64,
+   "end": 213.18,
+   "duration": 39.54,
+   "title": "Decoy Pricing: How a $2.5k Tier Boosted Middle Sales",
+   "score": 89.0,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 9.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 80.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 173.64,
+    "inside_word": false,
+    "gap_before": 0.48,
+    "gap_after": 0.12,
+    "level_db": -75.3
+   },
+   "cut_out": {
+    "at": 213.18,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.26,
+    "level_db": -75.3
+   },
+   "adjustments": [],
+   "text": "When I added a $2,500 premium tier, 70 % of prospects chose the $1,200 middle package. The high price acts as an anchor, so the middle tier looks like a bargain by comparison. Clients don't calculate absolute cost, they compare options side by side. That psychological trick boosted my average deal size without any extra work. The lesson always include a decoy that makes your real offer look like the obvious choice. I tested removing the premium tier and the middle package conversion dropped to 40%. The decoy isn't about selling the top tier, it's about framing the one you actually want to sell.",
+   "render": {
+    "seconds": 9.49,
+    "layout": "fit",
+    "seconds_per_output_minute": 14.4
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "when",
+     "sell"
+    ],
+    "got": [
+     "when",
+     "sell"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "clip_3250cd14": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Complete story on pricing decoy strategy with clear lesson and ending.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Spoken version of the decoy pricing story, fully self-contained.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Practical negotiation script with clear rationale and strong closing statistics.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Free wedding edit leads to $5k corporate referral and inspiring lesson.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_6a54a0c6": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Critique of hourly billing with concrete example and flat package solution.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Speculative gaming edit leads to $2k monthly retainer and clear lesson.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Conversational free wedding edit story ending with satisfying 5k client payoff.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 9,
+   "reason": "Conversational intro to decoy pricing strategy with clear lesson and ending.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 9,
+   "reason": "YouTube series example illustrates hourly billing pitfalls, ending with value-based insight.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 474.4
+}

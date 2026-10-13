@@ -1,0 +1,260 @@
+{
+ "id": "synth-04-espresso-mistakes",
+ "kind": "synthetic",
+ "title": "Five Home Espresso Mistakes (and How to Fix Them)",
+ "duration": 386.56,
+ "project_id": "five-home-espresso-mistakes-and-f36edc",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.28,
+   "message": "06:26 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.21,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 90.52,
+   "message": "1250 words · faster-whisper small (int8, CPU) · 0.23x real time"
+  },
+  "diarize": {
+   "seconds": 0.36,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.17); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 70.61,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 6.09,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 86.46,
+   "message": "6 social posts, 8 grounding flags"
+  }
+ },
+ "asr_seconds": 90.51,
+ "asr_rtf": 0.2341,
+ "process_seconds_this_run": 255.2,
+ "wer": {
+  "wer": 0.011876484560570071,
+  "ref_words": 1263.0,
+  "substitutions": 7.0,
+  "deletions": 3.0,
+  "insertions": 5.0
+ },
+ "speakers": {
+  "gold_speakers": 1,
+  "predicted_speakers": 1,
+  "count_correct": true,
+  "word_accuracy": 1.0,
+  "words": 1250,
+  "note": "voices not separable with the light MFCC clustering (best silhouette 0.17); labelled as a single speaker"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 0.4
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 0.4
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 2,
+  "recall": 0.4,
+  "coverage": [
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 2
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Using Fresh Beans for Better Espresso"
+  },
+  {
+   "start": 74.0,
+   "title": "Dialing In Grind and Shot Time"
+  },
+  {
+   "start": 146.0,
+   "title": "Mastering Ratio, Tamp and Cleanliness"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 6,
+  "flags_long_form": 2,
+  "flag_texts": [
+   "1,400",
+   "1,400",
+   "1,400",
+   "1,400",
+   "1,400",
+   "1,400",
+   "1,400",
+   "1.0"
+  ],
+  "title_chars": 47,
+  "description_chars": 726,
+  "blog_words": 956,
+  "show_notes_words": 264,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 8 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_e0fbf4c1",
+   "rank": 1,
+   "start": 75.9,
+   "end": 118.83,
+   "duration": 42.93,
+   "title": "Dialing In Espresso: The Timer Trick",
+   "score": 88.8,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 9.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 78.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 75.9,
+    "inside_word": false,
+    "gap_before": 0.45,
+    "gap_after": 0.13,
+    "level_db": -72.5
+   },
+   "cut_out": {
+    "at": 118.83,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.44,
+    "level_db": -72.5
+   },
+   "adjustments": [],
+   "text": "Most home baristas chase the perfect particle size by feel, but the real clue lives in the shot timer. If your espresso runs too fast or too slow, the grind is usually the culprit. You might blame the machine or the beans, but the clock tells the truth every time. Here's the rule that changed everything for me. Aim for 25 to 30 second extraction from the first drop to the last. When the shot pulls in that window, the balance of acidity, sweetness and body lands right where it should. The trick is to change only one thing at a time, grind finer, pull taste, then adjust dose or temperature if needed. If you tweak Stick grind and dose together you'll never know which move fixed the problem. Stick to the single variable method, watch the clock, and you'll dial in a repeatable shot every morning.",
+   "render": {
+    "seconds": 19.08,
+    "layout": "fit",
+    "seconds_per_output_minute": 26.67
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "most",
+     "morning"
+    ],
+    "got": [
+     "most",
+     "morning"
+    ],
+    "clip_wer": 0.013
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_80f89341",
+   "rank": 2,
+   "start": 3.11,
+   "end": 53.94,
+   "duration": 50.83,
+   "title": "Why Stale Beans Ruin Espresso (and How to Fix)",
+   "score": 85.7,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 72.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 3.11,
+    "inside_word": false,
+    "gap_before": 0.36,
+    "gap_after": 0.12,
+    "level_db": -72.5
+   },
+   "cut_out": {
+    "at": 53.94,
+    "inside_word": false,
+    "gap_before": 0.29,
+    "gap_after": 0.35,
+    "level_db": -72.5
+   },
+   "adjustments": [],
+   "text": "Today we're tackling the first mistake that kills home espresso before you even pull a shot, stale beans. Most people grab whatever bag looks good on the shelf and wonder why the flavor is flat. You might think the roast level or origin matters more, but age trumps all of that. Here's the hard truth, a supermarket bag with no roast date is a flavor time bomb. Coffee peaks around 3 -14 days after roasting, then the aromatic oils oxidize and the sweetness evaporates. If the beans are older than a month, no grind adjustment, no temperature tweak, and no fancy machine will bring back that bright acidity or caramel body. You'll taste cardboard, muted acidity, and a hollow finish every single time. The fix is simple by beans with a clear roast date. Use them within two weeks and store them in an airtight container away from light and heat. Freshness is the single lever that makes every other variable matter.",
+   "render": {
+    "seconds": 22.64,
+    "layout": "fit",
+    "seconds_per_output_minute": 26.72
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "today",
+     "matter"
+    ],
+    "got": [
+     "today",
+     "matter"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "clip_e0fbf4c1": {
+   "error": "empty answer: max_tokens reached before any output"
+  },
+  "clip_80f89341": {
+   "error": "empty answer: max_tokens reached before any output"
+  },
+  "random-0": {
+   "error": "empty answer: max_tokens reached before any output"
+  },
+  "random-1": {
+   "error": "empty answer: max_tokens reached before any output"
+  },
+  "gold-0": {
+   "error": "empty answer: max_tokens reached before any output"
+  },
+  "gold-1": {
+   "error": "empty answer: max_tokens reached before any output"
+  },
+  "gold-2": {
+   "error": "empty answer: max_tokens reached before any output"
+  },
+  "gold-3": {
+   "error": "empty answer: max_tokens reached before any output"
+  },
+  "gold-4": {
+   "error": "empty answer: max_tokens reached before any output"
+  }
+ },
+ "eval_seconds": 611.4
+}

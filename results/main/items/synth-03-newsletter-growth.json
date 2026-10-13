@@ -1,0 +1,377 @@
+{
+ "id": "synth-03-newsletter-growth",
+ "kind": "synthetic",
+ "title": "From Zero to 10,000 Newsletter Subscribers",
+ "duration": 480.597,
+ "project_id": "from-zero-to-10-000-newsletter-s-dab229",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.37,
+   "message": "08:00 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.33,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 295.8,
+   "message": "1211 words · faster-whisper small (int8, CPU) · 0.62x real time"
+  },
+  "diarize": {
+   "seconds": 1.32,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.62)"
+  },
+  "clips": {
+   "seconds": 77.89,
+   "message": "3 clips from 4 candidates"
+  },
+  "chapters": {
+   "seconds": 9.71,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 86.45,
+   "message": "6 social posts, 1 grounding flags"
+  }
+ },
+ "asr_seconds": 295.79,
+ "asr_rtf": 0.6155,
+ "process_seconds_this_run": 473.9,
+ "wer": {
+  "wer": 0.017017828200972446,
+  "ref_words": 1234.0,
+  "substitutions": 16.0,
+  "deletions": 2.0,
+  "insertions": 3.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9835,
+  "words": 1209,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.62)"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 9.1
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 9.1
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 3,
+  "recall": 0.6,
+  "coverage": [
+   0.97,
+   0.96,
+   0.0,
+   0.0,
+   0.94
+  ],
+  "clips_mostly_on_a_highlight": 3
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Manual outreach for first 100 subscribers"
+  },
+  {
+   "start": 98.0,
+   "title": "Shortening newsletter to boost open rate"
+  },
+  {
+   "start": 286.0,
+   "title": "Monetizing without selling out"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 1,
+  "flag_texts": [
+   "1.0"
+  ],
+  "title_chars": 67,
+  "description_chars": 1150,
+  "blog_words": 669,
+  "show_notes_words": 313,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 1 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_a95cffe3",
+   "rank": 1,
+   "start": 39.35,
+   "end": 74.64,
+   "duration": 35.29,
+   "title": "How 300 Personal Emails Got 100 Subscribers",
+   "score": 89.5,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 9.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 85.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 39.35,
+    "inside_word": false,
+    "gap_before": 0.48,
+    "gap_after": 0.12,
+    "level_db": -65.7
+   },
+   "cut_out": {
+    "at": 74.64,
+    "inside_word": false,
+    "gap_before": 0.29,
+    "gap_after": 0.33,
+    "level_db": -72.5
+   },
+   "adjustments": [],
+   "text": "My first 100 subscribers came from personally emailing 300 people. I had already helped in forums, Slack groups, and client calls. I exported every contact, wrote a short note that referenced the exact problem we solved together, and asked if they wanted a weekly tip sheet. About 40 % replied, and half of those signed up on the spot. That manual outreach took two evenings, cost $0, and gave me a list that was already warm. The lesson, start with the people who already trust you, because they become your most reliable growth engine.",
+   "render": {
+    "seconds": 8.45,
+    "layout": "fit",
+    "seconds_per_output_minute": 14.37
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "my",
+     "engine"
+    ],
+    "got": [
+     "my",
+     "engine"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_b7d3b91e",
+   "rank": 2,
+   "start": 137.72,
+   "end": 169.95,
+   "duration": 32.23,
+   "title": "Cutting Newsletter Length Doubled Open Rate",
+   "score": 86.5,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 8.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 80.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 137.72,
+    "inside_word": false,
+    "gap_before": 0.49,
+    "gap_after": 0.13,
+    "level_db": -66.8
+   },
+   "cut_out": {
+    "at": 169.95,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.4,
+    "level_db": -72.5
+   },
+   "adjustments": [],
+   "text": "When I cut the newsletter from 2,000 words to 400, the open rate doubled from 22 % to 44 % in the very next send. The shorter issue forced me to pick one concrete tip, write a crisp headline, and drop every tangential story. Readers told me they could finish it in a coffee break and actually apply the advice. That shift also reduced my writing time from 3 hours to 45 minutes per week. The lesson. Respect the reader's attention span, and the metrics will reward you.",
+   "render": {
+    "seconds": 7.83,
+    "layout": "fit",
+    "seconds_per_output_minute": 14.58
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "when",
+     "you"
+    ],
+    "got": [
+     "when",
+     "you"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_781dab81",
+   "rank": 3,
+   "start": 419.35,
+   "end": 453.48,
+   "duration": 34.13,
+   "title": "Welcome Automation Added $3K/Month Revenue",
+   "score": 82.5,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 80.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 419.35,
+    "inside_word": false,
+    "gap_before": 0.57,
+    "gap_after": 0.09,
+    "level_db": -65.9
+   },
+   "cut_out": {
+    "at": 453.48,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.32,
+    "level_db": -72.5
+   },
+   "adjustments": [],
+   "text": "The Welcome series now delivers a 45 % open rate and a 12 % click -through, driving 20 % of all paid tier sign -ups. If I had sent it from subscriber one, I estimate I would have captured an extra 300 paying members in the first 90 days, adding roughly $3,000 in recurring revenue. The sequence is just three emails, intro, value promise, and a quick win, but it sets expectations and builds habit instantly. The takeaway, automate the first impression before you even hit publish.",
+   "render": {
+    "seconds": 8.52,
+    "layout": "fit",
+    "seconds_per_output_minute": 14.98
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "the",
+     "publish"
+    ],
+    "got": [
+     "the",
+     "publish"
+    ],
+    "clip_wer": 0.023
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "clip_b7d3b91e": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Complete story about shortening newsletters with clear metrics and lesson.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains the cost of delay with concrete numbers and a clear takeaway.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Interview clip explaining manual outreach for first 100 subscribers.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Clear story of replacing sponsor revenue with own product.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Strong narrative about partner swap proving engagement metrics.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 3,
+   "reason": "Garbled edit, starts mid-sentence, ends abruptly without full context.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Same as c01, clear data story with a strong lesson.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_a95cffe3": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Clear story of manual outreach yielding warm subscribers.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Same as c08, clear story of manual outreach.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_781dab81": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains the welcome series impact with concrete numbers and takeaway.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Engaging question hook leading to a successful partnership story.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 579.4
+}
