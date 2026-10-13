@@ -73,11 +73,16 @@ export function Timeline({
         </div>
         <canvas ref={canvas} className="absolute inset-x-0 top-3 h-[52px] w-full" />
         {/* chapters */}
-        {chapters.map((c) => (
-          <div key={c.start} className="absolute top-1.5 h-[62px] border-l border-dashed border-violet/60" style={{ left: pct(c.start) }}>
-            <span className="absolute left-1 top-0 max-w-[140px] truncate rounded bg-panel-2/90 px-1 text-[10px] text-violet-200">{c.title}</span>
-          </div>
-        ))}
+        {chapters.map((c, i) => {
+          const next = chapters[i + 1]?.start ?? duration;
+          return (
+            <div key={c.start} className="absolute top-1.5 h-[62px] border-l border-dashed border-violet/60" style={{ left: pct(c.start), width: pct(next - c.start) }}>
+              <span className="absolute left-1 right-1 top-0 truncate rounded bg-panel-2/90 px-1 text-[10px] text-violet-200" title={c.title}>
+                {c.title}
+              </span>
+            </div>
+          );
+        })}
         {/* clips */}
         <div className="absolute inset-x-0 bottom-2 h-[40px]">
           {clips.map((clip) => {

@@ -1,0 +1,465 @@
+{
+ "runs": {
+  "main": {
+   "run": "main",
+   "provider": "openrouter",
+   "model": "nvidia/nemotron-3-super-120b-a12b:free",
+   "fallbacks": [
+    "nvidia/nemotron-3-ultra-550b-a55b:free"
+   ],
+   "judge": {
+    "model_clips": {
+     "n": 35,
+     "standalone_pct": 100.0,
+     "complete_ending_pct": 100.0
+    },
+    "model_clips_synthetic": {
+     "n": 9,
+     "standalone_pct": 100.0,
+     "complete_ending_pct": 100.0
+    },
+    "model_clips_real": {
+     "n": 26,
+     "standalone_pct": 100.0,
+     "complete_ending_pct": 100.0
+    },
+    "random_windows": {
+     "n": 35,
+     "standalone_pct": 62.9,
+     "complete_ending_pct": 65.7
+    },
+    "planted_highlights": {
+     "n": 18,
+     "standalone_pct": 100.0,
+     "complete_ending_pct": 100.0
+    },
+    "unanswered": 9
+   },
+   "asr": "faster-whisper small (int8, CPU)",
+   "finished_at": "2026-10-13 13:19:35",
+   "items": 9,
+   "synthetic_items": 5,
+   "real_items": 4,
+   "total_duration_s": 7773.3,
+   "wer": {
+    "synthetic": {
+     "wer": 0.0155,
+     "ref_words_wrong_or_missed": 0.0123,
+     "ref_words": 5215,
+     "items": 5
+    },
+    "real": {
+     "wer": 0.2004,
+     "ref_words_wrong_or_missed": 0.0718,
+     "ref_words": 13894,
+     "items": 4
+    },
+    "all": {
+     "wer": 0.1499,
+     "ref_words_wrong_or_missed": 0.0556,
+     "ref_words": 19109,
+     "items": 9
+    }
+   },
+   "asr_realtime_factor": 0.1649,
+   "speakers": {
+    "two_speaker_items": 3,
+    "word_accuracy": 0.9879,
+    "count_correct": 5,
+    "single_speaker_items_labelled_single": 2,
+    "single_speaker_items": 2
+   },
+   "chapters": {
+    "tol15": {
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.667,
+     "boundaries_gold": 18,
+     "boundaries_predicted": 9,
+     "mean_abs_error_s": 2.7
+    },
+    "tol30": {
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.667,
+     "boundaries_gold": 18,
+     "boundaries_predicted": 9,
+     "mean_abs_error_s": 2.7
+    },
+    "items": 5
+   },
+   "clips": {
+    "count": 37,
+    "per_item_median": 2,
+    "length_ok_pct": 100.0,
+    "median_length_s": 32.7,
+    "issues": {
+     "dangling_reference": 3,
+     "cut_in_loud": 4,
+     "starts_with_connector": 2,
+     "cut_in_tight": 2,
+     "cut_out_loud": 2
+    },
+    "with_warnings_pct": 27.0
+   },
+   "cuts": {
+    "count": 74,
+    "inside_word": 0,
+    "tight_lt_30ms": 2,
+    "loud_gt_minus12db": 6,
+    "median_level_db": -32.4,
+    "rendered_clips_checked": 37,
+    "first_word_intact_pct": 97.3,
+    "last_word_intact_pct": 100.0
+   },
+   "highlights": {
+    "planted": 23,
+    "found": 11,
+    "recall": 0.478,
+    "clips_mostly_on_a_highlight": 11,
+    "clips_on_synthetic": 11
+   },
+   "framing": {
+    "tracked_clips": 25,
+    "face_in_window_tracked_pct": 96.8,
+    "face_in_window_center_pct": 88.9,
+    "layouts": {
+     "fit": 12,
+     "track": 25
+    }
+   },
+   "timing": {
+    "asr_seconds": 1281.7,
+    "asr_seconds_per_source_minute": 9.89,
+    "llm_stage_seconds": 2737.8,
+    "llm_seconds_per_source_minute": 21.13,
+    "render_seconds": 446.3,
+    "render_seconds_per_output_minute": 20.7,
+    "rendered_minutes": 21.5
+   },
+   "posts": {
+    "items": 9,
+    "social_posts": 42,
+    "within_limit": 42,
+    "truncated_by_code": 0,
+    "grounding_flags_social": 12,
+    "grounding_flags_long_form": 4,
+    "chapters_youtube_ready": 8
+   },
+   "calls": {
+    "requests": 78,
+    "ok": 57,
+    "retries_or_errors": 21,
+    "input_tokens": 257714,
+    "output_tokens": 262058,
+    "median_latency_s": 35.3,
+    "served_models": {
+     "nvidia/nemotron-3-super-120b-a12b:free": 48,
+     "dots-studio/dots-3-note-preview:free": 8,
+     "nvidia/nemotron-3-ultra-550b-a55b:free": 1
+    },
+    "all_free": true,
+    "by_tag": {
+     "clips": 14,
+     "chapters": 10,
+     "posts": 43,
+     "judge": 10,
+     "posts:policy_fallback": 1
+    }
+   }
+  },
+  "rules": {
+   "run": "rules",
+   "provider": "fake",
+   "model": "fake-rules",
+   "fallbacks": [],
+   "judge": {
+    "model_clips": {
+     "n": 26,
+     "standalone_pct": 69.2,
+     "complete_ending_pct": 76.9
+    },
+    "model_clips_synthetic": {
+     "n": 11,
+     "standalone_pct": 90.9,
+     "complete_ending_pct": 90.9
+    },
+    "model_clips_real": {
+     "n": 15,
+     "standalone_pct": 53.3,
+     "complete_ending_pct": 66.7
+    },
+    "random_windows": {
+     "n": 26,
+     "standalone_pct": 50.0,
+     "complete_ending_pct": 61.5
+    },
+    "planted_highlights": {
+     "n": 23,
+     "standalone_pct": 100.0,
+     "complete_ending_pct": 100.0
+    },
+    "unanswered": 28
+   },
+   "asr": "faster-whisper small (int8, CPU)",
+   "finished_at": "2026-10-13 14:01:37",
+   "items": 9,
+   "synthetic_items": 5,
+   "real_items": 4,
+   "total_duration_s": 7773.3,
+   "wer": {
+    "synthetic": {
+     "wer": 0.0155,
+     "ref_words_wrong_or_missed": 0.0123,
+     "ref_words": 5215,
+     "items": 5
+    },
+    "real": {
+     "wer": 0.2004,
+     "ref_words_wrong_or_missed": 0.0718,
+     "ref_words": 13894,
+     "items": 4
+    },
+    "all": {
+     "wer": 0.1499,
+     "ref_words_wrong_or_missed": 0.0556,
+     "ref_words": 19109,
+     "items": 9
+    }
+   },
+   "asr_realtime_factor": 0.1649,
+   "speakers": {
+    "two_speaker_items": 3,
+    "word_accuracy": 0.9879,
+    "count_correct": 5,
+    "single_speaker_items_labelled_single": 2,
+    "single_speaker_items": 2
+   },
+   "chapters": {
+    "tol15": {
+     "precision": 0.778,
+     "recall": 0.389,
+     "f1": 0.519,
+     "boundaries_gold": 18,
+     "boundaries_predicted": 9,
+     "mean_abs_error_s": 6.7
+    },
+    "tol30": {
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.667,
+     "boundaries_gold": 18,
+     "boundaries_predicted": 9,
+     "mean_abs_error_s": 9.2
+    },
+    "items": 5
+   },
+   "clips": {
+    "count": 40,
+    "per_item_median": 2,
+    "length_ok_pct": 100.0,
+    "median_length_s": 38.6,
+    "issues": {
+     "cut_out_loud": 4,
+     "cut_in_loud": 9,
+     "many_speakers": 1,
+     "dangling_reference": 1
+    },
+    "with_warnings_pct": 30.0
+   },
+   "cuts": {
+    "count": 80,
+    "inside_word": 0,
+    "tight_lt_30ms": 0,
+    "loud_gt_minus12db": 13,
+    "median_level_db": -27.0,
+    "rendered_clips_checked": 0,
+    "first_word_intact_pct": null,
+    "last_word_intact_pct": null
+   },
+   "highlights": {
+    "planted": 23,
+    "found": 7,
+    "recall": 0.304,
+    "clips_mostly_on_a_highlight": 7,
+    "clips_on_synthetic": 11
+   },
+   "framing": {
+    "tracked_clips": 0,
+    "face_in_window_tracked_pct": null,
+    "face_in_window_center_pct": null,
+    "layouts": {}
+   },
+   "timing": {
+    "asr_seconds": 1281.7,
+    "asr_seconds_per_source_minute": 9.89,
+    "llm_stage_seconds": 2.1,
+    "llm_seconds_per_source_minute": 0.02,
+    "render_seconds": 0,
+    "render_seconds_per_output_minute": null,
+    "rendered_minutes": 0.0
+   },
+   "posts": {
+    "items": 9,
+    "social_posts": 54,
+    "within_limit": 54,
+    "truncated_by_code": 0,
+    "grounding_flags_social": 11,
+    "grounding_flags_long_form": 41,
+    "chapters_youtube_ready": 8
+   },
+   "calls": {
+    "requests": 21,
+    "ok": 3,
+    "retries_or_errors": 18,
+    "input_tokens": 6472,
+    "output_tokens": 20015,
+    "median_latency_s": 84.9,
+    "served_models": {
+     "dots-studio/dots-3-note-preview:free": 3
+    },
+    "all_free": true,
+    "by_tag": {
+     "judge": 16,
+     "judge:policy_fallback": 5
+    }
+   }
+  }
+ },
+ "rubric": {
+  "all": {
+   "n": 20,
+   "passes": 15,
+   "standalone_2": 16,
+   "mean_standalone": 1.8,
+   "mean_hook": 1.35,
+   "mean_payoff": 1.65,
+   "mean_clean_boundaries": 1.55,
+   "mean_platform_fit": 1.5
+  },
+  "synthetic": {
+   "n": 10,
+   "passes": 7,
+   "standalone_2": 7,
+   "mean_standalone": 1.7,
+   "mean_hook": 1.6,
+   "mean_payoff": 2.0,
+   "mean_clean_boundaries": 1.5,
+   "mean_platform_fit": 1.7
+  },
+  "nasa": {
+   "n": 10,
+   "passes": 8,
+   "standalone_2": 9,
+   "mean_standalone": 1.9,
+   "mean_hook": 1.1,
+   "mean_payoff": 1.3,
+   "mean_clean_boundaries": 1.6,
+   "mean_platform_fit": 1.3
+  }
+ },
+ "smoke": [
+  {
+   "model": "nvidia/nemotron-3-super-120b-a12b:free",
+   "ok": true,
+   "clips": [
+    [
+     3,
+     13,
+     "Why creators should price by value, not fear"
+    ],
+    [
+     23,
+     29,
+     "How to raise prices without losing clients"
+    ]
+   ],
+   "rejected": [],
+   "served": "nvidia/nemotron-3-super-120b-a12b:free",
+   "output_tokens": 4940,
+   "seconds": 42.7
+  },
+  {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "ok": true,
+   "clips": [
+    [
+     15,
+     21,
+     "The Three-Number Pricing Test for Creators"
+    ],
+    [
+     24,
+     29,
+     "How to Raise Prices Without Losing Clients"
+    ]
+   ],
+   "rejected": [],
+   "served": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "output_tokens": 2217,
+   "seconds": 37.6
+  },
+  {
+   "model": "google/gemma-4-31b-it:free",
+   "ok": false,
+   "error": "rate limited: google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+   "seconds": 101.4
+  },
+  {
+   "model": "thinkingmachines/inkling:free",
+   "ok": false,
+   "error": "upstream 403: thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+   "seconds": 3.0
+  },
+  {
+   "model": "dots-studio/dots-3-note-preview:free",
+   "ok": true,
+   "clips": [
+    [
+     3,
+     13,
+     "The Pricing Trap Creators Fall Into"
+    ],
+    [
+     15,
+     21,
+     "The 3-Number Pricing Test for Creators"
+    ]
+   ],
+   "rejected": [],
+   "served": "dots-studio/dots-3-note-preview:free",
+   "output_tokens": 3634,
+   "seconds": 44.2
+  },
+  {
+   "model": "nvidia/nemotron-3.5-lightning:free",
+   "ok": false,
+   "error": "empty answer: max_tokens reached before any output",
+   "seconds": 166.2
+  }
+ ],
+ "all_calls": {
+  "requests": 127,
+  "ok": 73,
+  "retries_or_errors": 54,
+  "input_tokens": 279675,
+  "output_tokens": 370592,
+  "median_latency_s": 42.7,
+  "served_models": {
+   "nvidia/nemotron-3-super-120b-a12b:free": 49,
+   "nvidia/nemotron-3-ultra-550b-a55b:free": 12,
+   "dots-studio/dots-3-note-preview:free": 12
+  },
+  "all_free": true,
+  "by_tag": {
+   "smoke": 10,
+   "testset_script": 18,
+   "clips": 14,
+   "chapters": 10,
+   "posts": 43,
+   "judge": 26,
+   "posts:policy_fallback": 1,
+   "judge:policy_fallback": 5
+  }
+ }
+}

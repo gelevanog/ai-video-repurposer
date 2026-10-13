@@ -1,0 +1,224 @@
+{
+ "id": "synth-06-emergency-fund",
+ "kind": "synthetic",
+ "title": "Your First $1,000 Emergency Fund",
+ "duration": 466.151,
+ "project_id": "your-first-1-000-emergency-fund-124e65",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.42,
+   "message": "07:46 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.55,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 99.39,
+   "message": "882 words · faster-whisper small (int8, CPU) · 0.21x real time"
+  },
+  "diarize": {
+   "seconds": 0.69,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.14); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 0.09,
+   "message": "3 clips from 4 candidates"
+  },
+  "chapters": {
+   "seconds": 0.01,
+   "message": "4 chapters"
+  },
+  "posts": {
+   "seconds": 0.0,
+   "message": "6 social posts, 0 grounding flags"
+  }
+ },
+ "asr_seconds": 95.58,
+ "asr_rtf": 0.205,
+ "process_seconds_this_run": 102.2,
+ "wer": {
+  "wer": 0.020994475138121547,
+  "ref_words": 905.0,
+  "substitutions": 11.0,
+  "deletions": 3.0,
+  "insertions": 5.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 1,
+  "predicted_speakers": 1,
+  "count_correct": true,
+  "word_accuracy": 1.0,
+  "words": 880,
+  "note": "voices not separable with the light MFCC clustering (best silhouette 0.14); labelled as a single speaker"
+ },
+ "chapters": {
+  "predicted": 4,
+  "gold": 5,
+  "tol15": {
+   "hits": 2,
+   "precision": 0.667,
+   "recall": 0.5,
+   "f1": 0.571,
+   "mean_abs_error_s": 3.9
+  },
+  "tol30": {
+   "hits": 3,
+   "precision": 1.0,
+   "recall": 0.75,
+   "f1": 0.857,
+   "mean_abs_error_s": 11.0
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 0,
+  "recall": 0.0,
+  "coverage": [
+   0.0,
+   0.0,
+   0.16,
+   0.0,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 0
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Thump · Between · Buffer"
+  },
+  {
+   "start": 104.0,
+   "title": "Months · Year · Statements"
+  },
+  {
+   "start": 224.0,
+   "title": "Balance · Account · Extra"
+  },
+  {
+   "start": 383.0,
+   "title": "Urgent · Unexpected · Three"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 32,
+  "description_chars": 316,
+  "blog_words": 252,
+  "show_notes_words": 169,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 0 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_93251f59",
+   "rank": 1,
+   "start": 159.52,
+   "end": 210.28,
+   "duration": 50.76,
+   "title": "You'll be surprised How many line items you",
+   "score": 77.1,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 66.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 159.52,
+    "inside_word": false,
+    "gap_before": 0.14,
+    "gap_after": 0.04,
+    "level_db": -17.8
+   },
+   "cut_out": {
+    "at": 210.28,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.24,
+    "level_db": -51.4
+   },
+   "adjustments": [],
+   "text": "You'll be surprised How many line items you don't recognize? One listener told me she found a $12 magazine subscription She hadn't read in two years 12 bucks times 12 months. That's another 144 back in her pocket. Like you said, it's not about deprivation, it's about plugging leaks. You didn't know existed. Grab three months of statements. This weekend, cancel what you don't use, move the savings straight to the fund. You've found the money. Make it move without you thinking about it. Pay yourself first. Isn't a cute phrase. It's a mechanical advantage."
+  },
+  {
+   "id": "clip_ccba3dd1",
+   "rank": 2,
+   "start": 56.32,
+   "end": 111.34,
+   "duration": 55.02,
+   "title": "You might wonder why",
+   "score": 70.2,
+   "scores": {
+    "hook": 6.5,
+    "payoff": 10.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 70.0
+   },
+   "issues": [
+    "cut_in_tight"
+   ],
+   "cut_in": {
+    "at": 56.32,
+    "inside_word": false,
+    "gap_before": -0.82,
+    "gap_after": 0.82,
+    "level_db": -23.4
+   },
+   "cut_out": {
+    "at": 111.34,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.44,
+    "level_db": -73.1
+   },
+   "adjustments": [],
+   "text": "You might wonder why. We don't just attack the credit cards first. The answer is simple. Without a cushion, every surprise becomes a new balance. Think about the last time you had to choose between fixing the car and buying groceries. That choice disappears when the buffer exists. Right. And that's why this comes before aggressive debt payoff or investing. You're not building wealth yet. You're buying insurance against the inevitable. So step one, get that first thousand tucked away, everything else builds on top of it. Okay, where does the money come from? Most people tell me they're already stretched. The answer is usually hiding in plain sight."
+  },
+  {
+   "id": "clip_cfda3045",
+   "rank": 3,
+   "start": 242.98,
+   "end": 281.38,
+   "duration": 38.4,
+   "title": "If 25 feels tight start with 10",
+   "score": 70.2,
+   "scores": {
+    "hook": 5.5,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 59.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 242.98,
+    "inside_word": false,
+    "gap_before": 0.82,
+    "gap_after": 0.12,
+    "level_db": -73.1
+   },
+   "cut_out": {
+    "at": 281.38,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.81,
+    "level_db": -73.1
+   },
+   "adjustments": [],
+   "text": "If 25 feels tight, start with 10. The habit matters more than the amount, and you can bump it up after a raise. Automation also removes the temptation to borrow from the fund. for a weekend trip. The transfer happens before you even see the balance. Right, the key is consistency. Even a small automatic transfer builds the muscle memory of saving. Log into your bank right now. Schedule it. Future you will thank present you."
+  }
+ ],
+ "eval_seconds": 102.2
+}

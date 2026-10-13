@@ -175,11 +175,16 @@ export function PhonePreview({
                     const spoken = i <= active.word;
                     const color = spec.karaoke ? (spoken ? spec.highlight : spec.color) : spec.pop && isActive ? spec.highlight : spec.oneWord && /\d/.test(w.text) ? spec.highlight : spec.color;
                     return (
-                      <span key={w.index}>
-                        <span className="caption-word" style={{ color, transform: spec.pop && isActive && !spec.oneWord ? "scale(1.1)" : undefined }}>
-                          {display(w.text, spec)}
-                        </span>
-                        {i < active.group.length - 1 ? " " : ""}
+                      <span
+                        key={w.index}
+                        className="caption-word"
+                        style={{
+                          color,
+                          marginRight: i < active.group.length - 1 ? "0.38em" : undefined,
+                          transform: spec.pop && isActive && !spec.oneWord ? "scale(1.07)" : undefined,
+                        }}
+                      >
+                        {display(w.text, spec)}
                       </span>
                     );
                   })}
@@ -189,7 +194,7 @@ export function PhonePreview({
           </>
         )}
         <button onClick={toggle} className="absolute inset-0 flex items-center justify-center" aria-label={playing ? "Pause" : "Play"}>
-          {!playing && (
+          {!playing && t - clip.start < 0.3 && (
             <span className="grid h-14 w-14 place-items-center rounded-full bg-black/45 backdrop-blur">
               <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6" fill="white">
                 <path d="M7 4v16l13-8z" />
@@ -197,6 +202,13 @@ export function PhonePreview({
             </span>
           )}
         </button>
+        {!playing && t - clip.start >= 0.3 && (
+          <span className="pointer-events-none absolute bottom-3 right-3 grid h-8 w-8 place-items-center rounded-full bg-black/50">
+            <svg viewBox="0 0 24 24" className="ml-0.5 h-3.5 w-3.5" fill="white">
+              <path d="M7 4v16l13-8z" />
+            </svg>
+          </span>
+        )}
         <div className="absolute left-3 top-3 rounded-md bg-black/55 px-1.5 py-0.5 text-[10px] font-medium text-white/90">
           {rendered ? "Rendered MP4" : layout === "track" ? "Live preview · face tracking" : layout === "fit" ? "Live preview · full frame" : "Live preview · centre crop"}
         </div>

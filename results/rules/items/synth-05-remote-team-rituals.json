@@ -1,0 +1,222 @@
+{
+ "id": "synth-05-remote-team-rituals",
+ "kind": "synthetic",
+ "title": "Remote Team Rituals That Actually Work",
+ "duration": 488.64,
+ "project_id": "remote-team-rituals-that-actuall-86c9a3",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.41,
+   "message": "08:08 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.56,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.01,
+   "message": "1263 words · faster-whisper small (int8, CPU) · 0.16x real time"
+  },
+  "diarize": {
+   "seconds": 1.23,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.51)"
+  },
+  "clips": {
+   "seconds": 0.16,
+   "message": "3 clips from 4 candidates"
+  },
+  "chapters": {
+   "seconds": 0.01,
+   "message": "4 chapters"
+  },
+  "posts": {
+   "seconds": 0.01,
+   "message": "6 social posts, 0 grounding flags"
+  }
+ },
+ "asr_seconds": 76.17,
+ "asr_rtf": 0.1559,
+ "process_seconds_this_run": 4.4,
+ "wer": {
+  "wer": 0.027258566978193146,
+  "ref_words": 1284.0,
+  "substitutions": 11.0,
+  "deletions": 18.0,
+  "insertions": 6.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9889,
+  "words": 1262,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.51)"
+ },
+ "chapters": {
+  "predicted": 4,
+  "gold": 5,
+  "tol15": {
+   "hits": 3,
+   "precision": 1.0,
+   "recall": 0.75,
+   "f1": 0.857,
+   "mean_abs_error_s": 1.9
+  },
+  "tol30": {
+   "hits": 3,
+   "precision": 1.0,
+   "recall": 0.75,
+   "f1": 0.857,
+   "mean_abs_error_s": 1.9
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 1,
+  "recall": 0.2,
+  "coverage": [
+   0.0,
+   0.87,
+   0.44,
+   0.46,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 1
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Rituals · Shared · Person"
+  },
+  {
+   "start": 91.0,
+   "title": "Update · Six · Call"
+  },
+  {
+   "start": 193.0,
+   "title": "Work · Client · Unfinished"
+  },
+  {
+   "start": 383.0,
+   "title": "Lunch · Budget · Each"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 38,
+  "description_chars": 316,
+  "blog_words": 396,
+  "show_notes_words": 177,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 0 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_a9fe82d1",
+   "rank": 1,
+   "start": 216.92,
+   "end": 257.5,
+   "duration": 40.58,
+   "title": "Why keep it unfinished",
+   "score": 75.8,
+   "scores": {
+    "hook": 7.5,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 65.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 216.92,
+    "inside_word": false,
+    "gap_before": 0.34,
+    "gap_after": 0.12,
+    "level_db": -72.0
+   },
+   "cut_out": {
+    "at": 257.5,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.1,
+    "level_db": -72.0
+   },
+   "adjustments": [],
+   "text": "Why keep it unfinished? Because unfinished work invites questions, not judgments. when someone shows a rough wireframe. The team spots edge cases early and the designer gets concrete feedback before investing hours that Early Catch saved us a redesigned cycle on the last e -commerce project, which would have cost two weeks. Demo Friday gives each person a 10 -minute slot to show something that isn't done yet and that rawness is exactly the point. The presenter walks through a sketch, a prototype, type or a messy code branch. And the room, well, the video call asks clarifying questions instead of polishing."
+  },
+  {
+   "id": "clip_042871bf",
+   "rank": 2,
+   "start": 117.66,
+   "end": 175.66,
+   "duration": 58.0,
+   "title": "How does that look in practice",
+   "score": 75.2,
+   "scores": {
+    "hook": 7.5,
+    "payoff": 9.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 60.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 117.66,
+    "inside_word": false,
+    "gap_before": 0.34,
+    "gap_after": 0.12,
+    "level_db": -72.0
+   },
+   "cut_out": {
+    "at": 175.66,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.1,
+    "level_db": -72.0
+   },
+   "adjustments": [],
+   "text": "How does that look in practice? Each person posts a quick note. What they finished yesterday, what they'll tackle today, and any blocker that needs help. It lives in a shared channel, searchable, and no one has to sit through a meeting because it's asynchronous. A designer in London can read the update from a teammate in New York before their day starts, and the blocker gets addressed before any code ships. When we replace the daily call with that three -line update, the team reclaimed roughly six hours a week, time that used to vanish into calendar invites and idle chatter, the written format forces clarity. You can't hide behind vague verbal updates and anyone can scan the whole squad's progress in seconds. We also added a weekly thread where anyone can expand on a blocker without derailing a short meeting. The result, faster handoffs, fewer surprise delays, and a measurable boost in billable hours."
+  },
+  {
+   "id": "clip_0ef8d32a",
+   "rank": 3,
+   "start": 314.26,
+   "end": 351.9,
+   "duration": 37.64,
+   "title": "How did that play out",
+   "score": 70.2,
+   "scores": {
+    "hook": 7.5,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 59.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 314.26,
+    "inside_word": false,
+    "gap_before": 0.24,
+    "gap_after": 0.12,
+    "level_db": -72.0
+   },
+   "cut_out": {
+    "at": 351.9,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.16,
+    "level_db": -72.0
+   },
+   "adjustments": [],
+   "text": "How did that play out? The client said they needed a quick check in every Wednesday, so we offered a shared a sink board instead. They tried it, saw the transparency, and later adopted the same No Meeting Day for their own team. They even started a weekly retro on Thursday to capture what the Wednesday block surfaced. Zero meeting Wednesdays gave the crew a predictable block of uninterrupted hours, and the numbers backed it up. In the first month, average code review turnaround dropped from 12 hours to 4, and designers reported a 30 % rise in completed UI screens."
+  }
+ ],
+ "eval_seconds": 4.4
+}

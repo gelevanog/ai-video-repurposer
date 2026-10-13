@@ -1,0 +1,105 @@
+{
+ "cpu": 16,
+ "load_before": [
+  11.51,
+  10.33,
+  7.67
+ ],
+ "whisper": "small int8",
+ "render": "1080x1920 libx264 veryfast crf 21",
+ "items": [
+  {
+   "id": "nasa-crew9-news-conference",
+   "duration_s": 1651.6,
+   "resolution": "640x360",
+   "audio_extract_s": 1.7,
+   "asr_s": 329.1,
+   "asr_s_per_min": 11.96,
+   "diarize_s": 2.3,
+   "speakers": 3,
+   "renders": [
+    {
+     "clip": "clip_477c7d06",
+     "duration_s": 32.74,
+     "layout": "track",
+     "seconds": 7.1,
+     "s_per_output_min": 13.0
+    },
+    {
+     "clip": "clip_b9d8a2aa",
+     "duration_s": 45.43,
+     "layout": "track",
+     "seconds": 9.8,
+     "s_per_output_min": 12.9
+    },
+    {
+     "clip": "clip_755f9ca7",
+     "duration_s": 38.78,
+     "layout": "track",
+     "seconds": 7.6,
+     "s_per_output_min": 11.8
+    }
+   ]
+  },
+  {
+   "id": "synth-01-freelance-pricing",
+   "duration_s": 401.066,
+   "resolution": "1280x720",
+   "audio_extract_s": 0.3,
+   "asr_s": 100.6,
+   "asr_s_per_min": 15.05,
+   "diarize_s": 0.4,
+   "speakers": 2,
+   "renders": [
+    {
+     "clip": "clip_6a54a0c6",
+     "duration_s": 44.63,
+     "layout": "fit",
+     "seconds": 11.1,
+     "s_per_output_min": 14.9
+    },
+    {
+     "clip": "clip_3250cd14",
+     "duration_s": 39.54,
+     "layout": "fit",
+     "seconds": 11.0,
+     "s_per_output_min": 16.7
+    }
+   ]
+  },
+  {
+   "id": "nasa-solar-cruiser",
+   "duration_s": 299.05,
+   "resolution": "640x360",
+   "audio_extract_s": 0.4,
+   "asr_s": 80.4,
+   "asr_s_per_min": 16.13,
+   "diarize_s": 0.4,
+   "speakers": 1,
+   "renders": [
+    {
+     "clip": "clip_e337a455",
+     "duration_s": 24.64,
+     "layout": "track",
+     "seconds": 8.2,
+     "s_per_output_min": 19.9
+    },
+    {
+     "clip": "clip_29672fe8",
+     "duration_s": 30.41,
+     "layout": "fit",
+     "seconds": 11.8,
+     "s_per_output_min": 23.2
+    }
+   ]
+  }
+ ],
+ "load_after": [
+  19.54,
+  17.87,
+  12.88
+ ],
+ "asr_s_per_source_min": 13.01,
+ "diarize_s_per_source_min": 0.08,
+ "render_s_per_output_min": 15.6
+}

@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help install serve web mcp test test-fast lint format web-lint web-build sample testset eval-rules eval-real summary docker-build docker-up clean
+.PHONY: help install serve web mcp test test-fast lint format web-lint web-build sample testset eval-rules eval-real eval-resume summary docker-build docker-up clean
 
 FREE_MODEL ?= nvidia/nemotron-3-super-120b-a12b:free
 REAL = RECUT_LLM_PROVIDER=openrouter RECUT_LLM_MODEL=$(FREE_MODEL)
@@ -49,10 +49,16 @@ testset:  ## Fetch the NASA videos (checksummed) and render the synthetic talks 
 	uv run recut testset synth
 
 eval-rules:  ## The whole evaluation with the offline rule-based model (the baseline; no API calls)
-	RECUT_LLM_PROVIDER=fake uv run recut eval run --name rules --no-judge
+	RECUT_LLM_PROVIDER=fake uv run recut eval run --name rules --no-render --judge-cloud
 
 eval-real:  ## The real run behind the README (needs OPENROUTER_API_KEY; every model :free; ~150 requests)
 	$(REAL) uv run recut eval run --name main
+	uv run recut eval summary
+
+eval-resume:  ## Finish the model run where the free daily quota stopped it (4 synthetic talks), re-judge, summarize
+	$(REAL) uv run recut eval run --name main --only synth-05-remote-team-rituals,synth-06-emergency-fund,synth-07-beginner-marathon,synth-08-giving-feedback
+	$(REAL) uv run recut eval rejudge --name main --provider openrouter
+	$(REAL) uv run recut eval rejudge --name rules --provider openrouter
 	uv run recut eval summary
 
 summary:  ## Fold results/<run>/items/*.json and the call ledger into results/summary.json

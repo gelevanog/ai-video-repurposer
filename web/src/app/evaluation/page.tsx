@@ -20,7 +20,7 @@ function Stat({ label, value, sub, tone }: { label: string; value: string; sub?:
 export default function EvaluationPage() {
   const { data } = useApi<Summary>("/api/eval");
   const main = data?.runs?.main;
-  const rules = data?.runs?.rules;
+  const rules = data?.runs?.rules_on_main_items ?? data?.runs?.rules;
   if (!data) return <div className="p-10 text-sm text-muted">Loading…</div>;
   if (!main) return <div className="p-10 text-sm text-muted">No evaluation results yet. Run `make eval-real` (see README).</div>;
   const j = main.judge;
@@ -34,12 +34,20 @@ export default function EvaluationPage() {
       </p>
 
       <div className="mt-6 grid grid-cols-4 gap-4">
-        <Stat label="Caption WER, real speech" value={pct(main.wer.real.wer * 100, 1)} sub={`${main.wer.real.ref_words.toLocaleString()} reference words (NASA captions)`} />
+        <Stat
+          label="Caption words wrong or missed, real speech"
+          value={pct(main.wer.real.ref_words_wrong_or_missed * 100, 1)}
+          sub={`${main.wer.real.ref_words.toLocaleString()} NASA caption words; raw WER ${pct(main.wer.real.wer * 100, 1)} (captions skip chunks)`}
+        />
         <Stat label="Caption WER, synthetic" value={pct(main.wer.synthetic.wer * 100, 1)} sub={`${main.wer.synthetic.ref_words.toLocaleString()} words, TTS voices`} />
         <Stat label="Clips judged standalone" value={pct(j.model_clips.standalone_pct)} sub={`vs ${pct(j.random_windows.standalone_pct)} for random windows, n=${j.model_clips.n}`} tone="text-mint" />
         <Stat label="Cuts inside a word" value={`${main.cuts.inside_word} / ${main.cuts.count}`} sub={`first word intact after render: ${pct(main.cuts.first_word_intact_pct)}`} tone="text-mint" />
         <Stat label="Chapter boundaries ±30 s" value={`F1 ${main.chapters.tol30.f1.toFixed(2)}`} sub={rules ? `rules baseline F1 ${rules.chapters.tol30.f1.toFixed(2)}` : undefined} />
-        <Stat label="Planted highlights found" value={`${main.highlights.found} / ${main.highlights.planted}`} sub={rules ? `rules baseline ${rules.highlights.found} / ${rules.highlights.planted}` : undefined} />
+        <Stat
+          label="Clips on a planted highlight"
+          value={`${main.highlights.clips_mostly_on_a_highlight} / ${main.highlights.clips_on_synthetic}`}
+          sub={rules ? `rules baseline ${rules.highlights.clips_mostly_on_a_highlight} / ${rules.highlights.clips_on_synthetic}` : undefined}
+        />
         <Stat label="Render time" value={`${main.timing.render_seconds_per_output_minute} s`} sub="per minute of 1080×1920 output, CPU" />
         <Stat label="Speech recognition" value={`${main.timing.asr_seconds_per_source_minute} s`} sub="per minute of audio (faster-whisper small, CPU)" />
       </div>
@@ -72,6 +80,20 @@ export default function EvaluationPage() {
               ))}
             </tbody>
           </table>
+        </Panel>
+        <Panel title="Rubric on a sample (read by Claude, not an independent human)">
+          {data.rubric ? (
+            <div className="space-y-1.5 text-sm text-ink-soft">
+              <div>
+                {data.rubric.all.passes} of {data.rubric.all.n} clips pass (standalone and no zero score); {data.rubric.all.standalone_2} fully standalone.
+              </div>
+              <div className="mono text-[12px] text-muted">
+                hook {data.rubric.all.mean_hook} · payoff {data.rubric.all.mean_payoff} · boundaries {data.rubric.all.mean_clean_boundaries} · fit {data.rubric.all.mean_platform_fit} (0-2)
+              </div>
+            </div>
+          ) : (
+            <div className="text-sm text-muted">No rubric yet.</div>
+          )}
         </Panel>
         <Panel title="Model calls">
           <div className="space-y-1.5 text-sm text-ink-soft">

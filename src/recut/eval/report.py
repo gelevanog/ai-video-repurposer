@@ -59,12 +59,18 @@ def ledger_stats(prefix: str) -> dict[str, Any]:
     }
 
 
-def summarize_run(name: str) -> dict[str, Any]:
+def summarize_run(name: str, *, same_items_as: str | None = None) -> dict[str, Any]:
     rows = _items(name)
+    if same_items_as:
+        keep = {r["id"] for r in _items(same_items_as)}
+        rows = [r for r in rows if r["id"] in keep]
     if not rows:
         return {}
     meta_path = RESULTS / name / "run.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
+    bench = RESULTS / "bench.json"
+    if bench.exists() and name == "main":
+        meta["bench"] = {k: v for k, v in json.loads(bench.read_text(encoding="utf-8")).items() if k != "items"}
     synth = [r for r in rows if r["kind"] == "synthetic"]
     real = [r for r in rows if r["kind"] == "nasa"]
     clips = [c for r in rows for c in r["clips"]]
@@ -96,11 +102,15 @@ def summarize_run(name: str) -> dict[str, Any]:
     spk_ok = sum((r["speakers"]["word_accuracy"] or 0) * r["speakers"]["words"] for r in multi)
 
     # judge
-    verdicts = [v for r in rows for v in (r.get("judge") or {}).values() if "standalone" in v]
+    def cloud_verdict(v: dict[str, Any]) -> bool:
+        """A verdict from the cloud judge (the offline rules "judge" is not a judge)."""
+        return "standalone" in v and not str(v.get("judge", "")).startswith("fake")
+
+    verdicts = [v for r in rows for v in (r.get("judge") or {}).values() if cloud_verdict(v)]
 
     def judged(group: str, subset: list[dict[str, Any]] | None = None) -> dict[str, Any]:
         pool = (
-            [v for r in subset for v in (r.get("judge") or {}).values() if "standalone" in v and v["group"] == group]
+            [v for r in subset for v in (r.get("judge") or {}).values() if cloud_verdict(v) and v["group"] == group]
             if subset is not None
             else [v for v in verdicts if v["group"] == group]
         )
@@ -165,7 +175,8 @@ def summarize_run(name: str) -> dict[str, Any]:
             "model_clips_real": judged("model", real),
             "random_windows": judged("random"),
             "planted_highlights": judged("gold"),
-            "unanswered": sum(1 for r in rows for v in (r.get("judge") or {}).values() if "standalone" not in v),
+            "unanswered": sum(1 for r in rows for v in (r.get("judge") or {}).values() if not cloud_verdict(v)),
+            "judged_items": sum(1 for r in rows if any(cloud_verdict(v) for v in (r.get("judge") or {}).values())),
         },
         "highlights": {
             "planted": sum(h["highlights"] for h in highlights),
@@ -213,6 +224,10 @@ def summarize(names: list[str]) -> dict[str, Any]:
         summary = summarize_run(name)
         if summary:
             out["runs"][name] = summary
+    if "main" in names:
+        for name in names:
+            if name != "main" and (summary := summarize_run(name, same_items_as="main")):
+                out["runs"][f"{name}_on_main_items"] = summary
     rubric = RESULTS / "rubric.json"
     if rubric.exists():
         out["rubric"] = json.loads(rubric.read_text(encoding="utf-8")).get("summary")

@@ -49,12 +49,12 @@ export function OutputsTab({ project, config, onChange }: { project: Project; co
           publishing.
         </div>
         <div className="flex items-center gap-2">
-          <label className="flex items-center gap-1.5 text-sm">
+          <label className="flex items-center gap-1.5 whitespace-nowrap text-sm">
             <input type="checkbox" checked={o.approved} onChange={(e) => save({ approved: e.target.checked })} className="accent-mint" /> Texts approved
           </label>
           <a
             href={`${API_URL}/api/projects/${project.id}/export`}
-            className={`rounded-lg px-3 py-1.5 text-sm font-semibold ${approvedClips || o.approved ? "bg-mint text-[#062018]" : "pointer-events-none bg-panel-3 text-muted"}`}
+            className={`whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-semibold ${approvedClips || o.approved ? "bg-mint text-[#062018]" : "pointer-events-none bg-panel-3 text-muted"}`}
           >
             ↓ Export bundle ({approvedClips} clips)
           </a>
