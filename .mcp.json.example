@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "recut": {
+      "command": "uv",
+      "args": ["run", "--directory", "/absolute/path/to/ai-video-repurposer", "recut", "mcp"],
+      "env": { "RECUT_ALLOWED_SOURCE_DIRS": "/absolute/path/to/your/videos" }
+    }
+  }
+}

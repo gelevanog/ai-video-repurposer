@@ -1,0 +1,16 @@
+.git
+.venv
+.cache
+**/__pycache__
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.env
+.env.*
+docs
+tests
+web
+data/projects
+data/testset/media
+data/testset/work
+results/calls.jsonl

@@ -1,0 +1,45 @@
+# Recut: the API (with ffmpeg and faster-whisper) and the review UI.
+#   docker compose up --build
+#     review UI  http://localhost:3000
+#     API        http://localhost:8000   (OpenAPI docs at /docs)
+# With no keys the offline rule-based model runs the demo (the bundled sample talk is imported on first start).
+# For free cloud models put OPENROUTER_API_KEY and RECUT_LLM_PROVIDER=openrouter in .env (README > Configuration).
+# The first transcription downloads faster-whisper `small` (~460 MB) into the cache volume.
+name: recut
+
+services:
+  api:
+    build: .
+    image: recut-api:latest
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      RECUT_LLM_PROVIDER: ${RECUT_LLM_PROVIDER:-fake}
+      RECUT_CORS_ORIGINS: http://localhost:${WEB_PORT:-3000}
+      RECUT_SEED_DEMO: "true"
+    volumes:
+      - projects:/app/data/projects
+      - cache:/home/app/.cache
+      # Media you want to import by path (RECUT_ALLOWED_SOURCE_DIRS=/media):
+      # - ./my-videos:/media:ro
+    ports:
+      - "${API_PORT:-8000}:8000"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./web
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:${API_PORT:-8000}
+    image: recut-web:latest
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    restart: unless-stopped
+
+volumes:
+  projects:
+  cache:

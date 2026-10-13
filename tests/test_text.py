@@ -57,7 +57,10 @@ def test_wer_normalization_ignores_formatting() -> None:
         "not",
     ]
     assert normalize_for_wer("Um, uh, so") == ["so"]
-    assert normalize_for_wer("$40,000") == ["40000"]
+    assert normalize_for_wer("$40,000") == ["40000", "dollars"]
+    assert normalize_for_wer("forty thousand dollars") == ["40000", "dollars"]
+    assert normalize_for_wer("one hundred and five, twenty two") == ["105", "22"]
+    assert normalize_for_wer("don’t") == ["do", "not"]
 
 
 def test_wer_counts_substitutions_deletions_insertions() -> None:
@@ -78,3 +81,13 @@ def test_word_count() -> None:
 def test_word_model_defaults() -> None:
     w = Word(start=0, end=1, text="hi")
     assert w.speaker == "S1" and w.prob == 1.0
+
+
+def test_split_numbers_from_whisper_are_joined() -> None:
+    from recut.asr.whisper import clean_words
+
+    words = [Word(start=0, end=0.4, text="$40"), Word(start=0.4, end=0.6, text=",000"), Word(start=0.7, end=1.0, text="in"),
+             Word(start=1.1, end=1.2, text="4"), Word(start=1.2, end=1.4, text=".5"), Word(start=1.5, end=1.6, text=",and")]
+    out = clean_words(words)
+    assert [w.text for w in out] == ["$40,000", "in", "4.5", ",and"]
+    assert out[0].end == 0.6

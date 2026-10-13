@@ -1,0 +1,250 @@
+{
+ "id": "synth-01-freelance-pricing",
+ "title": "Stop Charging by the Hour: Pricing for Freelance Video Editors",
+ "show": "Cut & Paid Podcast",
+ "format": "podcast",
+ "accent": [
+  124,
+  92,
+  255
+ ],
+ "speakers": {
+  "S1": {
+   "name": "Priya Nair (host)",
+   "voice": "af_heart"
+  },
+  "S2": {
+   "name": "Tom Becker (guest)",
+   "voice": "am_adam"
+  }
+ },
+ "license": "CC0 1.0 (synthetic test media made for this repository)",
+ "drafted_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "chapters": [
+  {
+   "title": "How Tom got into editing",
+   "bullets": [
+    "Wedding video start",
+    "Free edit leads to $5k client",
+    "Shift to YouTube editing"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Tom, thanks for joining. How did you first get into video editing?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "I started messing around with iMovie in high school, cutting together skate clips for friends. After college I picked up a few wedding gigs just to pay rent.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Weddings, huh? That sounds like a grind.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "One night I edited a wedding video for free, just to help a friend, and the couple loved it so much they referred me to a corporate client who paid five thousand dollars for a single project. I stayed up until three a.m., tweaking color grades and syncing audio, because I wanted the couple to feel the emotion of their day. The next morning they sent a thank‑you text and a referral to a marketing director who needed a brand film. That project paid five thousand dollars and became my first retainer client. The lesson? Sometimes the work you do for free becomes the portfolio piece that pays you back tenfold.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "Wow, that free edit turned into a five‑k client. What happened next?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "From there I leaned into YouTube creators, building a reel that showed I could turn raw footage into tight stories. The referrals kept coming.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Nice. So you went from weddings to YouTube.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "The problem with hourly rates",
+   "bullets": [
+    "Hourly caps income",
+    "Faster = less money",
+    "Flat packages fix it"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Let's talk money for a minute. Why do you hate hourly billing so much?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Hourly billing caps your income because the faster you get, the less you charge, and clients hate watching the clock tick while they wait for a final cut.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Right, speed becomes a penalty instead of a reward, and that messes with motivation.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "When I cut a recurring YouTube series, the first season took twenty hours and I billed two thousand dollars. By season three I trimmed the workflow to eight hours, but the invoice fell to eight hundred dollars, a sixty percent drop. Clients loved the faster turnaround, yet they paid less because the clock stopped sooner. I realized I was subsidizing my own skill growth. The model forces you to choose between quality speed and fair pay. Switching to flat packages solved that conflict. I tried raising my hourly rate, but clients pushed back, saying they only budgeted for the original estimate. Decoupling price from time let me charge for value, not hours.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So the faster you got, the less you made, and that feels completely backwards for a creative professional.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Exactly, and once I moved to flat project fees my revenue grew even as my edit time shrank, because clients pay for the result not the hours.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Makes total sense. Let's move on to how you structure packages.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Packages that sell",
+   "bullets": [
+    "Three‑tier packages",
+    "Decoy premium tier",
+    "70% pick middle"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Okay, let's break down your three‑tier packages for YouTube editing and see why they convert so well.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "I offer a basic cut for quick turnaround, a standard package that adds motion graphics, captions, and color grading, and a premium tier that includes custom thumbnail design, SEO metadata, and a revision round.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "And the premium tier is the decoy, right, the one you don't really expect many people to buy?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "When I added a two thousand five hundred dollar premium tier, seventy percent of prospects chose the one thousand two hundred dollar middle package. The high price acts as an anchor, so the middle tier looks like a bargain by comparison. Clients don't calculate absolute cost; they compare options side by side. That psychological trick boosted my average deal size without any extra work. The lesson? Always include a decoy that makes your real offer look like the obvious choice. I tested removing the premium tier and the middle package conversion dropped to forty percent. The decoy isn't about selling the top tier; it's about framing the one you actually want to sell.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So the expensive tier you never expect to sell actually drives the middle sales, which is pretty counter‑intuitive.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Exactly, it's a pricing lever, not a product you push, and it lets me keep the middle tier profitable while still offering a high‑end option for the few who want it.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Got it. Let's talk about handling price objections next.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Handling 'that's too expensive'",
+   "bullets": [
+    "Never discount",
+    "Scope reduction script",
+    "Maintain rate integrity"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Clients often say it's too expensive, and I know many freelancers cave. How do you respond without discounting?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "I never lower the price because that signals my work is negotiable. Instead I trim the scope so the budget fits the deliverable and the client still gets a polished result and it keeps my margins healthy.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Can you give me the exact line you use when the budget conversation gets tight?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "When a client pushes back, I say, I can’t reduce the fee, but I can drop the extra revision round and the custom thumbnail to match your budget. The sentence is deliberate: it protects my rate while offering a concrete trade‑off. Clients usually accept the reduced scope because they see the value they keep. If they still hesitate, I walk away rather than erode my pricing floor. The payoff? You maintain profitability and set a precedent that your rates are non‑negotiable. I’ve used that line on dozens of calls and it closes about eighty percent of the time without a single discount.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "That's a powerful script. Do you ever get pushback on the scope reduction, or do clients usually accept it?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Rarely. Most clients realize the core edit is what they need, and they appreciate the transparency because they see exactly what they're paying for and they feel confident moving forward.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Makes sense. Let's wrap with advice for beginners who are just starting out.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Advice for beginners",
+   "bullets": [
+    "Free sample for favorite channel",
+    "Cold send lands retainer",
+    "Show value up front"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Final question before we wrap: what's your top tip for editors just starting out who want paying clients fast?",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "Pick a channel you genuinely enjoy, edit a short sample for free, and send it to them cold with a brief note explaining why you love their content and attach the file directly so they can watch instantly.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Cold email a free edit? That sounds risky, but also like a great way to stand out.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "I edited a sixty‑second teaser for a gaming channel I loved, sent it unasked, and the creator replied within an hour offering a two thousand dollar monthly retainer. The free sample showed I understood their pacing, humor, and brand voice without any brief. They didn't have to guess if I could deliver; they saw it instantly. That one speculative edit turned into a recurring contract that paid my rent for a year. The lesson? Show, don't tell, and target creators whose work you already respect. It also built a portfolio piece I still reference in pitches today.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "Wow, a cold free edit landed a retainer. That's bold and honestly inspiring for anyone just starting.",
+     "highlight": false
+    },
+    {
+     "speaker": "S2",
+     "text": "It feels bold, but it's really just demonstrating value up front. Most creators are hungry for reliable editors who get their vibe without hand‑holding and they usually reply within days.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Great advice. Thanks for sharing your journey, Tom, and for the concrete pricing tactics.",
+     "highlight": false
+    }
+   ]
+  }
+ ]
+}

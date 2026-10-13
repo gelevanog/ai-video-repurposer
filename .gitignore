@@ -37,3 +37,5 @@ report.xml
 .idea/
 .vscode/
 .DS_Store
+web/AGENTS.md
+web/CLAUDE.md

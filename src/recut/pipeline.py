@@ -17,7 +17,7 @@ from typing import Any, Literal
 from pydantic import BaseModel, Field
 
 from recut.asr import diarize as diarization
-from recut.asr.whisper import transcribe
+from recut.asr.whisper import clean_words, transcribe
 from recut.chapters import format_youtube, make_chapters, youtube_ready
 from recut.clips.lint import lint_clip, penalty
 from recut.clips.snap import snap_times
@@ -40,7 +40,7 @@ from recut.models import (
     Transcript,
     now_iso,
 )
-from recut.render.render import render_clip
+from recut.render.render import plan_crop, render_clip
 from recut.store import Store
 from recut.text import sentences_from_words, ts
 
@@ -200,6 +200,7 @@ class Pipeline:
         cached = cache / key if cache is not None and project.source.sha256 and self.settings.asr == "whisper" else None
         if cached is not None and cached.exists():
             transcript = Transcript.model_validate_json(cached.read_text(encoding="utf-8"))
+            transcript = transcript.model_copy(update={"words": clean_words(transcript.words)})
         else:
             transcript = transcribe(
                 self.media(project), self.audio_path(project), self.settings, duration=project.source.duration
@@ -309,6 +310,7 @@ class Pipeline:
                 clip.cut_in, clip.cut_out = result.cut_in, result.cut_out
                 clip.adjustments = result.adjustments
                 clip.edited = True
+                clip.crop = None
                 clip.hook = project.sentences[clip.first_sentence].text
             if patch.caption_style is not None:
                 clip.caption_style = patch.caption_style
@@ -422,6 +424,20 @@ class Pipeline:
             self.store.save(project)
             return project
 
+    def framing(self, project_id: str, clip_id: str) -> Project:
+        """Plan the 9:16 framing of a clip (face tracking or fallback) without rendering: the editor's live preview
+        uses it, and the render reuses it while the cut and layout stay the same."""
+        project = self.store.load(project_id)
+        clip = project.clip(clip_id)
+        plan = plan_crop(self.media(project), self.probe_of(project), clip.start, clip.end, self.settings, layout=clip.layout)
+        with self.store.lock(project_id):
+            fresh = self.store.load(project_id)
+            target = fresh.clip(clip_id)
+            if (target.start, target.end, target.layout) == (clip.start, clip.end, clip.layout):
+                target.crop = plan
+                self.store.save(fresh)
+            return fresh
+
     def render_path(self, project: Project, clip: Clip) -> Path:
         return self.store.dir(project.id) / "renders" / f"{clip.id}.mp4"
 
@@ -436,6 +452,7 @@ class Pipeline:
             transcript.words,
             self.render_path(project, clip),
             self.settings,
+            plan=clip.crop,
         )
         with self.store.lock(project_id):
             fresh = self.store.load(project_id)

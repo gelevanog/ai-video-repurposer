@@ -154,7 +154,7 @@ def create_app(settings: Settings | None = None, *, pipeline: Pipeline | None = 
                 "title_target": limits.YOUTUBE_TITLE_TARGET,
                 "description": limits.YOUTUBE_DESCRIPTION,
             },
-            "samples": [p.name for p in _importable(settings)],
+            "samples": _importable(settings),
         }
 
     @app.get("/api/projects")
@@ -315,6 +315,21 @@ def create_app(settings: Settings | None = None, *, pipeline: Pipeline | None = 
             raise HTTPException(404, f"no clip {clip_id}") from exc
         return jobs.submit("render", project_id, lambda: pipe.render(project_id, clip_id), clip_id=clip_id).as_dict()
 
+    @app.get("/api/projects/{project_id}/clips/{clip_id}/framing")
+    def clip_framing(project_id: str, clip_id: str) -> dict[str, Any]:
+        project = load(project_id)
+        try:
+            clip = project.clip(clip_id)
+        except KeyError as exc:
+            raise HTTPException(404, f"no clip {clip_id}") from exc
+        if clip.crop is None:
+            try:
+                clip = pipe.framing(project_id, clip_id).clip(clip_id)
+            except MediaError as exc:
+                raise HTTPException(500, str(exc)) from exc
+        assert clip.crop is not None
+        return clip.crop.model_dump(mode="json")
+
     @app.get("/api/projects/{project_id}/clips/{clip_id}/video")
     def clip_video(project_id: str, clip_id: str, download: bool = False) -> FileResponse:
         project = load(project_id)
@@ -385,11 +400,27 @@ def _allowed_dirs(settings: Settings) -> list[Path]:
     ]
 
 
-def _importable(settings: Settings) -> list[Path]:
-    out: list[Path] = []
+def _importable(settings: Settings) -> list[dict[str, str]]:
+    """Media in the allowed folders, with the licence and credit from the test-set manifest when it is listed."""
+    known: dict[str, dict[str, str]] = {}
+    manifest = REPO_ROOT / "data" / "testset" / "manifest.json"
+    if manifest.exists():
+        for item in json.loads(manifest.read_text(encoding="utf-8")).get("items", []):
+            known[f"{item['id']}.mp4"] = item
+    out: list[dict[str, str]] = []
     for folder in _allowed_dirs(settings):
-        if folder.exists():
-            out.extend(sorted(p for p in folder.iterdir() if p.suffix.lower() in ALLOWED_SUFFIXES))
+        if not folder.exists():
+            continue
+        for path in sorted(p for p in folder.iterdir() if p.suffix.lower() in ALLOWED_SUFFIXES):
+            item = known.get(path.name, {})
+            out.append(
+                {
+                    "name": item.get("title") or path.stem.replace("-", " "),
+                    "path": str(path),
+                    "license": item.get("license") or "CC0 1.0 (synthetic sample)",
+                    "attribution": item.get("attribution") or "",
+                }
+            )
     return out
 
 

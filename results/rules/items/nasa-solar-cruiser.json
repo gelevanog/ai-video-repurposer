@@ -1,0 +1,207 @@
+{
+ "id": "nasa-solar-cruiser",
+ "kind": "nasa",
+ "title": "Solar Cruiser solar sail deployment demo (2022-11-09)",
+ "duration": 299.05,
+ "project_id": "solar-cruiser-solar-sail-deploym-bcb925",
+ "model": "fake/rules",
+ "stages": {
+  "probe": {
+   "seconds": 0.31,
+   "message": "04:59 · 640x360 @ 30 fps"
+  },
+  "audio": {
+   "seconds": 1.01,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.01,
+   "message": "832 words · faster-whisper small (int8, CPU) · 0.06x real time"
+  },
+  "diarize": {
+   "seconds": 1.47,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.15); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 0.05,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 0.0,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 0.01,
+   "message": "6 social posts, 12 grounding flags"
+  }
+ },
+ "asr_seconds": 17.24,
+ "asr_rtf": 0.0576,
+ "process_seconds_this_run": 3.1,
+ "wer": {
+  "wer": 0.023668639053254437,
+  "ref_words": 845.0,
+  "substitutions": 13.0,
+  "deletions": 3.0,
+  "insertions": 4.0
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "System · Propulsion · Feet"
+  },
+  {
+   "start": 46.0,
+   "title": "Sail · Test · Sails"
+  },
+  {
+   "start": 161.0,
+   "title": "Sun · Point · Space"
+  }
+ ],
+ "clips": [
+  {
+   "id": "clip_0a4e95ea",
+   "rank": 1,
+   "start": 112.11,
+   "end": 151.69,
+   "duration": 39.58,
+   "title": "Could you get these two hundred foot long",
+   "score": 79.7,
+   "scores": {
+    "hook": 7.5,
+    "payoff": 10.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 79.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 112.11,
+    "inside_word": false,
+    "gap_before": 0.21,
+    "gap_after": 0.13,
+    "level_db": -20.7
+   },
+   "cut_out": {
+    "at": 151.69,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.1,
+    "level_db": -21.8
+   },
+   "adjustments": [],
+   "text": "Could you get these two hundred foot long booms coiled up, put in a deployer attached to a sail that has the area of over 4 ,000 square feet when it's all folded and rolled, put it in a small box and get it to deploy unaided? And the answer is yes. We had a very successful test and the results are evident in the pictures that have been taken and the data we collected during the test. And the key to enabling some of these missions is having larger and larger sails that are very lightweight. And that's why we're moving from sails the size of Nea Scout, 925 square feet to 17 ,800 square feet with Solar Cruiser.",
+   "render": {
+    "seconds": 29.76,
+    "layout": "fit",
+    "seconds_per_output_minute": 45.11
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "could",
+     "cruiser"
+    ],
+    "got": [
+     "could",
+     "cruiser"
+    ],
+    "clip_wer": 0.025
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_fce4d914",
+   "rank": 2,
+   "start": 227.17,
+   "end": 267.28,
+   "duration": 40.11,
+   "title": "The reason why that's so exciting is I",
+   "score": 71.9,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 7.0,
+    "standalone": 7.0,
+    "clarity": 7.0,
+    "virality": 64.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 227.17,
+    "inside_word": false,
+    "gap_before": 0.38,
+    "gap_after": 0.12,
+    "level_db": -20.6
+   },
+   "cut_out": {
+    "at": 267.28,
+    "inside_word": false,
+    "gap_before": 0.43,
+    "gap_after": 0.49,
+    "level_db": -21.9
+   },
+   "adjustments": [],
+   "text": "The reason why that's so exciting is I can't imagine trying to understand the Earth's weather systems if we don't know what's happening at the North and South Pole. Scientists are similarly handicapped when they try to study the Sun because they don't have near -continuous observations of the poles. Now solar sales are obviously not for everything. Sales are limited to small spacecraft and small payloads. We won't be flying humans with them anytime soon. But that doesn't mean they can't be used to support human missions. In near -Earth space going to the moon, they can be put into novel orbits to give near -continuous communications coverage to the moon. They can give us observations of what's happening on the lunar far side continuously.",
+   "render": {
+    "seconds": 33.36,
+    "layout": "fit",
+    "seconds_per_output_minute": 49.9
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "the",
+     "continuously"
+    ],
+    "got": [
+     "the",
+     "continuously"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_fce4d914": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "clip_0a4e95ea": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 6,
+   "reason": "rules",
+   "judge": "fake/rules"
+  }
+ },
+ "eval_seconds": 226.4
+}

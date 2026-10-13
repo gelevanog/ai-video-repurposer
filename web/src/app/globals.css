@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Poppins ExtraBold";
+  src: url("/fonts/Poppins-ExtraBold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anton";
+  src: url("/fonts/Anton-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo Black";
+  src: url("/fonts/ArchivoBlack-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Poppins ExtraBold", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+  --color-bg: #0a0c12;
+  --color-panel: #11141d;
+  --color-panel-2: #171b27;
+  --color-panel-3: #1e2331;
+  --color-line: #262b3b;
+  --color-line-soft: #1c2030;
+  --color-ink: #eceef6;
+  --color-ink-soft: #b9bed1;
+  --color-muted: #7d8399;
+  --color-violet: #8b5cf6;
+  --color-violet-soft: #2a2148;
+  --color-lime: #a3e635;
+  --color-lime-soft: #23301a;
+  --color-amber: #fbbf24;
+  --color-amber-soft: #33290f;
+  --color-rose: #fb7185;
+  --color-rose-soft: #3a1a22;
+  --color-sky: #60a5fa;
+  --color-sky-soft: #172640;
+  --color-mint: #34d399;
+  --color-mint-soft: #11302a;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #2a3044;
+  border-radius: 8px;
+}
+
+.phone {
+  border-radius: 34px;
+  box-shadow:
+    0 0 0 10px #05060a,
+    0 0 0 11px #2a2f40,
+    0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+.caption-word {
+  display: inline-block;
+  transition: transform 90ms ease-out, color 60ms linear;
+}
+
+.md h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+}
+.md h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 1.1rem 0 0.4rem;
+  color: var(--color-ink);
+}
+.md p {
+  margin: 0 0 0.7rem;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+.md ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0 0 0.7rem;
+  color: var(--color-ink-soft);
+}
+.md li {
+  margin: 0.2rem 0;
+}
+.md blockquote {
+  border-left: 3px solid var(--color-violet);
+  padding: 0.2rem 0 0.2rem 0.8rem;
+  margin: 0 0 0.7rem;
+  color: var(--color-ink);
+  font-style: italic;
+}
+.md hr {
+  border-color: var(--color-line);
+  margin: 1rem 0;
+}
+
+input[type="range"].scrub {
+  accent-color: var(--color-violet);
+}

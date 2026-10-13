@@ -129,27 +129,76 @@ _CONTRACTIONS = {
 }
 
 
+_UNITS = {w: int(v) for w, v in _NUMBER_WORDS.items() if int(v) < 20}
+_TENS = {w: int(v) for w, v in _NUMBER_WORDS.items() if 20 <= int(v) < 100}
+_SCALES = {"thousand": 1000, "million": 1_000_000, "billion": 1_000_000_000}
+
+
+def _numbers_to_digits(tokens: list[str]) -> list[str]:
+    """"five thousand" -> "5000", "40 thousand" -> "40000", "one hundred and five" -> "105"."""
+    out: list[str] = []
+    total = current = 0
+    active = False
+
+    def flush() -> None:
+        nonlocal total, current, active
+        if active:
+            out.append(str(total + current))
+        total = current = 0
+        active = False
+
+    for i, token in enumerate(tokens):
+        nxt = tokens[i + 1] if i + 1 < len(tokens) else ""
+        if token in _UNITS or token in _TENS:
+            if active and current % 10 == 0 and current % 100 != 0 and token in _UNITS and current >= 20:
+                current += _UNITS[token]  # "twenty five"
+            elif active and current and current % 100 == 0 and token in (_UNITS | _TENS):
+                current += (_UNITS | _TENS)[token]  # "two hundred five"
+            elif active and total and not current:
+                current = (_UNITS | _TENS)[token]  # "five thousand two"
+            else:
+                flush()
+                current, active = (_UNITS | _TENS)[token], True
+        elif token == "hundred" and active:
+            current = max(current, 1) * 100
+        elif token in _SCALES and active:
+            total += max(current, 1) * _SCALES[token]
+            current = 0
+        elif token.isdigit():
+            flush()
+            current, active = int(token), True
+        elif token == "and" and active and (nxt in _UNITS or nxt in _TENS):
+            continue
+        else:
+            flush()
+            out.append(token)
+    flush()
+    return out
+
+
 def normalize_for_wer(text: str) -> list[str]:
     """Lowercase, ASCII-fold, expand contractions, number words to digits, drop punctuation and fillers.
 
-    Applied identically to the reference and the hypothesis, so formatting choices (\"10%\" vs \"ten percent\",
-    \"don't\" vs \"do not\") do not count as recognition errors."""
+    Applied identically to the reference and the hypothesis, so formatting choices ("$5,000" vs "five thousand
+    dollars" is still one word apart: "dollars"; "10%" vs "ten percent", "don't" vs "do not") do not count as
+    recognition errors."""
+    text = text.replace("’", "'").replace("‘", "'").replace("‑", "-").replace("‐", "-")
     text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii").lower()
     text = re.sub(r"\[[^\]]*\]|\([^)]*\)", " ", text)  # [applause], (inaudible)
-    text = text.replace("%", " percent ").replace("&", " and ").replace("’", "'")
+    text = text.replace("%", " percent ").replace("&", " and ")
     text = re.sub(r"(\d),(\d{3})", r"\1\2", text)
+    text = re.sub(r"(\d),(\d{3})", r"\1\2", text)
+    text = re.sub(r"\$(\d+)", r"\1 dollars", text)
     for k in ("won't", "can't"):
         text = text.replace(k, _CONTRACTIONS[k])
     for suffix in ("n't", "'re", "'ve", "'ll", "'d", "'m"):
         text = text.replace(suffix, _CONTRACTIONS[suffix])
     text = re.sub(r"'s\b", "s", text)
+    text = re.sub(r"(\d)\.(\d)", r"\1point\2", text)
     text = re.sub(r"[^a-z0-9\s]", " ", text)
-    tokens = []
-    for token in text.split():
-        if token in _FILLERS:
-            continue
-        tokens.append(_NUMBER_WORDS.get(token, token))
-    return tokens
+    tokens = [t for t in text.split() if t not in _FILLERS]
+    tokens = [t.replace("point", ".") if re.fullmatch(r"\d+point\d+", t) else t for t in tokens]
+    return _numbers_to_digits(tokens)
 
 
 def edit_distance(ref: Sequence[str], hyp: Sequence[str]) -> tuple[int, int, int]:

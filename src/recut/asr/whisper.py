@@ -7,6 +7,7 @@ media file instead (`<file>.words.json`): CI, the tests and the zero-download de
 from __future__ import annotations
 
 import os
+import re
 import threading
 import time
 from pathlib import Path
@@ -38,7 +39,7 @@ def load_sidecar(media: Path) -> Transcript:
             f"no sidecar transcript {path.name}: install the `asr` extra (faster-whisper) or set RECUT_ASR=whisper"
         )
     transcript = Transcript.model_validate_json(path.read_text(encoding="utf-8"))
-    return transcript.model_copy(update={"model": transcript.model or "sidecar"})
+    return transcript.model_copy(update={"model": transcript.model or "sidecar", "words": clean_words(transcript.words)})
 
 
 def save_sidecar(media: Path, transcript: Transcript) -> Path:
@@ -87,7 +88,7 @@ def transcribe_wav(wav: Path, settings: Settings, *, duration: float | None = No
             if end <= start:
                 end = start + 0.05
             words.append(Word(start=round(start, 3), end=round(end, 3), text=text, prob=round(float(w.probability), 3)))
-    words = _monotonic(words)
+    words = clean_words(_monotonic(words))
     elapsed = time.monotonic() - started
     total = duration if duration is not None else float(getattr(info, "duration", 0.0) or 0.0)
     log.info("asr.done", words=len(words), seconds=round(elapsed, 1), audio_seconds=round(total, 1))
@@ -98,6 +99,22 @@ def transcribe_wav(wav: Path, settings: Settings, *, duration: float | None = No
         words=words,
         seconds=round(elapsed, 2),
     )
+
+
+_NUMBER_TAIL = re.compile(r"^[,.]\d")
+
+
+def clean_words(words: list[Word]) -> list[Word]:
+    """Whisper sometimes splits numbers into two "words" ("$40" + ",000", "4" + ",000"): join them so captions,
+    grounding checks and WER see one number."""
+    out: list[Word] = []
+    for w in words:
+        if out and _NUMBER_TAIL.match(w.text) and out[-1].text[-1:].isdigit():
+            prev = out[-1]
+            out[-1] = prev.model_copy(update={"text": prev.text + w.text, "end": w.end, "prob": min(prev.prob, w.prob)})
+            continue
+        out.append(w)
+    return out
 
 
 def _monotonic(words: list[Word]) -> list[Word]:
