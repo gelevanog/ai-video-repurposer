@@ -104,7 +104,7 @@
   "within_limit": 6,
   "truncated": 0,
   "flags_social": 6,
-  "flags_long_form": 2,
+  "flags_long_form": 1,
   "flag_texts": [
    "1,400",
    "1,400",
@@ -112,8 +112,7 @@
    "1,400",
    "1,400",
    "1,400",
-   "1,400",
-   "1.0"
+   "1,400"
   ],
   "title_chars": 47,
   "description_chars": 726,

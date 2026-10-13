@@ -686,5 +686,19 @@
    "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
- "eval_seconds": 861.0
+ "eval_seconds": 861.0,
+ "posts": {
+  "social_posts": 0,
+  "within_limit": 0,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 73,
+  "description_chars": 739,
+  "blog_words": 926,
+  "show_notes_words": 441,
+  "chapters_youtube_ready": true,
+  "stage_message": "0 social posts, 2 grounding flags, errors: social: empty answer: max_tokens reached before any output"
+ }
 }

@@ -104,15 +104,14 @@
   "within_limit": 6,
   "truncated": 0,
   "flags_social": 6,
-  "flags_long_form": 1,
+  "flags_long_form": 0,
   "flag_texts": [
    "1.10",
    "1.10",
    "1.10",
    "1.10",
    "1.10",
-   "1.10",
-   "1.0"
+   "1.10"
   ],
   "title_chars": 65,
   "description_chars": 1012,

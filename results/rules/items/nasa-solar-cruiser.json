@@ -156,41 +156,21 @@
   }
  ],
  "judge": {
-  "random-1": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+  "clip_18d82451": {
+   "group": "model",
+   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
   },
   "clip_caa84482": {
    "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_18d82451": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
   },
   "random-0": {
    "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+  },
+  "random-1": {
+   "group": "random",
+   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
   }
  },
  "eval_seconds": 1.1

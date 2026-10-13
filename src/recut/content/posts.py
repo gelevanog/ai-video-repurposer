@@ -152,7 +152,7 @@ def generate(
     platforms: Sequence[str] = tuple(limits.PLATFORMS),
 ) -> tuple[Outputs, dict[str, Any]]:
     transcript = plain_transcript(sentences)
-    index = TranscriptIndex(" ".join(s.text for s in sentences))
+    index = TranscriptIndex(" ".join(s.text for s in sentences), extra=source.title or source.filename)
     stats: dict[str, Any] = {"calls": 0, "errors": []}
     header = f"Video: {source.title or source.filename}\nDuration: {ts(sentences[-1].end if sentences else 0)}\n"
     outputs = Outputs(generated_by=model.label)
@@ -198,9 +198,7 @@ def generate(
         )
         blog = re.sub(r"<think>.*?</think>", "", completion.text, flags=re.S).strip()
         blog = re.sub(r"^```(?:markdown|md)?\s*|\s*```$", "", blog).strip()
-        if credit:
-            blog += f"\n\n---\n\n*{credit}*\n"
-        outputs.blog_post = blog
+        outputs.blog_post = blog + (f"\n\n---\n\n*{credit}*\n" if credit else "")
     except LLMError as exc:
         stats["errors"].append(f"blog: {str(exc)[:160]}")
 
@@ -309,7 +307,7 @@ def generate(
         ("title", outputs.seo_title),
         ("description", str(meta.get("description") or "")),
         ("show notes", "\n".join([str(meta.get("summary") or ""), *_strings(meta.get("takeaways"))])),
-        ("blog post", outputs.blog_post),
+        ("blog post", outputs.blog_post.split("\n\n---\n\n*")[0]),
     ):
         for issue in check(text, index):
             long_issues.append(issue.model_copy(update={"message": f"{label}: {issue.message}"}))

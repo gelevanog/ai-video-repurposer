@@ -104,10 +104,8 @@
   "within_limit": 6,
   "truncated": 0,
   "flags_social": 0,
-  "flags_long_form": 1,
-  "flag_texts": [
-   "1.0"
-  ],
+  "flags_long_form": 0,
+  "flag_texts": [],
   "title_chars": 67,
   "description_chars": 1150,
   "blog_words": 669,

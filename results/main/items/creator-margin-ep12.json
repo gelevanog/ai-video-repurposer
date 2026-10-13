@@ -264,5 +264,19 @@
    "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
- "eval_seconds": 404.8
+ "eval_seconds": 404.8,
+ "posts": {
+  "social_posts": 0,
+  "within_limit": 0,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 54,
+  "description_chars": 880,
+  "blog_words": 667,
+  "show_notes_words": 248,
+  "chapters_youtube_ready": false,
+  "stage_message": ""
+ }
 }

@@ -299,6 +299,48 @@ def refresh_chapters(name: str, settings: Settings) -> None:
         print(f"{row['id']}: {len(project.chapters)} chapters")
 
 
+def recheck_posts(name: str) -> None:
+    """Re-run only the deterministic checks (limits, grounding) on the texts a run already generated, without any
+    model call, and write the posts summary into each item."""
+    from recut.content import limits
+    from recut.content.grounding import TranscriptIndex, check
+
+    store = Store(REPO_ROOT / ".cache" / "eval-projects" / name)
+    for path in sorted((results_dir(name) / "items").glob("*.json")):
+        row = json.loads(path.read_text(encoding="utf-8"))
+        project = store.load(row["project_id"])
+        index = TranscriptIndex(" ".join(s.text for s in project.sentences), extra=project.source.title)
+        o = project.outputs
+        for post in o.social:
+            spec = limits.PLATFORMS[post.platform]
+            post.chars = limits.count(post.text, spec.counting)
+            post.within_limit = post.chars <= spec.limit
+            post.issues = [i for i in post.issues if i.kind == "length"] + check(post.text, index)
+        credits = [x for x in (project.source.attribution, project.source.license) if x]
+
+        def strip(text: str, credits: list[str] = credits) -> str:
+            for credit in credits:
+                text = text.replace(credit, " ")
+            return text
+
+        description = strip(o.seo_description.split("\n\nChapters:")[0])
+        notes = strip(o.show_notes.split("## Quotes")[0])
+        blog = strip(o.blog_post)
+        o.issues = [i for i in o.issues if i.kind == "length"]
+        for label, text in (
+            ("title", o.seo_title),
+            ("description", description),
+            ("show notes", notes),
+            ("blog post", blog),
+        ):
+            for issue in check(text, index):
+                o.issues.append(issue.model_copy(update={"message": f"{label}: {issue.message}"}))
+        store.save(project)
+        row["posts"] = posts_summary(project)
+        path.write_text(json.dumps(row, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"{row['id']}: {row['posts']['social_posts']} posts, flags {row['posts']['flag_texts']}")
+
+
 def refresh_posts(name: str, settings: Settings) -> None:
     """Re-run the posts stage of every project of a run (after a fix in the posts code) and update the items."""
     work = REPO_ROOT / ".cache" / "eval-projects" / name

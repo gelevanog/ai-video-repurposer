@@ -605,5 +605,23 @@
    "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
- "eval_seconds": 561.6
+ "eval_seconds": 561.6,
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 3,
+  "flag_texts": [
+   "For the first week or two on space station … that’s really disorienting,",
+   "you’re just immersed in the environment and you’re hanging there in the Earth, moving below your feet… space station is ",
+   "complex, diverse, and beautiful"
+  ],
+  "title_chars": 59,
+  "description_chars": 1108,
+  "blog_words": 899,
+  "show_notes_words": 311,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 3 grounding flags"
+ }
 }

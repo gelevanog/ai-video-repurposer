@@ -444,7 +444,7 @@ def create_server(settings: Settings | None = None, *, state: RecutMCP | None = 
         issues: list[dict[str, Any]] = []
         if project_id:
             project = recut.project(project_id)
-            index = TranscriptIndex(" ".join(s.text for s in project.sentences))
+            index = TranscriptIndex(" ".join(s.text for s in project.sentences), extra=project.name)
             issues = [i.model_dump() for i in check(text, index)]
         return {
             "platform": platform,

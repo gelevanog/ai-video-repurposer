@@ -209,5 +209,19 @@
    "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
- "eval_seconds": 643.2
+ "eval_seconds": 643.2,
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 60,
+  "description_chars": 1021,
+  "blog_words": 638,
+  "show_notes_words": 287,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 0 grounding flags"
+ }
 }

@@ -48,13 +48,19 @@ QUOTE_MIN_SCORE = 88.0
 class TranscriptIndex:
     """The transcript in the normalized forms the checks compare against."""
 
-    def __init__(self, text: str) -> None:
+    def __init__(self, text: str, *, extra: str = "") -> None:
+        """`extra`: other legitimate sources of numbers, e.g. the video's own title ("episode 12")."""
+        text = f"{text} {extra}".strip()
         self.tokens = normalize_for_wer(text)
         self.text = " ".join(self.tokens)
         self.numbers = {t for t in self.tokens if t.isdigit()}
         joined = re.sub(r"(\d),(\d{3})", r"\1\2", text)
         self.numbers |= {_value(m.group(1), m.group(2)) for m in _NUMBER.finditer(joined)}
         self.numbers |= {n.split(".")[0] for n in list(self.numbers)}
+        # "three and a half" -> 3.5
+        for i in range(len(self.tokens) - 3):
+            if self.tokens[i].isdigit() and self.tokens[i + 1 : i + 4] == ["and", "a", "half"]:
+                self.numbers.add(f"{self.tokens[i]}.5")
 
 
 def check_numbers(text: str, index: TranscriptIndex) -> list[GroundingIssue]:

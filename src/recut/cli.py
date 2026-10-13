@@ -347,6 +347,14 @@ def eval_refresh_chapters(
     runner.refresh_chapters(name, _settings(provider))
 
 
+@eval_app.command("recheck-posts")
+def eval_recheck_posts(name: Annotated[str, typer.Option()] = "main") -> None:
+    """Re-run the deterministic length and grounding checks on generated texts (no model calls)."""
+    from recut.eval import runner
+
+    runner.recheck_posts(name)
+
+
 @eval_app.command("refresh-posts")
 def eval_refresh_posts(
     name: Annotated[str, typer.Option()] = "main",
