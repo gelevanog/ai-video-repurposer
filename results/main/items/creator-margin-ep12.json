@@ -1,0 +1,267 @@
+{
+ "id": "creator-margin-ep12",
+ "kind": "synthetic",
+ "title": "The Creator Margin, episode 12: Why your first price is too low",
+ "duration": 116.822,
+ "project_id": "the-creator-margin-episode-12-wh-615fa1",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.55,
+   "message": "01:56 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.48,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 136.18,
+   "message": "308 words · faster-whisper small (int8, CPU) · 0.88x real time"
+  },
+  "diarize": {
+   "seconds": 0.29,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.54)"
+  },
+  "clips": {
+   "seconds": 29.83,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 9.79,
+   "message": "2 chapters (YouTube needs at least three chapters)"
+  },
+  "posts": {
+   "seconds": 134.57,
+   "message": "0 social posts, 4 grounding flags, errors: social: the reply was cut off at max_tokens"
+  }
+ },
+ "asr_seconds": 102.27,
+ "asr_rtf": 0.8754,
+ "process_seconds_this_run": 311.9,
+ "wer": {
+  "wer": 0.009708737864077669,
+  "ref_words": 309.0,
+  "substitutions": 2.0,
+  "deletions": 0.0,
+  "insertions": 1.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9772,
+  "words": 307,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.54)"
+ },
+ "chapters": {
+  "predicted": 2,
+  "gold": 3,
+  "tol15": {
+   "hits": 1,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 1.0
+  },
+  "tol30": {
+   "hits": 1,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 1.0
+  }
+ },
+ "highlights": {
+  "highlights": 3,
+  "found": 2,
+  "recall": 0.667,
+  "coverage": [
+   0.63,
+   0.0,
+   1.0
+  ],
+  "clips_mostly_on_a_highlight": 2
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Why creators underprice from fear"
+  },
+  {
+   "start": 47.0,
+   "title": "The three-number pricing test"
+  }
+ ],
+ "clips": [
+  {
+   "id": "clip_da85c02c",
+   "rank": 1,
+   "start": 20.95,
+   "end": 46.94,
+   "duration": 25.99,
+   "title": "The $200 Video That Made $40k",
+   "score": 88.5,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 9.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 75.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 20.95,
+    "inside_word": false,
+    "gap_before": 0.37,
+    "gap_after": 0.13,
+    "level_db": -72.7
+   },
+   "cut_out": {
+    "at": 46.94,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 1.03,
+    "level_db": -72.7
+   },
+   "adjustments": [],
+   "text": "When I started, I charged $200 for a launch video that made my client $40,000 in a week. The video was not the problem. My price was nobody pays you for your hours. They pay you for the result. So that is the trap with hourly rates. Exactly. An hourly rate punishes you for getting faster. The better you get, the less you earn.",
+   "render": {
+    "seconds": 10.1,
+    "layout": "fit",
+    "seconds_per_output_minute": 23.32
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "when",
+     "earn"
+    ],
+    "got": [
+     "when",
+     "earn"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_3fe4cee5",
+   "rank": 2,
+   "start": 82.31,
+   "end": 110.72,
+   "duration": 28.41,
+   "title": "Raising Prices: A Progress Report",
+   "score": 79.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 70.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 82.31,
+    "inside_word": false,
+    "gap_before": 0.38,
+    "gap_after": 0.12,
+    "level_db": -72.7
+   },
+   "cut_out": {
+    "at": 110.72,
+    "inside_word": false,
+    "gap_before": 0.33,
+    "gap_after": 0.43,
+    "level_db": -40.7
+   },
+   "adjustments": [],
+   "text": "how do you raise prices with clients you already have? Give them 90 days of notice and laid with what changed for them. Last year I told every client that our new rate starts in April and I listed the results we delivered since the last increase. Out of 11 clients, 10 stayed. The one who left was the one I was losing money on anyway. A price increase is not an apology. It is a progress report.",
+   "render": {
+    "seconds": 12.46,
+    "layout": "fit",
+    "seconds_per_output_minute": 26.31
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "how",
+     "report"
+    ],
+    "got": [
+     "how",
+     "report"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Clear explanation of the three-number pricing test and its benefits.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Direct advice on raising prices with a strong example and concluding principle.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Exposes pricing fear, shares a personal underpricing story, and states the value principle.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_da85c02c": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Personal story illustrating the paradox of hourly rates punishing efficiency.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 5,
+   "reason": "Starts mid-sentence, combines two topics, and ends with a podcast sign-off.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_3fe4cee5": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Answering a common pricing question with a clear strategy and successful example.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 8,
+   "payoff": 3,
+   "reason": "Explains the pricing test but cuts off abruptly mid-sentence at the end.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 404.8
+}

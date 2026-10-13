@@ -315,6 +315,18 @@ def eval_summary(names: Annotated[str, typer.Option(help="Comma-separated run na
     report.summarize([n for n in names.split(",") if n])
 
 
+@eval_app.command("bench")
+def eval_bench(
+    items: Annotated[str, typer.Option(help="Comma-separated test-set ids.")],
+    clips: Annotated[int, typer.Option(help="Clips to render per item (from the run's projects).")] = 3,
+    run: Annotated[str, typer.Option()] = "main",
+) -> None:
+    """CPU timing on an idle machine (results/bench.json): ASR, speakers, framing and rendering."""
+    from recut.eval import bench
+
+    bench.run(get_settings(), items=[x for x in items.split(",") if x], run=run, clips_per_item=clips)
+
+
 @eval_app.command("rubric-sample")
 def eval_rubric_sample(name: Annotated[str, typer.Option()] = "main", n: Annotated[int, typer.Option()] = 24) -> None:
     """Write a seeded sample of clips for the human-style rubric (results/<run>/rubric_sample.md)."""

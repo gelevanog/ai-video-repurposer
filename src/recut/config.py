@@ -94,7 +94,7 @@ class Settings(BaseSettings):
     judge_model: str = DEFAULT_JUDGE_MODEL
     """The clip judge in the evaluation: a different free model than the one that picked the clips."""
     llm_timeout_seconds: float = 240.0
-    llm_max_tokens: int = 12000
+    llm_max_tokens: int = 16000
     """A ceiling, not a target: free reasoning models spend thousands of tokens thinking before the JSON."""
     llm_temperature: float = 0.2
     llm_reasoning_effort: str = "low"

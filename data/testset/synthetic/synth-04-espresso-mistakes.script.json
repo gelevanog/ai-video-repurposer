@@ -1,0 +1,171 @@
+{
+ "id": "synth-04-espresso-mistakes",
+ "title": "Five Home Espresso Mistakes (and How to Fix Them)",
+ "show": "Morning Pull",
+ "format": "talk",
+ "accent": [
+  234,
+  179,
+  8
+ ],
+ "speakers": {
+  "S1": {
+   "name": "Leo Martin",
+   "voice": "am_eric"
+  }
+ },
+ "license": "CC0 1.0 (synthetic test media made for this repository)",
+ "drafted_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "chapters": [
+  {
+   "title": "Stale beans",
+   "bullets": [
+    "Check roast date",
+    "Buy within 2 weeks",
+    "Store airtight"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Hey everyone, welcome back to Morning Pull. Today we’re tackling the first mistake that kills home espresso before you even pull a shot: stale beans. Most people grab whatever bag looks good on the shelf and wonder why the flavor is flat. You might think the roast level or origin matters more, but age trumps all of that.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Here’s the hard truth: a supermarket bag with no roast date is a flavor time bomb. Coffee peaks around three to fourteen days after roasting, then the aromatic oils oxidize and the sweetness evaporates. If the beans are older than a month, no grind adjustment, no temperature tweak, and no fancy machine will bring back that bright acidity or caramel body. You’ll taste cardboard, muted acidity, and a hollow finish every single time. The fix is simple — buy beans with a clear roast date, use them within two weeks, and store them in an airtight container away from light and heat. Freshness is the single lever that makes every other variable matter.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So once you have fresh beans, the next step is keeping them that way. I like to portion a week’s worth into a small vacuum‑sealed jar and keep the rest in the freezer — just make sure it’s fully thawed before grinding.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Bottom line: if the bag doesn’t tell you when it was roasted, put it back. Fresh beans are the foundation, and everything else we’ll cover builds on that.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Grinding for the wrong time",
+   "bullets": [
+    "Target 25‑30 sec shot",
+    "Adjust one variable at a time",
+    "Use a timer"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Next up is the grind. Most home baristas chase the perfect particle size by feel, but the real clue lives in the shot timer. If your espresso runs too fast or too slow, the grind is usually the culprit. You might blame the machine or the beans, but the clock tells the truth every time.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Here’s the rule that changed everything for me: aim for a 25‑to‑30‑second extraction from the first drop to the last. When the shot pulls in that window, the balance of acidity, sweetness, and body lands right where it should. The trick is to change only one thing at a time — grind finer, pull, taste, then adjust dose or temperature if needed. If you tweak grind and dose together you’ll never know which move fixed the problem. Stick to the single‑variable method, watch the clock, and you’ll dial in a repeatable shot every morning.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So you set the grinder, pull a shot, note the time, and if it’s 22 seconds you go a notch finer. If it’s 35 seconds you back off. Keep a small notebook or phone note — just the grind setting and the time — and you’ll see the pattern emerge fast.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Remember, the timer is your most honest feedback tool. Nail the 25‑to‑30‑second window and the rest of the recipe falls into place. Once you lock that in, you can start experimenting with temperature or pressure without guessing.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Ignoring the ratio",
+   "bullets": [
+    "Weigh dose and yield",
+    "Target 1:2 ratio",
+    "Scale beats guesswork"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Let’s talk about ratio. Too many home brewers eyeball the coffee and the liquid, hoping the numbers line up. The result is usually a shot that’s either sour and thin or bitter and heavy. You might think the bean origin or roast level decides the taste, but without a consistent ratio the same coffee can taste completely different from shot to shot.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Here’s the surprise that saved my mornings: a $15 kitchen scale beat a $400 grinder upgrade. When I started weighing 18 grams in and 36 grams out — a 1:2 dose‑to‑yield ratio — the espresso instantly gained clarity, sweetness, and a clean finish. Before that I was guessing, sometimes pulling 20 grams in and 30 grams out, other times 22 in and 44 out, and the flavor swung wildly. The scale forces consistency; every shot becomes a repeatable experiment instead of a lottery. If you only buy one tool, make it a 0.1‑gram scale.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So you weigh the dose, you weigh the yield, and you adjust grind until the time lands in that 25‑to‑30‑second window we just covered. The scale turns guesswork into data, and data lets you troubleshoot fast. Write down the numbers each morning; after a week you’ll see a tight cluster around 1:2, and any outlier instantly tells you something drifted.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Bottom line: weigh everything. A cheap scale is the highest ROI piece of gear you’ll ever own. Once the ratio is locked, you can focus on temperature, pressure, or even water chemistry without chasing ghosts.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Uneven tamping",
+   "bullets": [
+    "Level tamp every shot",
+    "Use distribution tool",
+    "Toothpick trick for spread"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Now let’s look at puck preparation. A crooked tamp creates a channel, and water will always take the path of least resistance. The result is an uneven extraction that shows up as sour notes on one side and bitterness on the other. You might blame the bean or the machine, but a tilted tamp is the silent saboteur that shows up in every cup.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Here’s the visual that sticks: imagine a tamp that’s tilted just a few degrees — water rockets down the low side, over‑extracting that strip while the high side stays dry. The fix is dead simple: after dosing, give the grounds a quick swipe with a toothpick or a distribution tool to level the bed, then tamp straight down with a calibrated 30‑pound pressure. The toothpick trick spreads the fines evenly, eliminates the ridge, and forces a uniform flow. You’ll taste a balanced shot with clean acidity and a lingering sweet finish instead of a split personality cup.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So you dose, you level with the toothpick, you tamp straight, and you watch the shot. If you see a fast blonding on one side, go back and check your distribution — it’s usually the culprit. Keep a small mirror or phone camera under the portafilter to spot unevenness before you lock in — it saves you a wasted shot.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "A level tamp is the cheapest consistency upgrade you can make. No new gear required, just a habit. Once the habit sticks, you’ll notice the flavor profile stabilizes shot after shot, and the guesswork disappears.",
+     "highlight": false
+    }
+   ]
+  },
+  {
+   "title": "Dirty equipment",
+   "bullets": [
+    "Back‑flush weekly",
+    "Clean group head daily",
+    "Descale monthly"
+   ],
+   "turns": [
+    {
+     "speaker": "S1",
+     "text": "Finally, let’s talk about cleanliness. Most people pull great shots for a week, then the flavor turns sour and they blame the beans. The real villain is old coffee oil building up in the group head and the portafilter. You might think a quick rinse is enough, but oil is sticky and builds up layer by layer, invisible to the eye.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Here’s the taste test that proves it: run a back‑flush with a blind filter once a week and you’ll pull a shot that tastes clean, bright, and sweet. Skip that routine for two weeks and the same coffee develops a rancid, stale‑oil flavor that most drinkers swear is a bad roast. The oil polymerizes on the shower screen, the group gasket, and the portafilter basket, creating a bitter film that contaminates every extraction. A 30‑second back‑flush with a dedicated cleaning tablet removes that film and restores the true character of the bean.",
+     "highlight": true
+    },
+    {
+     "speaker": "S1",
+     "text": "So after each session, wipe the basket, rinse the portafilter, and give the group head a quick purge. Once a week, lock in the blind filter, add the tablet, and run the back‑flush cycle — it takes less than a minute. If you notice a dull, ashy aftertaste creeping in, that’s your cue — the back‑flush is overdue.",
+     "highlight": false
+    },
+    {
+     "speaker": "S1",
+     "text": "Clean gear is the silent partner that lets every other variable shine. Keep the routine, and the beans finally get the credit they deserve. A clean machine means every adjustment you make — grind, dose, temperature — actually shows up in the cup.",
+     "highlight": false
+    }
+   ]
+  }
+ ]
+}
