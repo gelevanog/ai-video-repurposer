@@ -46,7 +46,7 @@ def check_numbers(text: str, index: TranscriptIndex) -> list[GroundingIssue]:
         line_start = clean.rfind("\n", 0, match.start()) + 1
         if _LIST_COUNT.match(clean[line_start:]) or _LIST_COUNT.match(clean[match.start() :]):
             continue  # "3 takeaways": a count of the post's own list, not a claim from the video
-        if value in index.numbers or value.split(".")[0] in index.numbers and "." not in value:
+        if value in index.numbers or (value.split(".")[0] in index.numbers and "." not in value):
             continue
         issues.append(
             GroundingIssue(

@@ -10,6 +10,7 @@ from __future__ import annotations
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import numpy.typing as npt
@@ -46,7 +47,7 @@ class FaceDetector:
         self._cv2 = cv2
         self.model = model
         self.threshold = threshold
-        self._det = None
+        self._det: Any = None
         self._size: tuple[int, int] | None = None
 
     def detect(self, frame: npt.NDArray[np.uint8]) -> list[Face]:

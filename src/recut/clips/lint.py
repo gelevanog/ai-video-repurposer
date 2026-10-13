@@ -20,7 +20,9 @@ CONTEXT_PHRASES = re.compile(
     r"going back to|earlier (?:i|we)|the (?:second|third|other) (?:one|thing|point)|that (?:point|story) i)\b",
     re.IGNORECASE,
 )
-GREETINGS = re.compile(r"^(hi|hello|hey|welcome|good (?:morning|afternoon|evening)|thanks for (?:having|joining))\b", re.I)
+GREETINGS = re.compile(
+    r"^(hi|hello|hey|welcome|good (?:morning|afternoon|evening)|thanks for (?:having|joining))\b", re.I
+)
 FILLERS = {"um", "uh", "erm", "uhm", "hmm"}
 
 
@@ -101,7 +103,9 @@ def lint_clip(
         fillers = sum(1 for w in clip_words if re.sub(r"\W", "", w.text.lower()) in FILLERS)
         if fillers / len(clip_words) > 0.06:
             issues.append(
-                ClipIssue(code="fillers", severity="info", message=f"{fillers} filler words ({fillers / len(clip_words):.0%})")
+                ClipIssue(
+                    code="fillers", severity="info", message=f"{fillers} filler words ({fillers / len(clip_words):.0%})"
+                )
             )
         speakers = {w.speaker for w in clip_words}
         if len(speakers) > 2:
@@ -110,7 +114,9 @@ def lint_clip(
         if cut is None:
             continue
         if cut.inside_word:
-            issues.append(ClipIssue(code=f"cut_{label}_mid_word", severity="error", message=f"cut-{label} falls inside a word"))
+            issues.append(
+                ClipIssue(code=f"cut_{label}_mid_word", severity="error", message=f"cut-{label} falls inside a word")
+            )
         elif min(cut.gap_before, cut.gap_after) < 0.03:
             issues.append(
                 ClipIssue(

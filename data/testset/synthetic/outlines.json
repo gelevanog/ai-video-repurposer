@@ -1,0 +1,122 @@
+[
+  {
+    "id": "synth-01-freelance-pricing",
+    "title": "Stop Charging by the Hour: Pricing for Freelance Video Editors",
+    "show": "Cut & Paid Podcast",
+    "format": "podcast",
+    "accent": [124, 92, 255],
+    "speakers": {"S1": {"name": "Priya Nair (host)", "voice": "af_heart"}, "S2": {"name": "Tom Becker (guest)", "voice": "am_adam"}},
+    "chapters": [
+      {"title": "How Tom got into editing", "gist": "Tom's path from wedding videos to editing for YouTube channels", "highlight": "the night he edited a wedding video for free and the couple's referral led to his first $5,000 client"},
+      {"title": "The problem with hourly rates", "gist": "why hourly billing caps income and annoys clients", "highlight": "getting faster made him earn less: same project went from 20 hours to 8 and his invoice dropped by 60%"},
+      {"title": "Packages that sell", "gist": "three-tier packages for YouTube editing", "highlight": "the decoy package: adding an expensive tier made 70% of clients choose the middle one"},
+      {"title": "Handling 'that's too expensive'", "gist": "negotiation and scope instead of discounts", "highlight": "never discount, remove scope: the exact sentence he uses when a client pushes back"},
+      {"title": "Advice for beginners", "gist": "first steps for new editors", "highlight": "edit one free sample for a channel you love, send it unasked, and how that landed him a retainer"}
+    ]
+  },
+  {
+    "id": "synth-02-sleep-shift-work",
+    "title": "Sleeping Well on Night Shifts",
+    "show": "Better Rest Lectures",
+    "format": "talk",
+    "accent": [56, 189, 248],
+    "speakers": {"S1": {"name": "Dr. Helen Brooks", "voice": "bf_emma"}},
+    "chapters": [
+      {"title": "Why night shifts break sleep", "gist": "the body clock and light", "highlight": "the 'jet lag without the trip' explanation: a nurse on nights lives in a different time zone from her own body every week"},
+      {"title": "Light is the master switch", "gist": "using light and darkness deliberately", "highlight": "sunglasses on the drive home: the cheapest sleep intervention she knows and why it works"},
+      {"title": "Anchor sleep", "gist": "splitting sleep into an anchor block and a nap", "highlight": "the anchor sleep rule: four hours at the same time every day, whatever the rota says"},
+      {"title": "Caffeine and food timing", "gist": "when to stop coffee and what to eat on shift", "highlight": "caffeine has a half-life of about 5 hours: the coffee at 4 a.m. is still half in your blood at 9"},
+      {"title": "Days off without the crash", "gist": "switching back to days", "highlight": "the mistake of staying up all day after the last night shift and the gentler 'half-flip' instead"}
+    ]
+  },
+  {
+    "id": "synth-03-newsletter-growth",
+    "title": "From Zero to 10,000 Newsletter Subscribers",
+    "show": "The Creator Stack",
+    "format": "podcast",
+    "accent": [34, 197, 94],
+    "speakers": {"S1": {"name": "Marcus Lee (host)", "voice": "am_michael"}, "S2": {"name": "Sofia Alvarez (guest)", "voice": "af_bella"}},
+    "chapters": [
+      {"title": "Starting with nobody", "gist": "Sofia's first 100 subscribers", "highlight": "her first 100 subscribers came from personally emailing 300 people she had helped before"},
+      {"title": "One idea per issue", "gist": "writing short focused issues", "highlight": "cutting her newsletter from 2,000 words to 400 doubled the open rate"},
+      {"title": "Growth loops", "gist": "referrals and cross-promotions", "highlight": "the swap that brought 1,200 subscribers in a weekend: a recommendation exchange with a newsletter twice her size"},
+      {"title": "Making money without selling out", "gist": "sponsorships and paid tiers", "highlight": "turning down a $3,000 sponsor that did not fit her readers, and why it paid off"},
+      {"title": "What she would do differently", "gist": "lessons", "highlight": "she would have started a welcome email sequence on day one because it is still her best-performing email"}
+    ]
+  },
+  {
+    "id": "synth-04-espresso-mistakes",
+    "title": "Five Home Espresso Mistakes (and How to Fix Them)",
+    "show": "Morning Pull",
+    "format": "talk",
+    "accent": [234, 179, 8],
+    "speakers": {"S1": {"name": "Leo Martin", "voice": "am_eric"}},
+    "chapters": [
+      {"title": "Stale beans", "gist": "freshness and roast date", "highlight": "the supermarket bag with no roast date: why beans older than a month taste flat no matter what you do"},
+      {"title": "Grinding for the wrong time", "gist": "dialing in grind size", "highlight": "the 25 to 30 seconds rule and the one change at a time method"},
+      {"title": "Ignoring the ratio", "gist": "dose and yield with a scale", "highlight": "a cheap kitchen scale improved his espresso more than a $400 grinder upgrade"},
+      {"title": "Uneven tamping", "gist": "puck preparation", "highlight": "the tilted tamp that sends water down one side of the puck, and the toothpick trick to spread the grounds"},
+      {"title": "Dirty equipment", "gist": "cleaning routine", "highlight": "back-flushing once a week: the rancid oil taste most people blame on the beans"}
+    ]
+  },
+  {
+    "id": "synth-05-remote-team-rituals",
+    "title": "Remote Team Rituals That Actually Work",
+    "show": "Agency Operators",
+    "format": "podcast",
+    "accent": [244, 63, 94],
+    "speakers": {"S1": {"name": "Grace Kim (host)", "voice": "af_sarah"}, "S2": {"name": "Oliver Hart (guest)", "voice": "bm_lewis"}},
+    "chapters": [
+      {"title": "Oliver's agency", "gist": "a 14-person fully remote design agency", "highlight": "the month everyone was busy and nobody was talking, and the missed deadline that taught him rituals matter"},
+      {"title": "Async stand-ups", "gist": "written updates instead of meetings", "highlight": "replacing the daily call with a three-line written update saved the team about 6 hours a week"},
+      {"title": "Demo Fridays", "gist": "showing work in progress", "highlight": "Demo Friday: ten minutes where anyone shows unfinished work, and why unfinished is the point"},
+      {"title": "Meeting-free days", "gist": "deep work protection", "highlight": "Wednesdays with zero meetings and the client who complained and then copied the idea"},
+      {"title": "Keeping people connected", "gist": "culture without an office", "highlight": "the $50 monthly lunch budget for two random teammates and what it did to cross-team help"}
+    ]
+  },
+  {
+    "id": "synth-06-emergency-fund",
+    "title": "Your First $1,000 Emergency Fund",
+    "show": "Money Basics",
+    "format": "talk",
+    "accent": [16, 185, 129],
+    "speakers": {"S1": {"name": "Aisha Johnson", "voice": "af_nicole"}},
+    "chapters": [
+      {"title": "Why $1,000 first", "gist": "a small buffer before anything else", "highlight": "the flat tyre story: how a $400 surprise turns into $1,200 of credit card debt without a buffer"},
+      {"title": "Finding the money", "gist": "looking at recurring spending", "highlight": "the subscription audit: she found $87 a month of subscriptions she had forgotten"},
+      {"title": "Automate it", "gist": "automatic transfers on payday", "highlight": "pay yourself first: a $25 automatic transfer the day salary arrives beats any willpower plan"},
+      {"title": "Where to keep it", "gist": "separate account", "highlight": "keep it in a separate account with a boring name so you do not see it when you check your balance"},
+      {"title": "When to use it", "gist": "what counts as an emergency", "highlight": "the three-question test: is it urgent, necessary and unexpected; a sale on a TV is none of them"}
+    ]
+  },
+  {
+    "id": "synth-07-beginner-marathon",
+    "title": "Training for Your First Marathon",
+    "show": "Long Run Radio",
+    "format": "podcast",
+    "accent": [249, 115, 22],
+    "speakers": {"S1": {"name": "Jamal Wright (host)", "voice": "am_fenrir"}, "S2": {"name": "Coach Nina Park", "voice": "af_nova"}},
+    "chapters": [
+      {"title": "Is a marathon realistic?", "gist": "who can train for one", "highlight": "her client who could not run for 5 minutes and finished a marathon 18 months later"},
+      {"title": "Slow runs build speed", "gist": "easy pace and the 80/20 rule", "highlight": "the talk test: if you cannot speak in full sentences, you are running too fast"},
+      {"title": "The long run", "gist": "building the weekly long run", "highlight": "the 10 percent rule and the week she breaks it on purpose: every fourth week is a step back"},
+      {"title": "Fuel and water", "gist": "eating during the race", "highlight": "practice your race-day breakfast on every long run, never try anything new on race day"},
+      {"title": "Race day", "gist": "pacing the race", "highlight": "the first 10 kilometres should feel too easy, because the race starts at kilometre 30"}
+    ]
+  },
+  {
+    "id": "synth-08-giving-feedback",
+    "title": "How to Give Feedback Without Starting a Fight",
+    "show": "Lead Better",
+    "format": "talk",
+    "accent": [168, 85, 247],
+    "speakers": {"S1": {"name": "Daniel Ross", "voice": "bm_george"}},
+    "chapters": [
+      {"title": "Why feedback goes wrong", "gist": "defensiveness and timing", "highlight": "the feedback sandwich does not work: people hear only the bread"},
+      {"title": "Describe, don't diagnose", "gist": "behaviour instead of character", "highlight": "'you were late three times this month' versus 'you are unreliable' and why only one can be fixed"},
+      {"title": "Ask before you tell", "gist": "starting with a question", "highlight": "the one question that opens every hard conversation: how do you think that went?"},
+      {"title": "Timing and place", "gist": "private, soon, specific", "highlight": "the 48-hour rule: feedback older than two days feels like an ambush"},
+      {"title": "Receiving feedback", "gist": "modelling it as a leader", "highlight": "he asks his team for one thing to stop doing every quarter and the answer that changed his meetings"}
+    ]
+  }
+]

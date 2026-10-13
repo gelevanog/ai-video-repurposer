@@ -38,7 +38,20 @@ class StyleSpec:
 
 STYLES: dict[str, StyleSpec] = {
     "bold": StyleSpec(
-        "Poppins ExtraBold", 84, "&H00FFFFFF", "&H0000E1FF", "&H00000000", "&H96000000", 1, 6, 2, 3, 18, True, True, True
+        "Poppins ExtraBold",
+        84,
+        "&H00FFFFFF",
+        "&H0000E1FF",
+        "&H00000000",
+        "&H96000000",
+        1,
+        6,
+        2,
+        3,
+        18,
+        True,
+        True,
+        True,
     ),
     "boxed": StyleSpec(
         "Archivo Black", 68, "&H00FFFFFF", "&H0066F2A6", "&H50201812", "&H00000000", 3, 14, 0, 4, 22, False, False, True
@@ -62,10 +75,38 @@ STYLES: dict[str, StyleSpec] = {
         lines=2,
     ),
     "pop": StyleSpec(
-        "Anton", 132, "&H00FFFFFF", "&H0000E1FF", "&H00000000", "&H96000000", 1, 8, 3, 1, 14, True, True, True, one_word=True
+        "Anton",
+        132,
+        "&H00FFFFFF",
+        "&H0000E1FF",
+        "&H00000000",
+        "&H96000000",
+        1,
+        8,
+        3,
+        1,
+        14,
+        True,
+        True,
+        True,
+        one_word=True,
     ),
     "minimal": StyleSpec(
-        "Poppins ExtraBold", 54, "&H00FFFFFF", "&H00FFFFFF", "&H64000000", "&H78000000", 1, 2.5, 1.5, 7, 34, False, False, False, lines=2
+        "Poppins ExtraBold",
+        54,
+        "&H00FFFFFF",
+        "&H00FFFFFF",
+        "&H64000000",
+        "&H78000000",
+        1,
+        2.5,
+        1.5,
+        7,
+        34,
+        False,
+        False,
+        False,
+        lines=2,
     ),
 }
 STYLE_LABELS: dict[str, str] = {

@@ -190,7 +190,7 @@ def build(script: dict[str, Any], out_dir: Path, *, voice: Voice | None = None) 
                 title=chapter["title"],
                 bullets=chapter.get("bullets", []),
                 speaker=name,
-                accent=accent,  # type: ignore[arg-type]
+                accent=accent,
             )
             duration = bounds[i] - (prev_end if i else 0.0)
             prev_end = bounds[i]

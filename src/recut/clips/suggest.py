@@ -59,7 +59,9 @@ def transcript_lines(sentences: Sequence[Sentence], *, speakers: bool = True) ->
     lines = []
     for s in sentences:
         who = f"{s.speaker}: " if speakers else ""
-        lines.append(f"[{s.index}] {ts(s.start, millis=True)}-{ts(s.end, millis=True)} ({s.end - s.start:.1f} s) {who}{s.text}")
+        lines.append(
+            f"[{s.index}] {ts(s.start, millis=True)}-{ts(s.end, millis=True)} ({s.end - s.start:.1f} s) {who}{s.text}"
+        )
     return "\n".join(lines)
 
 
@@ -312,7 +314,9 @@ def suggest(
         messages: list[Message] = [
             {
                 "role": "system",
-                "content": SYSTEM.format(min_s=settings.clip_min_seconds, max_s=settings.clip_max_seconds, n=per_window),
+                "content": SYSTEM.format(
+                    min_s=settings.clip_min_seconds, max_s=settings.clip_max_seconds, n=per_window
+                ),
             },
             {
                 "role": "user",
@@ -323,7 +327,9 @@ def suggest(
         ]
         calls += 1
         try:
-            completion = model.complete(messages, max_tokens=settings.llm_max_tokens, temperature=settings.llm_temperature)
+            completion = model.complete(
+                messages, max_tokens=settings.llm_max_tokens, temperature=settings.llm_temperature
+            )
             reply = parse_json_object(completion.text)
         except (LLMError, JSONReplyError) as exc:
             log.warning("clips.window_failed", error=str(exc)[:200])

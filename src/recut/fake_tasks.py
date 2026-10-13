@@ -193,7 +193,14 @@ def social_posts(messages: Sequence[Message]) -> str:
     best = max((t for _, t in rows), key=_sentence_score, default="")
     title = _video_title(messages)
     tags = " ".join("#" + w for w in _keywords([t for _, t in rows], 3))
-    keys = re.findall(r'"(\w+)": ""', _system(messages)) or ["x", "linkedin", "instagram", "tiktok", "threads", "facebook"]
+    keys = re.findall(r'"(\w+)": ""', _system(messages)) or [
+        "x",
+        "linkedin",
+        "instagram",
+        "tiktok",
+        "threads",
+        "facebook",
+    ]
     out = {}
     for key in keys:
         if key == "x":

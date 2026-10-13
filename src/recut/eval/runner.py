@@ -1,0 +1,311 @@
+"""The evaluation run: every test-set item goes through the real pipeline, then each output is scored.
+
+Per item: caption WER against the reference transcript, speaker accuracy (synthetic), chapter boundaries against
+the gold chapters (synthetic), clips (length, cut checks from timestamps and from the audio level, re-transcription
+of every rendered clip to catch clipped words, planted-highlight recall, a blind LLM judge of standalone-ness with
+random windows and the planted highlights as calibration), framing (face inside the 9:16 window, tracked vs a
+centre crop), render time and model calls. Results: results/<run>/items/<id>.json and results/<run>/run.json."""
+
+from __future__ import annotations
+
+import itertools
+import json
+import random
+import tempfile
+import time
+import zlib
+from pathlib import Path
+from typing import Any
+
+from rapidfuzz import fuzz
+
+from recut.asr.whisper import transcribe_wav
+from recut.config import REPO_ROOT, Settings
+from recut.eval import testset
+from recut.eval.judge import JudgeItem, judge
+from recut.llm.factory import model_for
+from recut.logging_config import get_logger
+from recut.media.ffmpeg import extract_audio, sample_frames
+from recut.models import Clip, Project
+from recut.pipeline import Pipeline
+from recut.render import crop
+from recut.text import normalize_for_wer, wer
+
+log = get_logger(__name__)
+
+
+def results_dir(name: str) -> Path:
+    return REPO_ROOT / "results" / name
+
+
+# ------------------------------------------------------------------------------------------------ metrics
+def speaker_accuracy(project: Project, gold: dict[str, Any]) -> dict[str, Any]:
+    """Word-level speaker accuracy under the best one-to-one mapping of predicted to gold labels."""
+    assert project.transcript is not None
+    sentences = gold["sentences"]
+    pairs: list[tuple[str, str]] = []
+    j = 0
+    for w in project.transcript.words:
+        mid = (w.start + w.end) / 2
+        while j < len(sentences) - 1 and sentences[j]["end"] < mid:
+            j += 1
+        s = sentences[j]
+        if s["start"] - 0.3 <= mid <= s["end"] + 0.3:
+            pairs.append((w.speaker, s["speaker"]))
+    gold_labels = sorted({g for _, g in pairs})
+    pred_labels = sorted({p for p, _ in pairs})
+    best = 0
+    for perm in itertools.permutations(gold_labels + ["?"] * max(0, len(pred_labels) - len(gold_labels)), len(pred_labels)):
+        mapping = dict(zip(pred_labels, perm, strict=True))
+        best = max(best, sum(1 for p, g in pairs if mapping[p] == g))
+    return {
+        "gold_speakers": len(gold["speakers"]),
+        "predicted_speakers": len(project.transcript.speakers),
+        "count_correct": len(gold["speakers"]) == len(project.transcript.speakers),
+        "word_accuracy": round(best / len(pairs), 4) if pairs else None,
+        "words": len(pairs),
+        "note": project.transcript.diarization_note,
+    }
+
+
+def chapter_scores(predicted: list[float], gold: list[float], duration: float) -> dict[str, Any]:
+    """Boundary precision/recall/F1 at +-15 s and +-30 s (the 00:00 chapter excluded: it is always right)."""
+    pred = sorted(t for t in predicted if t > 1.0)
+    ref = sorted(t for t in gold if t > 1.0)
+    out: dict[str, Any] = {"predicted": len(pred) + 1, "gold": len(ref) + 1}
+    for tol in (15, 30):
+        used: set[int] = set()
+        hits = 0
+        errors = []
+        for t in ref:
+            best = None
+            for i, p in enumerate(pred):
+                if i in used or abs(p - t) > tol:
+                    continue
+                if best is None or abs(p - t) < abs(pred[best] - t):
+                    best = i
+            if best is not None:
+                used.add(best)
+                hits += 1
+                errors.append(abs(pred[best] - t))
+        precision = hits / len(pred) if pred else 0.0
+        recall = hits / len(ref) if ref else 1.0
+        f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+        out[f"tol{tol}"] = {
+            "hits": hits,
+            "precision": round(precision, 3),
+            "recall": round(recall, 3),
+            "f1": round(f1, 3),
+            "mean_abs_error_s": round(sum(errors) / len(errors), 1) if errors else None,
+        }
+    _ = duration
+    return out
+
+
+def overlap(a: tuple[float, float], b: tuple[float, float]) -> float:
+    return max(0.0, min(a[1], b[1]) - max(a[0], b[0]))
+
+
+def highlight_recall(clips: list[Clip], highlights: list[dict[str, Any]]) -> dict[str, Any]:
+    hit = 0
+    per = []
+    for h in highlights:
+        span = (h["start"], h["end"])
+        best = max((overlap(span, (c.start, c.end)) for c in clips), default=0.0)
+        frac = best / max(1e-6, span[1] - span[0])
+        per.append(round(frac, 2))
+        hit += frac >= 0.5
+    clip_on_highlight = sum(
+        1
+        for c in clips
+        if max((overlap((c.start, c.end), (h["start"], h["end"])) for h in highlights), default=0.0) / max(1e-6, c.end - c.start)
+        >= 0.5
+    )
+    return {
+        "highlights": len(highlights),
+        "found": hit,
+        "recall": round(hit / len(highlights), 3) if highlights else None,
+        "coverage": per,
+        "clips_mostly_on_a_highlight": clip_on_highlight,
+    }
+
+
+def clip_text(project: Project, clip: Clip) -> str:
+    return " ".join(s.text for s in project.sentences[clip.first_sentence : clip.last_sentence + 1])
+
+
+def random_windows(project: Project, n: int, settings: Settings, seed: int) -> list[tuple[int, int]]:
+    """Random sentence windows of 25-55 s: the baseline the judge should reject most of the time."""
+    rng = random.Random(seed)
+    sents = project.sentences
+    out: list[tuple[int, int]] = []
+    for _ in range(n * 20):
+        if len(out) >= n or len(sents) < 3:
+            break
+        i = rng.randrange(0, len(sents) - 1)
+        target = rng.uniform(25, 55)
+        j = i
+        while j + 1 < len(sents) and sents[j].end - sents[i].start < target:
+            j += 1
+        if settings.clip_min_seconds <= sents[j].end - sents[i].start <= settings.clip_max_seconds:
+            out.append((i, j))
+    return out
+
+
+def boundary_check(project: Project, clip: Clip, rendered: Path, settings: Settings) -> dict[str, Any]:
+    """Re-transcribe the rendered clip: are its first and last spoken words the ones the clip should start and end
+    with? A cut inside a word shows up as a missing or garbled boundary word. Independent of the cut logic."""
+    assert project.transcript is not None
+    expected = [
+        t
+        for w in project.transcript.words
+        if clip.start <= (w.start + w.end) / 2 <= clip.end
+        for t in normalize_for_wer(w.text)
+    ]
+    with tempfile.TemporaryDirectory() as tmp:
+        wav = extract_audio(rendered, Path(tmp) / "clip.wav", ffmpeg=settings.ffmpeg)
+        hyp = transcribe_wav(wav, settings)
+    got = [t for w in hyp.words for t in normalize_for_wer(w.text)]
+    if not expected or not got:
+        return {"first_ok": False, "last_ok": False, "expected": expected[:2], "got": got[:3]}
+
+    def near(word: str, window: list[str]) -> bool:
+        return any(word == g or fuzz.ratio(word, g) >= 80 for g in window)
+
+    return {
+        "first_ok": near(expected[0], got[:3]),
+        "last_ok": near(expected[-1], got[-3:]),
+        "expected": [expected[0], expected[-1]],
+        "got": [got[0], got[-1]],
+        "clip_wer": round(wer(" ".join(expected), " ".join(got))["wer"], 3),
+    }
+
+
+def framing(project: Project, clip: Clip, settings: Settings) -> dict[str, Any] | None:
+    if clip.crop is None or clip.crop.layout != "track" or not project.source.has_video:
+        return None
+    detector = crop.FaceDetector(settings.face_model)
+    frames = sample_frames(
+        Path(project.source.path),
+        start=clip.start,
+        end=clip.end,
+        fps=2.0,
+        width=min(640, project.source.width),
+        src_width=project.source.width,
+        src_height=project.source.height,
+    )
+    samples = crop.analyse(frames, detector)
+    window = min(1.0, project.source.height * 9 / 16 / max(1, project.source.width))
+    return {
+        "samples_with_face": sum(1 for s in samples if s.faces),
+        "tracked": round(crop.coverage(samples, clip.crop.keys, window_frac=window), 3),
+        "center": round(crop.coverage(samples, [crop.CropKey(t=0, cx=0.5)], window_frac=window), 3),
+        "keys": len(clip.crop.keys),
+    }
+
+
+# ------------------------------------------------------------------------------------------------ run
+def evaluate_item(item: dict[str, Any], name: str, settings: Settings, *, render: bool, run_judge: bool) -> dict[str, Any]:
+    media = testset.media_path(item)
+    work = REPO_ROOT / ".cache" / "eval-projects" / name
+    pipeline = Pipeline(
+        settings.model_copy(update={"data_dir": work}),
+        models=lambda tag: model_for(settings, tag=f"eval-{name}:{tag}"),
+    )
+    started = time.monotonic()
+    project = pipeline.create(
+        media, name=item["title"], license=item["license"], attribution=item.get("attribution", ""), copy=False
+    )
+    project = pipeline.process(project.id)
+    assert project.transcript is not None
+    process_seconds = time.monotonic() - started
+    duration = project.source.duration
+    row: dict[str, Any] = {
+        "id": item["id"],
+        "kind": item["kind"],
+        "title": item["title"],
+        "duration": duration,
+        "project_id": project.id,
+        "model": project.llm,
+        "stages": {s.name: {"seconds": s.seconds, "message": s.message} for s in project.stages},
+        "asr_seconds": project.transcript.seconds,
+        "asr_rtf": round(project.transcript.seconds / max(1.0, duration), 4),
+        "process_seconds_this_run": round(process_seconds, 1),
+    }
+    hyp_text = " ".join(w.text for w in project.transcript.words)
+    row["wer"] = wer(testset.reference_text(item), hyp_text)
+    gold: dict[str, Any] | None = None
+    if item["kind"] == "synthetic":
+        gold = json.loads(testset.gold_path(item).read_text(encoding="utf-8"))
+        row["speakers"] = speaker_accuracy(project, gold)
+        row["chapters"] = chapter_scores([c.start for c in project.chapters], [c["start"] for c in gold["chapters"]], duration)
+        row["highlights"] = highlight_recall(project.clips, gold["highlights"])
+    row["chapters_out"] = [{"start": c.start, "title": c.title} for c in project.chapters]
+    clips_out = []
+    for clip in project.clips:
+        entry: dict[str, Any] = {
+            "id": clip.id,
+            "rank": clip.rank,
+            "start": clip.start,
+            "end": clip.end,
+            "duration": clip.duration,
+            "title": clip.title,
+            "score": clip.score,
+            "scores": clip.scores.model_dump(),
+            "issues": [i.code for i in clip.issues],
+            "cut_in": clip.cut_in.model_dump() if clip.cut_in else None,
+            "cut_out": clip.cut_out.model_dump() if clip.cut_out else None,
+            "adjustments": clip.adjustments,
+            "text": clip_text(project, clip),
+        }
+        if render:
+            project = pipeline.render(project.id, clip.id)
+            fresh = project.clip(clip.id)
+            assert fresh.render is not None
+            entry["render"] = {
+                "seconds": fresh.render.seconds,
+                "layout": fresh.render.layout,
+                "seconds_per_output_minute": round(fresh.render.seconds / max(1e-6, fresh.render.duration) * 60, 2),
+            }
+            entry["boundary"] = boundary_check(project, fresh, Path(fresh.render.path), settings)
+            entry["framing"] = framing(project, fresh, settings)
+        clips_out.append(entry)
+    row["clips"] = clips_out
+    if run_judge and project.clips:
+        items = [JudgeItem(c["id"], "model", c["text"]) for c in clips_out]
+        for k, (i, j) in enumerate(random_windows(project, len(clips_out), settings, seed=zlib.crc32(item["id"].encode()) % 1000)):
+            items.append(JudgeItem(f"random-{k}", "random", " ".join(s.text for s in project.sentences[i : j + 1])))
+        if gold is not None:
+            for k, h in enumerate(gold["highlights"]):
+                items.append(JudgeItem(f"gold-{k}", "gold", h["text"]))
+        row["judge"] = judge(items, settings, tag=f"eval-{name}:judge")
+    return row
+
+
+def run(*, name: str, settings: Settings, only: list[str] | None = None, render: bool = True, judge: bool = True) -> None:
+    out = results_dir(name) / "items"
+    out.mkdir(parents=True, exist_ok=True)
+    items = [i for i in testset.load_manifest() if not only or i["id"] in only]
+    missing = [i["id"] for i in items if not testset.media_path(i).exists()]
+    if missing:
+        raise SystemExit(f"missing media (run `recut testset download` / `recut testset synth`): {', '.join(missing)}")
+    for item in items:
+        target = out / f"{item['id']}.json"
+        if target.exists() and not only:
+            print(f"{item['id']}: done already")
+            continue
+        started = time.monotonic()
+        row = evaluate_item(item, name, settings, render=render, run_judge=judge)
+        row["eval_seconds"] = round(time.monotonic() - started, 1)
+        target.write_text(json.dumps(row, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"{item['id']}: {len(row['clips'])} clips, WER {row['wer']['wer']:.3f}, {row['eval_seconds']:.0f} s")
+    meta = {
+        "run": name,
+        "provider": settings.llm_provider,
+        "model": settings.model_name,
+        "fallbacks": settings.fallbacks,
+        "judge": settings.judge_model if settings.llm_provider != "fake" else "fake/rules",
+        "asr": f"faster-whisper {settings.whisper_model} ({settings.whisper_compute_type}, CPU)",
+        "finished_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+    }
+    (results_dir(name) / "run.json").write_text(json.dumps(meta, indent=1), encoding="utf-8")

@@ -60,7 +60,9 @@ def plain_transcript(sentences: Sequence[Sentence], *, max_words: int = MAX_PROM
     lines = []
     for s in keep:
         lines.append(f"[{s.index}] {ts(s.start)} {s.speaker}: {s.text}")
-    note = "" if len(keep) == len(sentences) else f"(long transcript: {len(keep)} of {len(sentences)} sentences shown)\n"
+    note = (
+        "" if len(keep) == len(sentences) else f"(long transcript: {len(keep)} of {len(sentences)} sentences shown)\n"
+    )
     return note + "\n".join(lines)
 
 
@@ -93,7 +95,12 @@ def _strings(value: Any) -> list[str]:
 
 
 def show_notes_markdown(
-    summary: str, takeaways: Sequence[str], quote_ids: Sequence[int], sentences: Sequence[Sentence], chapters: Sequence[Chapter], credit: str
+    summary: str,
+    takeaways: Sequence[str],
+    quote_ids: Sequence[int],
+    sentences: Sequence[Sentence],
+    chapters: Sequence[Chapter],
+    credit: str,
 ) -> str:
     by_index = {s.index: s for s in sentences}
     out = ["## Summary", "", summary.strip(), ""]
@@ -168,7 +175,12 @@ def generate(
     outputs.seo_description = assemble_description(str(meta.get("description") or ""), chapters, source)
     outputs.tags = _clean_tags(_strings(meta.get("tags")))
     outputs.show_notes = show_notes_markdown(
-        str(meta.get("summary") or ""), _strings(meta.get("takeaways"))[:6], _ints(meta.get("quotes")), sentences, chapters, credit
+        str(meta.get("summary") or ""),
+        _strings(meta.get("takeaways"))[:6],
+        _ints(meta.get("quotes")),
+        sentences,
+        chapters,
+        credit,
     )
 
     # 2. blog post
@@ -263,7 +275,7 @@ def generate(
         )
 
     # grounding of the long-form texts
-    issues: list[GroundingIssue] = []
+    long_issues: list[GroundingIssue] = []
     for label, text in (
         ("title", outputs.seo_title),
         ("description", str(meta.get("description") or "")),
@@ -271,14 +283,14 @@ def generate(
         ("blog post", outputs.blog_post),
     ):
         for issue in check(text, index):
-            issues.append(issue.model_copy(update={"message": f"{label}: {issue.message}"}))
+            long_issues.append(issue.model_copy(update={"message": f"{label}: {issue.message}"}))
     if len(title) > limits.YOUTUBE_TITLE_TARGET:
-        issues.append(
+        long_issues.append(
             GroundingIssue(
                 kind="length",
                 text=title,
                 message=f"title: {len(title)} characters; YouTube cuts titles in search after about {limits.YOUTUBE_TITLE_TARGET}",
             )
         )
-    outputs.issues = issues
+    outputs.issues = long_issues
     return outputs, stats

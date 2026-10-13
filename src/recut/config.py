@@ -19,6 +19,9 @@ ASSETS_DIR = REPO_ROOT / "assets"
 DEFAULT_FREE_MODEL = "nvidia/nemotron-3-super-120b-a12b:free"
 DEFAULT_FREE_FALLBACKS = ["nvidia/nemotron-3-ultra-550b-a55b:free"]
 DEFAULT_JUDGE_MODEL = "google/gemma-4-31b-it:free"
+DEFAULT_JUDGE_FALLBACKS = ["dots-studio/dots-3-note-preview:free"]
+DEFAULT_SCRIPT_MODEL = "dots-studio/dots-3-note-preview:free"
+"""The synthetic test scripts are drafted by a different model family than the one that picks clips."""
 DEFAULT_MODELS: dict[str, str] = {
     "fake": "fake-rules",
     "openrouter": DEFAULT_FREE_MODEL,
@@ -55,6 +58,9 @@ class Settings(BaseSettings):
     """0 = all cores."""
     whisper_language: str = "en"
     whisper_beam_size: int = 1
+    transcript_cache_dir: Path | None = Path(".cache/transcripts")
+    """Transcripts keyed by the source's SHA-256 and the model, so re-processing a file does not transcribe it again
+    (the original transcription time is kept in the transcript). Empty = no cache."""
     diarize: bool = True
     max_speakers: int = 4
 
@@ -131,7 +137,7 @@ class Settings(BaseSettings):
         classmethod(lambda cls, v: _split(v))
     )
 
-    @field_validator("llm_ledger", mode="before")
+    @field_validator("llm_ledger", "transcript_cache_dir", mode="before")
     @classmethod
     def _empty_ledger(cls, value: object) -> object:
         return None if value in ("", None) else value

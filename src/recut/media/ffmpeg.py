@@ -65,11 +65,7 @@ def probe(path: Path, *, ffprobe: str = "ffprobe") -> Probe:
     data = json.loads(proc.stdout or b"{}")
     streams = data.get("streams") or []
     video = next(
-        (
-            s
-            for s in streams
-            if s.get("codec_type") == "video" and not (s.get("disposition") or {}).get("attached_pic")
-        ),
+        (s for s in streams if s.get("codec_type") == "video" and not (s.get("disposition") or {}).get("attached_pic")),
         None,
     )
     audio = next((s for s in streams if s.get("codec_type") == "audio"), None)
@@ -97,7 +93,9 @@ def sha256_file(path: Path, chunk: int = 1 << 20) -> str:
     return digest.hexdigest()
 
 
-def extract_audio(src: Path, dst: Path, *, ffmpeg: str = "ffmpeg", start: float = 0.0, end: float | None = None) -> Path:
+def extract_audio(
+    src: Path, dst: Path, *, ffmpeg: str = "ffmpeg", start: float = 0.0, end: float | None = None
+) -> Path:
     """16 kHz mono 16-bit WAV, the input of speech recognition, diarization and silence detection."""
     dst.parent.mkdir(parents=True, exist_ok=True)
     tmp = dst.with_suffix(".tmp.wav")

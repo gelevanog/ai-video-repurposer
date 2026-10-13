@@ -1,0 +1,80 @@
+[
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "ok": true,
+  "clips": [
+   [
+    3,
+    13,
+    "Why creators should price by value, not fear"
+   ],
+   [
+    23,
+    29,
+    "How to raise prices without losing clients"
+   ]
+  ],
+  "rejected": [],
+  "served": "nvidia/nemotron-3-super-120b-a12b:free",
+  "output_tokens": 4940,
+  "seconds": 42.7
+ },
+ {
+  "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "ok": true,
+  "clips": [
+   [
+    15,
+    21,
+    "The Three-Number Pricing Test for Creators"
+   ],
+   [
+    24,
+    29,
+    "How to Raise Prices Without Losing Clients"
+   ]
+  ],
+  "rejected": [],
+  "served": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "output_tokens": 2217,
+  "seconds": 37.6
+ },
+ {
+  "model": "google/gemma-4-31b-it:free",
+  "ok": false,
+  "error": "rate limited: google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+  "seconds": 101.4
+ },
+ {
+  "model": "thinkingmachines/inkling:free",
+  "ok": false,
+  "error": "upstream 403: thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+  "seconds": 3.0
+ },
+ {
+  "model": "dots-studio/dots-3-note-preview:free",
+  "ok": true,
+  "clips": [
+   [
+    3,
+    13,
+    "The Pricing Trap Creators Fall Into"
+   ],
+   [
+    15,
+    21,
+    "The 3-Number Pricing Test for Creators"
+   ]
+  ],
+  "rejected": [],
+  "served": "dots-studio/dots-3-note-preview:free",
+  "output_tokens": 3634,
+  "seconds": 44.2
+ },
+ {
+  "model": "nvidia/nemotron-3.5-lightning:free",
+  "ok": false,
+  "error": "empty answer: max_tokens reached before any output",
+  "seconds": 166.2
+ }
+]

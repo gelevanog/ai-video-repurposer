@@ -1,0 +1,134 @@
+{
+ "about": "Recut evaluation test set. Media files live in data/testset/media/ (gitignored); `recut testset download` fetches the NASA items, `recut testset synth` renders the synthetic ones.",
+ "items": [
+  {
+   "id": "creator-margin-ep12",
+   "kind": "synthetic",
+   "title": "The Creator Margin, episode 12: Why your first price is too low",
+   "script": "data/samples/creator-margin-ep12.script.json",
+   "license": "CC0 1.0 (synthetic, made for this repository)",
+   "attribution": "",
+   "note": "the bundled demo sample (also committed in data/samples/)"
+  },
+  {
+   "id": "synth-01-freelance-pricing",
+   "kind": "synthetic",
+   "title": "Stop Charging by the Hour: Pricing for Freelance Video Editors",
+   "script": "data/testset/synthetic/synth-01-freelance-pricing.script.json",
+   "license": "CC0 1.0 (synthetic, made for this repository)",
+   "attribution": ""
+  },
+  {
+   "id": "synth-02-sleep-shift-work",
+   "kind": "synthetic",
+   "title": "Sleeping Well on Night Shifts",
+   "script": "data/testset/synthetic/synth-02-sleep-shift-work.script.json",
+   "license": "CC0 1.0 (synthetic, made for this repository)",
+   "attribution": ""
+  },
+  {
+   "id": "synth-03-newsletter-growth",
+   "kind": "synthetic",
+   "title": "From Zero to 10,000 Newsletter Subscribers",
+   "script": "data/testset/synthetic/synth-03-newsletter-growth.script.json",
+   "license": "CC0 1.0 (synthetic, made for this repository)",
+   "attribution": ""
+  },
+  {
+   "id": "synth-04-espresso-mistakes",
+   "kind": "synthetic",
+   "title": "Five Home Espresso Mistakes (and How to Fix Them)",
+   "script": "data/testset/synthetic/synth-04-espresso-mistakes.script.json",
+   "license": "CC0 1.0 (synthetic, made for this repository)",
+   "attribution": ""
+  },
+  {
+   "id": "synth-05-remote-team-rituals",
+   "kind": "synthetic",
+   "title": "Remote Team Rituals That Actually Work",
+   "script": "data/testset/synthetic/synth-05-remote-team-rituals.script.json",
+   "license": "CC0 1.0 (synthetic, made for this repository)",
+   "attribution": ""
+  },
+  {
+   "id": "synth-06-emergency-fund",
+   "kind": "synthetic",
+   "title": "Your First $1,000 Emergency Fund",
+   "script": "data/testset/synthetic/synth-06-emergency-fund.script.json",
+   "license": "CC0 1.0 (synthetic, made for this repository)",
+   "attribution": ""
+  },
+  {
+   "id": "synth-07-beginner-marathon",
+   "kind": "synthetic",
+   "title": "Training for Your First Marathon",
+   "script": "data/testset/synthetic/synth-07-beginner-marathon.script.json",
+   "license": "CC0 1.0 (synthetic, made for this repository)",
+   "attribution": ""
+  },
+  {
+   "id": "synth-08-giving-feedback",
+   "kind": "synthetic",
+   "title": "How to Give Feedback Without Starting a Fight",
+   "script": "data/testset/synthetic/synth-08-giving-feedback.script.json",
+   "license": "CC0 1.0 (synthetic, made for this repository)",
+   "attribution": ""
+  },
+  {
+   "id": "nasa-crew9-news-conference",
+   "kind": "nasa",
+   "title": "NASA's SpaceX Crew-9 crew news conference (2024-07-26)",
+   "nasa_id": "jsc2024m000139_Crew-9_Crew_News_Conference",
+   "url": "https://images-assets.nasa.gov/video/jsc2024m000139_Crew-9_Crew_News_Conference/jsc2024m000139_Crew-9_Crew_News_Conference~small.mp4",
+   "captions_url": "https://images-assets.nasa.gov/video/jsc2024m000139_Crew-9_Crew_News_Conference/jsc2024m000139_Crew-9_Crew_News_Conference.srt",
+   "source_page": "https://images.nasa.gov/details/jsc2024m000139_Crew-9_Crew_News_Conference",
+   "sha256": "554fa886dc4c6a8db099afa2259519271c98514595de9f5c99b9a6a31794d855",
+   "captions_sha256": "fd59a1f55c3853758d32d91aa127eab6119d1437a0b4a3c18d4bb1194e596f5b",
+   "bytes": 311167241,
+   "license": "Public domain (NASA media, not subject to US copyright; NASA media usage guidelines)",
+   "attribution": "Video: NASA (jsc2024m000139_Crew-9_Crew_News_Conference), images.nasa.gov"
+  },
+  {
+   "id": "nasa-ohara-postflight",
+   "kind": "nasa",
+   "title": "Loral O'Hara post-flight crew news conference (2024-04-15)",
+   "nasa_id": "iss070m261061444_Loral_O’Hara_Post-Flight_Crew_News_Conference_240415",
+   "url": "https://images-assets.nasa.gov/video/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415~small.mp4",
+   "captions_url": "https://images-assets.nasa.gov/video/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415.srt",
+   "source_page": "https://images.nasa.gov/details/iss070m261061444_Loral_O%E2%80%99Hara_Post-Flight_Crew_News_Conference_240415",
+   "sha256": "0eb3f2fd0fbcb350ecad3de4798a6a1a954c67e85f9ef063f0a804c259ed4fcc",
+   "captions_sha256": "998932e04464ba41e1c539efce399833ec71541ba4c9c92849e7a1e25abec8f0",
+   "bytes": 265098927,
+   "license": "Public domain (NASA media, not subject to US copyright; NASA media usage guidelines)",
+   "attribution": "Video: NASA (iss070m261061444_Loral_O’Hara_Post-Flight_Crew_News_Conference_240415), images.nasa.gov"
+  },
+  {
+   "id": "nasa-swot-prelaunch",
+   "kind": "nasa",
+   "title": "SWOT prelaunch news conference (2022-12-14)",
+   "nasa_id": "KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707",
+   "url": "https://images-assets.nasa.gov/video/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707~small.mp4",
+   "captions_url": "https://images-assets.nasa.gov/video/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707.srt",
+   "source_page": "https://images.nasa.gov/details/KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707",
+   "sha256": "630adabf2c028d631277ff3bb932831e12a343e7ebf7130bc368f990f2200ccc",
+   "captions_sha256": "b3cc837ecb17e608e7b084e05276347c74d6c337fe12a33f8422a62148d6378d",
+   "bytes": 515908737,
+   "license": "Public domain (NASA media, not subject to US copyright; NASA media usage guidelines)",
+   "attribution": "Video: NASA (KSC-20221214-VP-MMS01-0001-SWOT_Prelaunch_News_Conference-3318707), images.nasa.gov"
+  },
+  {
+   "id": "nasa-solar-cruiser",
+   "kind": "nasa",
+   "title": "Solar Cruiser solar sail deployment demo (2022-11-09)",
+   "nasa_id": "Solar Cruiser Demo",
+   "url": "https://images-assets.nasa.gov/video/Solar%20Cruiser%20Demo/Solar%20Cruiser%20Demo~small.mp4",
+   "captions_url": "https://images-assets.nasa.gov/video/Solar%20Cruiser%20Demo/Solar%20Cruiser%20Demo.srt",
+   "source_page": "https://images.nasa.gov/details/Solar%20Cruiser%20Demo",
+   "sha256": "829d684d2fcffcb407f071da17556070dc34b4699446ee030afd823a452e8344",
+   "captions_sha256": "170c17e281768e681e0b677ffd07ef7d976768ede1a323c30aa2d76df32d75b1",
+   "bytes": 58160955,
+   "license": "Public domain (NASA media, not subject to US copyright; NASA media usage guidelines)",
+   "attribution": "Video: NASA (Solar Cruiser Demo), images.nasa.gov"
+  }
+ ]
+}

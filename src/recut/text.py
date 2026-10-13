@@ -50,11 +50,7 @@ def sentences_from_words(words: Sequence[Word]) -> list[Sentence]:
         end = last or is_sentence_end(word.text)
         if not end:
             nxt = words[i + 1]
-            if nxt.speaker != word.speaker:
-                end = True
-            elif i - first + 1 >= MAX_SENTENCE_WORDS and nxt.start - word.end >= 0.5:
-                end = True
-            elif nxt.start - word.end >= LONG_PAUSE * 2.5 and i - first >= 3:
+            if nxt.speaker != word.speaker or (i - first + 1 >= MAX_SENTENCE_WORDS and nxt.start - word.end >= 0.5) or (nxt.start - word.end >= LONG_PAUSE * 2.5 and i - first >= 3):
                 end = True
         if end:
             span = words[first : i + 1]

@@ -189,14 +189,15 @@ def texttiling(sentences: Sequence[Sentence], *, k: int, block: int = 6) -> list
         depth[gap] = (lpeak - smooth[gap]) + (rpeak - smooth[gap])
     order = np.argsort(-depth)
     picked: list[int] = []
-    for gap in order:
+    for raw_gap in order:
+        gap = int(raw_gap)
         if depth[gap] <= 0 or len(picked) >= k - 1:
             break
-        t = sentences[int(gap)].start
+        t = sentences[gap].start
         if t < MIN_CHAPTER or sentences[-1].end - t < MIN_CHAPTER:
             continue
         if all(abs(t - sentences[p].start) >= MIN_CHAPTER * 2 for p in picked):
-            picked.append(int(gap))
+            picked.append(gap)
     bounds = [0, *sorted(picked)]
     out = []
     for i, b in enumerate(bounds):

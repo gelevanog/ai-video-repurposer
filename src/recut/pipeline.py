@@ -195,9 +195,18 @@ class Pipeline:
         return "16 kHz mono"
 
     def _stage_transcribe(self, project: Project) -> str:
-        transcript = transcribe(
-            self.media(project), self.audio_path(project), self.settings, duration=project.source.duration
-        )
+        cache = self.settings.transcript_cache_dir
+        key = f"{project.source.sha256}-{self.settings.whisper_model}-{self.settings.whisper_compute_type}.json"
+        cached = cache / key if cache is not None and project.source.sha256 and self.settings.asr == "whisper" else None
+        if cached is not None and cached.exists():
+            transcript = Transcript.model_validate_json(cached.read_text(encoding="utf-8"))
+        else:
+            transcript = transcribe(
+                self.media(project), self.audio_path(project), self.settings, duration=project.source.duration
+            )
+            if cached is not None:
+                cached.parent.mkdir(parents=True, exist_ok=True)
+                cached.write_text(transcript.model_dump_json(), encoding="utf-8")
         project.transcript = transcript
         project.sentences = sentences_from_words(transcript.words)
         rtf = transcript.seconds / max(1.0, project.source.duration)
@@ -351,7 +360,8 @@ class Pipeline:
                     errors = [i for i in clip.issues if i.severity == "error"]
                     if errors and not patch.force:
                         raise ReviewError(
-                            "fix these before approving (or approve with force): " + "; ".join(i.message for i in errors)
+                            "fix these before approving (or approve with force): "
+                            + "; ".join(i.message for i in errors)
                         )
                 clip.status = patch.status
             clip.history.append({"at": now_iso(), "before": before, "patch": patch.model_dump(exclude_none=True)})
@@ -491,9 +501,11 @@ class Pipeline:
                 stem = f"{clip.rank:02d}-{_slug(clip.title)}"
                 zf.write(clip.render.path, f"clips/{stem}.mp4")
                 zf.writestr(f"clips/{stem}.srt", clip_srt(project, clip))
-                post = clip.post.caption + ("\n\n" + " ".join(clip.post.hashtags) if clip.post.hashtags else "")
-                zf.writestr(f"clips/{stem}.txt", f"{clip.title}\n\n{post.strip()}\n")
-                manifest["clips"].append({"file": f"clips/{stem}.mp4", "start": clip.start, "end": clip.end, "title": clip.title})
+                caption = clip.post.caption + ("\n\n" + " ".join(clip.post.hashtags) if clip.post.hashtags else "")
+                zf.writestr(f"clips/{stem}.txt", f"{clip.title}\n\n{caption.strip()}\n")
+                manifest["clips"].append(
+                    {"file": f"clips/{stem}.mp4", "start": clip.start, "end": clip.end, "title": clip.title}
+                )
             if project.outputs.approved:
                 o = project.outputs
                 zf.writestr("youtube/title.txt", o.seo_title + "\n")

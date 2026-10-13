@@ -53,7 +53,7 @@ def ensure_models(directory: Path = MODEL_DIR) -> Path:
         if path.exists() and _sha256(path) == f.sha256:
             continue
         tmp = path.with_suffix(".part")
-        urllib.request.urlretrieve(f.url, tmp)  # noqa: S310 - fixed https URL
+        urllib.request.urlretrieve(f.url, tmp)
         if _sha256(tmp) != f.sha256:
             tmp.unlink()
             raise RuntimeError(f"checksum mismatch for {f.name}")

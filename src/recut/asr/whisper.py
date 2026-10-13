@@ -119,6 +119,11 @@ def _monotonic(words: list[Word]) -> list[Word]:
 def transcribe(media: Path, wav: Path, settings: Settings, *, duration: float | None = None) -> Transcript:
     if settings.asr == "sidecar":
         return load_sidecar(media)
-    if sidecar_path(media).exists() and os.environ.get("RECUT_PREFER_SIDECAR") == "1":
-        return load_sidecar(media)
+    try:
+        import faster_whisper  # noqa: F401
+    except ImportError:
+        if sidecar_path(media).exists():
+            log.warning("asr.sidecar_fallback", reason="faster-whisper is not installed")
+            return load_sidecar(media)
+        raise ASRUnavailableError("faster-whisper is not installed: `uv sync --extra asr`") from None
     return transcribe_wav(wav, settings, duration=duration)

@@ -195,7 +195,9 @@ def render_clip(
     ass_path = out.with_suffix(".ass")
     ass_path.write_text(ass, encoding="utf-8")
     tmp = out.with_name(out.stem + ".part.mp4")
-    job = RenderJob(src, tmp, clip.start, clip.end, probe, plan, ass_path, settings.render_width, settings.render_height)
+    job = RenderJob(
+        src, tmp, clip.start, clip.end, probe, plan, ass_path, settings.render_width, settings.render_height
+    )
     run(build_command(job, settings), timeout=max(600.0, duration * 30))
     tmp.replace(out)
     elapsed = time.monotonic() - started
