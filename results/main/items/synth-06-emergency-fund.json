@@ -1,0 +1,380 @@
+{
+ "id": "synth-06-emergency-fund",
+ "kind": "synthetic",
+ "title": "Your First $1,000 Emergency Fund",
+ "duration": 466.151,
+ "project_id": "your-first-1-000-emergency-fund-f1a4b3",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.14,
+   "message": "07:46 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.13,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.0,
+   "message": "882 words · faster-whisper small (int8, CPU) · 0.21x real time"
+  },
+  "diarize": {
+   "seconds": 0.32,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.14); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 49.13,
+   "message": "3 clips from 4 candidates"
+  },
+  "chapters": {
+   "seconds": 0.0,
+   "message": "4 chapters"
+  },
+  "posts": {
+   "seconds": 0.0,
+   "message": "6 social posts, 0 grounding flags"
+  }
+ },
+ "asr_seconds": 95.58,
+ "asr_rtf": 0.205,
+ "process_seconds_this_run": 49.9,
+ "wer": {
+  "wer": 0.020994475138121547,
+  "ref_words": 905.0,
+  "substitutions": 11.0,
+  "deletions": 3.0,
+  "insertions": 5.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 1,
+  "predicted_speakers": 1,
+  "count_correct": true,
+  "word_accuracy": 1.0,
+  "words": 880,
+  "note": "voices not separable with the light MFCC clustering (best silhouette 0.14); labelled as a single speaker"
+ },
+ "chapters": {
+  "predicted": 4,
+  "gold": 5,
+  "tol15": {
+   "hits": 3,
+   "precision": 1.0,
+   "recall": 0.75,
+   "f1": 0.857,
+   "mean_abs_error_s": 0.6
+  },
+  "tol30": {
+   "hits": 3,
+   "precision": 1.0,
+   "recall": 0.75,
+   "f1": 0.857,
+   "mean_abs_error_s": 0.6
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 3,
+  "recall": 0.6,
+  "coverage": [
+   0.84,
+   0.0,
+   0.83,
+   0.0,
+   0.82
+  ],
+  "clips_mostly_on_a_highlight": 3
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Why $1,000 Prevents Financial Crisis"
+  },
+  {
+   "start": 101.0,
+   "title": "Find Money by Canceling Unused Subscriptions"
+  },
+  {
+   "start": 198.0,
+   "title": "Automate Savings to Build the Fund"
+  },
+  {
+   "start": 282.0,
+   "title": "Keep Fund Separate, Use for Emergencies"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 45,
+  "description_chars": 764,
+  "blog_words": 751,
+  "show_notes_words": 254,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 0 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_3bae162b",
+   "rank": 1,
+   "start": 385.73,
+   "end": 416.91,
+   "duration": 31.18,
+   "title": "Use the 3‑Question Test to Spot Real Emergencies",
+   "score": 83.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 9.0,
+    "standalone": 8.0,
+    "clarity": 9.0,
+    "virality": 80.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 385.73,
+    "inside_word": false,
+    "gap_before": 0.38,
+    "gap_after": 0.12,
+    "level_db": -73.1
+   },
+   "cut_out": {
+    "at": 416.91,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.04,
+    "level_db": -73.1
+   },
+   "adjustments": [],
+   "text": "Is it urgent? Is it necessary? Is it unexpected? A blown transmission on the only car that gets you to work. Yes, yes, yes, a 65 inch TV on sale for Black Friday. Not urgent, not necessary. And you knew Black Friday existed. That's zero for three. The fund is for the roof leak, the ER visit, the layoff.",
+   "render": {
+    "seconds": 4.0,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.7
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "is",
+     "layoff"
+    ],
+    "got": [
+     "is",
+     "layoff"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_e43dfd38",
+   "rank": 2,
+   "start": 4.8,
+   "end": 49.83,
+   "duration": 45.03,
+   "title": "Why $1,000 Is Your First Emergency Fund",
+   "score": 82.5,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 9.0,
+    "virality": 70.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 4.8,
+    "inside_word": false,
+    "gap_before": 1.1,
+    "gap_after": 0.1,
+    "level_db": -66.5
+   },
+   "cut_out": {
+    "at": 49.83,
+    "inside_word": false,
+    "gap_before": 0.29,
+    "gap_after": 1.17,
+    "level_db": -63.9
+   },
+   "adjustments": [],
+   "text": "$1,000. It feels arbitrary, but it's the line between a bad day and a financial crisis. Picture this. You're driving to work. Hear that thump -thump -thump and pull over to a shredded tire. $400. For a replacement, no buffer. Remember you swipe the credit card, the card carries 24 % interest. You pay the minimum, because rent is due. Six months later, that 400 has become 1200, 1000. In a savings account would have stopped the bleeding at 400. That's the whole point.",
+   "render": {
+    "seconds": 5.38,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.17
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": false,
+    "expected": [
+     "1000",
+     "point"
+    ],
+    "got": [
+     "1000",
+     "bye"
+    ],
+    "clip_wer": 0.069
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_4886cb65",
+   "rank": 3,
+   "start": 210.4,
+   "end": 253.04,
+   "duration": 42.64,
+   "title": "Automate $25 Each Payday to Build Your Fund",
+   "score": 76.5,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 70.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 210.4,
+    "inside_word": false,
+    "gap_before": 0.42,
+    "gap_after": 0.12,
+    "level_db": -73.1
+   },
+   "cut_out": {
+    "at": 253.04,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.92,
+    "level_db": -72.6
+   },
+   "adjustments": [],
+   "text": "Set up a $25 automatic transfer. The day your salary hits, 25 bucks. 26 pay periods. That's $650 a year. You don't decide each time. You don't negotiate with yourself. After a long week, the money Many vanishes before you, can spend it on takeout. Willpower is a battery that drains. Automation is a wire that stays live. If 25 feels tight, start with 10. The habit matters more than the amount, and you can bump it up after a raise.",
+   "render": {
+    "seconds": 5.28,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.43
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "set",
+     "raise"
+    ],
+    "got": [
+     "set",
+     "raise"
+    ],
+    "clip_wer": 0.024
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "clip_e43dfd38": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains the importance of a $1000 emergency fund using a flat tire example.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Introduces a three-question test to distinguish emergencies from non-essential purchases.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 3,
+   "payoff": 3,
+   "reason": "Starts mid-sentence and ends on a cliffhanger about credit card strategy.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Offers practical advice on opening and naming a separate emergency savings account.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Explains the concept of paying yourself first through automation.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 8,
+   "reason": "Explains why an emergency fund is prioritized over aggressive credit card debt payoff.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Shares a personal subscription audit story to show how to fund an emergency fund.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_3bae162b": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Uses the three-question test to define what qualifies as an emergency.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Tells a complete story about a flat tire to illustrate the danger of credit card debt.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_4886cb65": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Provides actionable steps and math for setting up automatic savings transfers.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 9,
+   "payoff": 4,
+   "reason": "Starts with a strong hook but ends mid-sentence introducing the subscription audit.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 135.0
+}

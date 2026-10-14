@@ -184,86 +184,86 @@
   }
  ],
  "judge": {
-  "clip_504b82f0": {
-   "group": "model",
+  "gold-0": {
+   "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Complete personal story showing how a free edit led to a $5k client.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains decoy pricing strategy with stats and a clear lesson on framing.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-2": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Detailed explanation of decoy pricing with concrete numbers and a clear takeaway.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_c06c287a": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 3,
+   "payoff": 5,
+   "reason": "Starts mid-sentence and stitches two different topics conversationally.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-3": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Actionable script for price objections, explaining the trade-off and showing high success rate.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
-  "gold-0": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_c06c287a": {
+  "clip_504b82f0": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Q&A format telling the origin story of how free wedding edit led to a $5k client.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-4": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-1": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-0": {
-   "group": "random",
-   "standalone": false,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Story of unsolicited teaser edit landing a $2k monthly retainer, illustrating 'show, don't tell'.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-1": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Explains the pitfall of hourly billing for recurring work and the solution of flat-rate packages.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
    "hook": 4,
    "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "reason": "Starts with a reaction to external context and ends on a conversational exclamation.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 1.1

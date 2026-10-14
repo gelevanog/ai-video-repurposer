@@ -228,32 +228,86 @@
   }
  ],
  "judge": {
-  "clip_e0fbf4c1": {
-   "error": "empty answer: max_tokens reached before any output"
-  },
-  "clip_80f89341": {
-   "error": "empty answer: max_tokens reached before any output"
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Explains coffee freshness, the problem of stale beans, and provides a clear, actionable fix.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-0": {
-   "error": "empty answer: max_tokens reached before any output"
-  },
-  "random-1": {
-   "error": "empty answer: max_tokens reached before any output"
-  },
-  "gold-0": {
-   "error": "empty answer: max_tokens reached before any output"
-  },
-  "gold-1": {
-   "error": "empty answer: max_tokens reached before any output"
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Focuses on tamping, explains how a tilted tamp ruins extraction, and offers a simple leveling fix.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-2": {
-   "error": "empty answer: max_tokens reached before any output"
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 10,
+   "payoff": 9,
+   "reason": "Advocates for using a cheap kitchen scale to achieve consistent espresso yield and better flavor.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_e0fbf4c1": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains how to use a shot timer and the single-variable method to dial in espresso grind.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-3": {
-   "error": "empty answer: max_tokens reached before any output"
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Visualizes a tilted tamp, explains the channeling effect, and provides the toothpick leveling fix.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_80f89341": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Addresses stale beans as the primary espresso mistake, explaining roast dates and storage.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-4": {
-   "error": "empty answer: max_tokens reached before any output"
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains the necessity of weekly back-flushing to prevent rancid oil buildup in espresso machines.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Details the 25-30 second extraction rule and the single-variable method for dialing in espresso.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Provides a detailed, step-by-step guide on adjusting grind settings based on shot timer feedback.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 611.4

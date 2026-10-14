@@ -1,0 +1,380 @@
+{
+ "id": "synth-05-remote-team-rituals",
+ "kind": "synthetic",
+ "title": "Remote Team Rituals That Actually Work",
+ "duration": 488.64,
+ "project_id": "remote-team-rituals-that-actuall-db2161",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.16,
+   "message": "08:08 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.17,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.0,
+   "message": "1263 words · faster-whisper small (int8, CPU) · 0.16x real time"
+  },
+  "diarize": {
+   "seconds": 0.64,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.51)"
+  },
+  "clips": {
+   "seconds": 0.03,
+   "message": "3 clips from 4 candidates"
+  },
+  "chapters": {
+   "seconds": 32.89,
+   "message": "4 chapters"
+  },
+  "posts": {
+   "seconds": 78.25,
+   "message": "6 social posts, 0 grounding flags"
+  }
+ },
+ "asr_seconds": 76.17,
+ "asr_rtf": 0.1559,
+ "process_seconds_this_run": 112.3,
+ "wer": {
+  "wer": 0.027258566978193146,
+  "ref_words": 1284.0,
+  "substitutions": 11.0,
+  "deletions": 18.0,
+  "insertions": 6.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9889,
+  "words": 1262,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.51)"
+ },
+ "chapters": {
+  "predicted": 4,
+  "gold": 5,
+  "tol15": {
+   "hits": 1,
+   "precision": 0.333,
+   "recall": 0.25,
+   "f1": 0.286,
+   "mean_abs_error_s": 0.3
+  },
+  "tol30": {
+   "hits": 1,
+   "precision": 0.333,
+   "recall": 0.25,
+   "f1": 0.286,
+   "mean_abs_error_s": 0.3
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 1,
+  "recall": 0.2,
+  "coverage": [
+   1.0,
+   0.34,
+   0.0,
+   0.18,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 1
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Creating a Weekly Blocker Check‑In"
+  },
+  {
+   "start": 122.0,
+   "title": "Swapping Stand‑up for Async Updates"
+  },
+  {
+   "start": 239.0,
+   "title": "Demo Fridays and Focused Wednesdays"
+  },
+  {
+   "start": 383.0,
+   "title": "Random Lunch Pairs Boost Collaboration"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 50,
+  "description_chars": 913,
+  "blog_words": 1094,
+  "show_notes_words": 282,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 0 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_d637847b",
+   "rank": 1,
+   "start": 294.04,
+   "end": 341.38,
+   "duration": 47.34,
+   "title": "Blocking Wednesdays for focus time boosted deep work",
+   "score": 84.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 80.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 294.04,
+    "inside_word": false,
+    "gap_before": 0.5,
+    "gap_after": 0.12,
+    "level_db": -72.0
+   },
+   "cut_out": {
+    "at": 341.38,
+    "inside_word": false,
+    "gap_before": 0.28,
+    "gap_after": 0.04,
+    "level_db": -72.0
+   },
+   "adjustments": [],
+   "text": "We noticed that deep work evaporated whenever a calendar invite popped up, so we blocked every Wednesday for focus time. No internal syncs, no client calls. The idea came after a sprint where we missed a launch, because everyone was stuck in back -to -back calls. Right, and a client actually pushed back on that. How did that play out? The client said they needed a quick check in every Wednesday, so we offered a shared a sink board instead. They tried it, saw the transparency, and later adopted the same No Meeting Day for their own team. They even started a weekly retro on Thursday to capture what the Wednesday block surfaced. Zero meeting Wednesdays gave the crew a predictable block of uninterrupted hours, and the numbers backed it up.",
+   "render": {
+    "seconds": 5.9,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.48
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "we",
+     "up"
+    ],
+    "got": [
+     "we",
+     "up"
+    ],
+    "clip_wer": 0.015
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_fe07457d",
+   "rank": 2,
+   "start": 97.28,
+   "end": 155.8,
+   "duration": 58.52,
+   "title": "Async stand‑up reclaimed six hours a week",
+   "score": 78.3,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 7.0,
+    "standalone": 8.0,
+    "clarity": 9.0,
+    "virality": 78.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 97.28,
+    "inside_word": false,
+    "gap_before": 0.66,
+    "gap_after": 0.12,
+    "level_db": -72.0
+   },
+   "cut_out": {
+    "at": 155.8,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.26,
+    "level_db": -72.0
+   },
+   "adjustments": [],
+   "text": "The team was spending 15 minutes each morning on a call that often turned into status theater. People tuned out and the same information lived in our project board anyway. We also noticed that the call rarely produced actionable decisions, so the ROI felt low. Right, so you move to a three -line written update. How does that look in practice? Each person posts a quick note. What they finished yesterday, what they'll tackle today, and any blocker that needs help. It lives in a shared channel, searchable, and no one has to sit through a meeting because it's asynchronous. A designer in London can read the update from a teammate in New York before their day starts, and the blocker gets addressed before any code ships. When we replace the daily call with that three -line update, the team reclaimed roughly six hours a week, time that used to vanish into calendar invites and idle chatter, the written format forces clarity.",
+   "render": {
+    "seconds": 7.42,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.61
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "the",
+     "clarity"
+    ],
+    "got": [
+     "the",
+     "clarity"
+    ],
+    "clip_wer": 0.025
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_a658f417",
+   "rank": 3,
+   "start": 33.51,
+   "end": 84.61,
+   "duration": 51.1,
+   "title": "A silent Slack month led to a weekly sink ritual",
+   "score": 74.8,
+   "scores": {
+    "hook": 6.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 9.0,
+    "virality": 68.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 33.51,
+    "inside_word": false,
+    "gap_before": 0.38,
+    "gap_after": 0.12,
+    "level_db": -72.0
+   },
+   "cut_out": {
+    "at": 84.61,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.38,
+    "level_db": -72.0
+   },
+   "adjustments": [],
+   "text": "Three major client launches overlapped, and each designer buried themselves in their own files. Slack channels went silent. No one raised a flag, and the project lead only discovered the bottleneck when a deliverable arrived late. One month we hit a wall, every designer was heads down, Slack went quiet, and a major client Deadline slipped by two days. We realized we had no ritual to surface blockers, no shared pulse, just a pile of tasks. So we introduced a lightweight weekly sink, a shared board, and a simple rule. If you're stuck, you flag it in the next update. The next sprint we delivered on time, and the team reported feeling less isolated. That missed Deadline taught me that rituals aren't overhead. They are the connective tissue that keeps a remote crew moving together.",
+   "render": {
+    "seconds": 6.49,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.62
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "3",
+     "together"
+    ],
+    "got": [
+     "3",
+     "together"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "clip_fe07457d": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains replacing daily status calls with async three-line updates and reclaiming six hours.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Details how a $50 random lunch budget boosted cross-team collaboration and resolved blockers faster.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": false,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "Explains random lunch pairing but ends abruptly on meeting setup without concluding lesson.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Shows how Zero-Meeting Wednesdays improved code review and design metrics, adopted by clients.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains Demo Friday and how unfinished work leads to faster feedback and vulnerability.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 5,
+   "reason": "Conversational fragment about the origin of zero-meeting Wednesdays, ending on metrics.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Highlights the six-hour weekly savings and clarity from async written updates.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_d637847b": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 8,
+   "payoff": 6,
+   "reason": "Conversational clip about blocking Wednesdays for deep work, ending abruptly on metrics.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Story of a missed deadline leading to weekly syncs and the lesson on team rituals.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_a658f417": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Narrative about overlapping launches, silent Slack, and the importance of team rituals.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 6,
+   "reason": "Conversational transition to explaining the three-line update, ending abruptly on clarity.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 219.5
+}

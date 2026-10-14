@@ -688,17 +688,17 @@
  },
  "eval_seconds": 861.0,
  "posts": {
-  "social_posts": 0,
-  "within_limit": 0,
+  "social_posts": 6,
+  "within_limit": 6,
   "truncated": 0,
   "flags_social": 0,
   "flags_long_form": 0,
   "flag_texts": [],
-  "title_chars": 73,
-  "description_chars": 739,
-  "blog_words": 926,
-  "show_notes_words": 441,
+  "title_chars": 69,
+  "description_chars": 1546,
+  "blog_words": 883,
+  "show_notes_words": 381,
   "chapters_youtube_ready": true,
-  "stage_message": "0 social posts, 2 grounding flags, errors: social: empty answer: max_tokens reached before any output"
+  "stage_message": "6 social posts, 0 grounding flags"
  }
 }

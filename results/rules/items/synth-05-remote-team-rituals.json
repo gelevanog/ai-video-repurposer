@@ -218,5 +218,106 @@
    "text": "How did that play out? The client said they needed a quick check in every Wednesday, so we offered a shared a sink board instead. They tried it, saw the transparency, and later adopted the same No Meeting Day for their own team. They even started a weekly retro on Thursday to capture what the Wednesday block surfaced. Zero meeting Wednesdays gave the crew a predictable block of uninterrupted hours, and the numbers backed it up. In the first month, average code review turnaround dropped from 12 hours to 4, and designers reported a 30 % rise in completed UI screens."
   }
  ],
- "eval_seconds": 4.4
+ "eval_seconds": 4.4,
+ "judge": {
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains Demo Friday's purpose and benefits, ending with why they protect it.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Details replacing daily calls with written updates, showing clear time and efficiency gains.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Explains the random lunch pairing perk and its quantifiable impact on cross-team collaboration.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Narrates the origin of No Meeting Wednesdays and shares positive productivity metrics.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_a9fe82d1": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": false,
+   "hook": 9,
+   "payoff": 6,
+   "reason": "Explains the value of showing unfinished work to get early feedback, though the delivery is somewhat disjointed.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Details the impact of No Meeting Wednesdays and how it influenced the client's workflow.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_042871bf": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains the mechanics and benefits of the asynchronous three-line daily update.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_0ef8d32a": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Explains how a client's request led to adopting No Meeting Wednesdays with positive results.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Shares a story of a missed deadline leading to implementing communication rituals for better alignment.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": false,
+   "hook": 7,
+   "payoff": 6,
+   "reason": "Describes the three-line update practice but cuts off before fully concluding the benefits.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": false,
+   "hook": 6,
+   "payoff": 5,
+   "reason": "Discusses random lunch pairings and their informal collaboration benefits, but ends by repeating the setup.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ }
 }

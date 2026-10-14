@@ -220,5 +220,106 @@
    "text": "If 25 feels tight, start with 10. The habit matters more than the amount, and you can bump it up after a raise. Automation also removes the temptation to borrow from the fund. for a weekend trip. The transfer happens before you even see the balance. Right, the key is consistency. Even a small automatic transfer builds the muscle memory of saving. Log into your bank right now. Schedule it. Future you will thank present you."
   }
  ],
- "eval_seconds": 102.2
+ "eval_seconds": 102.2,
+ "judge": {
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Explains automation over willpower with concrete math and a strong closing metaphor.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Personal subscription audit reveals how to save over $1000 for an emergency fund.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Uses a three-question test to clearly define true emergencies versus unnecessary purchases.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains the credit card interest trap and why a cushion must come before debt payoff.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_93251f59": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Listener example of finding $144 from unused subscription, urging audit and automation.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Practical advice on setting up a separate, boring account to keep emergency fund out of sight.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_ccba3dd1": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": false,
+   "hook": 7,
+   "payoff": 6,
+   "reason": "Explains why a cushion comes before debt payoff, but ends on a teaser about funding source.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_cfda3045": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Encourages starting small with $10, emphasizing consistency and immediate action to automate.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 10,
+   "payoff": 10,
+   "reason": "Vivid scenario of a flat tire leading to credit card debt, illustrating the need for a buffer.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 8,
+   "payoff": 2,
+   "reason": "Starts mid-discussion and cuts off abruptly mid-sentence about subscription audit.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 3,
+   "reason": "Fragment of the flat tire scenario, cuts off before explaining the strategy.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ }
 }

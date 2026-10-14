@@ -144,3 +144,8 @@ def test_abbreviated_amounts_are_grounded() -> None:
     assert check_numbers("A $200 video that made $40k", INDEX) == []
     assert check_numbers("It made 40 thousand dollars", INDEX) == []
     assert [i.text for i in check_numbers("It made $2M", INDEX)] == ["2M"]
+
+
+def test_ordinals_are_grounded() -> None:
+    index = TranscriptIndex("Every fourth week I take a step back.")
+    assert check_numbers("A step-back week every 4th week", index) == []

@@ -221,5 +221,106 @@
    "text": "Here's the hard truth. The feedback sandwich does not work. You lay a praise, criticism, praise, hoping the middle lands, but the brain only remembers the bread. Studies show that recipients recall the positive frames and discard the corrective core, so the behavior never shifts. I've watched managers spend 10 minutes wrapping a single point in compliments, only to hear the same mistake repeated next week. The fix is simple. Drop the filler, name the specific action, and state the impact in one clear sentence. When you stop hiding the message inside a snack, the listener can actually chew on it and change."
   }
  ],
- "eval_seconds": 124.0
+ "eval_seconds": 124.0,
+ "judge": {
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Complete advice on using a specific question to open tough conversations.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains describing behavior instead of labeling with a concrete example.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Shares personal leadership practice of asking what to stop doing.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 6,
+   "payoff": 3,
+   "reason": "Starts mid-anecdote and ends on a teaser without completing the point.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_6f284ec1": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": false,
+   "hook": 7,
+   "payoff": 6,
+   "reason": "Explains describing behavior vs labeling but ends on a fragment.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains the 48-hour rule for feedback with a personal anecdote.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_d9514940": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains the 48-hour rule for feedback with a personal anecdote.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_3cf0e9d9": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Debunks the feedback sandwich and offers a simple alternative.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Debunks the feedback sandwich and offers a simple alternative.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains the timing of feedback with a personal anecdote.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 4,
+   "reason": "Starts mid-sequence referencing the sandwich and ends transitioning to the next habit.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ }
 }

@@ -43,6 +43,12 @@ _LIST_COUNT = re.compile(
 )
 _TIMESTAMP = re.compile(r"\b\d{1,2}:\d{2}(?::\d{2})?\b")
 QUOTE_MIN_SCORE = 88.0
+_ORDINALS = {
+    w: str(i)
+    for i, w in enumerate(
+        "first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth".split(), start=1
+    )
+}
 
 
 class TranscriptIndex:
@@ -57,6 +63,8 @@ class TranscriptIndex:
         joined = re.sub(r"(\d),(\d{3})", r"\1\2", text)
         self.numbers |= {_value(m.group(1), m.group(2)) for m in _NUMBER.finditer(joined)}
         self.numbers |= {n.split(".")[0] for n in list(self.numbers)}
+        # "the fourth week" may be written "4th"
+        self.numbers |= {_ORDINALS[t] for t in self.tokens if t in _ORDINALS}
         # "three and a half" -> 3.5
         for i in range(len(self.tokens) - 3):
             if self.tokens[i].isdigit() and self.tokens[i + 1 : i + 4] == ["and", "a", "half"]:

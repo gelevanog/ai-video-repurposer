@@ -1,0 +1,306 @@
+{
+ "id": "synth-07-beginner-marathon",
+ "kind": "synthetic",
+ "title": "Training for Your First Marathon",
+ "duration": 332.829,
+ "project_id": "training-for-your-first-marathon-8e370d",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.18,
+   "message": "05:32 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.15,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.0,
+   "message": "949 words · faster-whisper small (int8, CPU) · 0.28x real time"
+  },
+  "diarize": {
+   "seconds": 0.33,
+   "message": "2 speakers separated by MFCC and pitch clustering (silhouette 0.42)"
+  },
+  "clips": {
+   "seconds": 55.93,
+   "message": "2 clips from 3 candidates"
+  },
+  "chapters": {
+   "seconds": 11.48,
+   "message": "3 chapters"
+  },
+  "posts": {
+   "seconds": 114.27,
+   "message": "6 social posts, 2 grounding flags"
+  }
+ },
+ "asr_seconds": 93.5,
+ "asr_rtf": 0.2809,
+ "process_seconds_this_run": 182.5,
+ "wer": {
+  "wer": 0.007223942208462332,
+  "ref_words": 969.0,
+  "substitutions": 5.0,
+  "deletions": 0.0,
+  "insertions": 2.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 2,
+  "predicted_speakers": 2,
+  "count_correct": true,
+  "word_accuracy": 0.9757,
+  "words": 945,
+  "note": "2 speakers separated by MFCC and pitch clustering (silhouette 0.42)"
+ },
+ "chapters": {
+  "predicted": 3,
+  "gold": 5,
+  "tol15": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 0.5
+  },
+  "tol30": {
+   "hits": 2,
+   "precision": 1.0,
+   "recall": 0.5,
+   "f1": 0.667,
+   "mean_abs_error_s": 0.5
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 2,
+  "recall": 0.4,
+  "coverage": [
+   0.84,
+   0.0,
+   0.0,
+   1.0,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 2
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Intro and Beginner Marathon Story"
+  },
+  {
+   "start": 79.0,
+   "title": "Easy Pace, Talk Test & Long Run"
+  },
+  {
+   "start": 209.0,
+   "title": "Race Day Nutrition and Pacing"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 62,
+  "description_chars": 1081,
+  "blog_words": 886,
+  "show_notes_words": 293,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 2 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_39e4af28",
+   "rank": 1,
+   "start": 32.84,
+   "end": 58.09,
+   "duration": 25.25,
+   "title": "From zero to marathon in 18 months",
+   "score": 89.5,
+   "scores": {
+    "hook": 9.0,
+    "payoff": 9.0,
+    "standalone": 9.0,
+    "clarity": 9.0,
+    "virality": 85.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 32.84,
+    "inside_word": false,
+    "gap_before": 0.56,
+    "gap_after": 0.12,
+    "level_db": -70.2
+   },
+   "cut_out": {
+    "at": 58.09,
+    "inside_word": false,
+    "gap_before": 0.29,
+    "gap_after": 0.17,
+    "level_db": -70.2
+   },
+   "adjustments": [],
+   "text": "I had a client, Maria, who couldn't run for five minutes straight when we met. She was 42, worked night shifts, and hadn't exercised in a decade. We started with walk -run intervals, one minute jogging, two minutes walking, three times a week. Every two weeks we added a minute to the jog. No speed work, no fancy gadgets, just consistency. 18 months later, she crossed the finish line of the Chicago Marathon in 5 hours 12 minutes.",
+   "render": {
+    "seconds": 3.34,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.94
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "i",
+     "minutes"
+    ],
+    "got": [
+     "i",
+     "minutes"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_70664fa4",
+   "rank": 2,
+   "start": 211.87,
+   "end": 261.53,
+   "duration": 49.66,
+   "title": "Nothing new on race day",
+   "score": 80.0,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 80.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 211.87,
+    "inside_word": false,
+    "gap_before": 0.16,
+    "gap_after": 0.04,
+    "level_db": -49.1
+   },
+   "cut_out": {
+    "at": 261.53,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.44,
+    "level_db": -70.2
+   },
+   "adjustments": [],
+   "text": "Where do most people go wrong? They wait until race week to experiment. Your gut is a muscle. It needs training just like your quads, and it takes weeks to adapt to carbohydrate concentration. So you make them practice breakfast. Practice your race day breakfast on every single long run. Same oatmeal, same banana, same coffee, same timing. Never try anything new on race day. I had a runner who swore by a new caffeinated gel at mile 20. He'd never used it in training. At mile 22, he cramped so badly he walked the last 4K. Meanwhile, another athlete ate the exact same toast with peanut butter and honey she'd eaten before every 20 -miler for 12 weeks. She negative -split the marathon. Your stomach remembers, don't surprise it when the stakes are highest. That's a great rule, nothing new on race day period.",
+   "render": {
+    "seconds": 6.1,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.37
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "where",
+     "period"
+    ],
+    "got": [
+     "where",
+     "period"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "clip_70664fa4": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Complete nutrition advice with contrasting examples and a clear concluding rule.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Explains the step-back week concept with a personal injury anecdote and successful results.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Direct nutrition advice with contrasting runner examples and a memorable stomach lesson.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Inspiring story of Maria's marathon transformation ending with an explicit, motivational lesson.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_39e4af28": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Tells Maria's complete marathon transformation story but omits the explicit final takeaway lesson.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Clear marathon pacing strategy starting with a counterintuitive hook and logical breakdown.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Starts with the gut muscle analogy, giving the same nutrition advice and rule as c01.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 9,
+   "reason": "Explains pacing strategy with a strong, motivational conclusion about the final 12k.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Practical explanation of the 'talk test' with clear physiological benefits and actionable advice.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 248.1
+}

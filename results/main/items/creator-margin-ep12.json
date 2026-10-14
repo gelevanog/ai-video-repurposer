@@ -266,17 +266,17 @@
  },
  "eval_seconds": 404.8,
  "posts": {
-  "social_posts": 0,
-  "within_limit": 0,
+  "social_posts": 6,
+  "within_limit": 6,
   "truncated": 0,
   "flags_social": 0,
   "flags_long_form": 0,
   "flag_texts": [],
-  "title_chars": 54,
-  "description_chars": 880,
-  "blog_words": 667,
-  "show_notes_words": 248,
+  "title_chars": 64,
+  "description_chars": 629,
+  "blog_words": 647,
+  "show_notes_words": 240,
   "chapters_youtube_ready": false,
-  "stage_message": ""
+  "stage_message": "6 social posts, 0 grounding flags"
  }
 }

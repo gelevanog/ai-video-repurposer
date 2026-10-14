@@ -527,101 +527,221 @@
   }
  ],
  "judge": {
-  "clip_a24f5b3f": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_cbb43b10": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_91f131f0": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_1447aedb": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_78a05600": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_f6cbe88b": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_d21f1676": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_9b9e225b": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_3bcff443": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+  "random-5": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains SWOT's mission, technological improvements, and climate significance clearly.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_6eb794f9": {
    "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_1507d727": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_32443086": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "random-0": {
-   "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "random-1": {
-   "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "random-2": {
-   "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "random-3": {
-   "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 3,
+   "reason": "Conversational Q&A about launch trajectory, lacks cohesive standalone narrative.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-4": {
    "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "random-5": {
-   "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Introduces SWOT mission, explains water cycle, and links it to climate change.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-6": {
    "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 3,
+   "payoff": 2,
+   "reason": "Reporter asking questions about mission lifetime and instrument, starts and stops abruptly.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
-  "random-7": {
-   "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "random-8": {
-   "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "random-9": {
-   "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+  "clip_f6cbe88b": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 6,
+   "reason": "Describes rocket rollout and launch readiness reviews leading to approval.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-10": {
    "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 5,
+   "reason": "Mentions spacecraft operations and team roles, but relies on slide references.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 4,
+   "reason": "Press conference instructions and introduction to Earth science fleet, starts mid-sentence.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 3,
+   "payoff": 6,
+   "reason": "Technical countdown update, starts mid-sentence but ends with launch readiness summary.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-3": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains the revolutionary impact of SWOT on monitoring inland water bodies.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_a24f5b3f": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Summarizes mission benefits and introduces the panel of experts.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_1507d727": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 5,
+   "reason": "Recounts the spacecraft's journey and assembly, but starts by referencing prior context.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-7": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Complete, clear summary of the SWOT mission, launch details, and scientific goals.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_1447aedb": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 4,
+   "reason": "Reflective speech with personal acknowledgments, starts mid-thought and ends on an open address.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_3bcff443": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 5,
+   "reason": "Conversational weather update for launch, messy speech with visual references.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-9": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 8,
+   "reason": "Press conference wrap-up with launch time, viewing details, and website info.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-11": {
    "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Explains the history of altimetry and SWOT's tenfold improvement in water measurement.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-8": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 5,
+   "reason": "Describes the payload development journey, but relies on visual graphics.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_91f131f0": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 3,
+   "payoff": 6,
+   "reason": "Discusses mission duration and hardware lifespan, starts mid-sentence.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_cbb43b10": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 3,
+   "payoff": 5,
+   "reason": "Explains science mission timeline and data release, but references prior context.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_d21f1676": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains the massive increase in monitoring inland water bodies and its benefits.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_78a05600": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 6,
+   "reason": "Describes the spacecraft's transport and processing, relying on visual photos.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 3,
+   "payoff": 2,
+   "reason": "Transitions to social media questions and starts answering, but cuts off mid-sentence.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_32443086": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 4,
+   "payoff": 5,
+   "reason": "Conversational explanation of trajectory design and launch probabilities.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_9b9e225b": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": true,
+   "hook": 3,
+   "payoff": 4,
+   "reason": "Explains satellite integration and shipping issues, starts mid-sentence and references prior problems.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 9.3

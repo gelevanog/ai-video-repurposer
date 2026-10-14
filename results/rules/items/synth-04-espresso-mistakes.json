@@ -184,86 +184,86 @@
   }
  ],
  "judge": {
-  "clip_c2d1f400": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "gold-2": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "gold-3": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
   "gold-0": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_da789092": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "gold-4": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-1": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Strong hook on roast dates, clear explanation of freshness and storage.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-0": {
    "group": "random",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Explains tamping channeling and offers a simple leveling fix.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Surprising story of a cheap scale beating an expensive grinder with clear advice.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_da789092": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 3,
+   "payoff": 3,
+   "reason": "Starts and ends mid-thought, cutting off before explaining the ratio.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Visual description of tilted tamp and a simple toothpick fix for even extraction.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_c2d1f400": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Comprehensive advice on buying, storing, and thawing beans with a punchy conclusion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Explains the necessity of back-flushing with a clear taste test comparison.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-1": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Clear rule for extraction time and single-variable adjustment method.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Detailed guide on using extraction time and timer to dial in espresso.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 1.9

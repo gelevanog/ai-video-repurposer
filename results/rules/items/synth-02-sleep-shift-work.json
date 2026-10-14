@@ -184,86 +184,86 @@
   }
  ],
  "judge": {
-  "clip_ee088422": {
-   "group": "model",
+  "gold-0": {
+   "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Standalone explanation of circadian misalignment from night shifts, ending with a clear conclusion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
    "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "reason": "Starts mid-sentence with 'Pair that' and ends by transitioning to the next topic.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-2": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Standalone advice on sleep anchoring with a clear explanation and satisfying conclusion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_04dde6c3": {
+   "group": "model",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 5,
+   "reason": "Starts mid-sentence summarizing previous points and ends on a transitional note.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-3": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Standalone explanation of caffeine timing with concrete examples and actionable rules.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
-  "gold-0": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_04dde6c3": {
+  "clip_ee088422": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Standalone advice on transitioning from night shift, highlighting a mistake and offering a solution.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-4": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-1": {
-   "group": "random",
-   "standalone": false,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-0": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Standalone explanation of the half-flip transition method with clear steps and benefits.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "gold-1": {
    "group": "gold",
    "standalone": true,
    "complete_ending": true,
-   "hook": 4,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 9,
+   "payoff": 9,
+   "reason": "Vivid scenario about driving home from night shift, explaining the science and benefit of sunglasses.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains how to handle days off with the half-flip method and social scheduling tips.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 1.1

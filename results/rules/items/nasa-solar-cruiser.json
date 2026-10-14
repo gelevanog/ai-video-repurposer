@@ -158,19 +158,39 @@
  "judge": {
   "clip_18d82451": {
    "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
-  },
-  "clip_caa84482": {
-   "group": "model",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Poses a deployment challenge, confirms test success, and explains larger sail missions.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-0": {
    "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Introduces NASA's solar sail mission, explaining launch, sail size, and asteroid study.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-1": {
    "group": "random",
-   "error": "rate limited: Rate limit exceeded: free-models-per-day-high-balance. "
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains space propulsion with solar sails and concludes with an intuitive sailboat analogy.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_caa84482": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Connects polar observation needs to solar sails supporting lunar missions.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 1.1

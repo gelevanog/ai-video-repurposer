@@ -181,5 +181,88 @@
    "text": "Where do most people go wrong? They wait until race week to experiment. Your gut is a muscle. It needs training just like your quads, and it takes weeks to adapt to carbohydrate concentration. So you make them practice breakfast. Practice your race day breakfast on every single long run. Same oatmeal, same banana, same coffee, same timing. Never try anything new on race day. I had a runner who swore by a new caffeinated gel at mile 20. He'd never used it in training. At mile 22, he cramped so badly he walked the last 4K. Meanwhile, another athlete ate the exact same toast with peanut butter and honey she'd eaten before every 20 -miler for 12 weeks."
   }
  ],
- "eval_seconds": 96.5
+ "eval_seconds": 96.5,
+ "judge": {
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Complete client transformation story with an inspiring, practical takeaway.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 6,
+   "payoff": 7,
+   "reason": "Detailed marathon pacing strategy ending with a motivating conclusion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Explains the concept of step-back weeks and how they prevent injury.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_140155d5": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 5,
+   "payoff": 6,
+   "reason": "Advice on pacing the first 10k of a marathon to avoid early burnout.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Contrasts two runners' nutrition habits to show why practice is vital.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_b6e1cc09": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Opens with a rhetorical question and answers it with runner examples.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Explains why the first 10k should feel easy to save energy for later.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Introduces the talk test, explains how to apply it, and lists benefits.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 9,
+   "reason": "Explains gut training with contrasting runner examples and a firm rule.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ }
 }

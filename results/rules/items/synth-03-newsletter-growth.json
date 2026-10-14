@@ -217,104 +217,104 @@
   }
  ],
  "judge": {
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Complete story of a successful newsletter swap with clear metrics and takeaway.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Clear before/after experiment showing how brevity improved metrics and saved time.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Quantifies the financial and growth cost of delaying a welcome series with clear metrics.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 4,
+   "reason": "Fragmented transcript with confusing names and an unfinished explanation of the delay's impact.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_1fc5db3f": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains the financial benefit of rejecting a sponsor for an own product with concrete numbers.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Polished narrative showing how replacing a sponsor with own product boosted revenue and conversion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
   "clip_4fea47af": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
    "hook": 6,
    "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "gold-4": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-0": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "gold-3": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "gold-2": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "random-1": {
-   "group": "random",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "gold-1": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "clip_1fc5db3f": {
-   "group": "model",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
-  },
-  "gold-0": {
-   "group": "gold",
-   "standalone": true,
-   "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "reason": "Interview segment explaining the rationale for rejecting a sponsor due to audience misalignment.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "clip_efc67361": {
    "group": "model",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Complete interview snippet quantifying the growth and revenue lost by delaying a welcome email.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Shares an actionable strategy of manual outreach to warm contacts with impressive conversion stats.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   },
   "random-2": {
    "group": "random",
    "standalone": true,
    "complete_ending": true,
-   "hook": 6,
-   "payoff": 6,
-   "reason": "rules",
-   "judge": "fake/rules"
+   "hook": 9,
+   "payoff": 8,
+   "reason": "Answers a compelling question with a story of how engagement metrics secured a partner swap.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 7,
+   "reason": "Introduces the topic of organic growth and explains the strategy for acquiring the first hundred subscribers.",
+   "judge": "dots-studio/dots-3-note-preview:free"
   }
  },
  "eval_seconds": 1.8

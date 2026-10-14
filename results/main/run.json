@@ -7,5 +7,5 @@
  ],
  "judge": "google/gemma-4-31b-it:free",
  "asr": "faster-whisper small (int8, CPU)",
- "finished_at": "2026-10-13 13:19:35"
+ "finished_at": "2026-10-14 09:43:06"
 }

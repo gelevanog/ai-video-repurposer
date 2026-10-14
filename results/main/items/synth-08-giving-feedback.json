@@ -1,0 +1,383 @@
+{
+ "id": "synth-08-giving-feedback",
+ "kind": "synthetic",
+ "title": "How to Give Feedback Without Starting a Fight",
+ "duration": 520.68,
+ "project_id": "how-to-give-feedback-without-sta-d7ccd9",
+ "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+ "stages": {
+  "probe": {
+   "seconds": 0.19,
+   "message": "08:40 · 1280x720 @ 25 fps"
+  },
+  "audio": {
+   "seconds": 0.21,
+   "message": "16 kHz mono"
+  },
+  "transcribe": {
+   "seconds": 0.04,
+   "message": "1324 words · faster-whisper small (int8, CPU) · 0.23x real time"
+  },
+  "diarize": {
+   "seconds": 0.42,
+   "message": "voices not separable with the light MFCC clustering (best silhouette 0.10); labelled as a single speaker"
+  },
+  "clips": {
+   "seconds": 34.2,
+   "message": "3 clips from 4 candidates"
+  },
+  "chapters": {
+   "seconds": 10.87,
+   "message": "4 chapters"
+  },
+  "posts": {
+   "seconds": 76.71,
+   "message": "6 social posts, 0 grounding flags"
+  }
+ },
+ "asr_seconds": 122.26,
+ "asr_rtf": 0.2348,
+ "process_seconds_this_run": 122.8,
+ "wer": {
+  "wer": 0.009752438109527382,
+  "ref_words": 1333.0,
+  "substitutions": 5.0,
+  "deletions": 2.0,
+  "insertions": 6.0,
+  "caption_offset_s": 0.0
+ },
+ "speakers": {
+  "gold_speakers": 1,
+  "predicted_speakers": 1,
+  "count_correct": true,
+  "word_accuracy": 1.0,
+  "words": 1324,
+  "note": "voices not separable with the light MFCC clustering (best silhouette 0.10); labelled as a single speaker"
+ },
+ "chapters": {
+  "predicted": 4,
+  "gold": 5,
+  "tol15": {
+   "hits": 0,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "mean_abs_error_s": null
+  },
+  "tol30": {
+   "hits": 1,
+   "precision": 0.333,
+   "recall": 0.25,
+   "f1": 0.286,
+   "mean_abs_error_s": 28.7
+  }
+ },
+ "highlights": {
+  "highlights": 5,
+  "found": 3,
+  "recall": 0.6,
+  "coverage": [
+   1.0,
+   1.0,
+   0.0,
+   1.0,
+   0.0
+  ],
+  "clips_mostly_on_a_highlight": 3
+ },
+ "chapters_out": [
+  {
+   "start": 0.0,
+   "title": "Why feedback often backfires"
+  },
+  {
+   "start": 57.0,
+   "title": "Describe behavior, not personality"
+  },
+  {
+   "start": 172.0,
+   "title": "Give feedback within 48 hours"
+  },
+  {
+   "start": 383.0,
+   "title": "Model feedback reception yourself"
+  }
+ ],
+ "posts": {
+  "social_posts": 6,
+  "within_limit": 6,
+  "truncated": 0,
+  "flags_social": 0,
+  "flags_long_form": 0,
+  "flag_texts": [],
+  "title_chars": 65,
+  "description_chars": 682,
+  "blog_words": 637,
+  "show_notes_words": 273,
+  "chapters_youtube_ready": true,
+  "stage_message": "6 social posts, 0 grounding flags"
+ },
+ "clips": [
+  {
+   "id": "clip_8fd147af",
+   "rank": 1,
+   "start": 133.37,
+   "end": 171.63,
+   "duration": 38.26,
+   "title": "Concrete Beats Character Every Time",
+   "score": 80.8,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 9.0,
+    "virality": 78.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 133.37,
+    "inside_word": false,
+    "gap_before": 0.66,
+    "gap_after": 0.12,
+    "level_db": -72.8
+   },
+   "cut_out": {
+    "at": 171.63,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.5,
+    "level_db": -72.8
+   },
+   "adjustments": [],
+   "text": "Here's the difference that changes everything. saying, say you were late three times this month instead of you are unreliable. The first statement is a fact you can verify on a calendar. The second is a label that cannot be measured. When you point to the specific behavior, the recipient can agree, apologize, and adjust the habit. When you slap a trait on them, they argue about who they are, not what they did. I've seen a manager replace a vague or disorganized with the report Miss the Deadline twice. and the employee fixed the process within a week. Concrete beats character every time.",
+   "render": {
+    "seconds": 4.81,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.54
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "heres",
+     "time"
+    ],
+    "got": [
+     "heres",
+     "time"
+    ],
+    "clip_wer": 0.038
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_aef5f723",
+   "rank": 2,
+   "start": 346.3,
+   "end": 382.94,
+   "duration": 36.64,
+   "title": "The 48-Hour Rule: Feedback Timing Matters",
+   "score": 76.5,
+   "scores": {
+    "hook": 7.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 8.0,
+    "virality": 70.0
+   },
+   "issues": [],
+   "cut_in": {
+    "at": 346.3,
+    "inside_word": false,
+    "gap_before": 0.66,
+    "gap_after": 0.12,
+    "level_db": -72.8
+   },
+   "cut_out": {
+    "at": 382.94,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.42,
+    "level_db": -59.7
+   },
+   "adjustments": [],
+   "text": "The 48 -hour rule is simple. Feedback older than two days feels like an ambush. After 48 hours the details blur, the emotion cools, and the recipient starts filling the gaps with their own story, usually a defensive one. I learned this the hard way when I waited a week to address a missed deadline. The engineer thought I was holding a grudge, not coaching a habit. When you deliver the observation within the window, the facts are fresh, the intent is clear, and the conversation stays on track. Miss the window and you trade coaching for conflict.",
+   "render": {
+    "seconds": 4.76,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.79
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "the",
+     "conflict"
+    ],
+    "got": [
+     "the",
+     "conflict"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  },
+  {
+   "id": "clip_86a36dd5",
+   "rank": 3,
+   "start": 29.31,
+   "end": 70.69,
+   "duration": 41.38,
+   "title": "Ditch the Feedback Sandwich for Better Results",
+   "score": 68.5,
+   "scores": {
+    "hook": 8.0,
+    "payoff": 8.0,
+    "standalone": 8.0,
+    "clarity": 9.0,
+    "virality": 75.0
+   },
+   "issues": [
+    "cut_in_tight",
+    "cut_in_loud"
+   ],
+   "cut_in": {
+    "at": 29.31,
+    "inside_word": false,
+    "gap_before": -1.18,
+    "gap_after": 1.18,
+    "level_db": -7.5
+   },
+   "cut_out": {
+    "at": 70.69,
+    "inside_word": false,
+    "gap_before": 0.3,
+    "gap_after": 0.4,
+    "level_db": -72.8
+   },
+   "adjustments": [],
+   "text": "Here's the hard truth. The feedback sandwich does not work. You lay a praise, criticism, praise, hoping the middle lands, but the brain only remembers the bread. Studies show that recipients recall the positive frames and discard the corrective core, so the behavior never shifts. I've watched managers spend 10 minutes wrapping a single point in compliments, only to hear the same mistake repeated next week. The fix is simple. Drop the filler, name the specific action, and state the impact in one clear sentence. When you stop hiding the message inside a snack, the listener can actually chew on it and change.",
+   "render": {
+    "seconds": 5.34,
+    "layout": "fit",
+    "seconds_per_output_minute": 7.74
+   },
+   "boundary": {
+    "first_ok": true,
+    "last_ok": true,
+    "expected": [
+     "heres",
+     "change"
+    ],
+    "got": [
+     "heres",
+     "change"
+    ],
+    "clip_wer": 0.0
+   },
+   "framing": null
+  }
+ ],
+ "judge": {
+  "clip_aef5f723": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Explains the 48-hour feedback rule with a clear example and strong conclusion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-4": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Shares a personal leadership practice with a concrete example and clear takeaway on asking for feedback.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-0": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 5,
+   "payoff": 6,
+   "reason": "Starts mid-thought as a transition between habits, referencing previous and next points.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-3": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 8,
+   "reason": "Clear explanation of the 48-hour feedback rule with a personal anecdote and strong conclusion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-2": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 9,
+   "reason": "Introduces a powerful question for tough conversations, illustrates it with an example, and gives a clear call to action.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-1": {
+   "group": "random",
+   "standalone": false,
+   "complete_ending": false,
+   "hook": 4,
+   "payoff": 3,
+   "reason": "Starts mid-anecdote referencing prior context and cuts off before explaining the final answer.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-1": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains the crucial difference between describing behavior and labeling the person with a clear example.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_8fd147af": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 7,
+   "payoff": 7,
+   "reason": "Similar to c07 but with some transcription errors, still conveys the complete point about concrete behavior vs character.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "gold-0": {
+   "group": "gold",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Debunks the feedback sandwich myth, explains the psychology, and offers a simple direct alternative.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "clip_86a36dd5": {
+   "group": "model",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "A slightly rephrased version of c09 debunking the feedback sandwich and advocating for direct feedback.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  },
+  "random-2": {
+   "group": "random",
+   "standalone": true,
+   "complete_ending": true,
+   "hook": 8,
+   "payoff": 8,
+   "reason": "Explains the 48-hour rule for feedback delivery with a personal story and a punchy conclusion.",
+   "judge": "dots-studio/dots-3-note-preview:free"
+  }
+ },
+ "eval_seconds": 212.7
+}
