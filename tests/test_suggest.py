@@ -144,8 +144,11 @@ def test_suggest_with_the_offline_model(talk: tuple[Transcript, list], settings:
 
 def test_suggest_survives_a_failing_model(talk: tuple[Transcript, list], settings: Settings) -> None:  # type: ignore[type-arg]
     transcript, sentences = talk
-    report = suggest(sentences, transcript.words, None, ScriptedModel(fail=True), settings)
+    model = ScriptedModel(fail=True)
+    report = suggest(sentences, transcript.words, None, model, settings)
     assert report.clips == [] and "boom" in report.rejected[0]
+    assert len(model.calls) == 2  # one retry asking for a direct answer
+    assert "answer with the JSON directly" in model.calls[1][1][1]["content"]
 
 
 def test_suggest_prompt_contains_numbered_sentences(talk: tuple[Transcript, list], settings: Settings) -> None:  # type: ignore[type-arg]

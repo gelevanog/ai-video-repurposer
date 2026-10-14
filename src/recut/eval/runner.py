@@ -342,7 +342,7 @@ def recheck_posts(name: str) -> None:
         print(f"{row['id']}: {row['posts']['social_posts']} posts, flags {row['posts']['flag_texts']}")
 
 
-def refresh_posts(name: str, settings: Settings) -> None:
+def refresh_posts(name: str, settings: Settings, only: list[str] | None = None) -> None:
     """Re-run the posts stage of every project of a run (after a fix in the posts code) and update the items."""
     work = REPO_ROOT / ".cache" / "eval-projects" / name
     pipeline = Pipeline(
@@ -351,6 +351,8 @@ def refresh_posts(name: str, settings: Settings) -> None:
     )
     for path in sorted((results_dir(name) / "items").glob("*.json")):
         row = json.loads(path.read_text(encoding="utf-8"))
+        if only and row["id"] not in only:
+            continue
         project = pipeline.store.load(row["project_id"]) if pipeline.store.exists(row["project_id"]) else None
         if project is None:
             continue

@@ -325,15 +325,28 @@ def suggest(
                 + transcript_lines(part),
             },
         ]
-        calls += 1
-        try:
-            completion = model.complete(
-                messages, max_tokens=settings.llm_max_tokens, temperature=settings.llm_temperature
-            )
-            reply = parse_json_object(completion.text)
-        except (LLMError, JSONReplyError) as exc:
-            log.warning("clips.window_failed", error=str(exc)[:200])
-            rejected.append(f"window {ts(part[0].start)}-{ts(part[-1].end)}: {str(exc)[:160]}")
+        reply = None
+        for attempt in range(2):
+            calls += 1
+            try:
+                completion = model.complete(
+                    messages, max_tokens=settings.llm_max_tokens, temperature=settings.llm_temperature
+                )
+                reply = parse_json_object(completion.text)
+                break
+            except (LLMError, JSONReplyError) as exc:
+                log.warning("clips.window_failed", attempt=attempt + 1, error=str(exc)[:200])
+                rejected.append(f"window {ts(part[0].start)}-{ts(part[-1].end)}: {str(exc)[:160]}")
+                # a reasoning model can spend its whole budget thinking: ask once more, for a direct answer
+                messages = [
+                    messages[0],
+                    {
+                        "role": "user",
+                        "content": messages[1]["content"]
+                        + "\n\nKeep your reasoning short and answer with the JSON directly.",
+                    },
+                ]
+        if reply is None:
             continue
         found, bad = parse_candidates(reply, {s.index for s in part})
         candidates.extend(found)
