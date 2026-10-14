@@ -25,23 +25,24 @@ https://github.com/user-attachments/assets/abab3dde-958d-4442-ac78-7ac98495df4a
 
 <sub>Frames from rendered 9:16 clips, one per caption style (bold with the title card, boxed, karaoke, pop, minimal). The framing comes from face tracking, and the wide shot on the right stays wide because there are two people in it.</sub>
 
-**Measured on 2026-10-13** on a 16-core CPU with no GPU. The machine was shared with other jobs (load average 11 to 19). The test set has 13 videos, 2 h 40 min in total: 9 synthetic podcasts and talks with exact gold data and 4 public-domain NASA briefings. The free language model ran on 9 of them (2 h 10 min) before the free tier's daily request limit stopped the run ([details](#how-the-run-went)).
+**Measured on 2026-10-13 and 2026-10-14** on a 16-core CPU with no GPU. The test set has 13 videos, 2 h 40 min in total: 9 synthetic podcasts and talks with exact gold data and 4 public-domain NASA briefings. All 13 went through the free model. The run was split over two days because the free tier's daily request limit stopped it after 9 videos ([details](#how-the-run-went)).
 
 | | Result |
 |---|---|
-| Cuts inside a word | **0 of 74** model-picked cut points (0 of 102 for the rule baseline). When each rendered clip is transcribed again, its first word is intact in **36 of 37** clips and its last word in **37 of 37** |
+| Cuts inside a word | **0 of 96** model-picked cut points (0 of 102 for the rule baseline). When each rendered clip is transcribed again, its first word is intact in **47 of 48** clips and its last word in **47 of 48**. The two misses are recognition differences on a silent cut, not clipped words ([below](#1-clips)) |
 | Clips that stand on their own, rubric on a sample (scored by Claude, not by an independent human) | **16 of 20** fully standalone, **15 of 20** pass the whole rubric (hook, payoff, clean start and end, platform fit) |
-| Clips that stand on their own, blind LLM judge (`dots-3-note-preview:free`) | **35 of 35** model clips vs **63%** of random 25-55 s windows. On the 3 videos where the rule baseline was also judged: **17 of 17** model clips vs **9 of 17** rule-picked clips |
-| Clips that land on a planted highlight (synthetic talks) | **11 of 11** model clips vs **7 of 11** for the rule baseline. Recall is **11 of 23**, because it asks for 2-3 clips per 7-minute talk and every talk has 5 planted highlights |
-| Chapter boundaries vs gold (synthetic talks) | **9 of 9** predicted boundaries within ±15 s (mean error **2.7 s**), recall **50%** because about 3 chapters were requested per 7-minute talk while the scripts have 5. TextTiling baseline: 7 of 9 within ±15 s, mean error 6.7 s |
+| Clips that stand on their own, blind LLM judge (`dots-3-note-preview:free`) | **47 of 48** model clips vs **31 of 51** rule-picked clips (61%) and **60%** of random 25-55 s windows |
+| Clips that land on a planted highlight (synthetic talks) | **20 of 22** model clips vs **12 of 22** for the rule baseline. Recall is **20 of 43**, because it asks for 2-3 clips per 7-minute talk and every talk has 5 planted highlights |
+| Chapter boundaries vs gold (synthetic talks) | **15 of 20** predicted boundaries within ±15 s (mean error **1.9 s**); recall **44%**, because about 3 chapters were requested per 7-minute talk while the scripts have 5. TextTiling baseline: 13 of 20 within ±15 s, mean error 5.4 s |
 | Caption accuracy (faster-whisper `small`, CPU) | synthetic voices: **1.6% WER** (9,706 words). Real NASA speech: **7.2%** of NASA's caption words wrong or missed (13,894 words). Raw WER is 20.0% because NASA's live captions skip whole passages |
 | Speakers (light MFCC clustering, no model) | **98.6%** of words with the right speaker on 5 two-voice podcasts. The speaker count is right in **9 of 9** synthetic videos, and all 4 single-voice talks are kept as one speaker |
-| Framing | the face stays inside the 9:16 window in **96.8%** of sampled frames with face tracking vs 88.9% for a centre crop (25 tracked clips). The 12 slide-video clips automatically use the full frame over a blurred fill |
-| Posts | **42 of 42** social posts within platform limits with no cut needed. **12 flagged** by the grounding check: 6 repeat an invented "$1.10" and 6 repeat a misheard "$1,400". 2 of 9 videos got no social posts because the model ran out of tokens ([fixed](#findings-from-the-run-fixed), not re-run) |
-| CPU time | speech recognition **13 s** per minute of audio under this load (**3.5-5.3 s** when the machine was quiet). Rendering **15.6 s** per minute of 1080×1920 output, so a 40 s clip takes about 10 s. The free model needed **21 s** per minute of source for clips, chapters and texts |
-| Cost | **$0**: 127 requests to OpenRouter (78 for the evaluation run), every requested and served model `:free` ([ledger](results/calls.jsonl)) |
+| Framing | the face stays inside the 9:16 window in **96.8%** of sampled frames with face tracking vs 88.9% for a centre crop (25 tracked clips). The 23 slide-video clips automatically use the full frame over a blurred fill |
+| Posts | **78 of 78** social posts within platform limits with no cut needed. **12 flagged** by the grounding check: 6 repeat an invented "$1.10" and 6 repeat a misheard "$1,400". 12 of 13 videos got a YouTube-valid chapter list (the 2-minute demo episode is too short) |
+| CPU time (quiet machine) | speech recognition **4.5 s** per minute of audio. Rendering **10.4 s** per minute of 1080×1920 output, so a 40 s clip takes about 7 s. On the first day, with other jobs running (load average 11-19), these were 13 s and 15.6 s. The free model needed **20 s** per minute of source for clips, chapters and texts |
+| Cost | **$0**: 171 requests to OpenRouter (110 for the evaluation run), every requested and served model `:free` ([ledger](results/calls.jsonl)) |
 
-**The honest verdict:** the parts done in code behave the way they were designed to. No cut landed inside a word, and transcribing the rendered clips again backs this up. The one miss was a clip opening on the instrument name "KaRIn", which the second transcription heard differently; that cut sat 0.21 s before the word. Face tracking keeps the speaker in frame, every post fit its platform's limit, and the grounding check caught both real errors in the generated posts. The free model is good at picking moments: all 11 clips on the synthetic talks landed on a planted highlight, compared with 7 of 11 for the keyword rules, and its chapter boundaries were within 3 seconds on average. Two things are weaker than the table suggests. The LLM judge is lenient: it called 63% of random windows standalone and every model clip standalone. My own reading of a 20-clip sample is lower, 16 of 20 fully standalone, and the 4 that failed open with "that signal", "the gentler approach" or a garbled sentence. Also, the system only finds as many moments as it is asked for, so recall of the planted highlights is about half. The run also exposed mistakes upstream of the model. The test voice read "$10" as "a dollar ten", Whisper heard "$15 ... $400" as "$1.15 ... $1.400", and the model turned these into "$1.10" and "$1,400". The grounding check flagged every one of these posts. The free tier's daily limit stopped the model run after 9 of 13 videos, and the last four synthetic talks are evaluated only by the rule baseline. Details and every number's source are below.
+**The honest verdict:** the parts done in code behave the way they were designed to. No cut landed inside a word, and transcribing the rendered clips again backs this up: the two misses are a clip opening on the instrument name "KaRIn", which the second transcription heard differently, and a clip whose silent ending Whisper filled with a hallucinated "bye". Face tracking keeps the speaker in frame, every post fit its platform's limit, and the grounding check caught both real errors in the generated posts. The free model is good at picking moments: 20 of 22 clips on the synthetic talks landed on a planted highlight, compared with 12 of 22 for the keyword rules, and the blind judge called 47 of 48 of its clips standalone against 61% of the rule-picked ones. Its chapter starts were within 2 seconds when they were right, but 4 of 20 were more than 30 s from any real topic change. Two things are weaker than the table suggests. The LLM judge is lenient: it also called 60% of random windows standalone. My own reading of a 20-clip sample is lower, 16 of 20 fully standalone, and the 4 that failed open with "that signal", "the gentler approach" or a garbled sentence. Also, the system only finds as many moments as it is asked for, so recall of the planted highlights is under half. The run also exposed mistakes upstream of the model. The test voice read "$10" as "a dollar ten", Whisper heard "$15 ... $400" as "$1.15 ... $1.400", and the model turned these into "$1.10" and "$1,400". The grounding check flagged every one of these posts. The free reasoning model also sometimes spends its whole budget thinking and returns nothing: that cost 2 videos their social posts and 1 video its clips until retries were added. Details and every number's source are below.
+
 ## What problem it solves
 
 Creators, podcasters, coaches and agencies sit on hours of long-form video: interviews, webinars, livestreams, talks. The audience is on TikTok, Reels and Shorts, so every episode should also become five to ten vertical clips with captions, a YouTube description with chapters, show notes, a blog post and a post per platform. Done by hand that is a day of editing per episode: scrubbing for the good moments, cutting so a clip does not start mid-word or end before the point, reframing a 16:9 shot to 9:16 around the speaker, timing captions word by word, and writing the same episode up six different ways within six different character limits.
@@ -235,35 +236,39 @@ Everything is in [`results/`](results): one JSON per video per run ([`results/ma
 
 **Choosing the model** ([`smoke.json`](results/smoke.json)): six free models got the same clip-picking task on the demo episode. `nemotron-3-super` (43 s), `nemotron-3-ultra` (38 s) and `dots-3-note-preview` (44 s) all returned valid picks. `gemma-4-31b-it` was rate-limited upstream, `inkling` refuses non-agent clients, and `nemotron-3.5-lightning` spent its whole token budget thinking.
 
-**The daily limit.** The run stopped at 07:10 UTC, when OpenRouter answered `free-models-per-day` (the free tier's daily request cap, shared by every project on the account). At that point 9 of the 13 videos had been processed by the model. The four remaining synthetic talks are in the rule baseline (speech, speakers, chapters, cuts) but not in the model run. `make eval-resume` finishes them after the limit resets, using the disk cache for everything already answered.
+**The daily limit.** On 2026-10-13 the run stopped at 07:10 UTC, when OpenRouter answered `free-models-per-day` (the free tier's daily request cap, shared by every project on the account). At that point 9 of the 13 videos had been processed. After the limit reset, `make eval-resume` processed the four remaining synthetic talks on 2026-10-14 (02:07-02:45 UTC). It reused cached answers, asked the judge again where verdicts were missing, and wrote social posts for the two videos that had none. All 13 videos now have model results, and the comparisons below are on all 13 or on all 9 synthetic talks.
+
+**What changed on the second day.** The fixes listed under [Findings](#findings-from-the-run-fixed) were in the code: the two-request retry for social posts, the 16,000-token output ceiling, the clip-window retry, and the grounding fixes. One talk (the emergency-fund talk) first came back with **no clips**: the reasoning model spent its whole budget thinking about the clip request and returned nothing. A retry was added, the video was run again, and the same request succeeded on its first attempt the second time. Its chapters, texts and transcript came from the cache. Rendering times on the first day were measured under heavy load from other jobs, so the CPU benchmark was repeated on the quiet machine.
 
 ### 1. Clips
 
-| | Free model (9 videos) | Rule baseline (same 9) |
+| | Free model (13 videos) | Rule baseline (same 13) |
 |---|---|---|
-| Clips | 37 (median 32.7 s, all 20-60 s) | 40 (median 38.6 s) |
-| Cut points inside a word (Whisper word times) | **0 of 74** | 0 of 80 |
-| Cut points within 30 ms of a word / on audio louder than -12 dB vs speech | 2 / 6 | 0 / 13 |
-| Median audio level at the cut, relative to speech | -32 dB | -27 dB |
-| Rendered clips re-transcribed: first word / last word intact | **36 / 37**, **37 / 37** | (not rendered) |
-| Clips that land on a planted highlight (synthetic) | **11 of 11** | 7 of 11 |
-| Lint warnings (dangling reference, starts with a connector, tight or loud cut) | 27% of clips | 30% of clips |
+| Clips | 48 (median 36.6 s, all 20-60 s) | 51 (median 39.2 s) |
+| Cut points inside a word (Whisper word times) | **0 of 96** | 0 of 102 |
+| Cut points within 30 ms of a word / on audio louder than -12 dB vs speech | 3 / 7 | 2 / 14 |
+| Median audio level at the cut, relative to speech | -37 dB | -32 dB |
+| Rendered clips re-transcribed: first word / last word intact | **47 / 48**, **47 / 48** | (not rendered) |
+| Clips that land on a planted highlight (synthetic) | **20 of 22** | 12 of 22 |
+| Lint warnings (dangling reference, starts with a connector, tight or loud cut) | 23% of clips | 27% of clips |
+
+The two re-transcription misses are not clipped words. One clip opens on the instrument name "KaRIn", which Whisper spelled "Kerrin" the first time and heard as "a ..." the second; that cut sat 0.29 s before the word. In the other, the cut-out is in silence (-64 dB), and the second transcription added a hallucinated "bye" after the last real word.
 
 **Are the clips standalone?** Two independent checks were run, and they disagree on how often.
 
-- **The blind LLM judge** read only each clip's words, shuffled together with random 25-55 s windows and the planted highlights. It called **35 of 35** model clips standalone, **18 of 18** planted highlights, and also **63%** of random windows. It separates good clips from random ones, but it is lenient. On the 3 videos where the baseline's clips were judged too (the daily limit cut that off), it called **17 of 17** model clips and **9 of 17** rule-picked clips standalone. Two batches of the same random windows also got different verdicts (53% and 35% standalone), so the judge is noisy too.
-- **A rubric on a seeded sample of 20 clips** (10 synthetic, 10 NASA), scored 0-2 for standalone, hook, payoff, clean boundaries and platform fit, gave **16 of 20 fully standalone** and **15 of 20 passing** (standalone and no zero). Mean hook was 1.35 and mean payoff 1.65. The NASA clips are standalone (9 of 10) but weaker as social content (hook 1.1). The four that were not standalone open with "that signal", "the gentler approach", "The Welcome series" or a garbled sentence. **I (Claude, the AI assistant that built Recut) scored this rubric** by reading the transcripts; it is not an independent human rating ([`rubric.json`](results/rubric.json)).
+- **The blind LLM judge** read only each clip's words, shuffled together with random 25-55 s windows and the planted highlights. It called **47 of 48** model clips standalone, **43 of 43** planted highlights, and also **60%** of random windows. On the same 13 videos it called **31 of 51** rule-picked clips standalone (61%, against 53% for that batch's random windows). It separates good clips from random ones, but it is lenient and noisy: the same random windows got different verdicts in different batches (on 3 videos, 53% in one batch and 35% in another).
+- **A rubric on a seeded sample of 20 clips** (10 synthetic, 10 NASA, drawn on the first day from the 9 videos done by then), scored 0-2 for standalone, hook, payoff, clean boundaries and platform fit, gave **16 of 20 fully standalone** and **15 of 20 passing** (standalone and no zero). Mean hook was 1.35 and mean payoff 1.65. The NASA clips are standalone (9 of 10) but weaker as social content (hook 1.1). The four that were not standalone open with "that signal", "the gentler approach", "The Welcome series" or a garbled sentence. **I (Claude, the AI assistant that built Recut) scored this rubric** by reading the transcripts; it is not an independent human rating ([`rubric.json`](results/rubric.json)).
 
 ### 2. Chapters (synthetic talks, gold boundaries)
 
-| | Free model | TextTiling baseline |
+| | Free model (9 talks) | TextTiling baseline |
 |---|---|---|
-| Predicted / gold boundaries | 9 / 18 | 9 / 18 |
-| Within ±15 s (precision) | **9 of 9**, mean error **2.7 s** | 7 of 9, mean error 6.7 s |
-| Within ±30 s | 9 of 9 | 9 of 9 |
-| Recall | 50% | 50% (39% at ±15 s) |
+| Predicted / gold boundaries | 20 / 34 | 20 / 34 |
+| Within ±15 s (precision) | **15 of 20**, mean error **1.9 s** | 13 of 20, mean error 5.4 s |
+| Within ±30 s | 16 of 20 | 17 of 20 |
+| Recall at ±15 s / ±30 s | 44% / 47% | 38% / 50% |
 
-Both were asked for about one chapter every two minutes, which comes to 3 for a 7-minute talk, while the scripts have 5 sections of about 80 s. Recall is low for that reason. Precision is the more useful number: every chapter start the model proposed was a real topic change, within 3 seconds on average. 8 of the 9 videos produced YouTube-valid chapter lists. The 2-minute demo episode is too short for three chapters of 45 s.
+Both were asked for about one chapter every two minutes, which comes to 3 for a 7-minute talk, while the scripts have 5 sections of about 80 s. Recall is low for that reason. When the model's chapter starts are right they are very precise (1.9 s mean error, against 5.4 s for TextTiling), but at ±30 s the lexical baseline is just as good. On the talks added on the second day the model did worse: no boundary within ±15 s on the feedback talk, and 1 of 3 on the remote-teams talk. 12 of the 13 videos produced YouTube-valid chapter lists; the 2-minute demo episode is too short for three chapters of 45 s.
 
 ### 3. Speech and speakers
 
@@ -276,11 +281,11 @@ Speakers on 5 two-voice podcasts: **98.6%** of words got the right speaker after
 
 ### 4. Rendering and framing
 
-25 clips from the NASA videos used face tracking. The main face was inside the 9:16 window in **96.8%** of sampled frames, compared with 88.9% for a fixed centre crop. People at a press-conference table mostly sit near the middle, so a centre crop is already fairly good there. 12 clips from slide videos and the solar-sail B-roll fell back automatically to the full frame over a blurred fill. CPU time on the 16-core machine, while other jobs kept the load average at 11-19 ([`bench.json`](results/bench.json)): speech recognition 13 s per minute of audio (the same model took 3.5-5.3 s per minute earlier in the day, on a quieter machine), speaker clustering 0.1 s per minute, rendering **15.6 s per minute of 1080×1920 output** including face detection.
+25 clips from the NASA videos used face tracking. The main face was inside the 9:16 window in **96.8%** of sampled frames, compared with 88.9% for a fixed centre crop. People at a press-conference table mostly sit near the middle, so a centre crop is already fairly good there. 23 clips from slide videos and the solar-sail B-roll fell back automatically to the full frame over a blurred fill. CPU time on the 16-core machine, benchmarked when it was otherwise idle (load average 1.2 at the start; [`bench.json`](results/bench.json)): speech recognition **4.5 s** per minute of audio, speaker clustering under 0.1 s per minute, and rendering **10.4 s per minute of 1080×1920 output**, including face detection. On the first day, with other jobs keeping the load average at 11-19, the same benchmark measured 13 s and 15.6 s.
 
 ### 5. Posts and grounding
 
-The 7 videos with social posts got 42 posts, **all within their platforms' limits**, with no rewrite request and no cut needed. 2 videos got none: the free reasoning model used its whole token budget thinking about six posts at once. After the run, Recut was changed to retry in two smaller requests (and to tell the model that code measures the lengths), but the run was not repeated because of the daily limit.
+All 13 videos got their social posts: **78 of 78 within their platforms' limits**, with no rewrite request and no cut needed. On the first day, 2 videos got none, because the free reasoning model used its whole token budget thinking about six posts at once. With the two-request retry and a note in the prompt that code measures the lengths, both got all six posts on the second day.
 
 The grounding check flagged **12 social posts and 4 long-form passages**, and each flag pointed at something real:
 
@@ -288,16 +293,18 @@ The grounding check flagged **12 social posts and 4 long-form passages**, and ea
 - **"$1,400 grinder"** in the espresso talk. The script says "$15 kitchen scale ... $400 grinder", Whisper heard "$1.15 ... $1.400", and the model "corrected" it to $1,400.
 - **3 quotes with ellipses** in the NASA post-flight show notes, stitched together from separate sentences, so they are not verbatim.
 
-The first findings of the run, false alarms on numbers in the video title and in the licence credit (for example "1.0" from "CC0 1.0") and on "three and a half" written as "3.5", were fixed before these counts. The counts come from re-running the checks on the stored texts, with no new model calls.
+The first findings of the run, false alarms on numbers in the video title and in the licence credit (for example "1.0" from "CC0 1.0") and on "three and a half" written as "3.5" and on "fourth" written as "4th", were fixed before these counts. The counts come from re-running the checks on the stored texts, with no new model calls.
 
 ### Findings from the run, fixed
 
 - **Whisper splits numbers** into two "words" ("$40" + ",000"), which looked like "$40 ,000" in captions. They are now joined.
 - **Six posts in one request** sometimes used the reasoning model's whole output budget. The request now falls back to two smaller ones, and the output ceiling is 16,000 tokens.
-- **Grounding false positives** from the video title, the appended credit and "three and a half" (above).
+- **Grounding false positives** from the video title, the appended credit, "three and a half" and ordinals (above).
 - **NASA caption files that do not match the video's cut** (a 5.5-minute music intro, a different end). The scorer now aligns caption timing to the transcript's word density before computing WER.
 - **The script validator** rejected a draft with a 169-word chapter; the floor was lowered from 170 to 150 words.
-- **The clip judge** returned no verdicts for one video (the batch failed). It is recorded as unanswered and can be retried with `recut eval rejudge`.
+- **The clip judge** returned no verdicts for one video (the batch failed). It was recorded as unanswered and re-asked with `recut eval rejudge` on the second day.
+- **An empty answer to the clip request** (the reasoning model used its whole budget thinking) left one talk with no clips. A window that fails is now asked once more, with a request for a direct answer.
+- **"Every fourth week" written as "4th"** was flagged as an invented number; ordinals now count as grounded.
 
 ### Screenshots
 
@@ -309,11 +316,11 @@ The first findings of the run, false alarms on numbers in the video title and in
 | **Projects.** Every processed video with its stages and the upload panel. The licence is required before export. | **Evaluation.** The numbers above, read from `results/summary.json`. |
 ## Key design decisions
 
-**Why the model answers with sentence numbers, not timestamps.** A language model reading a transcript is good at the editorial question (is this a moment, does it stand on its own, what is the hook) and bad at arithmetic on timestamps. If it returns times, it returns times that cut words in half. So it gets numbered sentences and answers with a range of them; the cut itself is code: whole sentences, 20-60 s, in the quietest 30 ms of the silence on each side, checked against the word times and the audio level. That is why the evaluation finds 0 cuts inside a word out of 74.
+**Why the model answers with sentence numbers, not timestamps.** A language model reading a transcript is good at the editorial question (is this a moment, does it stand on its own, what is the hook) and bad at arithmetic on timestamps. If it returns times, it returns times that cut words in half. So it gets numbered sentences and answers with a range of them; the cut itself is code: whole sentences, 20-60 s, in the quietest 30 ms of the silence on each side, checked against the word times and the audio level. That is why the evaluation finds 0 cuts inside a word out of 96.
 
 **Why a lint next to the model's scores.** Asked whether its own pick "stands alone", a model says yes with a high score almost every time. The lint is cheap and boring: it flags a clip that opens with "And", "He" or "That", says "as I said", opens with a greeting or ends on a question, and those findings lower the ranking and are shown to the reviewer. The blind judge in the evaluation is a second opinion from a different model family.
 
-**Why a live preview before rendering.** Rendering a minute of 1080x1920 takes about 16 s on CPU. The editor frames the source, draws the caption style and highlights the spoken word in the browser, from the same framing plan and word times the renderer uses, so trimming and fixing captions is instant and the render happens once, at the end.
+**Why a live preview before rendering.** Rendering a minute of 1080x1920 takes about 10 s on CPU. The editor frames the source, draws the caption style and highlights the spoken word in the browser, from the same framing plan and word times the renderer uses, so trimming and fixing captions is instant and the render happens once, at the end.
 
 **Why face tracking with a slow camera.** Following a face box frame by frame looks like a security camera. The virtual camera only moves when the face leaves a dead zone, at a capped speed, and cuts (instead of panning) at a shot change. When there is no face in most frames (slides, screen recordings, B-roll), cropping a 16:9 frame to its middle third loses the content, so the auto layout shows the full frame over a blurred fill instead.
 
@@ -380,7 +387,7 @@ make web-build   # next build
 make eval-rules  # the whole evaluation with the offline rules (no API calls)
 ```
 
-177 tests:
+178 tests:
 
 | Suite | What it covers |
 |---|---|
